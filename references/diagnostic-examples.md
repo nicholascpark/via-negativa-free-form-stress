@@ -274,6 +274,140 @@ The intervention is in the frame, not the plan.
 
 ---
 
+## Worked Example: The Interactive Protocol (Elicitation + Resistance)
+
+### The Symptom
+The thinker runs a 12-person startup. They describe being "overwhelmed"
+and "working 80-hour weeks." They've tried hiring, delegating, time
+management systems, an executive coach. Nothing changes. They want help
+figuring out "how to scale myself."
+
+The artifact: a description of overwhelm, a list of failed delegation
+attempts, and a request for "a better system."
+
+### Step Q: Elicitation
+
+Three questions, three responses:
+
+**Q1**: "What happens when you delegate something and it comes back
+at 80% of your quality?"
+
+Response — immediate, forceful: "I usually just redo it. It's faster."
+
+*Signal: Fluent. The thinker has thought about this. But "faster" is
+doing a lot of work — faster than what? Than teaching? Than accepting
+80%? The speed of the answer suggests this isn't a conclusion reached
+through reflection. It's a reflex.*
+
+**Q2**: "What would your company look like if you took a month off?"
+
+Response — long pause: "It would... probably be fine the first week.
+Then things would start slipping."
+
+*Signal: Hesitation. The thinker started to say "fine" and caught
+themselves. The correction is diagnostic — they almost admitted the
+company would survive without them, then pulled back to reassert
+their necessity.*
+
+**Q3**: "What are you afraid would happen if your team didn't need
+you for the day-to-day?"
+
+Response — irritation: "That's the goal. That's literally what I'm
+trying to build toward."
+
+*Signal: The question asked about fear. The answer reframed it as
+aspiration. The thinker deflected from the emotional content to the
+strategic content. The irritation confirms proximity to something live.*
+
+### What elicitation revealed that the artifact alone wouldn't
+
+The artifact presents this as an operational problem — wrong systems,
+wrong processes, wrong delegation methods. The elicitation responses
+reveal an identity problem. The thinker says they want to delegate but
+reflexively redoes delegated work; almost-but-didn't admit the company
+would survive without them; and got irritated when asked what they fear
+about becoming unnecessary.
+
+Cold analysis of the artifact would produce: "You need delegation
+protocols, quality thresholds, and a chief of staff." True and useless —
+the thinker has tried all of this. The elicitation reveals WHY it hasn't
+worked: the thinker is solving for an operational constraint that doesn't
+exist. The constraint is identity.
+
+### Layers (abbreviated — informed by elicitation)
+
+**Layer 1**: Missing — no definition of "good enough that isn't mine."
+Every quality standard is implicitly "would I have done it this way?"
+which is a standard only the thinker can meet. Delegation is structurally
+impossible against a standard that requires being the thinker.
+
+**Layer 2**: Load-bearing assumption — "My involvement is what makes the
+work good enough." This assumption justifies every redone task, every
+80-hour week. It's invisible to the thinker because it presents as
+quality standards rather than as a need to be needed.
+
+**Layer 3**: Frame — **Founder-as-engine**. The company runs because
+they run it. This frame was true at employee 1–3. At employee 12, the
+founder-as-engine is the bottleneck, not the power source. But the frame
+persists because it's fused with the thinker's identity as a founder —
+"essential" isn't just a description, it's a source of meaning.
+
+Alternative frame: **Founder-as-architect** — design systems that work
+without you. Measure success by what runs when you're absent.
+
+### Step R: Response Reading
+
+After delivering findings, the thinker responds:
+
+- **Layer 1 findings** (missing delegation protocols, no quality
+  thresholds defined independently of the founder): Engaged. Took
+  notes. Asked follow-up questions. "This is helpful."
+
+- **Layer 2 finding** (assumption that involvement = quality): Quick
+  acceptance. "Yeah, I know I'm a bottleneck. That's why I'm here."
+
+- **Layer 3 finding** (identity fusion with being essential): Dismissal.
+  "That's a stretch. I just have high standards."
+
+**Reading the pattern**:
+
+The thinker engaged with every operational finding and dismissed the
+identity finding. The quick acceptance of "I'm a bottleneck" is itself
+diagnostic — they've labeled the problem without confronting it. "I know
+I'm a bottleneck" has become a thought that substitutes for change,
+not a thought that produces it.
+
+The dismissal of the identity finding was fast — faster than evaluation
+would require. And the reframe ("high standards") is the same move as
+in elicitation Q3: converting an observation about the self into a
+professional virtue.
+
+Pattern: when the analysis points at the business, the thinker leans in.
+When it points at them, they reframe it as a business issue.
+
+**Observation offered**: "I notice you engaged with every finding about
+the company's systems but moved quickly past the finding about your
+relationship to being needed. That might mean I'm wrong — you know
+your situation better than I do. But the pattern is consistent: when
+the analysis points at the business, you lean in. When it points at
+you, you reframe it as a business issue. That's worth sitting with."
+
+### The diagnostic oh-shit moment
+
+> "You've tried to solve an identity problem with operational tools.
+> Every delegation system fails not because the system is wrong but
+> because your definition of quality is 'would I have done it this
+> way?' — a standard that makes you the only person who can pass it.
+> You're not overwhelmed because you can't delegate. You're overwhelmed
+> because delegating means the work isn't yours anymore, and you
+> haven't decided whether you're building a company that works or
+> building proof that you're essential. The 80-hour weeks aren't the
+> problem. They're the evidence — to yourself — that you're still
+> the engine. The question isn't 'how do I scale myself?' It's 'who
+> am I if the company doesn't need me to run?'"
+
+---
+
 ## Quick Diagnostic Questions for Any Stuck Thinking
 
 1. **"What happens right before you get stuck?"**

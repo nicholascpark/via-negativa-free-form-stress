@@ -112,13 +112,16 @@ failure mode is manufacturing cognitive critique of clear reasoning.
 
 ## How It Works: Progressive Metacognition
 
-The skill operates in **four layers**, each more metacognitive than the last.
+The skill operates in **four layers** bracketed by two interactive steps,
+each more metacognitive than the last.
 
 ### Reflective mode entry (stress test thinking):
-Start from Step 0 (Intake) → Layers.
+Start from Step 0 (Intake) → Step Q (Elicitation) → Layers → Step R
+(Response Reading).
 
 ### Diagnostic mode entry (stuck / circular thinking):
-Start from Step D (Diagnostic Intake) → then join the layer progression.
+Start from Step D (Diagnostic Intake) → Step Q (Elicitation) → then
+join the layer progression → Step R (Response Reading).
 
 ### Depth levels:
 
@@ -256,6 +259,76 @@ It's the moment when the thinker sees:
 
 The next thought becomes obvious once the thinker sees the structure.
 The value is in seeing the structure.
+
+---
+
+## Step Q: Elicitation — Ask Before Telling
+
+The most powerful move this skill has is not a finding. It's a question
+the thinker can't answer.
+
+Before running layers, ask 2–3 targeted questions. Not clarifying
+questions ("what do you mean by X?") — diagnostic questions designed
+to reveal the shape of the thinking from the thinker's own responses.
+
+### Why ask first
+
+1. **The answer reveals more than the artifact.** What the thinker says
+   fluently vs. where they stumble, hedge, or go silent tells you where
+   the frame's edges are — faster than any analysis could.
+
+2. **The thinker generates their own insight.** Being asked "what happens
+   on the day this plan stops working?" and discovering you have no
+   answer is a fundamentally different experience from being told "your
+   plan has no failure mode." The first is a revelation. The second is
+   feedback.
+
+3. **It calibrates depth.** The thinker's responses tell you whether
+   Layer 3 will land or whether they're already frame-aware. Don't
+   deliver findings the thinker has already reached — push past them.
+
+### Elicitation questions by mode
+
+**Reflective mode** (stress testing a plan or idea):
+- "What's the first thing you expect to go wrong?" — If they have a
+  clear answer, the plan has some resilience built in. If they don't,
+  Layer 1 will hit hard.
+- "What would make you abandon this entirely?" — Tests for failure
+  criteria and commitment clarity. Hesitation here is diagnostic.
+- "Who disagrees with this, and what's the strongest version of their
+  objection?" — Tests whether the thinker has genuinely engaged
+  opposing views or only their own.
+
+**Diagnostic mode** (stuck or circular thinking):
+- "What happens right before you get stuck?" — The moment before the
+  loop restarts is where the avoided thought lives.
+- "If you had to act right now with no more thinking, what would you
+  do?" — Separates genuine uncertainty from thinking-as-avoidance. If
+  the answer comes immediately, the thinking is the obstacle.
+- "What are you afraid of finding out?" — Direct probe for avoidance.
+  The thinker's reaction to this question — not their answer — is often
+  the most diagnostic signal in the entire interaction.
+
+### Reading the responses
+
+The answers matter less than how they arrive:
+
+- **Fluent, immediate**: The thinker has thought about this. Don't
+  resurface it — push past it.
+- **Hesitation, hedging, "I haven't really thought about that"**:
+  You've found an edge. This is where the layers should focus.
+- **Deflection or subject change**: You've found the avoidance. Handle
+  with care but don't let it pass unmarked.
+- **Irritation or dismissal**: The highest-signal response. The thinker
+  is protecting something. This is data, not confirmation — they might
+  be right that you're wrong. But note it. See Step R.
+
+### When to skip elicitation
+
+When you only have the artifact and no live thinker (reviewing a
+document asynchronously). In that case, run the layers cold but
+acknowledge internally that cold analysis has a lower ceiling — you're
+reading the map without being able to ask the territory.
 
 ---
 
@@ -502,6 +575,68 @@ it offers a different relationship to the whole thing.
 
 ---
 
+## Step R: Response Reading — Resistance as Data
+
+After delivering initial findings, the thinker's pattern of response
+is a second artifact — often more revealing than the first.
+
+This is not manipulation. This is the same structural perception the
+skill applies to thinking, now applied to the thinker's relationship
+with the findings themselves. The reaction to hearing "you might be
+avoiding X" contains more information about X than any analysis of
+the original artifact ever could.
+
+### What response patterns reveal
+
+**Engagement** (explores the finding, asks questions, connects it to
+experience):
+→ The finding landed. It's in the thinker's zone of proximate
+  development. Build on it.
+
+**Quick acceptance** ("yeah, that makes sense" without elaboration):
+→ Two possibilities: the finding is obvious and you've failed the
+  non-obvious test, OR the thinker is absorbing it without processing.
+  Distinguish by asking: "What changes if that's true?" Quick
+  acceptance + no answer = the finding hasn't actually landed.
+
+**Deflection** (acknowledges the finding but pivots to something else):
+→ The finding is proximate to something the thinker doesn't want to
+  examine. The direction of the pivot is diagnostic — they're moving
+  toward safer ground. Note where they move TO and what that movement
+  protects.
+
+**Dismissal** ("that doesn't apply," "you don't have enough context"):
+→ Possibly correct — you might be wrong. But if the dismissal comes
+  faster than the thinker could have evaluated the finding, it's
+  protective, not analytical. The speed of dismissal is the signal.
+
+**Irritation** (emotional pushback, "that's not helpful"):
+→ The highest-value signal. Irritation at a structural observation
+  means the observation is touching something live. This does NOT
+  mean you push harder — it means you name what you see with care:
+  "I notice this one landed differently. That might mean I'm wrong,
+  or it might mean it's close to something important. Your call."
+
+### The discipline
+
+- **Never weaponize resistance.** "You're defensive about this, which
+  proves I'm right" is the skill's worst failure mode. Resistance is
+  data, not confirmation. The thinker might be defensive because
+  you're wrong.
+- **Name the pattern, don't interpret it.** "You engaged deeply with
+  findings about the plan but moved quickly past findings about your
+  assumptions" is observation. "You're avoiding your assumptions" is
+  interpretation. Stay with observation.
+- **One pass only.** Read the response pattern, offer what you see,
+  and stop. Do not recursively analyze the thinker's response to your
+  analysis of their response. That's the Infinite Depth anti-pattern
+  applied to interaction.
+- **The thinker always has the last word.** If they say "that's not
+  what's happening," accept it. You've made the invisible visible.
+  What they do with visibility is not your concern.
+
+---
+
 ## Usage Notes
 
 ### Tone
@@ -582,6 +717,81 @@ candidates, say so: "This thinking is clear and well-considered. The
 significant absences I can identify appear to be intentional." That's
 a valid, valuable output. The worst failure mode is generating
 performative critique of clear reasoning.
+
+### When the Pattern Isn't Clean
+
+The worked examples have clean structures: one frame, one loop, one
+revelation. Real thinking arrives tangled — three frames active
+simultaneously, partial self-awareness of two problems, a stuck point
+that's actually several stuck points fused together.
+
+Do not force messy thinking into a clean pattern. That produces false
+oh-shit moments — structurally elegant, experientially hollow.
+
+**When multiple frames are active:**
+- Identify which frame is most load-bearing — the one that most
+  determines what's visible and invisible. Analyze that one. Mention
+  others only if they conflict with the primary frame in a way that
+  produces stuckness.
+- Frame conflicts (e.g., optimizing AND seeking completeness) are
+  themselves a finding. The thinker isn't stuck because of one frame —
+  they're stuck because two frames pull in opposite directions and the
+  thinker hasn't noticed.
+
+**When the thinker is partially self-aware:**
+- Calibrate. Ask what they already see. Then push exactly one level
+  past their current awareness. Resurfacing what the thinker already
+  knows is the Obvious Repackaged anti-pattern. The value is the next
+  thing — the one just past the edge of their self-knowledge.
+- Partial self-awareness is the highest-leverage starting point. The
+  thinker has done half the work. Your job is the half they can't do
+  alone.
+
+**When there's no clean loop or pattern:**
+- Say so. "I don't see a single clean pattern here — the stuckness
+  might not have one root cause" is honest and useful. Then identify
+  the single thread that seems most alive — the one the thinker
+  responds to with the most energy (positive or negative) — and
+  follow that one.
+
+**When you're not sure what you're seeing:**
+- Use elicitation (Step Q). When cold analysis produces ambiguity,
+  questions produce clarity. Ask the thinker to describe the stuckness
+  differently, or ask which tentative finding resonates most. Their
+  response tells you where to dig.
+
+### The Skill's Own Frame
+
+This skill operates in a deficit frame — it looks for what's missing,
+what's absent, what's not being thought. That's the method. But it
+means the skill has its own structural blindspot: it's biased toward
+finding absences even when the most important move is to affirm
+what's present.
+
+Before delivering findings, run this check:
+
+1. **"Am I finding real gaps or performing the skill?"** If the findings
+   feel forced — if you had to reach for them — the thinking might be
+   solid and your job is to say so.
+
+2. **"Is the thinker's real need perception or permission?"** Sometimes
+   the thinker doesn't need to see what's missing. They need to hear
+   that what's present is enough. The skill's deficit orientation can
+   miss this entirely — it keeps looking for absences when the absence
+   that matters most is the thinker's confidence in what they've
+   already got.
+
+3. **"Would the thinker be better served by acting than by analyzing?"**
+   The skill produces more thinking about thinking. For some thinkers in
+   some moments, more metacognition is the last thing they need. If the
+   elicitation question "what would you do if you had to act right now?"
+   produces an immediate, clear answer — the analysis is the obstacle.
+   Say so and get out of the way.
+
+The deepest via negativa move the skill can make is to apply via negativa
+to itself: what should this analysis NOT include? What finding should be
+left unspoken? Sometimes the answer is: the thinker would be fine with
+no feedback at all. That's a valid output.
 
 ### Scaling
 - **Quick check**: Layers 1–2, top findings per layer

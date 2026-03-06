@@ -43,7 +43,7 @@ what am I avoiding thinking about?
 
 ## The Skill
 
-Four-layer progressive metacognition: **Absence Inventory** (what's not being thought) -> **Load-Bearing Assumptions** (what the thinking stands on) -> **Frame Exclusions** (what the thinking paradigm renders invisible) -> **Via Negativa Design** (what the negative space reveals). Default depth includes frame analysis (Layers 1-3).
+**Elicitation** (ask before telling — diagnostic questions that reveal more than the artifact) -> **Absence Inventory** (what's not being thought) -> **Load-Bearing Assumptions** (what the thinking stands on) -> **Frame Exclusions** (what the thinking paradigm renders invisible) -> **Via Negativa Design** (what the negative space reveals) -> **Response Reading** (the thinker's resistance pattern as a second artifact). Default depth includes frame analysis (Layers 1-3).
 
 See `SKILL.md` for full methodology.
 
