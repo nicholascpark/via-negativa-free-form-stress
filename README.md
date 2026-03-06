@@ -1,5 +1,21 @@
 # Via Negativa Free-Form Stress
 
+## Introduction
+
+"Whereof one cannot speak, thereof one must be silent." — Ludwig Wittgenstein.
+
+Language has strict limits. When we push LLMs to explore topics beyond factual, logical description, standard generation falls short.
+
+This project operates on three foundational facts:
+
+- As idea-to-action time decreases, our cognitive debt will inevitably increase.
+- Next-token-prediction accuracy will continue to approach perfection.
+- Surfacing all thoughts and details into structured architectural plans is the definitive path forward.
+
+Because next-token prediction inherently limits out-of-the-box reasoning, LLM nodes require a different kind of activation. This repository introduces a method for perturbing and activating trained models to produce intentional noise—introducing creative thinking "via-negativa."
+
+## What is this?
+
 A metacognitive skill that applies via-negativa perception to **thinking itself** — plans, reasoning, decisions, notes, drafts, and ideas. Surfaces what's absent, assumed, and structurally excluded not just from the artifact but from the cognition that produced it.
 
 Most feedback asks *"is what you wrote correct?"*
