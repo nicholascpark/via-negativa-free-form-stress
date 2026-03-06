@@ -323,12 +323,23 @@ The answers matter less than how they arrive:
   is protecting something. This is data, not confirmation — they might
   be right that you're wrong. But note it. See Step R.
 
-### When to skip elicitation
+### Elicitation is non-optional
 
-When you only have the artifact and no live thinker (reviewing a
-document asynchronously). In that case, run the layers cold but
-acknowledge internally that cold analysis has a lower ceiling — you're
-reading the map without being able to ask the territory.
+When there is a live thinker — someone who can respond — always run
+elicitation before layers. The temptation to skip it ("I can already
+see the findings") is itself diagnostic: it means you're pattern-
+matching the artifact to known frames rather than discovering the
+thinker's actual cognitive landscape. The elicitation responses will
+contradict, refine, or redirect your initial read in ways that produce
+findings the thinker couldn't have generated alone. Without elicitation,
+Layer 3 findings reliably collapse into catalog entries — structurally
+correct, experientially hollow.
+
+The only exception is when you have the artifact and no live thinker
+(reviewing a document asynchronously). In that case, run the layers
+cold but flag the ceiling: cold analysis pattern-matches; live
+elicitation reveals. The difference is the difference between
+competent feedback and the oh-shit moment.
 
 ---
 
@@ -522,6 +533,34 @@ how you think.
 **The test**: Before writing a Layer 3 finding, ask: "Would the thinker
 say 'I hadn't realized I was thinking about it that way' or would they
 say 'obviously, that's how I'm thinking about it'?" If the latter, skip.
+
+### The catalog trap
+
+The frame catalog (`references/frame-catalog.md`) exists for calibration,
+not for lookup. The failure mode is: read the artifact → match it to the
+nearest catalog entry → report that entry's blindspots. This produces
+output that is structurally correct and completely generic — it could
+apply to anyone using that frame on any problem.
+
+The oh-shit moment lives in the *specific* intersection of THIS thinker's
+frame with THIS problem. That means:
+
+1. **Describe the frame in the thinker's own language first.** Before
+   checking the catalog, name the frame using words and metaphors from the
+   artifact itself. "You're treating this relationship like a project with
+   deliverables" is a revelation. "You're in a planning frame" is a label.
+
+2. **The catalog is a sanity check, not a source.** After you've described
+   the frame from the artifact, glance at the catalog to see if you've
+   missed a known blindspot. But the finding should sound like it was
+   discovered from this artifact, not retrieved from a reference file.
+
+3. **If your finding could appear unchanged in a different thinker's
+   analysis, it's too generic.** The finding "this excludes nonlinear
+   possibilities" applies to everything. The finding "your plan describes
+   your startup's growth as a series of hires, which means the only
+   version of 'bigger' you can see is 'more people'" applies to one
+   thinker. Aim for the second.
 
 **Output format for Layer 3:**
 - **Frame identified** (the cognitive paradigm in use)
