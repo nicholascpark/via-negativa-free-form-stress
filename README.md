@@ -1,6 +1,6 @@
 # Via Negativa Free-Form Stress
 
-A metacognitive skill that applies apophatic perception to **thinking itself** — plans, reasoning, decisions, notes, drafts, and ideas. Surfaces what's absent, assumed, and structurally excluded not just from the artifact but from the cognition that produced it.
+A metacognitive skill that applies via-negativa perception to **thinking itself** — plans, reasoning, decisions, notes, drafts, and ideas. Surfaces what's absent, assumed, and structurally excluded not just from the artifact but from the cognition that produced it.
 
 Most feedback asks *"is what you wrote correct?"*
 Most planning advice asks *"what's the next step?"*

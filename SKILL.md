@@ -1,7 +1,7 @@
 ---
 name: via-negativa-free-form-stress
 description: >
-  A metacognitive skill that applies apophatic perception to thinking itself —
+  A metacognitive skill that applies via-negativa perception to thinking itself —
   thoughts, plans, reasoning, markdown documents, notes, and written ideas.
   Surfaces what's absent, assumed, and structurally excluded not just from the
   artifact but from the cognition that produced it. Use for two modes:
@@ -33,7 +33,7 @@ Two modes of metacognitive perception, one underlying method:
   stalling? Why does this reasoning feel circular? What structural absence
   in the cognition itself keeps producing the same stuck point?
 
-Both modes use apophatic thinking (knowing by negation) and frame analysis
+Both modes use via-negativa thinking (knowing by negation) and frame analysis
 (seeing the paradigm, not just the content). The difference is whether the
 thinker is examining their reasoning proactively or trying to understand
 why it's failing.
