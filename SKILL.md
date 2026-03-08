@@ -134,16 +134,17 @@ See the Diagnostic Mode section below.
 
 ### Depth levels:
 
-The default depth is "Stress test" — Layers 1–3. This is intentional.
-**Layer 3 (Frame Exclusions) is where this skill's differentiating insight
-lives.** Layers 1–2 without Layer 3 produces competent findings that overlap
-with standard review. Layer 3 is what makes the output something the creator
-could not have produced from inside their own frame. Don't save it for
-"special occasions" — it IS the skill.
+The default depth is all four layers. This is intentional.
+**Layers 3–4 are where this skill's differentiating insight lives.**
+Layers 1–2 without Layer 3 produces competent findings that overlap
+with standard review. Layer 3 reveals what the creator *could not have seen*
+from inside their chosen frame. Layer 4 completes the arc: it synthesizes
+the negative space into what the artifact is actually reaching toward.
+Layer 3 is revelation; Layer 4 is generative revelation. Together they
+are the payoff. Don't save them for "special occasions" — they ARE the skill.
 
 - "Quick check" → Layers 1–2 (fast but less differentiated)
-- "Stress test" → Layers 1–3 (default — includes frame analysis)
-- "Full via negativa" → All four layers (includes generative design)
+- "Standard" → Layers 1–4 (default — the full arc from inventory to design)
 
 ---
 
@@ -460,6 +461,14 @@ Apply the Relevance Gate. For each passing assumption:
 
 **Question: "What does the framing itself make impossible to see?"**
 
+### Synthesis step (Layer 2 → Layer 3):
+Before proceeding, look across your Layer 1 and Layer 2 findings together.
+Ask: **"What single frame, if the creator were standing inside it, would make
+all of these absences and assumptions simultaneously invisible?"** That frame
+is your Layer 3 target. If no single frame unifies the findings, look for
+the 1–2 frames that cover the most. This is not a separate output — it's
+how you locate the frame worth analyzing instead of picking one arbitrarily.
+
 This is the meta-analytical layer and where the deepest insight lives.
 Layers 1–2 find things the creator missed. Layer 3 finds things the creator
 *could not have seen* from inside their chosen frame. The difference matters:
@@ -544,10 +553,13 @@ If the latter, skip it.
 
 **Question: "What does the shape of the negative space suggest should exist?"**
 
-After Layers 1–3 have mapped the absences, assumptions, and frame exclusions,
-this layer asks: does the negative space itself have a coherent shape? Often,
-the pattern of what's missing reveals a latent design that the artifact is
-reaching toward but hasn't articulated.
+### Synthesis step (Layer 3 → Layer 4):
+Layer 3 named the frame and its blindspots. Now ask: **"Given what the frame
+excludes, what is the artifact *trying to become* that the frame won't let it?"**
+The answer is not "add everything that's missing." It's the one structural
+move that resolves the most critical absences simultaneously. Look for the
+findings from all three layers that cluster around the same theme — that
+cluster IS the latent design.
 
 ### Method:
 1. Look across all findings from Layers 1–3
@@ -615,8 +627,7 @@ or the artifact is genuinely solid (which is a valid finding: say so).
 
 ### Scaling
 - **Quick check**: Layers 1–2, top findings per layer
-- **Standard (default)**: Layers 1–3, full findings with frame analysis
-- **Full via negativa**: All 4 layers, includes generative design
+- **Standard (default)**: All 4 layers — the full arc from inventory through generative design
 
 ### When the artifact is solid
 The skill should not manufacture findings. If the Relevance Gate filters out

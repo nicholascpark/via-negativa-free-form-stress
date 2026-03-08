@@ -53,6 +53,15 @@ scopes this as "v1 auth, refresh in follow-up."
 
 ### Layer 3: Frame Exclusions
 
+**Synthesis (2→3)**: Layers 1–2 surfaced: no coordination on token shape,
+no explanation of abandoned approach, no tenant field, an invisible assumption
+that "this PR is the only thing introducing auth," and the assumption that
+"auth can be added incrementally." Ask: what single frame makes all of these
+invisible at once? The answer: the frame that treats auth as *middleware* —
+a local, per-request concern. Inside that frame, system-level coordination,
+contract documentation, and lifecycle planning are literally out of scope.
+That's the frame to analyze.
+
 **Frame**: "Auth is middleware" — a request-level interception pattern.
 
 **Illuminates**: Clean separation of concerns, easy to add/remove from routes,
@@ -72,6 +81,13 @@ documenting that middleware-auth was chosen for v1 speed and will need to
 evolve into a gateway or service-level pattern before multi-tenant ships.
 
 ### Layer 4: Via Negativa Design
+
+**Synthesis (3→4)**: Layer 3 showed the middleware frame structurally excludes
+auth as system-level property, relationship, and lifecycle. Ask: given what
+the frame excludes, what is this PR *trying to become* that the frame won't
+let it? It's trying to be the system's auth contract — but the middleware
+frame keeps it scoped as "my middleware." The latent design is the contract
+itself.
 
 **Pattern**: Every significant absence clusters around the same theme —
 this PR introduces auth as a *feature* when the system needs auth as a

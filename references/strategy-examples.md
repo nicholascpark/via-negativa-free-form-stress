@@ -50,6 +50,15 @@ a competitive analysis section.
 
 ### Layer 3: Frame Exclusions
 
+**Synthesis (2→3)**: Layers 1–2 surfaced: no failure criteria, no
+cannibalization analysis, no rollback plan, and assumptions that "users want
+collaboration" (unvalidated), "DAU is the right metric" (measures frequency
+not quality), and "competitive landscape stays static." Ask: what single
+frame makes all of these invisible? The answer: the feature-launch playbook.
+Inside a playbook, the decision to build is already made — so failure
+criteria, demand validation, and premise-questioning are structurally
+out of scope. The playbook only asks "how" and "when," never "whether."
+
 **Frame**: Feature-launch playbook (timeline → build → market → measure).
 
 **Illuminates**: Execution clarity, team coordination, measurable outcomes.
@@ -68,6 +77,14 @@ justifies why this is a feature build and not an integration/partnership,
 and what user evidence supports the bet.
 
 ### Layer 4: Via Negativa Design
+
+**Synthesis (3→4)**: Layer 3 showed the playbook frame excludes the
+question "whether to build this at all" and has no mechanism for
+self-correction. Ask: what is this plan *trying to become* that the
+playbook frame won't let it? It's trying to be a plan that can change
+its own mind — a learning plan. The cluster of absences (no failure
+criteria, no demand validation, no conviction checkpoints) all point
+at the same latent design.
 
 **Pattern in the negative space**: The absences cluster around "the plan
 doesn't question its own premise." There's strong execution planning

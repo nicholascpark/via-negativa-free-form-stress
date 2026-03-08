@@ -43,6 +43,14 @@ has no concept of eventual consistency.
 
 ### Layer 3: The debugging frame is the problem
 
+**Synthesis (2→3)**: Layer 1 showed the system lacks async-aware test
+infrastructure, retry mechanisms, and consistency guarantees. Layer 2
+showed the root assumption — "processing is fast enough" — rotted when
+the system migrated from sync to async. Ask: what frame makes all of
+this invisible? The "flaky test" frame. Inside that frame, the test is
+the problem and the system is fine. The frame structurally prevents the
+team from hearing what the test is telling them.
+
 **Frame the team is using**: "This is a flaky test" — a test reliability problem.
 
 **What this frame illuminates**: Retries, CI stability, test quarantine.
@@ -58,6 +66,14 @@ side effects complete before dependent operations execute. This isn't a test
 problem — it's an architectural absence.
 
 ### Layer 4: The structural intervention
+
+**Synthesis (3→4)**: Layer 3 revealed the "flaky test" frame hides a
+system-level absence: no concept of eventual consistency in test
+infrastructure. Ask: what is this system *trying to become*? It already
+migrated to async processing but its surrounding infrastructure (tests,
+monitoring, error handling) hasn't followed. The latent design: an
+async-aware test and observability layer that treats eventual consistency
+as a first-class system property.
 
 **Pattern in the negative space**: Every finding points to the same absence —
 the system migrated from synchronous to asynchronous processing but the
@@ -132,6 +148,15 @@ It was simply never considered because the HTTP frame didn't require it.
 
 ### Layer 3: Frame mismatch
 
+**Synthesis (2→3)**: Layer 1 showed no heartbeat, no reaper, no metric for
+idle resources. Layer 2 showed the "clients disconnect cleanly" assumption
+was inherited from HTTP and never updated for WebSockets. Ask: what frame
+makes all of this invisible? The "memory leak" frame. Inside that frame,
+you profile the heap and look for retained objects. But every object here
+IS reachable — the garbage collector is working correctly. The frame
+prevents the team from seeing that the problem is definitional, not
+mechanical: the system has no concept of "dead connection."
+
 **Frame the team is using**: "Memory leak" — a resource management problem
 in the application code.
 
@@ -149,6 +174,14 @@ It cannot reclaim resources when the signal never comes. This is a
 category-level absence — not specific to WebSockets.
 
 ### Layer 4: The structural intervention
+
+**Synthesis (3→4)**: Layer 3 revealed the system lacks "resource ownership
+with timeout" — a category-level absence, not WebSocket-specific. Ask:
+what is this system trying to become? It moved from request-scoped to
+connection-scoped resources but never built the lifecycle primitive that
+connection-scoped resources require. The latent design: a resource
+lifecycle manager that works for any long-lived resource, not just
+WebSockets.
 
 **Pattern**: The system was designed for request-scoped resources (allocate,
 use, free — all within one request). It now has connection-scoped resources
@@ -224,6 +257,15 @@ system has no way to know it's inconsistent except when a human notices.
 
 ### Layer 3: Frame mismatch
 
+**Synthesis (2→3)**: Layer 1 showed no transactional outbox, no ordering
+guarantees, no reconciliation. Layer 2 showed two invisible assumptions:
+"event publishing and database commits are simultaneous" and "consistency
+is emergent." Ask: what frame makes all of this invisible? The
+"event-driven microservices" frame. Inside that frame, loose coupling
+is the goal and consistency is assumed to emerge from correct event
+handling. The frame structurally excludes distributed consistency as
+something that requires explicit mechanisms.
+
 **Frame**: "Event-driven microservices" — services communicate via events,
 each owns its data.
 
@@ -242,6 +284,13 @@ discipline that frame requires. They have the architecture of a
 distributed system with the consistency assumptions of a monolith.
 
 ### Layer 4: The structural intervention
+
+**Synthesis (3→4)**: Layer 3 revealed the team adopted the microservices
+architecture without the distributed systems discipline it requires.
+Ask: what is this system trying to become? It wants event-driven autonomy
+but needs transactional consistency at the boundaries. The latent design
+is not a new architecture — it's the missing transactional boundary
+that makes the current architecture actually work.
 
 **Minimum viable intervention**: Implement a transactional outbox for
 the Profile Service. Events are written to an outbox table within the
