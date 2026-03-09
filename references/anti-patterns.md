@@ -240,3 +240,86 @@ their time and erodes trust in the skill.
 extra weight in task-framing challenges. The user knows more about
 their context than the agent does. Challenge assumptions that are
 genuinely implicit, not decisions that are clearly intentional.
+
+---
+
+## Layer 3b (Stochastic Perturbation) Anti-Patterns
+
+These apply when running the stochastic perturbation pass (Layer 3b). The
+general anti-patterns above also apply to any findings that emerge from the
+perturbation process.
+
+### 13. Forced Predicate Manufacturing
+
+**What it looks like**: Manufacturing emergent predicates when the product
+space P × {yᵢ} didn't yield any. The agent produces an elaborate analogy
+between the seed and the artifact, dressed up as structural insight.
+
+> **Bad**: "This microservice architecture is like a coral reef — many small
+> organisms working together to create something larger. This suggests the
+> architecture should be more 'organic' in its evolution."
+>
+> (This is metaphor, not an emergent predicate. It does not restructure
+> understanding of P. It does not predict any specific failure mode or reveal
+> any specific blindspot. "More organic" is not actionable.)
+
+**Why it fails**: The entire value of the perturbation pass depends on the
+honesty of the empty return. A perturbation agent that always returns non-empty
+is not exploring — it's pattern-completing. The process of extended exploration
+IS the computation; if the computation yields nothing, that's the correct
+output. Manufacturing a predicate to fill the silence destroys the
+signal-to-noise ratio of the entire protocol.
+
+**The fix**: Every perturbation finding must survive the evaluation agent's
+phase-transition test. If the finding doesn't restructure how P's predicates
+relate to each other, it's not a phase transition — it's noise or at best
+incremental. The perturbation pass producing zero phase transitions is a
+normal, expected outcome. It is not a failure of the protocol.
+
+---
+
+### 14. Entropy Collapse
+
+**What it looks like**: Generating seeds that are all from adjacent or familiar
+domains, producing the illusion of diverse sampling while actually staying
+within K.
+
+> **Bad** (for a software architecture artifact): Seeds are "a different
+> software architecture pattern," "a database design pattern," "a networking
+> protocol," "a cloud deployment strategy."
+
+**Why it fails**: These seeds are all within the software engineering predicate
+space. They sample from K, not ¬K. The perturbation pass becomes a dressed-up
+version of "consider alternative technical approaches" — which is just
+analytical Layer 3 in disguise. The Monte Carlo integration collapses to a
+neighborhood of the known.
+
+**The fix**: Check the domain distance of your seeds. If a practitioner in the
+artifact's field would recognize the seed as "related work," yᵢ ∈ K. At least
+one seed should come from a domain that has no professional connection to the
+artifact's field — ecology, liturgical practice, game theory, phenomenology,
+supply chain logistics. The discomfort of the juxtaposition is signal.
+
+---
+
+### 15. The Mystification Play
+
+**What it looks like**: Using the mathematical framing (predicate calculus,
+phase transitions, emergent predicates) to package a trivial observation as a
+profound discovery.
+
+> **Bad**: "Through stochastic sampling from ¬K weakly conditioned on P, we
+> discover that R(microservice_architecture, jazz_improvisation) reveals that
+> the system lacks 'improvisation space' — room for developers to creatively
+> deviate from patterns."
+
+**Why it fails**: "Developers need flexibility" is not a phase transition.
+Wrapping it in the perturbation protocol's language does not make it one. The
+mathematical framing exists to make the method precise, not to elevate the
+findings. If you strip the formalism and the seed reference and the finding
+is obvious, the protocol didn't earn it.
+
+**The fix**: Strip the formalism. Strip the seed reference. State the finding
+in plain language. Ask: "Is this genuinely non-obvious? Does it restructure
+understanding?" If the creator would say "obviously," the perturbation
+protocol is being used as packaging, not as a cognitive mechanism.

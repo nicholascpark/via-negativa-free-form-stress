@@ -129,7 +129,7 @@ Present findings as "worth confirming" — respect user agency.
 
 ## The Skill
 
-Four-layer progressive analysis: **Absence Inventory** → **Load-Bearing Assumptions** → **Frame Exclusions** → **Via Negativa Design**. Default depth is all four layers — Layers 3–4 are where the differentiating insight lives. Layer 3 reveals what the creator's frame made impossible to see; Layer 4 synthesizes the negative space into what the artifact is actually reaching toward.
+Four-layer progressive analysis: **Absence Inventory** → **Load-Bearing Assumptions** → **Frame Exclusions** → **Via Negativa Design**. Default depth is all four layers — Layers 3–4 are where the differentiating insight lives. Layer 3 reveals what the creator's frame made impossible to see; Layer 3b (stochastic perturbation) extends this by sampling from the complement of the known predicate space through parallel sub-agents, surfacing emergent predicates that analytical frame analysis cannot reach. Layer 4 synthesizes the negative space into what the artifact is actually reaching toward.
 
 Agent mode adds a compressed Layer 1+3 protocol for agentic decision points — see the Agent Mode section in `SKILL.md` for full methodology.
 

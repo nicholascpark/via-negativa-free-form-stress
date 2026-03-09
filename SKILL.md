@@ -146,6 +146,9 @@ are the payoff. Don't save them for "special occasions" — they ARE the skill.
 - "Quick check" → Layers 1–2 (fast but less differentiated)
 - "Standard" → Layers 1–4 (default — the full arc from inventory to design)
 
+Layer 3b (stochastic perturbation) runs at standard depth only, not quick check.
+It requires extended computation that is incompatible with speed-constrained modes.
+
 ---
 
 ## Step 0: Intake — Identify and Acquire the Artifact
@@ -468,6 +471,8 @@ all of these absences and assumptions simultaneously invisible?"** That frame
 is your Layer 3 target. If no single frame unifies the findings, look for
 the 1–2 frames that cover the most. This is not a separate output — it's
 how you locate the frame worth analyzing instead of picking one arbitrarily.
+This synthesis feeds both the analytical pass (Layer 3, the method below) and
+the stochastic perturbation pass (Layer 3b) when running at standard depth.
 
 This is the meta-analytical layer and where the deepest insight lives.
 Layers 1–2 find things the creator missed. Layer 3 finds things the creator
@@ -522,6 +527,10 @@ none exists is the skill at its worst.
 - Cross-paradigm migrations — the artifact may be shaped by the old paradigm
   while the system is moving to a new one
 
+The stochastic perturbation pass (Layer 3b) is highest-value in these same
+contexts — they are where K is most load-bearing and most invisible, making
+¬K most likely to contain consequential emergent predicates.
+
 **Low-value contexts** (frame analysis likely to produce tautologies):
 - Routine PRs that add a feature within an established pattern — the "frame"
   is just "the way this codebase works," which everyone already knows
@@ -547,6 +556,274 @@ If the latter, skip it.
 - **Alternative frame** (a different lens that would reveal something new)
 - **Reframe recommendation** (is a frame shift warranted, or just awareness?)
 
+### Layer 3b: Stochastic Perturbation
+
+Analytical Layer 3 asks "what can't I see?" — but that's a controlled question.
+The answer is bounded by the analyst's own ontology. A frame you can name is
+already partially inside your frame. The residual — what about the frames you
+cannot name because you lack the concepts — is inaccessible to analytical
+methods. Layer 3b addresses that residual.
+
+#### The mathematical device
+
+Let **P** = {p₁, p₂, ..., pₙ} be the set of predicates that describe the
+artifact's concern over domain D. Let **K** = the transitive closure of all
+predicates reachable from P through the artifact's frame — the "known" space,
+everything the frame can express. The complement **¬K** is the set of all
+predicates over the universal space that are not in K. ¬K is intractable — it
+cannot be enumerated, only sampled from.
+
+Layer 3b performs **Monte Carlo integration over ¬K**. Each perturbation agent
+draws an independent sample **yᵢ** from a high-entropy distribution over ¬K,
+weakly conditioned on P. The agent then explores the **product space P × {yᵢ}**
+through extended computation, looking for **emergent predicates** — relations R
+that become expressible only through the juxtaposition of P and yᵢ, where
+R ∉ K. These predicates are discovered through the exploration process itself,
+not specified in advance.
+
+The critical insight: the seed yᵢ is a catalyst, not a conclusion. The emergent
+predicate may not reference yᵢ at all. What matters is whether the
+**metacognitive process** of exploring P × {yᵢ} surfaces something about P
+that was inexpressible from within K. A **phase transition** occurs when an
+emergent predicate restructures the understanding of P itself — not just adding
+information but changing the topology of how P's predicates relate to each other.
+
+Most samples contribute zero emergent predicates. This is the expected outcome.
+The process requires high entropy in seed selection (to ensure coverage of ¬K),
+sufficient computation time per sample (convergence requires extended
+exploration, not a quick scan), and multi-stage evaluation (a separate
+computation pass determines whether any emergent predicate constitutes a genuine
+phase transition).
+
+#### Stage 1: Seed generation
+
+Generate N seeds (N=3–5 for standard depth, 1–2 for quick check). Each seed
+yᵢ is a specific phenomenon or mechanism sampled from maximum distance in
+predicate space from P.
+
+**Good seeds have three properties:**
+
+1. **Domain-distant**: From a field whose predicate vocabulary has minimal
+   overlap with P's domain. If a practitioner in P's field would recognize yᵢ
+   as "related work," it's within K, not ¬K.
+2. **Structurally specific**: A concrete mechanism, not a broad field. "Quorum
+   sensing in bacterial colonies" not "biology." "Giffen goods in famine
+   conditions" not "economics." Specificity is what makes the product space
+   P × {yᵢ} explorable — vague seeds produce vague explorations.
+3. **Weakly conditioned on P**: Shares at least one abstract structural property
+   with P — topology, dynamics, constraints, feedback loops — at a high level
+   of abstraction. This conditioning prevents pure noise while keeping entropy
+   high. Content similarity (same domain, same vocabulary) means you are
+   sampling from K disguised as ¬K.
+
+**Seed generation heuristic**: Take the artifact's core concern. Abstract it to
+its structural skeleton (e.g., "coordinating independent agents under partial
+information"). Then ask: "What systems in completely unrelated domains solve a
+structurally similar problem?" The answers are your seed candidates. Pick the
+ones most conceptually distant from the artifact's domain.
+
+**Entropy check**: If all seeds come from adjacent disciplines (all from
+engineering, all from science, all from business), the sampling distribution has
+collapsed into a neighborhood of K. At least one seed should come from a domain
+that has no professional connection to the artifact's field. The discomfort of
+the juxtaposition is signal that you are genuinely sampling from ¬K.
+
+#### Stage 2: Parallel perturbation (sub-agent spawning)
+
+Spawn N perturbation sub-agents, one per seed. Each agent is a **predicate
+calculus explorer** that roams the product space P × {yᵢ} with sufficient
+token budget for extended computation.
+
+Each perturbation agent's task:
+
+1. Formalize the artifact's implicit predicate structure P — what the artifact
+   asserts, assumes, and depends on.
+2. Hold P and yᵢ in juxtaposition — not to find a "connection" but to explore
+   what new predicates become expressible in the product space that are not
+   expressible in P alone.
+3. Allow extended reflection. The agent should explore multiple paths through
+   the product space, following associative chains, doubling back, sitting with
+   dead ends. Convergence requires iteration. Premature termination kills the
+   mechanism before emergent predicates can surface.
+4. Report: either the emergent predicates discovered (which may or may not
+   reference yᵢ — the seed is a catalyst, not the conclusion) or silence (the
+   product space yielded no new expressible predicates about P).
+
+**Perturbation agent prompt template:**
+
+```
+You are a predicate calculus explorer. Your task is to roam the product space
+of an artifact's predicate structure and a seed concept, looking for emergent
+predicates — relations that become expressible only through the juxtaposition.
+
+**The artifact's predicate structure P**: [summary of the artifact's core
+concern, assertions, assumptions, and dependencies as identified in Layers 1–3a]
+
+**Seed yᵢ**: [specific phenomenon/mechanism from a distant domain]
+
+**Shared structural property (weak conditioning)**: [the abstract property
+that connects them at a high level of abstraction]
+
+Instructions:
+1. Take your time. Explore the product space P × {yᵢ} through multiple paths.
+   Follow associative chains. Double back. Sit with dead ends. Convergence
+   requires iteration — do not rush to a conclusion.
+2. Ask: what predicates become expressible in this product space that are not
+   expressible in P alone? What structural properties of P become visible only
+   when P is held alongside yᵢ?
+3. The relationship must be STRUCTURAL (about topology, dynamics, constraints,
+   feedback loops, failure modes) not METAPHORICAL (surface similarity, analogy
+   by naming). "This is like that" is not an emergent predicate.
+4. The seed is a catalyst, not a conclusion. Your findings may not reference
+   yᵢ at all. What matters is what the exploration process reveals about P.
+5. If the product space yields no emergent predicates, return:
+   "No emergent predicates." This is the expected outcome for many seeds.
+   Do not manufacture predicates to fill the silence.
+```
+
+**Critical instruction**: Do not force emergent predicates. The process of
+extended exploration IS the computation. If the product space yields nothing,
+return empty. Empty is the expected outcome for many seeds. Manufacturing a
+predicate to fill the silence is the cardinal failure mode — it produces noise
+and destroys the signal-to-noise ratio of the entire protocol.
+
+#### Stage 3: Metacognitive evaluation (sub-agent spawning)
+
+For each non-empty perturbation output, spawn a **separate evaluation
+sub-agent** with sufficient token budget for prolonged metacognitive reflection.
+This separation is essential — the perturbation agent explored, the evaluation
+agent reflects on what was found. Different cognitive operations, different
+agents.
+
+**Why separate agents**: The perturbation agent has spent its token budget
+exploring the product space — it is cognitively committed to the paths it
+followed. A fresh evaluation agent brings no such commitment. It can reflect on
+the output with the distance needed to distinguish genuine emergence from the
+perturbation agent's pattern-completion.
+
+Each evaluation agent's task:
+
+1. Receive the emergent predicate(s) from Stage 2 and the original artifact
+   concern P.
+2. Perform **extended metacognitive reflection** — not a quick filter but a
+   prolonged examination:
+   - Does this emergent predicate constitute a **phase transition** in
+     understanding P? Does it restructure how P's predicates relate to each
+     other, or does it just add a new fact?
+   - Strip the seed reference entirely — does the insight about P stand on its
+     own? If it needs the seed to sound significant, it's analogy, not
+     emergence.
+   - Could analytical Layer 3a have reached this? If standard frame analysis
+     could produce this finding, the perturbation added no value — the finding
+     belongs in 3a, not 3b.
+   - Is this consequential? Does it change a decision, reveal a risk, or
+     reframe the problem? An interesting observation that changes nothing is
+     computation without output.
+3. Return a verdict: **phase transition** (genuine restructuring of
+   understanding), **incremental** (adds information but doesn't restructure),
+   or **noise** (doesn't survive reflection). Only phase-transition verdicts
+   pass to the final output.
+
+**Evaluation agent prompt template:**
+
+```
+You are a metacognitive evaluator. Your task is to determine whether an
+emergent predicate discovered through stochastic perturbation constitutes a
+genuine phase transition in understanding.
+
+**The artifact's predicate structure P**: [same summary as Stage 2]
+
+**Emergent predicate(s) to evaluate**: [output from Stage 2 perturbation agent]
+
+**Seed that catalyzed this**: [yᵢ, for context only — not for evaluation]
+
+Instructions:
+1. Take your time. This is prolonged reflection, not a quick filter.
+2. Strip the seed reference. Does the insight about P stand entirely on its
+   own? If it needs the seed to sound significant, it is analogy, not emergence.
+3. Test for phase transition: does this predicate restructure how P's existing
+   predicates relate to each other? Or does it merely add a new fact alongside
+   the existing structure? Restructuring = phase transition. Addition = incremental.
+4. Test for analytical reachability: could standard frame analysis (Layer 3a)
+   have produced this finding? If yes, the perturbation added no value.
+5. Test for consequence: does this change a decision, reveal a specific risk,
+   or reframe the problem? If it changes nothing, it is computation without
+   output.
+6. Return your verdict: phase_transition | incremental | noise
+   Include your reasoning for each test.
+```
+
+#### Stage 4 (optional): Iterative deepening — "Can I take my time?"
+
+The baseline protocol runs one round of N seeds. But some artifacts warrant
+deeper exploration — the analytical Layer 3 found significant frame issues, or
+the perturbation pass produced near-misses (incremental verdicts that suggest
+a phase transition is close but not yet resolved).
+
+When the baseline round produces no phase transitions but the evaluation agents
+signal proximity (incremental verdicts with high potential), or when the
+artifact's complexity warrants it, the protocol may ask the user:
+**"Can I take my time?"**
+
+If the user grants permission, the protocol enters **iterative deepening mode**:
+
+- Generate a new batch of N seeds, informed by what the previous round's
+  near-misses suggest about which regions of ¬K are most promising. The
+  sampling distribution narrows based on where incremental findings clustered,
+  while still maintaining sufficient entropy to avoid collapse into K.
+- Run Stages 2–3 again with the new seeds.
+- Repeat until either:
+  - A phase-transition finding emerges (the "gem")
+  - The user signals to stop
+  - Three consecutive rounds produce no incremental-or-better verdicts
+    (convergence to silence — the artifact's frame may genuinely have no
+    exploitable blind spots at this depth)
+
+This is the mathematical equivalent of increasing the sample count in Monte
+Carlo integration when the variance estimate suggests the integral hasn't
+converged. Each round refines the sampling distribution over ¬K while
+preserving sufficient entropy to avoid collapse into K.
+
+The key discipline: iterative deepening is not "keep trying until you find
+something." It's "keep sampling because the variance estimate suggests there's
+signal we haven't resolved yet." If consecutive rounds return silence, the
+integral has converged — stop.
+
+#### Graceful degradation
+
+Without parallel sub-agents: run Stages 2–3 sequentially in a single context
+with explicit phase boundaries between perturbation and evaluation. The
+separation between exploration and evaluation is conceptual, not just
+architectural — maintain it even in single-context execution by clearly
+transitioning between the two modes.
+
+Agent mode (speed-constrained) skips Layer 3b entirely. Extended computation is
+incompatible with agent mode's speed constraint. If a full perturbation pass is
+warranted, the agent mode audit should recommend pausing for a standard-depth
+analysis — not try to compress the perturbation into a single pass.
+
+#### Output format for Layer 3b:
+
+```
+**Perturbation pass** (N seeds, [domain-list]):
+- Phase transitions: [count] of [N]
+
+[For each phase-transition finding:]
+- **Catalyst**: [the seed yᵢ that prompted this exploration]
+- **Emergent predicate**: [what became expressible that wasn't before]
+- **What this restructures**: [how this changes the topology of P —
+  which predicates now relate differently to each other]
+- **Implication**: [specific consequence for the artifact]
+
+[If iterative deepening was used:]
+- Rounds: [count]. Convergence: [gem found | user stopped | silent convergence]
+
+[If no phase transitions:]
+- The perturbation pass did not surface emergent predicates beyond the
+  analytical Layer 3 findings above. Expected outcome for well-framed
+  artifacts.
+```
+
 ---
 
 ## Layer 4: Via Negativa Design (Generative)
@@ -554,8 +831,12 @@ If the latter, skip it.
 **Question: "What does the shape of the negative space suggest should exist?"**
 
 ### Synthesis step (Layer 3 → Layer 4):
-Layer 3 named the frame and its blindspots. Now ask: **"Given what the frame
-excludes, what is the artifact *trying to become* that the frame won't let it?"**
+Layer 3 named the frame and its blindspots — both the analytically identified
+exclusions and any emergent predicates discovered through perturbation (Layer
+3b). Phase-transition findings from Layer 3b, when present, are often the most
+generative input for Layer 4 because they introduce predicates that were outside
+the expressible space. Now ask: **"Given what the frame excludes, what is the
+artifact *trying to become* that the frame won't let it?"**
 The answer is not "add everything that's missing." It's the one structural
 move that resolves the most critical absences simultaneously. Look for the
 findings from all three layers that cluster around the same theme — that
