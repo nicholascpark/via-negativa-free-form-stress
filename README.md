@@ -1,18 +1,18 @@
 # Via Negativa Stress Test
 
-A metacognitive skill that equips an LLM with negative perception — the ability to see what's **absent, assumed, and structurally excluded** from any artifact or system.
+A metacognitive skill that equips an LLM with via negativa perception — the ability to see what's **absent, assumed, and structurally excluded** from any artifact or system.
 
 Most review asks *"is what's here correct?"*
 Most debugging asks *"where is the error?"*
 This asks *"what's NOT here, and does its absence matter?"*
 
-## Three Modes
+## Two Modes
 
 **Prophetic** (review / stress test): Nothing is broken yet. What's absent that will become the failure? What's invisible that would change the decision if seen?
 
 **Diagnostic** (debugging / root cause): Something is broken. What structural absence made this class of failure inevitable? What's missing from the system that would make this bug impossible?
 
-**Agent** (cognitive proprioception): An autonomous agent is reasoning toward action. What is that reasoning blind to? Is the agent solving the wrong problem?
+When the same method is turned inward on an agent's own reasoning, a third application emerges — **agent mode** (cognitive proprioception). What is that reasoning blind to? Is the agent solving the wrong problem?
 
 ## Quick Start
 

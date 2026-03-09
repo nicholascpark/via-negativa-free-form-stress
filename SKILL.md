@@ -1,7 +1,7 @@
 ---
 name: via-negativa-stress-test
 description: >
-  A metacognitive skill that equips an LLM with apophatic perception — the ability
+  A metacognitive skill that equips an LLM with via negativa perception — the ability
   to see what's absent, assumed, and structurally excluded from any artifact. Use for
   two modes: PROPHETIC (stress test, review, "poke holes in", "what am I not seeing",
   "what could go wrong", "challenge assumptions", "red team", "devil's advocate") and
@@ -22,22 +22,21 @@ description: >
 
 ## What This Skill Is
 
-Three modes of perception, one underlying method:
+Two modes of perception, one underlying method:
 
 - **Prophetic mode**: Nothing is broken yet. What's absent that will become
   the failure? What's invisible that would change the decision if seen?
 - **Diagnostic mode**: Something is broken. What structural absence made this
   class of failure inevitable? What's missing from the system that would make
   this bug impossible?
-- **Agent mode**: An autonomous agent is about to act. What is its reasoning
-  blind to? Is it solving the wrong problem? Is it stuck in a loop because
-  its frame doesn't fit the problem?
 
-All three modes use the same cognitive operations — apophatic thinking (knowing
+Both modes use the same cognitive operations — via negativa thinking (knowing
 by negation) and frame analysis (seeing the paradigm, not just the content).
-The difference is the entry point, the speed constraint, and the shape of the
-output. Prophetic and diagnostic modes produce analytical reports for humans.
-Agent mode produces structured verdicts for agentic loops.
+The difference is the entry point and the shape of the output.
+
+When Layer 3 (frame analysis) is turned inward on an agent's own reasoning
+rather than an external artifact, a third application emerges — agent mode.
+See the [Agent Mode](#agent-mode-cognitive-proprioception) section below.
 
 ## Core Principle
 
@@ -959,13 +958,14 @@ can't verify it from what's available."
 
 ### What This Is
 
+When Layer 3 (frame analysis) is applied to an agent's own reasoning rather
+than an external artifact, something specific emerges: cognitive proprioception.
 Proprioception is the body's continuous awareness of where it is in space
-without looking. Cognitive proprioception is the same thing for reasoning:
-the agent's continuous awareness of where its thinking is positioned — what
-it can reach from there and what it can't. This isn't a checkpoint that
-fires at a decision boundary. The agent carries it throughout the loop.
-The three interventions below are moments where it surfaces explicitly,
-not the only places it operates.
+without looking. Cognitive proprioception is the same thing for reasoning —
+the agent's continuous awareness of where its thinking is positioned, what
+it can reach from there, and what it can't. The agent carries it throughout
+the loop. The three interventions below are moments where it surfaces
+explicitly, not the only places it operates.
 
 This is not reflection. Reflection asks "is my plan good?" and produces a
 better version of the same plan. Agent mode asks "what is my plan blind to?"
