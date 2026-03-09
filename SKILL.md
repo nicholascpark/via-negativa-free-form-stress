@@ -13,9 +13,9 @@ description: >
   target-agnostic: code, PRs, bugs, incidents, strategies, architectures, designs,
   conversations, ideas — if something exists, this skill can perceive what's missing
   from it. If something is broken, this skill can find the absence it fell through.
-  Also operates as a pre-commit hook for agentic cognition: audit an agent's plan
-  before execution, diagnose why an agent is stuck in a loop, or challenge the
-  framing of a task before work begins.
+  Also operates as cognitive proprioception for agentic reasoning: continuous
+  awareness of where an agent's thinking is positioned, what it can't reach
+  from there, and why it's stuck.
 ---
 
 # Via Negativa Stress Test
@@ -955,15 +955,17 @@ can't verify it from what's available."
 
 ---
 
-## Agent Mode: Pre-Commit Hook for Cognition
+## Agent Mode: Cognitive Proprioception
 
 ### What This Is
 
-A compressed via-negativa pass designed to run at agentic decision points —
-the moment an autonomous agent (coding agent, planning agent, debugging agent)
-commits to a plan before executing it. The goal is not to review an artifact
-someone made. It's to intercept the agent's own reasoning and surface what
-it's blind to before it acts.
+Proprioception is the body's continuous awareness of where it is in space
+without looking. Cognitive proprioception is the same thing for reasoning:
+the agent's continuous awareness of where its thinking is positioned — what
+it can reach from there and what it can't. This isn't a checkpoint that
+fires at a decision boundary. The agent carries it throughout the loop.
+The three interventions below are moments where it surfaces explicitly,
+not the only places it operates.
 
 This is not reflection. Reflection asks "is my plan good?" and produces a
 better version of the same plan. Agent mode asks "what is my plan blind to?"
@@ -1198,18 +1200,19 @@ Gate — if the user clearly already knows, don't surface it.
 
 ### Integrating Agent Mode into an Agentic System
 
-Agent mode is designed to be inserted into existing agentic loops, not
-to replace them. The integration point is the decision boundary — the
-moment between "the agent has decided what to do" and "the agent does it."
+Agent mode is designed to be carried within existing agentic loops, not
+bolted on as a gate. The orientation is present throughout — the three
+interventions are moments where it surfaces explicitly, not the only
+places it operates.
 
 **Minimal integration** (start here):
-Insert a pre-execution audit at one decision point — the moment the
-agent commits to a plan. Use Layer 1+3 compressed. Measure: how often
-does the audit surface something that would have caused a failure or
-wasted iteration? If the hit rate is > 15%, expand. If it's noise,
-tune the Relevance Gate for machine-generated reasoning (which tends
-to be more internally consistent but more frame-locked than human
-reasoning).
+Start with the pre-execution audit — a compressed Layer 1+3 pass at the
+moment the agent commits to a plan. This is the most visible intervention
+but not the most fundamental. Measure: how often does the audit surface
+something that would have caused a failure or wasted iteration? If the
+hit rate is > 15%, expand. If it's noise, tune the Relevance Gate for
+machine-generated reasoning (which tends to be more internally consistent
+but more frame-locked than human reasoning).
 
 **Loop-break integration** (add second):
 Monitor the agent's action history. When 2+ similar actions have
@@ -1220,8 +1223,10 @@ retry-with-variation?
 **Full integration**:
 All three interventions active. Pre-execution audit on plan commits,
 loop-break diagnostic on detected loops, task-framing challenge on
-initial user requests. The system should have a bypass for trivial
-actions (the Overthinking Stall anti-pattern).
+initial user requests. At this level the agent carries the orientation
+continuously — the interventions are where it becomes explicit, but the
+perceptual stance shapes reasoning between them. The system should have
+a bypass for trivial actions (the Overthinking Stall anti-pattern).
 
 ---
 

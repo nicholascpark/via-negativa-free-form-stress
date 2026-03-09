@@ -12,7 +12,7 @@ This asks *"what's NOT here, and does its absence matter?"*
 
 **Diagnostic** (debugging / root cause): Something is broken. What structural absence made this class of failure inevitable? What's missing from the system that would make this bug impossible?
 
-**Agent** (pre-commit hook for cognition): An autonomous agent is about to act on its own reasoning. What is that reasoning blind to? Is the agent solving the wrong problem?
+**Agent** (cognitive proprioception): An autonomous agent is reasoning toward action. What is that reasoning blind to? Is the agent solving the wrong problem?
 
 ## Quick Start
 
