@@ -61,6 +61,12 @@ what am I avoiding thinking about?
 
 **Elicitation** (ask before telling — diagnostic questions that reveal more than the artifact) -> **Absence Inventory** (what's not being thought) -> **Load-Bearing Assumptions** (what the thinking stands on) -> **Frame Exclusions** (what the thinking paradigm renders invisible) -> **Via Negativa Design** (what the negative space reveals) -> **Response Reading** (the thinker's resistance pattern as a second artifact). Default depth includes frame analysis (Layers 1-3).
 
+### Depth Levels
+- **Quick check** → Layers 1–2 (fast but less differentiated)
+- **Stress test** → Layers 1–3 (default — includes frame analysis)
+- **Full via negativa** → All four layers (deterministic synthesis)
+- **Deep reflection** → All four layers + stochastic perturbation protocol (Monte Carlo sampling of conceptual space to surface insights beyond the analyst's associative range)
+
 See `SKILL.md` for full methodology.
 
 ## References

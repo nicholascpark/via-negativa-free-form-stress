@@ -133,7 +133,13 @@ could not have produced from inside their own head.
 
 - "Quick check" → Layers 1–2 (fast but less differentiated)
 - "Stress test" → Layers 1–3 (default — includes frame analysis)
-- "Full via negativa" → All four layers (includes generative metacognition)
+- "Full via negativa" → All four layers (includes deterministic synthesis)
+- "Deep reflection" → All four layers + stochastic perturbation protocol
+
+**Deep reflection triggers**: The thinker says "take your time," "go deeper,"
+or "deep reflection." OR the agent detects that Layer 4a synthesis feels thin
+and asks: "Can I take more time to search?" If the thinker agrees, Layer 4b
+activates.
 
 ---
 
@@ -584,7 +590,18 @@ thinking reveals a latent thought — something the thinker is reaching
 toward but hasn't articulated, perhaps can't articulate from inside
 their current frame.
 
-### Method:
+Layer 4 has two sub-protocols:
+- **Layer 4a** (deterministic synthesis) — always runs at this depth
+- **Layer 4b** (stochastic perturbation) — runs only at "Deep reflection"
+  depth or by explicit trigger
+
+---
+
+### Layer 4a: Deterministic Synthesis
+
+The structured pass across Layers 1–3 findings.
+
+#### Method:
 1. Look across all findings from Layers 1–3
 2. Ask: "If I built a thought to fill exactly this negative space,
    what would it be?"
@@ -595,14 +612,14 @@ their current frame.
 5. Frame it as a new question, not a new answer — the thinker
    should think the thought themselves
 
-### The generative move:
+#### The generative move:
 
 The deepest output of this skill is not "here's what you missed" but
 "here's the question you're not asking, and I think it might be THE
-question." Layer 4 doesn't add more content to the thinker's plan —
+question." Layer 4a doesn't add more content to the thinker's plan —
 it offers a different relationship to the whole thing.
 
-**Output format for Layer 4:**
+**Output format for Layer 4a:**
 - **Pattern in the negative space** (what the absences collectively
   suggest about the thinker's relationship to this problem)
 - **The latent thought** (what the thinker is reaching toward
@@ -611,6 +628,134 @@ it offers a different relationship to the whole thing.
   sat with it, would dissolve the most important absences)
 - **What to resist thinking** (via negativa discipline — not every
   absent thought should be added. Some absences are wisdom.)
+
+---
+
+### Layer 4b: Stochastic Perturbation Protocol
+
+**Purpose**: Deterministic synthesis (4a) is bounded by the analyst's
+own associative range. The same pattern-completing tendencies that make
+LLMs fluent also make them gravitationally bound to high-probability
+completions. Layer 4b introduces controlled randomness — Monte Carlo
+sampling of conceptual space — to surface insights the deterministic
+pass structurally cannot reach.
+
+4b runs AFTER 4a, using 4a's output and all Layer 1–3 findings as input.
+
+#### The core problem
+
+LLMs are pattern completers. Asking one to "think of something random"
+produces high-probability completions, not genuine randomness. Direct
+instructions to "be more random" fail. Structural constraints succeed.
+
+The mechanism uses three stages:
+
+#### Stage 1: Entropy Extraction (the seed)
+
+Derive pseudo-random parameters from the thinker's own artifact text.
+The text's statistical properties are semantically uncorrelated with
+concept generation, making them a genuine entropy source.
+
+**Character-level features:**
+- Count vowels in the first sentence, mod 7
+- Consonant-to-vowel ratio (rounded to nearest integer)
+- Shannon entropy of character distribution
+
+**Word-level features:**
+- Length of the Nth word (where N = sentence count)
+- Syllable count patterns across first paragraph
+- Positional extraction: every 7th word from the artifact
+
+**Structural features:**
+- Total sentence count mod 3
+- Paragraph break positions (as sequence of integers)
+
+These numbers become generative constraints — not mapped to predefined
+lists, but used to construct absurd structural requirements that force
+the system into low-probability conceptual territory.
+
+**Example**: An artifact yields parameters [3, "liquid", 5-syllable,
+"before"]. The constraint becomes: "Generate 3 concepts involving
+something liquid, using only words with 5+ syllables, that existed
+before language." The absurdity IS the randomness — it pushes concept
+generation off the well-worn paths.
+
+#### Stage 2: Orthogonal Stirring (the catalyst)
+
+Each raw concept from Stage 1 is passed through a randomly selected
+orthogonal category lens. This amplifies entropy and prevents
+gravitational collapse back to familiar territory.
+
+**Orthogonal category lenses:**
+- Physical systems (phase transitions, resonance, diffusion)
+- Biological systems (metamorphosis, dormancy, apoptosis)
+- Mathematical structures (topology, fixed points, attractors)
+- Social systems (commons governance, network effects)
+- Material processes (fermentation, distillation, tempering)
+- Information theory (entropy, compression, error correction)
+
+The category is NOT the seed. It's a forcing function that displaces
+the already-random concept further from the thinker's domain. Think of
+it as a field that bends the random walk away from attractor basins.
+
+**Category selection**: Use a different entropy extraction (e.g.,
+character count of the artifact's last sentence mod 6) to select the
+lens. The category should feel unrelated to the thinker's domain —
+that's the point.
+
+#### Stage 3: Reflection (the value extraction)
+
+Generate N=5 stirred concepts per round. Each gets a reflection pass
+(150–200 words, strict):
+
+1. Hold the stirred concept against the thinker's negative space
+   (from L1–3 + 4a)
+2. What does this concept's structure illuminate about the shape
+   of the absence?
+3. **Signal assessment** (1–5):
+   - 1 = noise — no meaningful connection
+   - 2 = faint echo — structural similarity but no actionable insight
+   - 3 = actionable — reveals a specific angle the deterministic pass missed
+   - 4 = significant — reframes part of the 4a synthesis
+   - 5 = reveals something the entire analysis missed
+
+**The concept itself is discarded.** Only the reflection matters. The
+stirred concept is scaffolding — it exists to push perception into
+unfamiliar territory, not to become a finding.
+
+#### Evaluation (200–300 words, strict)
+
+A separate pass reviews all reflections from the round:
+
+1. Apply the existing Relevance Gate to every reflection
+2. Each finding must exceed the deterministic baseline — if 4a already
+   captured the insight, the stochastic version adds nothing
+3. Each finding must ground in THIS thinker's specific problem, not
+   generic analogy. "Phase transitions are like career changes" is
+   generic. "Your plan treats the transition as instantaneous, but
+   phase transitions require sustained energy input at the boundary —
+   your plan has no concept of the energy cost of being between
+   states" is grounded.
+
+**Output**: Signal >= 3 findings only. For each: how it extends the
+L1–4a findings, and whether the Layer 4 output should be revised.
+
+#### Unbounded Iteration
+
+- If no seeds produce signal >= 3 in a round, the agent asks:
+  "Can I take more time to search?"
+- If yes: re-extract entropy using different text features
+  (e.g., last paragraph instead of first, word-final letters
+  instead of word-initial), run a new round
+- **Round 3**: If two rounds have produced no signal, examine WHY
+  the seeds failed. Is the failure itself diagnostic? A negative
+  space that resists even random perturbation may be genuinely
+  clean — or so deeply structural that random probes can't reach it.
+- **Hard cap**: 3 rounds (15 seeds maximum)
+- **If nothing found**: "The deterministic synthesis captured the
+  available insight. Stochastic perturbations confirmed the pattern
+  is clean." This is a valid and valuable output — it increases
+  confidence in the 4a findings.
 
 ---
 
@@ -827,6 +972,15 @@ Before delivering findings, run this check:
    produces an immediate, clear answer — the analysis is the obstacle.
    Say so and get out of the way.
 
+4. **"Am I generating noise to justify the protocol?"** (Layer 4b only)
+   The stochastic perturbation protocol creates pressure to produce
+   findings — it feels like all that entropy extraction and stirring
+   should yield something. But most seeds SHOULD produce noise. If
+   every stirred concept conveniently connects to the thinker's problem,
+   the reflection pass is manufacturing connections, not discovering
+   them. The honest output of 4b is often: "15 seeds, 0 signal. The
+   deterministic pass captured it." That's confirmation, not failure.
+
 The deepest via negativa move the skill can make is to apply via negativa
 to itself: what should this analysis NOT include? What finding should be
 left unspoken? Sometimes the answer is: the thinker would be fine with
@@ -834,8 +988,9 @@ no feedback at all. That's a valid output.
 
 ### Scaling
 - **Quick check**: Layers 1–2, top findings per layer
-- **Standard (default)**: Layers 1–3, full findings with frame analysis
-- **Full via negativa**: All 4 layers, includes generative metacognition
+- **Stress test (default)**: Layers 1–3, full findings with frame analysis
+- **Full via negativa**: All 4 layers (4a deterministic synthesis)
+- **Deep reflection**: All 4 layers + Layer 4b stochastic perturbation protocol
 
 ### What this skill cannot do
 Be honest about the ceiling:

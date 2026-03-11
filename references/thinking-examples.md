@@ -203,6 +203,157 @@ valuable to read.
 
 ---
 
+## Worked Example: Deep Reflection on the Career Change Plan
+
+This example applies Layer 4b (Stochastic Perturbation Protocol) to the
+career change plan from the first worked example. Layer 4a has already
+produced its synthesis (see above). The question: does stochastic
+perturbation surface anything the deterministic pass missed?
+
+### Setup
+
+Layer 4a found: the plan is detailed about WHAT (services, pricing,
+timeline) and silent about WHO (the thinker as businessperson). The
+latent thought: "Am I the kind of person who will thrive doing this?"
+The reframing question: "What would a version of this plan look like
+that I would enjoy on the worst day?"
+
+### Stage 1: Entropy Extraction
+
+Source text (first sentence of artifact): "I'm planning to leave my
+engineering role at [company] to start an independent consulting practice
+focused on architecture review and team coaching."
+
+**Character-level**: Vowels in first sentence = 47; 47 mod 7 = **5**.
+Consonant-to-vowel ratio ≈ 1.4, rounded = **1**. Shannon entropy of
+character distribution ≈ **4.1** bits.
+
+**Word-level**: Sentence count of artifact = 23; 23rd word = "pricing".
+Length of "pricing" = **7**. Every 7th word from the artifact:
+"engineering", "consulting", "coaching", "target", "posts".
+
+**Structural**: Sentence count mod 3 = 23 mod 3 = **2**.
+
+**Seed construction**: "Generate 5 concepts using the constraint:
+exactly 2 ideas involving something with 7 components that can be
+described using the word 'pricing' as a structural metaphor, where
+the system has entropy > 4."
+
+Raw concepts generated:
+1. A 7-note musical scale where each note's "price" is the cognitive
+   effort to hear it in context
+2. A 7-layer geological formation where pressure determines which
+   layers are visible at the surface
+3. A 7-stage grief model where each stage "costs" the one that follows
+4. A 7-node network where connection pricing creates emergent topology
+5. A 7-day circadian pattern where energy expenditure follows a
+   non-obvious distribution
+
+### Stage 2: Orthogonal Stirring
+
+Category selection: Last sentence character count = 84; 84 mod 6 = **0**
+→ Physical systems (phase transitions, resonance, diffusion).
+
+Stirred concepts:
+1. Musical scale → Resonance: a system where certain frequencies
+   amplify and others destructively interfere, and you can't choose
+   which — the medium determines it
+2. Geological layers → Phase transitions: layers that exist in stable
+   states until pressure crosses a threshold, then reorganize entirely
+3. Grief stages → Diffusion: a process that spreads through a medium
+   at a rate determined by the medium's resistance, not the process's
+   intensity
+4. Network topology → Resonance: nodes that vibrate at the network's
+   natural frequency get amplified; mismatched nodes get dampened
+5. Circadian pattern → Phase transitions: energy availability has
+   discrete states with sharp transitions, not smooth gradients
+
+### Stage 3: Reflection
+
+**Concept 1** (resonance in a selective medium):
+The thinker's plan assumes consulting will amplify their existing
+engineering strengths. But resonance is medium-dependent — skills that
+resonate in a corporate engineering context (depth, precision,
+collaboration at scale) may destructively interfere in a consulting
+context (breadth, speed, solo judgment). The plan never asks: "Which
+of my strengths will the consulting medium amplify, and which will it
+dampen?" Layer 4a identified the WHO gap broadly. This sharpens it:
+the thinker might be excellent AND mismatched — good at the work but
+operating in a medium that doesn't resonate with how they work.
+**Signal: 3** — actionable angle that 4a gestured toward but didn't
+specify.
+
+**Concept 2** (phase transitions under pressure):
+Stable layers reorganize entirely past a threshold. The thinker's plan
+treats the career transition as a move — from state A to state B. But
+phase transitions aren't moves; they're reorganizations where the
+internal structure changes. The plan doesn't account for identity
+reorganization: the thinker will not be "an engineer who consults"
+but will need to become "a consultant who was an engineer." This is
+a different structural point than 4a's observation. 4a asked whether
+the thinker will enjoy the daily reality. This asks whether the
+thinker's professional identity will survive the transition intact.
+**Signal: 4** — reframes part of the 4a synthesis.
+
+**Concept 3** (diffusion rate determined by medium resistance):
+The rate of career transition depends on the resistance of the
+thinker's environment — financial obligations, family expectations,
+professional network inertia. The plan addresses financial runway but
+not social/identity resistance. However, this is close to what Layer 1
+already found (energy model, social loss from Layer 3). Doesn't add
+meaningfully beyond the deterministic pass.
+**Signal: 2** — faint echo of existing findings.
+
+**Concept 4** (network resonance amplifying matched nodes):
+In consulting, the thinker's network isn't just a client source — it's
+a resonance filter. The people who amplify the thinker's signal are
+those whose problems match the thinker's natural frequency. The plan
+lists target clients by industry (startups) but not by problem-fit.
+This is a refinement of the Layer 2 finding about network conversion
+but doesn't reach a new structural insight.
+**Signal: 2** — refinement, not revelation.
+
+**Concept 5** (discrete energy states with sharp transitions):
+Energy availability has phase boundaries, not smooth curves. The plan
+assumes consistent capacity. But the actual pattern of solo work has
+sharp transitions: high-energy client delivery periods, low-energy
+gap periods, and the transition between them is abrupt, not gradual.
+The plan's financial model needs to account for these discrete states.
+This overlaps with Layer 1's "energy model assumes full capacity"
+finding.
+**Signal: 2** — confirms existing finding.
+
+### Evaluation
+
+Of 5 seeds, 2 produced signal >= 3:
+
+**Finding 1 (from Concept 1, signal 3)**: The plan assumes the
+thinker's engineering strengths will transfer to consulting. But the
+consulting medium selectively amplifies different capabilities than
+the corporate medium. Depth and precision — the thinker's likely
+core strengths — may be dampened in a context that rewards breadth
+and speed. This extends Layer 4a: beyond asking "will I enjoy this?"
+the thinker should ask "will my specific strengths be assets or
+liabilities in this medium?"
+
+**Finding 2 (from Concept 2, signal 4)**: The plan treats the career
+change as a logistics problem (timeline, finances, clients). But
+career transitions at this level are identity reorganizations — the
+thinker's professional self-concept must change, not just their
+employment status. The plan has no concept of this reorganization
+and no provision for the disorientation it produces. This extends
+Layer 4a's reframing question: beyond "what would I enjoy on the
+worst day?" add "who will I be on the other side, and am I ready
+for that person to be different from who I am now?"
+
+**Revised Layer 4 output**: Layer 4a's synthesis stands. The stochastic
+pass adds two specific dimensions: (1) medium-dependent skill
+amplification — some strengths won't transfer, and the thinker should
+identify which before committing; (2) identity reorganization — the
+plan needs a concept of who the thinker becomes, not just what they do.
+
+---
+
 ## Quick Reflective Questions for Any Plan or Thought
 
 When you don't have time for full analysis, ask these five:
