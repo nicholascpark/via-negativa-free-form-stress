@@ -629,6 +629,15 @@ it offers a different relationship to the whole thing.
 - **What to resist thinking** (via negativa discipline — not every
   absent thought should be added. Some absences are wisdom.)
 
+#### Transition to Layer 4b (progressive disclosure):
+
+After delivering 4a findings, assess: does the synthesis feel thin, or
+is the negative space richer than the deterministic pass can reach? If
+so, say: *"I think there's more here than structured analysis can
+surface. Can I take more time to search?"* If the thinker agrees →
+Layer 4b activates. If the synthesis captures the insight cleanly →
+deliver and move to Step R.
+
 ---
 
 ### Layer 4b: Stochastic Perturbation Protocol
@@ -742,20 +751,26 @@ L1–4a findings, and whether the Layer 4 output should be revised.
 
 #### Unbounded Iteration
 
-- If no seeds produce signal >= 3 in a round, the agent asks:
-  "Can I take more time to search?"
-- If yes: re-extract entropy using different text features
-  (e.g., last paragraph instead of first, word-final letters
-  instead of word-initial), run a new round
-- **Round 3**: If two rounds have produced no signal, examine WHY
-  the seeds failed. Is the failure itself diagnostic? A negative
-  space that resists even random perturbation may be genuinely
-  clean — or so deeply structural that random probes can't reach it.
-- **Hard cap**: 3 rounds (15 seeds maximum)
-- **If nothing found**: "The deterministic synthesis captured the
-  available insight. Stochastic perturbations confirmed the pattern
-  is clean." This is a valid and valuable output — it increases
-  confidence in the 4a findings.
+After each round, assess and offer to continue:
+
+- **Signal found (>= 3)**: Deliver findings, then: *"There's more
+  territory here. Want me to keep searching?"* If yes → new round
+  with different entropy extraction.
+- **No signal found**: *"That round was noise. I can try from a
+  different angle — want me to keep going?"* If yes → re-extract
+  entropy using different text features (e.g., last paragraph instead
+  of first, word-final letters instead of word-initial), run a new round.
+- **Round 3**: If two rounds produced no signal, examine WHY the seeds
+  failed. Is the failure itself diagnostic? A negative space that
+  resists even random perturbation may be genuinely clean — or so
+  deeply structural that random probes can't reach it. Offer this
+  meta-finding to the thinker.
+- **Hard cap**: 3 rounds (15 seeds maximum) unless the thinker
+  explicitly asks for more.
+- **If nothing found across all rounds**: "The deterministic synthesis
+  captured the available insight. Stochastic perturbations confirmed
+  the pattern is clean." This is a valid and valuable output — it
+  increases confidence in the 4a findings.
 
 ---
 
