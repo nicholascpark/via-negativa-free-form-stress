@@ -608,8 +608,9 @@ their current frame.
 
 Layer 4 has two sub-protocols:
 - **Layer 4a** (deterministic synthesis) — always runs at this depth
-- **Layer 4b** (stochastic perturbation) — runs only at "Deep reflection"
-  depth or by explicit trigger
+- **Layer 4b** (stochastic perturbation) — runs via progressive disclosure
+  (when 4a synthesis feels thin), explicit "Deep reflection" request, or
+  when the thinker says "go deeper" / "take your time"
 
 ---
 
