@@ -136,10 +136,26 @@ could not have produced from inside their own head.
 - "Full via negativa" → All four layers (includes deterministic synthesis)
 - "Deep reflection" → All four layers + stochastic perturbation protocol
 
-**Deep reflection triggers**: The thinker says "take your time," "go deeper,"
-or "deep reflection." OR the agent detects that Layer 4a synthesis feels thin
-and asks: "Can I take more time to search?" If the thinker agrees, Layer 4b
-activates.
+The thinker can jump to any depth explicitly. Progressive disclosure is
+the default when no depth is specified.
+
+### Progressive Disclosure (default)
+
+Don't pre-select depth. Start at Layer 1 and let each layer's output
+determine whether to go deeper. **Always run Layers 1–2 minimum.**
+
+- **After Layer 2**: Assumptions mostly visible/validated → deliver,
+  move to Step R. Invisible or fragile assumptions → *"There's a
+  framing pattern underneath these assumptions. Want me to look at
+  it?"* If yes → Layer 3.
+- **After Layer 3**: Frame well-chosen, thinker frame-aware → deliver,
+  move to Step R. Frame exclusions reveal coherent negative space →
+  *"The pattern of what's missing has a shape. Want me to trace it?"*
+  If yes → Layer 4a.
+- **After Layer 4a**: Synthesis captures insight cleanly → deliver,
+  move to Step R. Synthesis feels thin → *"I think there's more here
+  than structured analysis can surface. Can I take more time to
+  search?"* If yes → Layer 4b.
 
 ---
 
@@ -628,15 +644,6 @@ it offers a different relationship to the whole thing.
   sat with it, would dissolve the most important absences)
 - **What to resist thinking** (via negativa discipline — not every
   absent thought should be added. Some absences are wisdom.)
-
-#### Transition to Layer 4b (progressive disclosure):
-
-After delivering 4a findings, assess: does the synthesis feel thin, or
-is the negative space richer than the deterministic pass can reach? If
-so, say: *"I think there's more here than structured analysis can
-surface. Can I take more time to search?"* If the thinker agrees →
-Layer 4b activates. If the synthesis captures the insight cleanly →
-deliver and move to Step R.
 
 ---
 
