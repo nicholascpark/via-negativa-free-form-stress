@@ -75,7 +75,7 @@ building). Both mindsets are valid. This one doesn't fit this problem.
 **Alternative frame**: Exploration mode — "I'm going to write badly for
 60 days and see what emerges. The writing IS the research."
 
-### Layer 4: The generative move
+### Layer 3, Stage B: Generative Synthesis
 
 **Pattern in the negative space**: Every absence points to the same
 thing — the thinker has optimized the meta-process (planning the book)
@@ -175,7 +175,7 @@ reversible? If I move and hate it, can I move back?" If yes, the
 stakes are much lower than the analytical frame implies, and the
 decision becomes "which experiment do I want to run first?"
 
-### Layer 4: The generative move
+### Layer 3, Stage B: Generative Synthesis
 
 **The latent thought**: "Both options are fine. The thing I'm afraid of
 isn't choosing wrong — it's choosing at all, because choosing means
@@ -246,7 +246,7 @@ will produce interruptions. The frame defines interruption as failure,
 so failure is inevitable. The thinker then blames themselves or the
 plan, when the actual cause is the frame.
 
-### Layer 4: The generative move
+### Layer 3, Stage B: Generative Synthesis
 
 **The latent thought**: The thinker doesn't need a new plan. They need
 a new definition of success. "I exercised 3 out of 7 days this week"

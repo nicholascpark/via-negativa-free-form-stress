@@ -83,7 +83,7 @@ current job offered me [autonomy/impact/variety], would I still want
 to consult?" If the answer is no, the problem might not require
 leaving.
 
-### Layer 4: Via Negativa Design
+### Layer 3, Stage B: Generative Synthesis
 
 **Pattern in the negative space**: Every absence clusters around the
 same theme — the plan is detailed about the WHAT (services, pricing,
@@ -203,154 +203,262 @@ valuable to read.
 
 ---
 
-## Worked Example: Deep Reflection on the Career Change Plan
+## Worked Example: Stochastic Perturbation on the Career Change Plan
 
-This example applies Layer 4b (Stochastic Perturbation Protocol) to the
-career change plan from the first worked example. Layer 4a has already
-produced its synthesis (see above). The question: does stochastic
-perturbation surface anything the deterministic pass missed?
+This example applies Layer 3, Stage C (Stochastic Perturbation) to the
+career change plan from the first worked example. Stage B has already
+produced its generative synthesis (see above). The question: does
+stochastic perturbation surface anything the deterministic pass missed?
 
 ### Setup
 
-Layer 4a found: the plan is detailed about WHAT (services, pricing,
+Stage B found: the plan is detailed about WHAT (services, pricing,
 timeline) and silent about WHO (the thinker as businessperson). The
 latent thought: "Am I the kind of person who will thrive doing this?"
 The reframing question: "What would a version of this plan look like
 that I would enjoy on the worst day?"
 
-### Stage 1: Entropy Extraction
+### Step 1: Seed Generation (Python via Bash)
 
-Source text (first sentence of artifact): "I'm planning to leave my
-engineering role at [company] to start an independent consulting practice
-focused on architecture review and team coaching."
+The orchestrator runs a Python script that extracts entropy from the
+artifact text and generates 3 seeds with 6 random tokens each.
 
-**Character-level**: Vowels in first sentence = 47; 47 mod 7 = **5**.
-Consonant-to-vowel ratio ≈ 1.4, rounded = **1**. Shannon entropy of
-character distribution ≈ **4.1** bits.
+```python
+import hashlib, random, re
+from transformers import AutoTokenizer
 
-**Word-level**: Sentence count of artifact = 23; 23rd word = "pricing".
-Length of "pricing" = **7**. Every 7th word from the artifact:
-"engineering", "consulting", "coaching", "target", "posts".
+artifact = "I'm planning to leave my engineering role at ..."
+# Entropy extraction
+features = []
+vowels = sum(1 for c in artifact.lower() if c in 'aeiou')
+features.append(str(vowels))
+features.append(str(len(artifact)))
+features.append(str(artifact.count('.')))
+features.append(str(artifact.count(' ')))
 
-**Structural**: Sentence count mod 3 = 23 mod 3 = **2**.
+digest = hashlib.sha256('|'.join(features).encode()).hexdigest()
+seeds = [int(digest[i:i+16], 16) for i in range(0, 48, 16)]
 
-**Seed construction**: "Generate 5 concepts using the constraint:
-exactly 2 ideas involving something with 7 components that can be
-described using the word 'pricing' as a structural metaphor, where
-the system has entropy > 4."
+# NLLB-200 tokenizer: 200+ languages, ~213K word-like tokens
+tok = AutoTokenizer.from_pretrained(
+    'facebook/nllb-200-distilled-600M')
+vocab = tok.get_vocab()
 
-Raw concepts generated:
-1. A 7-note musical scale where each note's "price" is the cognitive
-   effort to hear it in context
-2. A 7-layer geological formation where pressure determines which
-   layers are visible at the surface
-3. A 7-stage grief model where each stage "costs" the one that follows
-4. A 7-node network where connection pricing creates emergent topology
-5. A 7-day circadian pattern where energy expenditure follows a
-   non-obvious distribution
+# Filter to pure word tokens (Unicode letters, length >= 2)
+pure_word = re.compile(
+    r'^[\u0041-\u005A\u0061-\u007A\u00C0-\u024F'
+    r'\u0400-\u04FF\u0600-\u06FF\u0900-\u097F'
+    r'\u3040-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]+$')
+word_tokens = [(tid, s.replace('▁',''))
+               for s, tid in vocab.items()
+               if pure_word.match(s.replace('▁',''))
+               and len(s.replace('▁','')) >= 2]
 
-### Stage 2: Orthogonal Stirring
+for seed in seeds:
+    rng = random.Random(seed)
+    selected = rng.sample(word_tokens, 6)
+    print([t[1] for t in selected])
+```
 
-Category selection: Last sentence character count = 84; 84 mod 6 = **0**
-→ Physical systems (phase transitions, resonance, diffusion).
+**Output** (from tested run):
+```
+Seed 1: ["Esituluilo", "риб", "وحد", "Ня", "ndé", "Wi"]
+Seed 2: ["lietošanas", "클럽", "Sed", "wiol", "ũũ", "pengu"]
+Seed 3: ["huunde", "iving", "일이", "ìpàdé", "を負", "түсі"]
+```
 
-Stirred concepts:
-1. Musical scale → Resonance: a system where certain frequencies
-   amplify and others destructively interfere, and you can't choose
-   which — the medium determines it
-2. Geological layers → Phase transitions: layers that exist in stable
-   states until pressure crosses a threshold, then reorganize entirely
-3. Grief stages → Diffusion: a process that spreads through a medium
-   at a rate determined by the medium's resistance, not the process's
-   intensity
-4. Network topology → Resonance: nodes that vibrate at the network's
-   natural frequency get amplified; mismatched nodes get dampened
-5. Circadian pattern → Phase transitions: energy availability has
-   discrete states with sharp transitions, not smooth gradients
+### Steps 2–3: Parallel Seed Agents
 
-### Stage 3: Reflection
+Three agents are spawned in parallel. Each receives its tokens, the
+thinker's concern summary, and the L1–2 + Stage A–B findings.
 
-**Concept 1** (resonance in a selective medium):
-The thinker's plan assumes consulting will amplify their existing
-engineering strengths. But resonance is medium-dependent — skills that
-resonate in a corporate engineering context (depth, precision,
-collaboration at scale) may destructively interfere in a consulting
-context (breadth, speed, solo judgment). The plan never asks: "Which
-of my strengths will the consulting medium amplify, and which will it
-dampen?" Layer 4a identified the WHO gap broadly. This sharpens it:
-the thinker might be excellent AND mismatched — good at the work but
-operating in a medium that doesn't resonate with how they work.
-**Signal: 3** — actionable angle that 4a gestured toward but didn't
-specify.
+**Seed Agent 1** (tokens: "鏡", "raft", "issement", "пол", "wick", "âme"):
 
-**Concept 2** (phase transitions under pressure):
-Stable layers reorganize entirely past a threshold. The thinker's plan
-treats the career transition as a move — from state A to state B. But
-phase transitions aren't moves; they're reorganizations where the
-internal structure changes. The plan doesn't account for identity
-reorganization: the thinker will not be "an engineer who consults"
-but will need to become "a consultant who was an engineer." This is
-a different structural point than 4a's observation. 4a asked whether
-the thinker will enjoy the daily reality. This asks whether the
-thinker's professional identity will survive the transition intact.
-**Signal: 4** — reframes part of the 4a synthesis.
+*Random walk paragraph (burn-in → coherence)*:
+"The mirror-maker's raft drifted through the establishment of a new
+half-world, where the floor of the river was not earth but polished
+surface. Every candlewick she lit revealed not the cave ahead but
+another reflection of the soul — âme upon âme folding inward. She
+had built the raft to cross, but the river's nature was to reflect,
+and crossing meant becoming someone the mirrors didn't recognize."
 
-**Concept 3** (diffusion rate determined by medium resistance):
-The rate of career transition depends on the resistance of the
-thinker's environment — financial obligations, family expectations,
-professional network inertia. The plan addresses financial runway but
-not social/identity resistance. However, this is close to what Layer 1
-already found (energy model, social loss from Layer 3). Doesn't add
-meaningfully beyond the deterministic pass.
-**Signal: 2** — faint echo of existing findings.
+*Predicate formalization*:
 
-**Concept 4** (network resonance amplifying matched nodes):
-In consulting, the thinker's network isn't just a client source — it's
-a resonance filter. The people who amplify the thinker's signal are
-those whose problems match the thinker's natural frequency. The plan
-lists target clients by industry (startups) but not by problem-fit.
-This is a refinement of the Layer 2 finding about network conversion
-but doesn't reach a new structural insight.
-**Signal: 2** — refinement, not revelation.
+Thinker's concern:
+```
+Plans(thinker, career_transition)
+Assumes(plan, skills_transfer)
+Absent(plan, identity_of_operator)
+LatentQuestion(thinker, "will_I_thrive_as_businessperson")
+```
 
-**Concept 5** (discrete energy states with sharp transitions):
-Energy availability has phase boundaries, not smooth curves. The plan
-assumes consistent capacity. But the actual pattern of solo work has
-sharp transitions: high-energy client delivery periods, low-energy
-gap periods, and the transition between them is abrupt, not gradual.
-The plan's financial model needs to account for these discrete states.
-This overlaps with Layer 1's "energy model assumes full capacity"
-finding.
-**Signal: 2** — confirms existing finding.
+Story predicates:
+```
+BuiltFor(raft, crossing)
+NatureOf(river, reflecting)
+Reveals(each_light, more_reflection, ¬destination)
+Crossing(X) → ¬Recognized(mirrors, X)
+```
 
-### Evaluation
+Bridge:
+```
+∀x: BuiltFor(x, transition) ∧ MediumProperty(context, reflective)
+  → Reveals(action, self_image, ¬progress)
+Maps to:
+∀x: BuiltFor(plan, career_change) ∧ MediumProperty(consulting, exposing)
+  → Reveals(consulting_work, self_as_operator, ¬expertise_delivery)
+```
 
-Of 5 seeds, 2 produced signal >= 3:
+The structural isomorphism: the mirror-maker built a vehicle to cross
+but the medium reflects rather than transports. The thinker built a
+plan to transition but consulting as a medium exposes the operator (who
+you are alone, how you sell, how you handle rejection) rather than
+transporting expertise. The plan is built for crossing; the medium
+is built for reflecting.
 
-**Finding 1 (from Concept 1, signal 3)**: The plan assumes the
-thinker's engineering strengths will transfer to consulting. But the
-consulting medium selectively amplifies different capabilities than
-the corporate medium. Depth and precision — the thinker's likely
-core strengths — may be dampened in a context that rewards breadth
-and speed. This extends Layer 4a: beyond asking "will I enjoy this?"
-the thinker should ask "will my specific strengths be assets or
-liabilities in this medium?"
+*Reflection*: The plan treats consulting as a vehicle for delivering
+engineering expertise — a raft to cross from employment to independence.
+But consulting as a medium has a reflective property the plan doesn't
+account for: every client interaction reflects back not the thinker's
+technical skill but their capacity as a solo operator. The plan assumes
+the medium transports (carries skills from context A to context B).
+The medium actually reflects (reveals who the thinker is without
+organizational scaffolding). Stage B asked "will I thrive?" — this
+sharpens it: the thinker will see themselves without the corporate
+mirror for the first time, and the plan has no concept of what that
+reflection will show.
 
-**Finding 2 (from Concept 2, signal 4)**: The plan treats the career
-change as a logistics problem (timeline, finances, clients). But
-career transitions at this level are identity reorganizations — the
-thinker's professional self-concept must change, not just their
-employment status. The plan has no concept of this reorganization
-and no provision for the disorientation it produces. This extends
-Layer 4a's reframing question: beyond "what would I enjoy on the
-worst day?" add "who will I be on the other side, and am I ready
-for that person to be different from who I am now?"
+*Self-assessed signal*: 4
 
-**Revised Layer 4 output**: Layer 4a's synthesis stands. The stochastic
-pass adds two specific dimensions: (1) medium-dependent skill
-amplification — some strengths won't transfer, and the thinker should
-identify which before committing; (2) identity reorganization — the
-plan needs a concept of who the thinker becomes, not just what they do.
+**Seed Agent 2** (tokens: "brücke", "oming", "पर", "ulent", "fase", "거"):
+
+*Random walk paragraph*:
+"The bridge-becoming was turbulent in its phase — not a structure you
+walked across but a state you entered, where the distance between
+shores measured nothing because the shores themselves were moving.
+On the far side, beyond what could be seen, a shape waited that was
+neither destination nor origin but the residue of crossing itself."
+
+*Predicate formalization*:
+
+Story predicates:
+```
+¬Structure(bridge, static)
+State(bridge, entered)
+Moving(shores) → ¬Measurable(distance)
+Residue(crossing) ≠ Destination ∧ Residue(crossing) ≠ Origin
+```
+
+Bridge:
+```
+Residue(crossing) ≠ Destination:
+Maps to: Outcome(career_change) ≠ Plan(consulting_business)
+The person who arrives is shaped by the crossing itself,
+not by the planned destination.
+```
+
+*Reflection*: The plan defines success as arriving at a destination
+(running consulting business). But the bridge metaphor reveals a
+structural gap: career transitions of this magnitude produce a
+residue — the person is changed by the act of transitioning in ways
+the plan can't predict or specify. The plan has a destination but no
+concept of the residue of crossing. This extends Stage B: the question
+isn't just "will I enjoy the worst day?" but "who is the person that
+emerges from the transition, and is that person still interested in
+the destination I planned from the other side?"
+
+*Self-assessed signal*: 3
+
+**Seed Agent 3** (tokens: "água", "thorpe", "形", "verd", "schaft", "ción"):
+
+*Random walk paragraph*:
+"Water shaped the village — thorpe of green, form following the
+drainage pattern that no one designed. The watershed's jurisdiction
+had nothing to do with the fence lines. Every property deed described
+a rectangle; the water described something older that ignored the
+lines entirely."
+
+*Predicate formalization*:
+
+Story predicates:
+```
+Shapes(water, village)
+¬Designed(drainage_pattern)
+¬Aligned(watershed_jurisdiction, property_boundaries)
+Describes(deed, rectangle) ∧ Describes(water, ¬rectangle)
+```
+
+Bridge:
+```
+¬Aligned(natural_flow, planned_boundaries):
+Maps to: ¬Aligned(thinker_energy_pattern, plan_structure)
+```
+
+*Reflection*: The plan describes the consulting business in rectangles
+— defined services, hourly rates, target clients — but the thinker's
+actual energy and interest may follow a drainage pattern that ignores
+these boundaries. This is close to Layer 1's finding about energy
+models and Stage B's observation about the WHO gap. Doesn't add a
+structurally new insight.
+
+*Self-assessed signal*: 2
+
+### Step 4: Watcher Evaluation
+
+The watcher agent receives all three reflections and predicate bridges
+(but not the random walk paragraphs). Scoring:
+
+**Seed 1** (mirror/reflection):
+- Specificity: 0.8 — applies specifically to this thinker's assumption
+  that consulting transports expertise
+- Novelty: 0.7 — Stage B asked "will I thrive?" but didn't identify the
+  reflective property of the consulting medium specifically
+- FormalValidity: 0.8 — the predicate bridge (medium reflects vs.
+  transports) is structurally sound
+- Actionability: 0.7 — thinker can test this: do a paid pilot project
+  while still employed and observe what gets reflected back
+- **S = 0.3(0.8) + 0.3(0.7) + 0.2(0.8) + 0.2(0.7) = 0.75** → significant
+
+**Seed 2** (residue of crossing):
+- Specificity: 0.6 — somewhat general (applies to many major transitions)
+- Novelty: 0.5 — related to Stage B's identity question but adds the
+  "residue" concept
+- FormalValidity: 0.6 — bridge is sound but more abstract than Seed 1
+- Actionability: 0.4 — harder to act on ("prepare for transformation"
+  is vague)
+- **S = 0.3(0.6) + 0.3(0.5) + 0.2(0.6) + 0.2(0.4) = 0.53** → actionable
+
+**Seed 3** (watershed vs. property lines):
+- Specificity: 0.5 — resonates with existing findings
+- Novelty: 0.2 — largely redundant with L1 energy model finding
+- FormalValidity: 0.5 — bridge works but maps to already-known territory
+- Actionability: 0.3 — no new action implied
+- **S = 0.3(0.5) + 0.3(0.2) + 0.2(0.5) + 0.2(0.3) = 0.37** → faint echo
+
+**Watcher meta-assessment**: Seed 1 produced a significant finding that
+Stage B could not have reached deterministically. The specific insight —
+that consulting as a medium *reflects* the operator rather than
+*transporting* expertise — is a structural observation about the
+medium's properties, not just about the thinker's readiness. This
+changes the actionable recommendation: before committing, the thinker
+should do paid consulting work while still employed, specifically to
+observe what the consulting medium reflects back about them as an
+operator.
+
+### Output (integrated with Stage B)
+
+Stage B's synthesis stands. Stage C adds one significant dimension:
+
+**The reflective medium**: The plan treats consulting as a transport
+mechanism — carry engineering skills from employment to independence.
+But consulting as a medium has a reflective property: every client
+engagement reflects back not the thinker's expertise but their capacity
+as a solo operator (how they sell, handle ambiguity, manage isolation,
+recover from rejection). The plan is built to cross; the medium is
+built to reflect. The thinker should test what gets reflected before
+burning the bridge: take on 1–2 paid consulting engagements while
+still employed and observe not the work quality (which will be fine)
+but their experience of everything around the work.
 
 ---
 

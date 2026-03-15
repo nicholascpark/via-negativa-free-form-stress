@@ -147,7 +147,7 @@ If you can't connect back, you've gone too deep.
 
 ---
 
-## 8. The Forced Connection (Layer 4b)
+## 8. The Forced Connection (Stage C)
 
 **What it looks like**: Manufacturing analogies between stirred concepts
 and the thinker's problem because the stochastic protocol demands output.
@@ -163,14 +163,14 @@ Most seeds should produce signal 1–2. A round where all 5 concepts
 yield signal >= 3 is almost certainly forcing connections.
 
 **The fix**: Before rating signal >= 3, ask: "Does this reflection
-reveal something specific that Layer 4a missed, or did I just find
+reveal something specific that Stage B missed, or did I just find
 a metaphor?" Metaphors are signal 2 at best. Signal 3+ requires a
 structural insight about the thinker's negative space that the
 deterministic pass could not have reached.
 
 ---
 
-## 9. The Interesting Tangent (Layer 4b)
+## 9. The Interesting Tangent (Stage C)
 
 **What it looks like**: A genuinely interesting perturbation finding
 that is irrelevant to the thinker's actual problem.
@@ -187,13 +187,13 @@ The stochastic protocol is particularly vulnerable to this because
 orthogonal stirring deliberately pushes toward unrelated domains —
 interesting connections are expected, but most aren't relevant.
 
-**The fix**: Apply the Relevance Gate with extra rigor on 4b findings.
-The question is not "is this interesting?" but "does the thinker need
-this to think better about THEIR problem?"
+**The fix**: Apply the Relevance Gate with extra rigor on Stage C
+findings. The question is not "is this interesting?" but "does the
+thinker need this to think better about THEIR problem?"
 
 ---
 
-## 10. The Infinite Search (Layer 4b)
+## 10. The Infinite Search (Stage C)
 
 **What it looks like**: Running more stochastic rounds because the
 process is enjoyable, not because more rounds will produce value.
@@ -203,17 +203,16 @@ process is enjoyable, not because more rounds will produce value.
 > paragraph instead of the first will yield something." (Round 3 also
 > produces nothing, but the analyst considers a fourth round.)
 
-**Why it fails**: The protocol has a hard cap of 3 rounds (15 seeds)
-for a reason. The search process — entropy extraction, concept
-generation, orthogonal stirring — is intrinsically engaging. It feels
-like progress. But additional rounds past the point of diminishing
-returns produce noise, not signal, and delay the thinker getting the
-actual output.
+**Why it fails**: The stochastic protocol should have bounded iteration.
+The search process — entropy extraction, concept generation, orthogonal
+stirring — is intrinsically engaging. It feels like progress. But
+additional rounds past the point of diminishing returns produce noise,
+not signal, and delay the thinker getting the actual output.
 
-**The fix**: Respect the hard cap. If 2 rounds produce no signal >= 3,
-the third round should focus on examining WHY seeds failed (which is
-itself diagnostic), not on hoping the next batch will be different.
-After 3 rounds: stop. Report the null result with confidence.
+**The fix**: Respect iteration bounds. If rounds produce no signal,
+focus on examining WHY seeds failed (which is itself diagnostic),
+not on hoping the next batch will be different. Report null results
+with confidence.
 
 ---
 
@@ -225,7 +224,7 @@ demonstrate analytical prowess. When in doubt: fewer findings, more
 grounded, always in service of what the thinker is actually trying
 to do. Silence is better than noise. "Your thinking is solid" is a
 valid and valuable output. Anti-patterns 8–10 add a specific variant:
-**performing the protocol instead of serving the thinker.** The
-stochastic perturbation protocol is a tool, not an end — most of its
-value comes from confirming the deterministic pass, not from
-generating additional findings.
+**performing the protocol instead of serving the thinker.** Stage C
+(stochastic perturbation) is a tool, not an end — most of its value
+comes from confirming the deterministic pass, not from generating
+additional findings.

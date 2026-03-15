@@ -57,12 +57,12 @@ window into the cognition behind it. The progression is:
 
 1. What's missing from what you wrote? (content-level)
 2. What's missing from how you're thinking about it? (reasoning-level)
-3. What's missing from the frame you're using to think? (paradigm-level)
-4. What does the shape of your not-thinking reveal about what you're
-   actually trying to think? (generative-level)
+3. What's missing from the frame you're using to think, what does
+   the shape of your not-thinking reveal, and what survives random
+   displacement? (paradigm + generative + stochastic)
 
 Each layer is more metacognitive than the last. Layer 1 looks at the plan.
-Layer 4 looks at the planner.
+Layer 3 looks at the planner.
 
 ## Where This Skill Delivers
 
@@ -112,7 +112,7 @@ failure mode is manufacturing cognitive critique of clear reasoning.
 
 ## How It Works: Progressive Metacognition
 
-The skill operates in **four layers** bracketed by two interactive steps,
+The skill operates in **three layers** bracketed by two interactive steps,
 each more metacognitive than the last.
 
 ### Reflective mode entry (stress test thinking):
@@ -125,16 +125,15 @@ join the layer progression → Step R (Response Reading).
 
 ### Depth levels:
 
-The default depth is "Stress test" — Layers 1–3. Layer 3 (Frame Exclusions)
-is where the differentiating metacognitive insight lives. Layers 1–2 without
+The default depth is "Stress test" — all three layers. Layer 3 is where
+the differentiating metacognitive insight lives. Layers 1–2 without
 Layer 3 produces competent feedback that overlaps with standard editing or
 planning advice. Layer 3 is what makes the output something the thinker
 could not have produced from inside their own head.
 
 - "Quick check" → Layers 1–2 (fast but less differentiated)
-- "Stress test" → Layers 1–3 (default — includes frame analysis)
-- "Full via negativa" → All four layers (includes deterministic synthesis)
-- "Deep reflection" → All four layers + stochastic perturbation protocol
+- "Stress test" → Layers 1–3 (default — includes frame analysis,
+  generative synthesis, and stochastic perturbation)
 
 The thinker can jump to any depth explicitly. Progressive disclosure is
 the default when no depth is specified.
@@ -148,14 +147,8 @@ determine whether to go deeper. **Always run Layers 1–2 minimum.**
   move to Step R. Invisible or fragile assumptions → *"There's a
   framing pattern underneath these assumptions. Want me to look at
   it?"* If yes → Layer 3.
-- **After Layer 3**: Frame well-chosen, thinker frame-aware → deliver,
-  move to Step R. Frame exclusions reveal coherent negative space →
-  *"The pattern of what's missing has a shape. Want me to trace it?"*
-  If yes → Layer 4a.
-- **After Layer 4a**: Synthesis captures insight cleanly → deliver,
-  move to Step R. Synthesis feels thin → *"I think there's more here
-  than structured analysis can surface. Can I take more time to
-  search?"* If yes → Layer 4b.
+- **After Layer 3**: Deliver all three stages (frame exclusions,
+  generative synthesis, stochastic perturbation), move to Step R.
 
 ---
 
@@ -245,7 +238,7 @@ would make 'what to do next' obvious?"
 
 ### Diagnostic layers:
 
-After diagnostic intake, apply the four layers with a diagnostic lens:
+After diagnostic intake, apply the three layers with a diagnostic lens:
 
 - **Layer 1** becomes: "What's absent from your thinking that would make
   the next step obvious?" Not "what's missing from the plan" but "what
@@ -258,16 +251,16 @@ After diagnostic intake, apply the four layers with a diagnostic lens:
   be able to figure this out alone," "I can't change X," "this shouldn't
   be this hard").
 
-- **Layer 3** becomes: "Is the thinking frame itself the problem?" The
-  thinker might be stuck because they're planning when they should be
-  exploring. Or analyzing when they should be deciding. Or optimizing
-  when the question is whether to do it at all. The frame mismatch
-  between the cognitive tool and the problem is often why thinking stalls.
-
-- **Layer 4** becomes: "What kind of thinker would you need to become to
-  make this problem dissolve?" Not "what should you think next" but "what
-  would need to change about how you think for this class of problem to
-  stop being a problem?"
+- **Layer 3** becomes: "Is the thinking frame itself the problem, and
+  what does the shape of the stuckness reveal?" The thinker might be
+  stuck because they're planning when they should be exploring. Or
+  analyzing when they should be deciding. Or optimizing when the question
+  is whether to do it at all. The frame mismatch between the cognitive
+  tool and the problem is often why thinking stalls. The generative
+  synthesis asks: "What kind of thinker would you need to become to make
+  this problem dissolve?" And the stochastic perturbation probes whether
+  the stuck point resists even random displacement — or breaks open
+  under an unexpected angle.
 
 ### The diagnostic oh-shit moment:
 
@@ -475,17 +468,24 @@ make them visible, not to undermine confidence.
 
 ---
 
-## Layer 3: Frame Exclusions
+## Layer 3: Deep Metacognition
 
-**Question: "What does the way you're thinking make impossible to see?"**
+**Question: "What does the way you're thinking make impossible to see,
+and what does the shape of your not-thinking reveal?"**
 
 This is the core metacognitive layer. Layers 1–2 find things the thinker
 missed. Layer 3 finds things the thinker **could not have seen** from
-inside their current frame. The difference matters: missing a thought
-is correctable; being structurally blind to it is a revelation about
-how you think.
+inside their current frame — then synthesizes the full negative space
+into a generative insight, and stress-tests that synthesis with
+stochastic perturbation to escape the analyst's own associative range.
 
-### Method:
+Layer 3 has three stages that run sequentially:
+
+### Stage A: Frame Exclusions
+
+**"What does the way you're thinking make impossible to see?"**
+
+#### Method:
 1. **Identify the frame**: What kind of thinking produced this? What
    paradigm, mental model, or cognitive habit shaped this reasoning?
    (optimization vs exploration, analytical vs intuitive, individual vs
@@ -499,7 +499,7 @@ how you think.
 4. **Assess frame-thought fit**: Is this the right kind of thinking for
    this kind of problem, or was the frame chosen by habit?
 
-### Common frame patterns in thinking:
+#### Common frame patterns in thinking:
 
 - **Planning frame**: Sees the future as a sequence of steps.
   Excludes: emergence, nonlinear change, the possibility that the
@@ -537,7 +537,7 @@ how you think.
   Excludes: what's working, what's sufficient, what would be
   damaged by fixing the "problem."
 
-### When Layer 3 will and won't produce value
+#### When Stage A will and won't produce value
 
 **High-value contexts**:
 - Life decisions where the thinker feels stuck (the frame IS the stuckness)
@@ -552,11 +552,11 @@ how you think.
 - Thinking where the frame was explicitly chosen and is appropriate
 - Simple decisions with clear criteria
 
-**The test**: Before writing a Layer 3 finding, ask: "Would the thinker
+**The test**: Before writing a Stage A finding, ask: "Would the thinker
 say 'I hadn't realized I was thinking about it that way' or would they
 say 'obviously, that's how I'm thinking about it'?" If the latter, skip.
 
-### The catalog trap
+#### The catalog trap
 
 The frame catalog (`references/frame-catalog.md`) exists for calibration,
 not for lookup. The failure mode is: read the artifact → match it to the
@@ -584,7 +584,7 @@ frame with THIS problem. That means:
    version of 'bigger' you can see is 'more people'" applies to one
    thinker. Aim for the second.
 
-**Output format for Layer 3:**
+**Output format for Stage A:**
 - **Frame identified** (the cognitive paradigm in use)
 - **What this frame illuminates** (its strengths — be fair)
 - **What this frame structurally excludes** (its necessary blindspots)
@@ -592,34 +592,21 @@ frame with THIS problem. That means:
   something new)
 - **Recommendation** (is a frame shift warranted, or just awareness?)
 
----
+### Stage B: Generative Synthesis
 
-## Layer 4: Via Negativa Design (Generative Metacognition)
+**"What does the shape of your not-thinking reveal about what you're
+actually trying to think?"**
 
-**Question: "What does the shape of your not-thinking reveal about what
-you're actually trying to think?"**
-
-After Layers 1–3 have mapped the absences, assumptions, and frame
-exclusions, this layer asks: does the pattern of what's NOT being
+After Stage A and Layers 1–2 have mapped the absences, assumptions, and
+frame exclusions, this stage asks: does the pattern of what's NOT being
 thought have a coherent shape? Often, the negative space of someone's
 thinking reveals a latent thought — something the thinker is reaching
 toward but hasn't articulated, perhaps can't articulate from inside
 their current frame.
 
-Layer 4 has two sub-protocols:
-- **Layer 4a** (deterministic synthesis) — always runs at this depth
-- **Layer 4b** (stochastic perturbation) — runs via progressive disclosure
-  (when 4a synthesis feels thin), explicit "Deep reflection" request, or
-  when the thinker says "go deeper" / "take your time"
+#### Method
 
----
-
-### Layer 4a: Deterministic Synthesis
-
-The structured pass across Layers 1–3 findings.
-
-#### Method:
-1. Look across all findings from Layers 1–3
+1. Look across all findings from Layers 1–2 and Stage A
 2. Ask: "If I built a thought to fill exactly this negative space,
    what would it be?"
 3. Ask: "What kind of thinker would need to exist for none of these
@@ -629,14 +616,14 @@ The structured pass across Layers 1–3 findings.
 5. Frame it as a new question, not a new answer — the thinker
    should think the thought themselves
 
-#### The generative move:
+#### The generative move
 
 The deepest output of this skill is not "here's what you missed" but
 "here's the question you're not asking, and I think it might be THE
-question." Layer 4a doesn't add more content to the thinker's plan —
+question." Stage B doesn't add more content to the thinker's plan —
 it offers a different relationship to the whole thing.
 
-**Output format for Layer 4a:**
+**Output format for Stage B:**
 - **Pattern in the negative space** (what the absences collectively
   suggest about the thinker's relationship to this problem)
 - **The latent thought** (what the thinker is reaching toward
@@ -646,139 +633,256 @@ it offers a different relationship to the whole thing.
 - **What to resist thinking** (via negativa discipline — not every
   absent thought should be added. Some absences are wisdom.)
 
----
+### Stage C: Stochastic Perturbation
 
-### Layer 4b: Stochastic Perturbation Protocol
+**"What survives displacement into alien conceptual territory?"**
 
-**Purpose**: Deterministic synthesis (4a) is bounded by the analyst's
-own associative range. The same pattern-completing tendencies that make
+Deterministic synthesis (Stage B) is bounded by the analyst's
+associative range — the same pattern-completing tendencies that make
 LLMs fluent also make them gravitationally bound to high-probability
-completions. Layer 4b introduces controlled randomness — Monte Carlo
-sampling of conceptual space — to surface insights the deterministic
-pass structurally cannot reach.
+completions. Stage C introduces **computational randomness** — not
+linguistic approximation of randomness — to displace concept generation
+into low-probability regions of semantic space.
 
-4b runs AFTER 4a, using 4a's output and all Layer 1–3 findings as input.
+This stage is **programmatic**. It uses tools (Bash for computation,
+Agent for parallel exploration) rather than prompting for "creative"
+or "random" output. The randomness is genuine; the reasoning is
+structured; the evaluation is mathematical.
 
-#### The core problem
+#### Architecture
 
-LLMs are pattern completers. Asking one to "think of something random"
-produces high-probability completions, not genuine randomness. Direct
-instructions to "be more random" fail. Structural constraints succeed.
+The protocol has five steps. Steps 1–3 run in parallel (one agent per
+seed). Step 4 runs as a separate watcher. Step 5 is the iteration loop.
 
-The mechanism uses three stages:
+```
+Main conversation (orchestrator)
+├── Step 1: Seed generation (Bash/Python — computational)
+├── Step 2–3: Spawn N parallel seed agents (Agent tool)
+│   ├── Seed Agent 1: random walk → predicate bridge → reflection
+│   ├── Seed Agent 2: random walk → predicate bridge → reflection
+│   └── Seed Agent N: random walk → predicate bridge → reflection
+├── Step 4: Spawn watcher agent (Agent tool)
+│   └── Watcher: score all reflections → identify signal
+└── Step 5: Iterate or deliver
+```
 
-#### Stage 1: Entropy Extraction (the seed)
+#### Step 1: Seed Generation (computational — Bash/Python)
 
-Derive pseudo-random parameters from the thinker's own artifact text.
-The text's statistical properties are semantically uncorrelated with
-concept generation, making them a genuine entropy source.
+Generate N independent seeds using entropy extracted from the thinker's
+artifact text. N = 3–5 seeds per round.
 
-**Character-level features:**
-- Count vowels in the first sentence, mod 7
-- Consonant-to-vowel ratio (rounded to nearest integer)
-- Shannon entropy of character distribution
+Run a Python script via Bash that:
 
-**Word-level features:**
-- Length of the Nth word (where N = sentence count)
-- Syllable count patterns across first paragraph
-- Positional extraction: every 7th word from the artifact
+1. **Extracts entropy from the artifact text**:
+   - Character-level: Shannon entropy of character distribution,
+     vowel count mod P (where P is a prime), consonant-to-vowel ratio
+   - Word-level: word count, mean word length, positional extraction
+     (every Kth word), syllable distribution
+   - Structural: sentence count, paragraph break positions, punctuation
+     frequency ratios
 
-**Structural features:**
-- Total sentence count mod 3
-- Paragraph break positions (as sequence of integers)
+2. **Generates N numeric seeds** by combining these features through
+   a hash function (e.g., SHA-256 of the concatenated features, sliced
+   into N non-overlapping segments, each converted to an integer seed).
 
-These numbers become generative constraints — not mapped to predefined
-lists, but used to construct absurd structural requirements that force
-the system into low-probability conceptual territory.
+3. **For each seed, samples K random tokens** (K = 5–8) from a
+   multilingual tokenizer vocabulary. Use the NLLB-200 tokenizer
+   (`facebook/nllb-200-distilled-600M` via `transformers`) which
+   covers 200+ languages with ~213K word-like tokens across 15+
+   scripts (Latin, Cyrillic, Arabic, Devanagari, Hangul, CJK,
+   Bengali, Myanmar, Telugu, etc.). Filter the vocabulary to pure
+   word tokens (tokens matching Unicode letter ranges, length ≥ 2,
+   stripped of sentencepiece `▁` prefix). The sampled tokens are
+   decoded into their surface forms — subwords, morphemes, or words
+   from any language.
 
-**Example**: An artifact yields parameters [3, "liquid", 5-syllable,
-"before"]. The constraint becomes: "Generate 3 concepts involving
-something liquid, using only words with 5+ syllables, that existed
-before language." The absurdity IS the randomness — it pushes concept
-generation off the well-worn paths.
+   **Do not use English-heavy tokenizers** (e.g., tiktoken cl100k_base
+   has <1% non-Latin tokens). The displacement requires genuine
+   cross-linguistic randomness.
 
-#### Stage 2: Orthogonal Stirring (the catalyst)
+   **Install dependencies** if not present:
+   ```bash
+   pip install sentencepiece transformers
+   ```
 
-Each raw concept from Stage 1 is passed through a randomly selected
-orthogonal category lens. This amplifies entropy and prevents
-gravitational collapse back to familiar territory.
+The output of Step 1 is N sets of K random tokens each. These are the
+raw displacement vectors — genuinely random lexical atoms that will
+force concept generation off the well-worn paths.
 
-**Orthogonal category lenses:**
-- Physical systems (phase transitions, resonance, diffusion)
-- Biological systems (metamorphosis, dormancy, apoptosis)
-- Mathematical structures (topology, fixed points, attractors)
-- Social systems (commons governance, network effects)
-- Material processes (fermentation, distillation, tempering)
-- Information theory (entropy, compression, error correction)
+**Example output** (from tested run):
+```
+Seed 1: ["Esituluilo", "риб", "وحد", "Ня", "ndé", "Wi"]
+Seed 2: ["lietošanas", "클럽", "Sed", "wiol", "ũũ", "pengu"]
+Seed 3: ["huunde", "iving", "일이", "ìpàdé", "を負", "түсі"]
+```
 
-The category is NOT the seed. It's a forcing function that displaces
-the already-random concept further from the thinker's domain. Think of
-it as a field that bends the random walk away from attractor basins.
+#### Step 2: Random Walk Story Generation (per seed — parallel agents)
 
-**Category selection**: Use a different entropy extraction (e.g.,
-character count of the artifact's last sentence mod 6) to select the
-lens. The category should feel unrelated to the thinker's domain —
-that's the point.
+Spawn N parallel agents (one per seed) using the Agent tool. Each seed
+agent receives:
+- Its set of K random tokens
+- A summary of the thinker's core concern (from intake)
+- The findings from Layers 1–2 and Stages A–B
 
-#### Stage 3: Reflection (the value extraction)
+Each seed agent's task:
 
-Generate N=5 stirred concepts per round. Each gets a reflection pass
-(150–200 words, strict):
+1. **Burn-in phase**: Generate tokens autoregressively using the K
+   random tokens as mandatory inclusions. The agent writes a short
+   paragraph (100–200 words) of narrative — a story fragment, a scene,
+   a description — that coherently incorporates all K tokens. The agent
+   may use additional random number generation (via Python) to determine
+   structural constraints: tense, genre, setting, point of view.
 
-1. Hold the stirred concept against the thinker's negative space
-   (from L1–3 + 4a)
-2. What does this concept's structure illuminate about the shape
-   of the absence?
-3. **Signal assessment** (1–5):
-   - 1 = noise — no meaningful connection
-   - 2 = faint echo — structural similarity but no actionable insight
-   - 3 = actionable — reveals a specific angle the deterministic pass missed
-   - 4 = significant — reframes part of the 4a synthesis
-   - 5 = reveals something the entire analysis missed
+   The burn-in is necessary because the first tokens after a random
+   start are still high-entropy (incoherent). The agent must generate
+   past the incoherence into a region where the autoregressive process
+   has found a local semantic basin — a coherent story that is
+   nonetheless in an alien region of concept space because its starting
+   conditions were genuinely random.
 
-**The concept itself is discarded.** Only the reflection matters. The
-stirred concept is scaffolding — it exists to push perception into
-unfamiliar territory, not to become a finding.
+2. **Output**: A coherent paragraph that exists in a region of concept
+   space the analyst's deterministic reasoning would never visit. The
+   paragraph itself is scaffolding — it is not a finding. Its value is
+   in the semantic territory it occupies.
 
-#### Evaluation (200–300 words, strict)
+#### Step 3: Predicate Calculus Bridge (per seed — same agent)
 
-A separate pass reviews all reflections from the round:
+Still within each seed agent, after generating the paragraph:
 
-1. Apply the existing Relevance Gate to every reflection
-2. Each finding must exceed the deterministic baseline — if 4a already
-   captured the insight, the stochastic version adds nothing
-3. Each finding must ground in THIS thinker's specific problem, not
-   generic analogy. "Phase transitions are like career changes" is
-   generic. "Your plan treats the transition as instantaneous, but
-   phase transitions require sustained energy input at the boundary —
-   your plan has no concept of the energy cost of being between
-   states" is grounded.
+1. **Formalize the thinker's concern** as logical predicates:
+   - Identify the core propositions from the thinker's artifact
+   - Express them as predicates: e.g., `Plans(thinker, career_change)`,
+     `Assumes(plan, network_converts)`, `Absent(plan, failure_criteria)`
+   - Include the key findings from Stages A–B as predicates:
+     e.g., `ExcludesFrame(plan, identity_cost)`,
+     `LatentThought(thinker, "who_will_I_become")`
 
-**Output**: Signal >= 3 findings only. For each: how it extends the
-L1–4a findings, and whether the Layer 4 output should be revised.
+2. **Formalize the generated paragraph** as predicates:
+   - Extract the core concepts, relationships, and structures from the
+     random walk output
+   - Express them as predicates: e.g., `TransformsUnder(X, pressure)`,
+     `Requires(transition, sustained_energy)`,
+     `InvisibleTo(actor, medium_properties)`
 
-#### Unbounded Iteration
+3. **Identify logical bridges** between the two predicate sets:
+   - Structural isomorphism: `∀x: P(x) → Q(x)` in the story maps to
+     `∀x: P'(x) → Q'(x)` in the thinker's situation
+   - Negation revelation: the story contains `¬R(x)` where the
+     thinker's reasoning assumes `R(x)`
+   - Compositional insight: combining story predicates with thinker
+     predicates yields a new predicate not in either set alone
 
-After each round, assess and offer to continue:
+   If no formally articulable bridge exists, the agent reports
+   **signal: 0** (noise). The predicate calculus step is the filter
+   that prevents "everything connects to everything" — the connection
+   must be logically statable, not merely associatively felt.
 
-- **Signal found (>= 3)**: Deliver findings, then: *"There's more
-  territory here. Want me to keep searching?"* If yes → new round
-  with different entropy extraction.
-- **No signal found**: *"That round was noise. I can try from a
-  different angle — want me to keep going?"* If yes → re-extract
+4. **Generate reflection** (150–200 words): Using the formal bridge as
+   backbone, the agent produces a natural-language reflection on what
+   the random walk's semantic territory reveals about the thinker's
+   negative space. The reflection must reference specific predicates
+   from both sides of the bridge.
+
+Each seed agent outputs:
+- The generated paragraph (for transparency)
+- The predicate formalization (both sides + bridge)
+- The reflection
+- A self-assessed signal score (1–5)
+
+#### Step 4: Watcher Evaluation (separate agent)
+
+Spawn a single watcher agent that receives all N reflections and
+their predicate bridges. The watcher has NO access to the random walk
+paragraphs — only the reflections and predicate formalizations. This
+prevents the watcher from being seduced by the narrative.
+
+The watcher evaluates each reflection using a composite score:
+
+```
+S = w₁·Specificity + w₂·Novelty + w₃·FormalValidity + w₄·Actionability
+
+where:
+  Specificity (0–1): Could this reflection apply to a different
+    thinker with a different problem? 0 = generic, 1 = unique to
+    this thinker's specific situation.
+
+  Novelty (0–1): Is this insight already captured in Stages A–B?
+    0 = redundant, 1 = entirely new structural insight.
+
+  FormalValidity (0–1): Is the predicate bridge logically sound?
+    0 = association masquerading as logic, 1 = valid structural
+    isomorphism or negation.
+
+  Actionability (0–1): Does the thinker gain a new question, frame,
+    or distinction they can use? 0 = interesting but inert,
+    1 = changes what the thinker does next.
+
+  Weights: w₁ = 0.3, w₂ = 0.3, w₃ = 0.2, w₄ = 0.2
+```
+
+**Signal thresholds**:
+- S < 0.3 → noise (discard)
+- 0.3 ≤ S < 0.5 → faint echo (mention only if nothing better)
+- 0.5 ≤ S < 0.7 → actionable (include in output)
+- S ≥ 0.7 → significant (foreground in output)
+
+The watcher also checks for **The Forced Connection** anti-pattern:
+if a seed agent's self-assessed signal is >= 3 but the predicate bridge
+contains only surface-level mappings (e.g., "both involve change"),
+override the score downward. The predicate formalization makes this
+detectable — shallow bridges have predicates that are too abstract
+(e.g., `Changes(X)` rather than `ReorganizesIdentityUnder(X, pressure)`).
+
+**Watcher output**: Ranked reflections with scores, plus a
+meta-assessment: did the stochastic pass reveal anything Stage B
+could not have reached?
+
+#### Step 5: Iteration
+
+The orchestrator (main conversation) receives the watcher's output
+and decides:
+
+- **Signal found (any S ≥ 0.5)**: Deliver the scored reflections
+  that pass threshold. Integrate with Stages A–B output. Report how
+  the stochastic findings extend or confirm the deterministic pass.
+
+- **No signal found (all S < 0.5)**: Run another round. Re-extract
   entropy using different text features (e.g., last paragraph instead
-  of first, word-final letters instead of word-initial), run a new round.
-- **Round 3**: If two rounds produced no signal, examine WHY the seeds
-  failed. Is the failure itself diagnostic? A negative space that
-  resists even random perturbation may be genuinely clean — or so
-  deeply structural that random probes can't reach it. Offer this
-  meta-finding to the thinker.
-- **Hard cap**: 3 rounds (15 seeds maximum) unless the thinker
-  explicitly asks for more.
-- **If nothing found across all rounds**: "The deterministic synthesis
-  captured the available insight. Stochastic perturbations confirmed
-  the pattern is clean." This is a valid and valuable output — it
-  increases confidence in the 4a findings.
+  of first, character bigrams instead of unigrams, different hash
+  slicing). Generate new seeds, spawn new agents.
+
+- **After 3 rounds with no signal**: Ask the thinker: *"The
+  stochastic perturbation hasn't surfaced anything beyond the
+  deterministic analysis. I can keep searching — want me to take
+  more time?"* If yes → continue with modified parameters (larger K,
+  different tokenizer, more seeds per round). If no → report the null
+  result.
+
+- **Null result is valid**: "Stochastic perturbation across N seeds
+  and M rounds confirmed the deterministic synthesis. The negative
+  space is clean — or so deeply structural that random displacement
+  can't reach it." This increases confidence in Stage B's findings.
+
+#### Self-checks for Stage C
+
+1. **"Am I generating noise to justify the protocol?"** The protocol
+   creates pressure to produce findings — all that computation should
+   yield something. But most seeds SHOULD produce noise. If every
+   seed conveniently connects to the thinker's problem, the predicate
+   bridges are being forced. The honest output is often: "15 seeds,
+   2 actionable reflections, rest was noise."
+
+2. **"Is the predicate bridge real or manufactured?"** Check: could
+   the bridge predicates be made more specific? If the most specific
+   version you can write is `∀x: Changes(x)`, it's not a bridge —
+   it's a tautology. Real bridges have predicates that name specific
+   structural features of both the story and the thinker's situation.
+
+3. **"Does this extend Stage B or just rephrase it?"** The watcher's
+   Novelty score catches this, but double-check: if the reflection
+   could have been written without the random walk, the random walk
+   added nothing. The value of Stage C is insights that could NOT
+   have been reached deterministically.
 
 ---
 
@@ -995,15 +1099,6 @@ Before delivering findings, run this check:
    produces an immediate, clear answer — the analysis is the obstacle.
    Say so and get out of the way.
 
-4. **"Am I generating noise to justify the protocol?"** (Layer 4b only)
-   The stochastic perturbation protocol creates pressure to produce
-   findings — it feels like all that entropy extraction and stirring
-   should yield something. But most seeds SHOULD produce noise. If
-   every stirred concept conveniently connects to the thinker's problem,
-   the reflection pass is manufacturing connections, not discovering
-   them. The honest output of 4b is often: "15 seeds, 0 signal. The
-   deterministic pass captured it." That's confirmation, not failure.
-
 The deepest via negativa move the skill can make is to apply via negativa
 to itself: what should this analysis NOT include? What finding should be
 left unspoken? Sometimes the answer is: the thinker would be fine with
@@ -1011,9 +1106,8 @@ no feedback at all. That's a valid output.
 
 ### Scaling
 - **Quick check**: Layers 1–2, top findings per layer
-- **Stress test (default)**: Layers 1–3, full findings with frame analysis
-- **Full via negativa**: All 4 layers (4a deterministic synthesis)
-- **Deep reflection**: All 4 layers + Layer 4b stochastic perturbation protocol
+- **Stress test (default)**: Layers 1–3, full findings with frame analysis,
+  generative synthesis, and stochastic perturbation
 
 ### What this skill cannot do
 Be honest about the ceiling:
