@@ -1,0 +1,330 @@
+STOCHASTIC PERTURBATION ALGORITHM
+Via Negativa Free-Form Stress — Stage C
+Monte Carlo Applied to Natural Language Concept Space
+
+================================================================================
+OVERVIEW
+================================================================================
+
+The algorithm escapes the deterministic associative range of LLM analysis
+by introducing computational randomness into concept generation. The
+randomness is genuine (Python RNG + multilingual tokenizer sampling),
+not linguistic ("be more creative"). The evaluation is mathematical
+(weighted composite scoring), not subjective ("does this feel relevant").
+
+The core insight: LLMs are pattern completers. Asking one to "think of
+something random" produces high-probability completions, not genuine
+randomness. The algorithm uses external computational randomness to
+force concept generation into low-probability semantic regions, then
+uses the LLM's reasoning ability to find structural connections back
+to the thinker's problem. Most connections are noise. The signal, when
+it appears, is something the deterministic pass structurally could not
+have reached.
+
+================================================================================
+ARCHITECTURE
+================================================================================
+
+Main Conversation (Orchestrator)
+├── Step 1: Seed generation (Bash/Python — computational)
+├── Steps 2-3: Spawn N parallel seed agents (Agent tool)
+│   ├── Seed Agent 1: random walk → predicate bridge → reflection
+│   ├── Seed Agent 2: random walk → predicate bridge → reflection
+│   └── Seed Agent N: random walk → predicate bridge → reflection
+├── Step 4: Spawn watcher agent (Agent tool)
+│   └── Watcher: score all reflections → identify signal
+└── Step 5: Iterate or deliver
+
+Tool requirements:
+  - Bash tool: runs Python for entropy extraction, RNG, tokenizer sampling
+  - Agent tool: spawns parallel subagents for seed exploration + watcher
+  - Python packages: transformers, sentencepiece (for NLLB-200 tokenizer)
+
+================================================================================
+STEP 1: SEED GENERATION (COMPUTATIONAL)
+================================================================================
+
+Input:  Thinker's artifact text (plan, draft, idea, etc.)
+Output: N sets of K random tokens sampled from multilingual vocabulary
+
+Parameters:
+  N = 3-5  (seeds per round)
+  K = 5-8  (tokens per seed)
+
+1.1 ENTROPY EXTRACTION
+
+  Extract numerical features from the artifact text:
+  - Character-level: vowel count, consonant count, total length
+  - Structural: sentence count, word count, punctuation frequencies
+  - These features are semantically uncorrelated with concept generation,
+    making them a genuine entropy source for seeding the RNG.
+
+1.2 HASH → SEEDS
+
+  Concatenate features as strings with delimiter.
+  SHA-256 hash of concatenated features → 64-character hex digest.
+  Slice digest into N non-overlapping 16-character segments.
+  Convert each segment to integer → N deterministic seeds.
+
+  Property: same artifact always produces the same seeds (reproducible).
+  Different artifacts produce different seeds (deterministic variation).
+
+1.3 MULTILINGUAL TOKEN SAMPLING
+
+  Tokenizer: NLLB-200 (facebook/nllb-200-distilled-600M)
+  - 256K vocabulary, ~213K pure word tokens after filtering
+  - 15+ scripts: Latin, Cyrillic, Arabic, Devanagari, Hangul, CJK,
+    Bengali, Myanmar, Telugu, Malayalam, Armenian, Georgian, etc.
+
+  Filter: keep only tokens matching Unicode letter ranges (length >= 2),
+  strip sentencepiece ▁ prefix. This removes control tokens, punctuation,
+  and code artifacts.
+
+  For each seed: initialize Python random.Random(seed), sample K tokens
+  from the filtered vocabulary without replacement.
+
+  Example output:
+    Seed 1: ["Esituluilo", "риб", "وحد", "Ня", "ndé", "Wi"]
+    Seed 2: ["lietošanas", "클럽", "Sed", "wiol", "ũũ", "pengu"]
+    Seed 3: ["huunde", "iving", "일이", "ìpàdé", "を負", "түсі"]
+
+  Why NLLB-200: English-heavy tokenizers (tiktoken cl100k_base) have <1%
+  non-Latin tokens. The displacement requires genuine cross-linguistic
+  randomness to escape the LLM's dominant language biases.
+
+================================================================================
+STEP 2: RANDOM WALK STORY GENERATION (PER SEED, PARALLEL)
+================================================================================
+
+Input:  K random tokens + thinker's concern summary + L1-2/Stage A-B findings
+Output: Coherent story paragraph (100-200 words)
+
+Each seed agent (spawned as a parallel subagent) generates a paragraph
+of narrative that coherently incorporates ALL K random tokens.
+
+Burn-in phase: The first tokens after a random start are high-entropy
+(incoherent). The agent must generate past incoherence into a local
+semantic basin — a coherent story that exists in an alien region of
+concept space because its starting conditions were genuinely random.
+
+The tokens may appear as character names, place names, sounds, concepts,
+or morphological components of words. The agent uses autoregressive
+generation to find coherence, optionally using additional RNG for
+structural constraints (tense, genre, setting).
+
+The paragraph itself is SCAFFOLDING — it is not a finding. Its value
+is in the semantic territory it occupies, not in its content.
+
+================================================================================
+STEP 3: PREDICATE CALCULUS BRIDGE (PER SEED, SAME AGENT)
+================================================================================
+
+Input:  Generated paragraph + thinker's concern predicates
+Output: Formal bridge predicates + natural language reflection
+
+3.1 FORMALIZE THINKER'S CONCERN
+
+  Express the thinker's core propositions as first-order predicates:
+    Plans(thinker, career_change)
+    Assumes(plan, network_converts)
+    Absent(plan, failure_criteria)
+    ExcludesFrame(plan, identity_cost)
+    LatentThought(thinker, "who_will_I_become")
+
+  Include findings from Layers 1-2 and Stages A-B.
+
+3.2 FORMALIZE STORY
+
+  Extract key concepts and relationships from the generated paragraph:
+    TransformsUnder(X, pressure)
+    Requires(transition, sustained_energy)
+    BuiltFor(raft, crossing) ∧ NatureOf(river, reflecting)
+
+3.3 IDENTIFY BRIDGES
+
+  Three types of valid bridges:
+
+  a) Structural isomorphism:
+     ∀x: P(x) → Q(x) in story maps to ∀x: P'(x) → Q'(x) in concern
+     Example: BuiltFor(raft, crossing) ∧ NatureOf(river, reflecting)
+              ≅ BuiltFor(plan, transition) ∧ NatureOf(consulting, exposing)
+
+  b) Negation revelation:
+     Story contains ¬R(x) where thinker assumes R(x)
+     Example: ¬Portable(identity_across_media) negates
+              Assumes(plan, skills_transfer_directly)
+
+  c) Compositional insight:
+     Combining story + thinker predicates yields new predicate in neither
+     Example: Obligation(imagined_self) ∧ LatentQuestion(thinker) →
+              DebtTo(thinker, unauthorized_version_of_self)
+
+  If NO formally articulable bridge exists → signal: 0 (noise).
+  The predicate calculus step is the anti-bullshit filter: connections
+  must be logically statable, not merely associatively felt.
+
+3.4 GENERATE REFLECTION
+
+  150-200 words. Uses the formal bridge as backbone. Must reference
+  specific predicates from both sides. This is the final artifact each
+  seed agent produces.
+
+SEED AGENT OUTPUT:
+  1. Generated paragraph (for transparency)
+  2. Story predicates (formal notation)
+  3. Bridge predicates (formal notation)
+  4. Reflection (natural language, predicate-grounded)
+  5. Self-assessed signal score (1-5)
+
+================================================================================
+STEP 4: WATCHER EVALUATION (SEPARATE AGENT)
+================================================================================
+
+Input:  All N reflections + predicate bridges (NOT the story paragraphs)
+Output: Ranked reflections with composite scores + meta-assessment
+
+The watcher has NO access to the random walk stories. This prevents
+narrative seduction — the watcher evaluates logical structure only.
+
+4.1 SCORING FORMULA
+
+  S = w₁·Specificity + w₂·Novelty + w₃·FormalValidity + w₄·Actionability
+
+  Specificity (0-1):
+    Could this reflection apply to a different thinker with a different
+    problem? 0 = generic ("change is hard"), 1 = unique to THIS thinker's
+    specific situation and concern.
+
+  Novelty (0-1):
+    Is this insight already captured in Stage B's deterministic synthesis?
+    0 = redundant restatement, 1 = entirely new structural insight.
+
+  FormalValidity (0-1):
+    Is the predicate bridge logically sound? 0 = association masquerading
+    as logic (e.g., "both involve change"), 1 = valid structural
+    isomorphism or negation with specific predicates.
+
+  Actionability (0-1):
+    Does the thinker gain a new question, frame, or distinction they can
+    use? 0 = interesting but inert, 1 = changes what the thinker does next.
+
+  Weights: w₁ = 0.3, w₂ = 0.3, w₃ = 0.2, w₄ = 0.2
+
+4.2 SIGNAL THRESHOLDS
+
+  S < 0.3  → noise (discard silently)
+  0.3 ≤ S < 0.5 → faint echo (mention only if nothing better)
+  0.5 ≤ S < 0.7 → actionable (include in output)
+  S ≥ 0.7  → significant (foreground in output)
+
+4.3 ANTI-PATTERN DETECTION
+
+  Forced Connection check: if seed agent self-assessed signal >= 3 but
+  predicate bridge contains only abstract mappings (e.g., Changes(X)
+  rather than ReorganizesIdentityUnder(X, pressure)), override score
+  downward. The predicate formalization makes this detectable — shallow
+  bridges have predicates that are too abstract.
+
+4.4 META-ASSESSMENT
+
+  Watcher answers: "Did any seed reach territory that Stage B's
+  deterministic synthesis could NOT have reached?" This is the key
+  question — stochastic perturbation is only valuable when it extends
+  the deterministic pass, not when it restates it in different imagery.
+
+================================================================================
+STEP 5: ITERATION
+================================================================================
+
+The orchestrator reads the watcher's scores and decides:
+
+  Signal found (any S ≥ 0.5):
+    Deliver scored reflections that pass threshold. Integrate with
+    Stages A-B output. Report how stochastic findings extend or
+    confirm the deterministic pass.
+
+  No signal (all S < 0.5):
+    Run another round. Re-extract entropy using different text features
+    (reverse artifact text before hashing, use character bigrams instead
+    of unigrams, different hash slicing). Generate new seeds, spawn new
+    agents.
+
+  After 3 rounds with no signal:
+    Ask the thinker: "The stochastic perturbation hasn't surfaced
+    anything beyond the deterministic analysis. Want me to take more
+    time?" If yes → continue with modified parameters (larger K,
+    different tokenizer, more seeds per round). If no → report null.
+
+  Null result is valid:
+    "Stochastic perturbation across N seeds and M rounds confirmed the
+    deterministic synthesis." This INCREASES confidence in Stage B.
+
+================================================================================
+EXPECTED SIGNAL RATES (from testing)
+================================================================================
+
+Per round (3 seeds):
+  - 0-1 significant findings (S ≥ 0.7) is typical
+  - 1-2 actionable findings (0.5 ≤ S < 0.7) is typical
+  - 1-2 noise/faint echo (S < 0.5) is expected and healthy
+
+If every seed produces signal ≥ 0.5, the predicate bridges are
+likely being forced. Most seeds SHOULD produce noise.
+
+Across 3 rounds (9-15 seeds):
+  - 2-4 actionable+ findings is a good outcome
+  - 0 findings across all rounds is a valid null result
+  - >6 findings suggests over-fitting or forced connections
+
+================================================================================
+DESIGN DECISIONS AND RATIONALE
+================================================================================
+
+Why NLLB-200 tokenizer (not tiktoken):
+  tiktoken cl100k_base is >99% Latin script. Genuine cross-linguistic
+  displacement requires tokens from Arabic, Devanagari, Hangul, CJK,
+  Cyrillic, etc. NLLB-200 covers 200+ languages.
+
+Why predicate calculus (not free association):
+  Free association produces "everything connects to everything."
+  Predicate calculus forces the connection to be formally articulable.
+  If you can't write the bridge as a logical statement, it's not a
+  bridge — it's a vibe.
+
+Why a separate watcher (not self-evaluation):
+  Seed agents are motivated to find signal (they just did a lot of work).
+  Self-assessment is systematically inflated (observed in testing: seed
+  agents consistently self-rate 4/5 while watcher scores range 0.44-0.75).
+  The watcher has no investment in any seed's success.
+
+Why the watcher can't see the stories:
+  Narrative is seductive. A beautiful story with a weak bridge scores
+  higher when you can see the story. Stripping the narrative forces
+  evaluation of logical structure only.
+
+Why SHA-256 (not simpler hash):
+  Uniform distribution across output space. Non-overlapping segments
+  produce independent seeds. Deterministic (same input = same output)
+  for reproducibility.
+
+Why iteration with entropy re-extraction:
+  Different text features produce different hash digests, which produce
+  different seeds, which sample different tokens. This ensures each round
+  explores a genuinely different region of concept space rather than
+  retrying the same displacement.
+
+================================================================================
+FUTURE ITERATION CONSIDERATIONS
+================================================================================
+
+- Adaptive K: increase token count for shorter artifacts (less entropy)
+- Multi-tokenizer rounds: alternate between NLLB-200 and other
+  multilingual tokenizers for different script distributions
+- Weighted scoring adjustment: tune weights based on observed signal
+  patterns across many invocations
+- Temperature parameter: control how aggressively the story must
+  incorporate tokens (strict = all tokens, loose = most tokens)
+- Cross-seed interaction: let watcher identify patterns ACROSS seeds
+  (multiple seeds pointing toward the same negative space region)
+- Persistent seed history: track which token combinations have been
+  tried across conversations to avoid repeating displacements

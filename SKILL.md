@@ -66,46 +66,14 @@ Layer 3 looks at the planner.
 
 ## Where This Skill Delivers
 
-### Reflective Mode (stress test thinking / plans)
+**Reflective mode**: Best on plans in formation, early-stage ideas,
+strategic reasoning, life decisions — contexts where the thinker is
+both author and only reviewer. Translates "this doesn't feel right"
+into "your plan assumes X, and X is fragile because Y."
 
-**Cognitive revelation** — the thought you structurally cannot have from
-inside your current frame:
-Best on: plans in formation, early-stage ideas, strategic reasoning,
-life decisions, creative outlines, belief examination. These are contexts
-where the thinker is both author and only reviewer, and where the framing
-choices are deeply personal and therefore deeply invisible.
-
-**Articulation value** — giving precise structural language to vague unease:
-You know something is off about your plan but can't say what. The skill
-translates "this doesn't feel right" into "your plan assumes X, and X
-is fragile because Y." Vague doubt becomes actionable insight.
-
-**Completeness value** — catching what the thinker's current cognitive
-state structurally omits:
-Tired thinkers miss different things than fresh ones. Excited thinkers
-miss different things than cautious ones. The skill doesn't replace
-your thinking — it compensates for the biases of your current state.
-
-### Diagnostic Mode (stuck / circular thinking)
-
-**Pattern revelation** — showing that the stuck point is a symptom, not
-the problem:
-The moment a thinker sees "you're not stuck on what to do next — you're
-stuck because your plan has no concept of failure, so every obstacle
-feels like a crisis instead of expected friction" — that's fundamentally
-different from "try a different approach."
-
-**Frame diagnosis** — revealing that the thinking tool is the problem:
-Often thinking stalls because the thinker is using the wrong frame.
-Planning in lists when the problem needs maps. Thinking in sequences
-when the problem is about relationships. Optimizing when the question
-is whether to do it at all.
-
-**Avoidance mapping** — finding the thought the thinker is actively
-not having:
-The most diagnostic finding is often: "Here's what you're avoiding
-thinking about. Not because you forgot — because thinking it would
-require you to change something you don't want to change."
+**Diagnostic mode**: Shows the stuck point is a symptom, not the
+problem. Reveals frame mismatches and maps avoidance — the thought
+the thinker is actively steering around.
 
 Do not oversell. If the thinking is genuinely solid, say so. The worst
 failure mode is manufacturing cognitive critique of clear reasoning.
@@ -159,42 +127,12 @@ cognitive artifacts require different approaches.
 
 ### Thinking types and how to read them:
 
-**A plan** (roadmap, strategy, outline, to-do list, timeline):
-→ Read the plan, but also read BETWEEN the lines. The ordering reveals
-  priorities. The granularity reveals confidence (detailed = confident,
-  vague = uncertain). What's at the bottom or absent entirely reveals
-  what the thinker considers unimportant or hasn't considered at all.
-
-**A draft or document** (essay, blog post, proposal, notes, journal):
-→ The document is a snapshot of thinking at a moment in time. Look for
-  where the writing is fluent (the thinker is confident) vs. where it's
-  halting, hedged, or vague (the thinker is uncertain or avoiding).
-  The transitions between sections reveal the reasoning structure.
-  Missing transitions reveal reasoning gaps.
-
-**A verbal idea** (described in conversation, brainstorm, spoken plan):
-→ The conversation IS the artifact. What the thinker says first reveals
-  what's top-of-mind. What they mention only when asked reveals what's
-  background. What they never mention reveals their frame's boundaries.
-  Questions you have to ask are themselves Layer 1 findings — those gaps
-  exist in the thinking, not just the communication.
-
-**A decision or priority list** (what to do, what to focus on, what to cut):
-→ The most revealing artifact type. Every inclusion implies an exclusion.
-  Every priority implies a depriority. Read the list for what's ON it,
-  then read it again for what's NOT on it and what that absence reveals
-  about the thinker's model of their situation.
-
-**A mental model or framework** (how someone thinks about a domain):
-→ The highest-leverage target. A mental model is a frame made explicit.
-  Analyze it the way Layer 3 analyzes implicit frames — what does this
-  model make visible, and what does it structurally render invisible?
-
-**A set of notes or fragments** (scattered thoughts, bullet points, margins):
-→ The most honest cognitive artifact. Notes don't perform coherence.
-  Look for clusters (what the thinker keeps returning to), isolates
-  (thoughts with no connection to others), and contradictions (thoughts
-  that can't both be true but coexist without resolution).
+- **Plan** (roadmap, strategy, to-do): Ordering = priorities. Granularity = confidence. What's absent = unconsidered.
+- **Draft** (essay, proposal, notes): Fluent sections = confident. Hedged/vague = uncertain or avoiding. Missing transitions = reasoning gaps.
+- **Verbal idea** (conversation, brainstorm): What's said first = top-of-mind. Never mentioned = frame boundaries. Questions you must ask = Layer 1 findings.
+- **Decision/priority list**: Every inclusion implies an exclusion. Read for what's NOT on it.
+- **Mental model**: Highest-leverage target. What does this model make visible, and what does it structurally render invisible?
+- **Notes/fragments**: Most honest artifact. Look for clusters, isolates, and unresolved contradictions.
 
 ---
 
@@ -286,21 +224,9 @@ Before running layers, ask 2–3 targeted questions. Not clarifying
 questions ("what do you mean by X?") — diagnostic questions designed
 to reveal the shape of the thinking from the thinker's own responses.
 
-### Why ask first
-
-1. **The answer reveals more than the artifact.** What the thinker says
-   fluently vs. where they stumble, hedge, or go silent tells you where
-   the frame's edges are — faster than any analysis could.
-
-2. **The thinker generates their own insight.** Being asked "what happens
-   on the day this plan stops working?" and discovering you have no
-   answer is a fundamentally different experience from being told "your
-   plan has no failure mode." The first is a revelation. The second is
-   feedback.
-
-3. **It calibrates depth.** The thinker's responses tell you whether
-   Layer 3 will land or whether they're already frame-aware. Don't
-   deliver findings the thinker has already reached — push past them.
+Elicitation reveals where the frame's edges are (hesitation, hedging),
+generates self-insight (discovering you have no answer ≠ being told),
+and calibrates depth (don't deliver findings the thinker already has).
 
 ### Elicitation questions by mode
 
@@ -340,21 +266,12 @@ The answers matter less than how they arrive:
 
 ### Elicitation is non-optional
 
-When there is a live thinker — someone who can respond — always run
-elicitation before layers. The temptation to skip it ("I can already
-see the findings") is itself diagnostic: it means you're pattern-
-matching the artifact to known frames rather than discovering the
-thinker's actual cognitive landscape. The elicitation responses will
-contradict, refine, or redirect your initial read in ways that produce
-findings the thinker couldn't have generated alone. Without elicitation,
-Layer 3 findings reliably collapse into catalog entries — structurally
-correct, experientially hollow.
+Always run elicitation before layers when a live thinker is present.
+Without it, Layer 3 findings collapse into generic catalog entries.
 
-The only exception is when you have the artifact and no live thinker
-(reviewing a document asynchronously). In that case, run the layers
-cold but flag the ceiling: cold analysis pattern-matches; live
-elicitation reveals. The difference is the difference between
-competent feedback and the oh-shit moment.
+Exception: no live thinker (reviewing a document asynchronously). Run
+layers cold but flag the ceiling: cold analysis pattern-matches; live
+elicitation reveals.
 
 ---
 
@@ -499,90 +416,34 @@ Layer 3 has three stages that run sequentially:
 4. **Assess frame-thought fit**: Is this the right kind of thinking for
    this kind of problem, or was the frame chosen by habit?
 
-#### Common frame patterns in thinking:
+#### Common frame patterns
 
-- **Planning frame**: Sees the future as a sequence of steps.
-  Excludes: emergence, nonlinear change, the possibility that the
-  goal itself might change, the value of not-planning.
-
-- **Problem-solving frame**: Sees the situation as something to fix.
-  Excludes: the possibility that the situation is fine and the
-  "problem" is the thinker's relationship to it. Not everything
-  that feels wrong IS wrong.
-
-- **Optimization frame**: Sees everything as improvable.
-  Excludes: the possibility that the thing is good enough, that
-  optimization itself is the problem, that some things get worse
-  when you try to make them better.
-
-- **Analysis frame**: Sees the situation as something to understand.
-  Excludes: the possibility that action would produce more
-  understanding than analysis. Sometimes you learn by doing,
-  and analysis is a form of productive procrastination.
-
-- **Control frame**: Sees the situation as something to manage.
-  Excludes: what would happen if you let go. What's maintaining
-  itself that you're spending energy "managing"? What would emerge
-  if you stopped controlling?
-
-- **Binary frame**: Sees a decision between two options.
-  Excludes: the third option, the both option, the neither option,
-  the "reframe the question" option.
-
-- **Narrative frame**: Sees the situation as a story with arc and meaning.
-  Excludes: randomness, meaninglessness, the possibility that the
-  events don't form a coherent story and that's fine.
-
-- **Deficit frame**: Sees what's wrong, broken, or missing.
-  Excludes: what's working, what's sufficient, what would be
-  damaged by fixing the "problem."
+See `references/frame-catalog.md` for the full catalog. Common ones:
+planning, problem-solving, optimization, analysis, control, binary,
+narrative, deficit. Each has structural blindspots — things it
+literally cannot represent.
 
 #### When Stage A will and won't produce value
 
-**High-value contexts**:
-- Life decisions where the thinker feels stuck (the frame IS the stuckness)
-- Plans that keep failing in the same way (frame-problem mismatch)
-- Thinking that feels productive but never reaches a conclusion
-  (analysis as avoidance)
-- Situations where the thinker's framing conflicts with reality
-  (the map doesn't match the territory)
+**High-value**: Life decisions, plans that keep failing the same way,
+thinking that never reaches a conclusion, map-territory mismatches.
+**Low-value**: Clear tactical thinking, explicitly chosen frames,
+simple decisions with clear criteria.
 
-**Low-value contexts**:
-- Clear tactical thinking about a well-understood problem
-- Thinking where the frame was explicitly chosen and is appropriate
-- Simple decisions with clear criteria
-
-**The test**: Before writing a Stage A finding, ask: "Would the thinker
-say 'I hadn't realized I was thinking about it that way' or would they
-say 'obviously, that's how I'm thinking about it'?" If the latter, skip.
+**The test**: Would the thinker say "I hadn't realized I was thinking
+about it that way" or "obviously"? If the latter, skip.
 
 #### The catalog trap
 
-The frame catalog (`references/frame-catalog.md`) exists for calibration,
-not for lookup. The failure mode is: read the artifact → match it to the
-nearest catalog entry → report that entry's blindspots. This produces
-output that is structurally correct and completely generic — it could
-apply to anyone using that frame on any problem.
+The catalog is for calibration, not lookup. The failure mode is matching
+to the nearest entry and reporting its blindspots generically.
 
-The oh-shit moment lives in the *specific* intersection of THIS thinker's
-frame with THIS problem. That means:
-
-1. **Describe the frame in the thinker's own language first.** Before
-   checking the catalog, name the frame using words and metaphors from the
-   artifact itself. "You're treating this relationship like a project with
-   deliverables" is a revelation. "You're in a planning frame" is a label.
-
-2. **The catalog is a sanity check, not a source.** After you've described
-   the frame from the artifact, glance at the catalog to see if you've
-   missed a known blindspot. But the finding should sound like it was
-   discovered from this artifact, not retrieved from a reference file.
-
+1. **Describe the frame in the thinker's own language first.** "You're
+   treating this relationship like a project with deliverables" is a
+   revelation. "You're in a planning frame" is a label.
+2. **The catalog is a sanity check**, not a source.
 3. **If your finding could appear unchanged in a different thinker's
-   analysis, it's too generic.** The finding "this excludes nonlinear
-   possibilities" applies to everything. The finding "your plan describes
-   your startup's growth as a series of hires, which means the only
-   version of 'bigger' you can see is 'more people'" applies to one
-   thinker. Aim for the second.
+   analysis, it's too generic.** Aim for specificity to THIS thinker.
 
 **Output format for Stage A:**
 - **Frame identified** (the cognitive paradigm in use)
@@ -638,251 +499,108 @@ it offers a different relationship to the whole thing.
 **"What survives displacement into alien conceptual territory?"**
 
 Deterministic synthesis (Stage B) is bounded by the analyst's
-associative range — the same pattern-completing tendencies that make
-LLMs fluent also make them gravitationally bound to high-probability
-completions. Stage C introduces **computational randomness** — not
-linguistic approximation of randomness — to displace concept generation
-into low-probability regions of semantic space.
+associative range. Stage C introduces **computational randomness** to
+displace concept generation into low-probability regions of semantic
+space.
 
-This stage is **programmatic**. It uses tools (Bash for computation,
-Agent for parallel exploration) rather than prompting for "creative"
-or "random" output. The randomness is genuine; the reasoning is
-structured; the evaluation is mathematical.
+**CRITICAL INSTRUCTION**: Stage C is executed by the `perturb.py`
+script, which handles ALL agent orchestration deterministically via
+the Anthropic API. You MUST call it via the Bash tool. Do NOT
+simulate, approximate, or linguistically generate what the script
+would produce. Do NOT spawn agents yourself for Stage C — the script
+does it.
 
-#### Architecture
+#### How to run Stage C
 
-The protocol has five steps. Steps 1–3 run in parallel (one agent per
-seed). Step 4 runs as a separate watcher. Step 5 is the iteration loop.
+**Before running Stage C**, prepare two inputs from your L1-2 +
+Stage A-B analysis:
 
-```
-Main conversation (orchestrator)
-├── Step 1: Seed generation (Bash/Python — computational)
-├── Step 2–3: Spawn N parallel seed agents (Agent tool)
-│   ├── Seed Agent 1: random walk → predicate bridge → reflection
-│   ├── Seed Agent 2: random walk → predicate bridge → reflection
-│   └── Seed Agent N: random walk → predicate bridge → reflection
-├── Step 4: Spawn watcher agent (Agent tool)
-│   └── Watcher: score all reflections → identify signal
-└── Step 5: Iterate or deliver
-```
+1. **Findings**: Formalize the thinker's concern + your findings as
+   predicates (e.g., `Plans(thinker, X)`, `Assumes(plan, Y)`,
+   `Absent(plan, Z)`, `Frame(plan, W)`, `LatentQuestion("...")`).
+   Save to a temp file.
 
-#### Step 1: Seed Generation (computational — Bash/Python)
+2. **Stage B summary**: One paragraph summarizing what Stage B found
+   (the latent thought, the reframing question).
 
-Generate N independent seeds using entropy extracted from the thinker's
-artifact text. N = 3–5 seeds per round.
+Then call the Bash tool with:
 
-Run a Python script via Bash that:
-
-1. **Extracts entropy from the artifact text**:
-   - Character-level: Shannon entropy of character distribution,
-     vowel count mod P (where P is a prime), consonant-to-vowel ratio
-   - Word-level: word count, mean word length, positional extraction
-     (every Kth word), syllable distribution
-   - Structural: sentence count, paragraph break positions, punctuation
-     frequency ratios
-
-2. **Generates N numeric seeds** by combining these features through
-   a hash function (e.g., SHA-256 of the concatenated features, sliced
-   into N non-overlapping segments, each converted to an integer seed).
-
-3. **For each seed, samples K random tokens** (K = 5–8) from a
-   multilingual tokenizer vocabulary. Use the NLLB-200 tokenizer
-   (`facebook/nllb-200-distilled-600M` via `transformers`) which
-   covers 200+ languages with ~213K word-like tokens across 15+
-   scripts (Latin, Cyrillic, Arabic, Devanagari, Hangul, CJK,
-   Bengali, Myanmar, Telugu, etc.). Filter the vocabulary to pure
-   word tokens (tokens matching Unicode letter ranges, length ≥ 2,
-   stripped of sentencepiece `▁` prefix). The sampled tokens are
-   decoded into their surface forms — subwords, morphemes, or words
-   from any language.
-
-   **Do not use English-heavy tokenizers** (e.g., tiktoken cl100k_base
-   has <1% non-Latin tokens). The displacement requires genuine
-   cross-linguistic randomness.
-
-   **Install dependencies** if not present:
-   ```bash
-   pip install sentencepiece transformers
-   ```
-
-The output of Step 1 is N sets of K random tokens each. These are the
-raw displacement vectors — genuinely random lexical atoms that will
-force concept generation off the well-worn paths.
-
-**Example output** (from tested run):
-```
-Seed 1: ["Esituluilo", "риб", "وحد", "Ня", "ndé", "Wi"]
-Seed 2: ["lietošanas", "클럽", "Sed", "wiol", "ũũ", "pengu"]
-Seed 3: ["huunde", "iving", "일이", "ìpàdé", "を負", "түсі"]
+```bash
+python3 perturb.py \
+  --artifact-file /tmp/artifact.txt \
+  --findings-file /tmp/findings.txt \
+  --stage-b-summary "Stage B found: [summary]" \
+  --output /tmp/perturbation-results.json
 ```
 
-#### Step 2: Random Walk Story Generation (per seed — parallel agents)
+Or inline:
 
-Spawn N parallel agents (one per seed) using the Agent tool. Each seed
-agent receives:
-- Its set of K random tokens
-- A summary of the thinker's core concern (from intake)
-- The findings from Layers 1–2 and Stages A–B
-
-Each seed agent's task:
-
-1. **Burn-in phase**: Generate tokens autoregressively using the K
-   random tokens as mandatory inclusions. The agent writes a short
-   paragraph (100–200 words) of narrative — a story fragment, a scene,
-   a description — that coherently incorporates all K tokens. The agent
-   may use additional random number generation (via Python) to determine
-   structural constraints: tense, genre, setting, point of view.
-
-   The burn-in is necessary because the first tokens after a random
-   start are still high-entropy (incoherent). The agent must generate
-   past the incoherence into a region where the autoregressive process
-   has found a local semantic basin — a coherent story that is
-   nonetheless in an alien region of concept space because its starting
-   conditions were genuinely random.
-
-2. **Output**: A coherent paragraph that exists in a region of concept
-   space the analyst's deterministic reasoning would never visit. The
-   paragraph itself is scaffolding — it is not a finding. Its value is
-   in the semantic territory it occupies.
-
-#### Step 3: Predicate Calculus Bridge (per seed — same agent)
-
-Still within each seed agent, after generating the paragraph:
-
-1. **Formalize the thinker's concern** as logical predicates:
-   - Identify the core propositions from the thinker's artifact
-   - Express them as predicates: e.g., `Plans(thinker, career_change)`,
-     `Assumes(plan, network_converts)`, `Absent(plan, failure_criteria)`
-   - Include the key findings from Stages A–B as predicates:
-     e.g., `ExcludesFrame(plan, identity_cost)`,
-     `LatentThought(thinker, "who_will_I_become")`
-
-2. **Formalize the generated paragraph** as predicates:
-   - Extract the core concepts, relationships, and structures from the
-     random walk output
-   - Express them as predicates: e.g., `TransformsUnder(X, pressure)`,
-     `Requires(transition, sustained_energy)`,
-     `InvisibleTo(actor, medium_properties)`
-
-3. **Identify logical bridges** between the two predicate sets:
-   - Structural isomorphism: `∀x: P(x) → Q(x)` in the story maps to
-     `∀x: P'(x) → Q'(x)` in the thinker's situation
-   - Negation revelation: the story contains `¬R(x)` where the
-     thinker's reasoning assumes `R(x)`
-   - Compositional insight: combining story predicates with thinker
-     predicates yields a new predicate not in either set alone
-
-   If no formally articulable bridge exists, the agent reports
-   **signal: 0** (noise). The predicate calculus step is the filter
-   that prevents "everything connects to everything" — the connection
-   must be logically statable, not merely associatively felt.
-
-4. **Generate reflection** (150–200 words): Using the formal bridge as
-   backbone, the agent produces a natural-language reflection on what
-   the random walk's semantic territory reveals about the thinker's
-   negative space. The reflection must reference specific predicates
-   from both sides of the bridge.
-
-Each seed agent outputs:
-- The generated paragraph (for transparency)
-- The predicate formalization (both sides + bridge)
-- The reflection
-- A self-assessed signal score (1–5)
-
-#### Step 4: Watcher Evaluation (separate agent)
-
-Spawn a single watcher agent that receives all N reflections and
-their predicate bridges. The watcher has NO access to the random walk
-paragraphs — only the reflections and predicate formalizations. This
-prevents the watcher from being seduced by the narrative.
-
-The watcher evaluates each reflection using a composite score:
-
-```
-S = w₁·Specificity + w₂·Novelty + w₃·FormalValidity + w₄·Actionability
-
-where:
-  Specificity (0–1): Could this reflection apply to a different
-    thinker with a different problem? 0 = generic, 1 = unique to
-    this thinker's specific situation.
-
-  Novelty (0–1): Is this insight already captured in Stages A–B?
-    0 = redundant, 1 = entirely new structural insight.
-
-  FormalValidity (0–1): Is the predicate bridge logically sound?
-    0 = association masquerading as logic, 1 = valid structural
-    isomorphism or negation.
-
-  Actionability (0–1): Does the thinker gain a new question, frame,
-    or distinction they can use? 0 = interesting but inert,
-    1 = changes what the thinker does next.
-
-  Weights: w₁ = 0.3, w₂ = 0.3, w₃ = 0.2, w₄ = 0.2
+```bash
+python3 perturb.py \
+  --artifact "the thinker's artifact text..." \
+  --findings "Plans(thinker, X)\nAssumes(plan, Y)..." \
+  --stage-b-summary "Stage B found: ..."
 ```
 
-**Signal thresholds**:
-- S < 0.3 → noise (discard)
-- 0.3 ≤ S < 0.5 → faint echo (mention only if nothing better)
-- 0.5 ≤ S < 0.7 → actionable (include in output)
-- S ≥ 0.7 → significant (foreground in output)
+The script:
+- Extracts entropy from the artifact text
+- Generates seeds via SHA-256 hash
+- Samples random tokens from NLLB-200 multilingual tokenizer (213K
+  word tokens across 15+ scripts)
+- Spawns N parallel seed agents via the Anthropic API (each generates
+  a random walk story, predicate bridge, and reflection)
+- Spawns a watcher agent that scores all reflections using:
+  `S = 0.3·Specificity + 0.3·Novelty + 0.2·FormalValidity + 0.2·Actionability`
+- Iterates up to 3 rounds if no signal (S ≥ 0.5) is found
+- Outputs JSON with scored reflections, meta-assessment, and top findings
 
-The watcher also checks for **The Forced Connection** anti-pattern:
-if a seed agent's self-assessed signal is >= 3 but the predicate bridge
-contains only surface-level mappings (e.g., "both involve change"),
-override the score downward. The predicate formalization makes this
-detectable — shallow bridges have predicates that are too abstract
-(e.g., `Changes(X)` rather than `ReorganizesIdentityUnder(X, pressure)`).
+**Parameters** (all optional):
+- `--rounds N` (default 3): max iteration rounds
+- `--seeds N` (default 3): seeds per round
+- `--tokens N` (default 6): random tokens per seed
+- `--seeds-only`: only run seed generation (no API calls, for testing)
 
-**Watcher output**: Ranked reflections with scores, plus a
-meta-assessment: did the stochastic pass reveal anything Stage B
-could not have reached?
+#### Reading the output
 
-#### Step 5: Iteration
+The JSON output contains:
+- `signal_found`: boolean — did any reflection score ≥ 0.5?
+- `top_findings`: list of reflections worth delivering to the thinker
+- `meta_assessment`: did the stochastic pass reach territory Stage B
+  could not?
+- `rounds`: full data for each round (seeds, reflections, scores)
 
-The orchestrator (main conversation) receives the watcher's output
-and decides:
+**If signal found**: Deliver the `top_findings` to the thinker,
+integrated with your Stages A–B output. Explain how the stochastic
+findings extend or confirm the deterministic pass.
 
-- **Signal found (any S ≥ 0.5)**: Deliver the scored reflections
-  that pass threshold. Integrate with Stages A–B output. Report how
-  the stochastic findings extend or confirm the deterministic pass.
+**If no signal after all rounds**: Report to the thinker: "Stochastic
+perturbation confirmed the deterministic synthesis." This increases
+confidence in Stage B. Ask if they want more rounds.
 
-- **No signal found (all S < 0.5)**: Run another round. Re-extract
-  entropy using different text features (e.g., last paragraph instead
-  of first, character bigrams instead of unigrams, different hash
-  slicing). Generate new seeds, spawn new agents.
+**Null result is valid output.**
 
-- **After 3 rounds with no signal**: Ask the thinker: *"The
-  stochastic perturbation hasn't surfaced anything beyond the
-  deterministic analysis. I can keep searching — want me to take
-  more time?"* If yes → continue with modified parameters (larger K,
-  different tokenizer, more seeds per round). If no → report the null
-  result.
+#### Requirements
 
-- **Null result is valid**: "Stochastic perturbation across N seeds
-  and M rounds confirmed the deterministic synthesis. The negative
-  space is clean — or so deeply structural that random displacement
-  can't reach it." This increases confidence in Stage B's findings.
+```bash
+pip install anthropic sentencepiece transformers
+```
+
+`ANTHROPIC_API_KEY` must be set in the environment or in a `.env` file.
 
 #### Self-checks for Stage C
 
-1. **"Am I generating noise to justify the protocol?"** The protocol
-   creates pressure to produce findings — all that computation should
-   yield something. But most seeds SHOULD produce noise. If every
-   seed conveniently connects to the thinker's problem, the predicate
-   bridges are being forced. The honest output is often: "15 seeds,
-   2 actionable reflections, rest was noise."
+1. **"Am I generating noise to justify the protocol?"** Most seeds
+   SHOULD produce noise. If every seed connects to the thinker's
+   problem, the bridges are being forced. Honest output is often:
+   "15 seeds, 2 actionable reflections, rest was noise."
 
-2. **"Is the predicate bridge real or manufactured?"** Check: could
-   the bridge predicates be made more specific? If the most specific
-   version you can write is `∀x: Changes(x)`, it's not a bridge —
-   it's a tautology. Real bridges have predicates that name specific
-   structural features of both the story and the thinker's situation.
+2. **"Is the predicate bridge real or manufactured?"** If the most
+   specific bridge you can write is `∀x: Changes(x)`, it's a
+   tautology, not a bridge.
 
-3. **"Does this extend Stage B or just rephrase it?"** The watcher's
-   Novelty score catches this, but double-check: if the reflection
-   could have been written without the random walk, the random walk
-   added nothing. The value of Stage C is insights that could NOT
-   have been reached deterministically.
+3. **"Does this extend Stage B or just rephrase it?"** If the
+   reflection could have been written without the random walk, the
+   random walk added nothing.
 
 ---
 
@@ -899,34 +617,16 @@ the original artifact ever could.
 
 ### What response patterns reveal
 
-**Engagement** (explores the finding, asks questions, connects it to
-experience):
-→ The finding landed. It's in the thinker's zone of proximate
-  development. Build on it.
-
-**Quick acceptance** ("yeah, that makes sense" without elaboration):
-→ Two possibilities: the finding is obvious and you've failed the
-  non-obvious test, OR the thinker is absorbing it without processing.
-  Distinguish by asking: "What changes if that's true?" Quick
-  acceptance + no answer = the finding hasn't actually landed.
-
-**Deflection** (acknowledges the finding but pivots to something else):
-→ The finding is proximate to something the thinker doesn't want to
-  examine. The direction of the pivot is diagnostic — they're moving
-  toward safer ground. Note where they move TO and what that movement
-  protects.
-
-**Dismissal** ("that doesn't apply," "you don't have enough context"):
-→ Possibly correct — you might be wrong. But if the dismissal comes
-  faster than the thinker could have evaluated the finding, it's
-  protective, not analytical. The speed of dismissal is the signal.
-
-**Irritation** (emotional pushback, "that's not helpful"):
-→ The highest-value signal. Irritation at a structural observation
-  means the observation is touching something live. This does NOT
-  mean you push harder — it means you name what you see with care:
-  "I notice this one landed differently. That might mean I'm wrong,
-  or it might mean it's close to something important. Your call."
+- **Engagement** (explores, asks questions): Finding landed. Build on it.
+- **Quick acceptance** (no elaboration): Either obvious (you failed) or
+  unprocessed. Ask "What changes if that's true?" to distinguish.
+- **Deflection** (pivots to something else): Proximate to something
+  the thinker won't examine. The pivot direction is diagnostic.
+- **Dismissal** (fast rejection): Might be correct. But if faster than
+  evaluation would require, it's protective. Speed is the signal.
+- **Irritation**: Highest-value signal. Don't push harder — name it
+  with care: "This one landed differently. I might be wrong, or it
+  might be close to something important. Your call."
 
 ### The discipline
 
@@ -1031,78 +731,29 @@ performative critique of clear reasoning.
 
 ### When the Pattern Isn't Clean
 
-The worked examples have clean structures: one frame, one loop, one
-revelation. Real thinking arrives tangled — three frames active
-simultaneously, partial self-awareness of two problems, a stuck point
-that's actually several stuck points fused together.
+Do not force messy thinking into a clean pattern. Real thinking arrives
+tangled. Handle accordingly:
 
-Do not force messy thinking into a clean pattern. That produces false
-oh-shit moments — structurally elegant, experientially hollow.
-
-**When multiple frames are active:**
-- Identify which frame is most load-bearing — the one that most
-  determines what's visible and invisible. Analyze that one. Mention
-  others only if they conflict with the primary frame in a way that
-  produces stuckness.
-- Frame conflicts (e.g., optimizing AND seeking completeness) are
-  themselves a finding. The thinker isn't stuck because of one frame —
-  they're stuck because two frames pull in opposite directions and the
-  thinker hasn't noticed.
-
-**When the thinker is partially self-aware:**
-- Calibrate. Ask what they already see. Then push exactly one level
-  past their current awareness. Resurfacing what the thinker already
-  knows is the Obvious Repackaged anti-pattern. The value is the next
-  thing — the one just past the edge of their self-knowledge.
-- Partial self-awareness is the highest-leverage starting point. The
-  thinker has done half the work. Your job is the half they can't do
-  alone.
-
-**When there's no clean loop or pattern:**
-- Say so. "I don't see a single clean pattern here — the stuckness
-  might not have one root cause" is honest and useful. Then identify
-  the single thread that seems most alive — the one the thinker
-  responds to with the most energy (positive or negative) — and
-  follow that one.
-
-**When you're not sure what you're seeing:**
-- Use elicitation (Step Q). When cold analysis produces ambiguity,
-  questions produce clarity. Ask the thinker to describe the stuckness
-  differently, or ask which tentative finding resonates most. Their
-  response tells you where to dig.
+- **Multiple frames**: Analyze the most load-bearing one. Frame
+  conflicts are themselves a finding.
+- **Partial self-awareness**: Push exactly one level past what the
+  thinker already sees. Don't resurface what they know.
+- **No clean pattern**: Say so honestly. Follow the single thread with
+  the most energy (positive or negative).
+- **Ambiguity**: Use elicitation (Step Q) to let the thinker's
+  responses tell you where to dig.
 
 ### The Skill's Own Frame
 
-This skill operates in a deficit frame — it looks for what's missing,
-what's absent, what's not being thought. That's the method. But it
-means the skill has its own structural blindspot: it's biased toward
-finding absences even when the most important move is to affirm
-what's present.
+This skill has a deficit-frame blindspot — biased toward finding
+absences even when affirmation is the right move. Before delivering:
 
-Before delivering findings, run this check:
-
-1. **"Am I finding real gaps or performing the skill?"** If the findings
-   feel forced — if you had to reach for them — the thinking might be
-   solid and your job is to say so.
-
-2. **"Is the thinker's real need perception or permission?"** Sometimes
-   the thinker doesn't need to see what's missing. They need to hear
-   that what's present is enough. The skill's deficit orientation can
-   miss this entirely — it keeps looking for absences when the absence
-   that matters most is the thinker's confidence in what they've
-   already got.
-
-3. **"Would the thinker be better served by acting than by analyzing?"**
-   The skill produces more thinking about thinking. For some thinkers in
-   some moments, more metacognition is the last thing they need. If the
-   elicitation question "what would you do if you had to act right now?"
-   produces an immediate, clear answer — the analysis is the obstacle.
-   Say so and get out of the way.
-
-The deepest via negativa move the skill can make is to apply via negativa
-to itself: what should this analysis NOT include? What finding should be
-left unspoken? Sometimes the answer is: the thinker would be fine with
-no feedback at all. That's a valid output.
+1. **"Am I finding real gaps or performing the skill?"** If findings
+   feel forced, the thinking might be solid. Say so.
+2. **"Does the thinker need perception or permission?"** Sometimes
+   they need to hear that what's present is enough.
+3. **"Would acting beat analyzing?"** If "what would you do right
+   now?" produces an immediate answer, get out of the way.
 
 ### Scaling
 - **Quick check**: Layers 1–2, top findings per layer
