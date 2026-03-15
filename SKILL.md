@@ -503,89 +503,92 @@ associative range. Stage C introduces **computational randomness** to
 displace concept generation into low-probability regions of semantic
 space.
 
-**CRITICAL INSTRUCTION**: Stage C is executed by the `perturb.py`
-script, which handles ALL agent orchestration deterministically via
-the Anthropic API. You MUST call it via the Bash tool. Do NOT
-simulate, approximate, or linguistically generate what the script
-would produce. Do NOT spawn agents yourself for Stage C — the script
-does it.
+**CRITICAL INSTRUCTION**: Stage C has two phases — a computational
+phase (Python) and a reasoning phase (Agent tool). Do NOT skip either.
+Do NOT simulate or linguistically approximate what the tools produce.
 
-#### How to run Stage C
+#### Phase 1: Computational — USE THE BASH TOOL
 
-**Before running Stage C**, prepare two inputs from your L1-2 +
-Stage A-B analysis:
+You MUST call the Bash tool to run `perturb.py` for seed generation.
+This script does ONLY the math (entropy extraction, SHA-256 hashing,
+NLLB-200 tokenizer sampling). It requires NO API key.
 
-1. **Findings**: Formalize the thinker's concern + your findings as
-   predicates (e.g., `Plans(thinker, X)`, `Assumes(plan, Y)`,
-   `Absent(plan, Z)`, `Frame(plan, W)`, `LatentQuestion("...")`).
-   Save to a temp file.
-
-2. **Stage B summary**: One paragraph summarizing what Stage B found
-   (the latent thought, the reframing question).
-
-Then call the Bash tool with:
+First, locate the script — it lives alongside this skill file:
 
 ```bash
-python3 perturb.py \
-  --artifact-file /tmp/artifact.txt \
-  --findings-file /tmp/findings.txt \
-  --stage-b-summary "Stage B found: [summary]" \
-  --output /tmp/perturbation-results.json
+# Find perturb.py (shipped with this skill)
+PERTURB=$(find ~ -name "perturb.py" -path "*/via-negativa*" 2>/dev/null | head -1)
+python3 "$PERTURB" --artifact "the thinker's artifact text"
 ```
 
-Or inline:
+If `transformers` or `sentencepiece` are not installed, first run:
+`pip install sentencepiece transformers`
 
-```bash
-python3 perturb.py \
-  --artifact "the thinker's artifact text..." \
-  --findings "Plans(thinker, X)\nAssumes(plan, Y)..." \
-  --stage-b-summary "Stage B found: ..."
+The script outputs JSON with computationally sampled multilingual
+tokens. Read these tokens from the Bash output — do NOT invent your
+own.
+
+#### Phase 2: Reasoning — USE THE AGENT TOOL
+
+**Before spawning agents**, formalize the thinker's concern + your
+L1-2 + Stage A-B findings as predicates (e.g., `Plans(thinker, X)`,
+`Assumes(plan, Y)`, `Absent(plan, Z)`, `LatentQuestion("...")`).
+
+**Step A — Seed agents**: For EACH seed in the Phase 1 output, call
+the Agent tool to spawn a parallel subagent. Send ALL Agent calls in
+a SINGLE message. Each agent's prompt:
+
+```
+You are a stochastic perturbation seed agent. Complete all three tasks.
+
+**Your random tokens** (sampled computationally from NLLB-200):
+[TOKENS FROM BASH OUTPUT]
+
+**Task 1 — Random Walk Story (100-200 words)**:
+Write a coherent paragraph incorporating ALL tokens above.
+
+**Task 2 — Predicate Calculus Bridge**:
+The thinker's concern (formalized):
+[YOUR PREDICATE FORMALIZATION]
+
+Formalize your story as predicates. Identify bridges (structural
+isomorphisms, negation revelations, compositional insights). If no
+formally articulable bridge exists, report signal: 0.
+
+**Task 3 — Reflection (150-200 words)**:
+Using the bridge as backbone, reflect on what the story reveals
+about the thinker's negative space. Reference specific predicates.
+
+Output: story, story_predicates, bridge_predicates, reflection,
+signal (1-5)
 ```
 
-The script:
-- Extracts entropy from the artifact text
-- Generates seeds via SHA-256 hash
-- Samples random tokens from NLLB-200 multilingual tokenizer (213K
-  word tokens across 15+ scripts)
-- Spawns N parallel seed agents via the Anthropic API (each generates
-  a random walk story, predicate bridge, and reflection)
-- Spawns a watcher agent that scores all reflections using:
-  `S = 0.3·Specificity + 0.3·Novelty + 0.2·FormalValidity + 0.2·Actionability`
-- Iterates up to 3 rounds if no signal (S ≥ 0.5) is found
-- Outputs JSON with scored reflections, meta-assessment, and top findings
+**Step B — Watcher agent**: After ALL seed agents return, spawn ONE
+MORE agent. Give it ONLY the reflections and bridge predicates (NOT
+the stories). Its prompt:
 
-**Parameters** (all optional):
-- `--rounds N` (default 3): max iteration rounds
-- `--seeds N` (default 3): seeds per round
-- `--tokens N` (default 6): random tokens per seed
-- `--seeds-only`: only run seed generation (no API calls, for testing)
+```
+Score each reflection using:
+S = 0.3*Specificity + 0.3*Novelty + 0.2*FormalValidity + 0.2*Actionability
+(all 0-1, thresholds: <0.3 noise, 0.3-0.5 faint echo, 0.5-0.7 actionable, ≥0.7 significant)
 
-#### Reading the output
+Check for Forced Connection: if self-assessed signal ≥ 3 but bridge
+predicates are abstract (e.g., Changes(X)), override score downward.
 
-The JSON output contains:
-- `signal_found`: boolean — did any reflection score ≥ 0.5?
-- `top_findings`: list of reflections worth delivering to the thinker
-- `meta_assessment`: did the stochastic pass reach territory Stage B
-  could not?
-- `rounds`: full data for each round (seeds, reflections, scores)
-
-**If signal found**: Deliver the `top_findings` to the thinker,
-integrated with your Stages A–B output. Explain how the stochastic
-findings extend or confirm the deterministic pass.
-
-**If no signal after all rounds**: Report to the thinker: "Stochastic
-perturbation confirmed the deterministic synthesis." This increases
-confidence in Stage B. Ask if they want more rounds.
-
-**Null result is valid output.**
-
-#### Requirements
-
-```bash
-pip install anthropic sentencepiece transformers
+Output: scores with S for each seed, meta-assessment of whether any
+seed reached territory Stage B could not.
 ```
 
-`ANTHROPIC_API_KEY` must be set in the environment or in a `.env` file.
+#### Step C — Iteration
+
+- **Any S ≥ 0.5**: Deliver those reflections to the thinker, integrated
+  with Stages A–B. Explain how stochastic findings extend or confirm
+  the deterministic pass.
+- **All S < 0.5**: Run another round — call `perturb.py --seeds-only`
+  again with `--round 2` (shifts the hash). Spawn new agents.
+- **After 3 rounds with no signal**: Ask the thinker if they want more.
+- **Null result is valid**: "Stochastic perturbation confirmed the
+  deterministic synthesis." This increases confidence in Stage B.
 
 #### Self-checks for Stage C
 
