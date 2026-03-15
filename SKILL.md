@@ -513,12 +513,10 @@ You MUST call the Bash tool to run `perturb.py` for seed generation.
 This script does ONLY the math (entropy extraction, SHA-256 hashing,
 NLLB-200 tokenizer sampling). It requires NO API key.
 
-First, locate the script — it lives alongside this skill file:
+The script lives alongside this skill file:
 
 ```bash
-# Find perturb.py (shipped with this skill)
-PERTURB=$(find ~ -name "perturb.py" -path "*/via-negativa*" 2>/dev/null | head -1)
-python3 "$PERTURB" --artifact "the thinker's artifact text"
+python3 ${CLAUDE_SKILL_DIR}/perturb.py --artifact "the thinker's artifact text"
 ```
 
 If `transformers` or `sentencepiece` are not installed, first run:

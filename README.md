@@ -42,7 +42,7 @@ The progression is increasingly metacognitive:
 
 ### As a Claude Skill
 
-Drop `SKILL.md` and `references/` into your Claude project or skill directory. Then:
+Copy the entire repo directory into `~/.claude/skills/via-negativa/` (or any skill directory Claude Code discovers). The directory must include `SKILL.md`, `perturb.py`, and `references/`. Then:
 
 ```
 # Reflective mode
