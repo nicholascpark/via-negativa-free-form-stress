@@ -526,7 +526,7 @@ Stage A-B analysis:
 Then call the Bash tool with:
 
 ```bash
-python3 perturb.py \
+python3 ~/.claude/perturb.py \
   --artifact-file /tmp/artifact.txt \
   --findings-file /tmp/findings.txt \
   --stage-b-summary "Stage B found: [summary]" \
@@ -536,7 +536,7 @@ python3 perturb.py \
 Or inline:
 
 ```bash
-python3 perturb.py \
+python3 ~/.claude/perturb.py \
   --artifact "the thinker's artifact text..." \
   --findings "Plans(thinker, X)\nAssumes(plan, Y)..." \
   --stage-b-summary "Stage B found: ..."
