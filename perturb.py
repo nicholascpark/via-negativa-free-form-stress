@@ -1,19 +1,30 @@
 #!/usr/bin/env python3
 """
-Stochastic Perturbation — Seed Generator (Stage C, Phase 1)
+Stochastic Perturbation — Seed Generator & Orchestrator (Stage C)
 
-Computational seed generation for the via-negativa stochastic perturbation
-protocol. Handles ONLY the math: entropy extraction, SHA-256 hashing, and
-NLLB-200 multilingual token sampling. No API key required.
-
-Agent spawning (Phase 2) is handled by the skill's imperative instructions
-within the Claude conversation — not by this script.
+Computational seed generation and execution manifest builder for the
+via-negativa stochastic perturbation protocol. Handles the math (entropy
+extraction, SHA-256 hashing, NLLB-200 multilingual token sampling) and
+the orchestration (complete agent prompts, scoring formulas, iteration).
+No API key required.
 
 Usage:
-  python perturb.py --seeds-only --artifact "text..."
-  python perturb.py --seeds-only --artifact-file path/to/artifact.txt
-  python perturb.py --seeds-only --artifact "text..." --rounds 2 --seeds 4 --tokens 7
-  python perturb.py --seeds-only --artifact "text..." --round 2  # specific round number
+  # Seed generation only (original mode)
+  python perturb.py --artifact "text..."
+  python perturb.py --artifact-file path/to/artifact.txt
+
+  # Full orchestrator manifest
+  python perturb.py --orchestrate \\
+    --artifact "text..." \\
+    --concern-summary "thinker's concern" \\
+    --predicates "Plans(thinker, X)" \\
+    --stage-b-synthesis "pattern in negative space"
+
+  # Iteration (uses persisted /tmp files from first call)
+  python perturb.py --orchestrate --artifact-file /tmp/vn-artifact.txt \\
+    --predicates-file /tmp/vn-predicates.txt \\
+    --concern-file /tmp/vn-concern.txt \\
+    --stage-b-file /tmp/vn-stageb.txt --round 2
 
 Requires:
   pip install sentencepiece transformers
