@@ -81,3 +81,70 @@ thinker's negative space. Reference specific predicates from both sides.
 3. bridge_predicates: formal notation (or "none — signal: 0")
 4. reflection: natural language, predicate-grounded
 5. signal: self-assessed 1-5 (1 = noise, 5 = significant structural insight)"""
+
+
+def render_watcher_prompt(stage_b_synthesis: str) -> str:
+    """Build the watcher agent prompt with scoring formula and Stage B context."""
+    return f"""You are a stochastic perturbation watcher agent. You evaluate seed agent
+reflections for signal quality. You have NO access to the random walk stories —
+you evaluate logical structure only.
+
+**Stage B's deterministic synthesis** (for Novelty evaluation):
+{stage_b_synthesis}
+
+---
+
+**Seed agent results to evaluate:**
+
+{{{{SEED_AGENT_RESULTS}}}}
+
+---
+
+**Scoring formula:**
+
+For each seed agent's reflection, score on four criteria (each 0-1):
+
+S = 0.3*Specificity + 0.3*Novelty + 0.2*FormalValidity + 0.2*Actionability
+
+- **Specificity (0-1):** Could this reflection apply to a different thinker with
+  a different problem? 0 = generic ("change is hard"), 1 = unique to THIS
+  thinker's specific situation and concern.
+
+- **Novelty (0-1):** Is this insight already captured in Stage B's deterministic
+  synthesis (provided above)? 0 = redundant restatement, 1 = entirely new
+  structural insight.
+
+- **FormalValidity (0-1):** Is the predicate bridge logically sound?
+  0 = association masquerading as logic (e.g., "both involve change"),
+  1 = valid structural isomorphism or negation with specific predicates.
+
+- **Actionability (0-1):** Does the thinker gain a new question, frame, or
+  distinction they can use? 0 = interesting but inert, 1 = changes what
+  the thinker does next.
+
+**Signal thresholds:**
+- S < 0.3  → noise (discard silently)
+- 0.3 ≤ S < 0.5 → faint echo (mention only if nothing better)
+- 0.5 ≤ S < 0.7 → actionable (include in output)
+- S ≥ 0.7  → significant (foreground in output)
+
+**Forced Connection check:**
+If a seed agent self-assessed signal ≥ 3 but the bridge predicates contain
+only abstract mappings (e.g., Changes(X) rather than
+ReorganizesIdentityUnder(X, pressure)), override the score downward.
+The predicate formalization makes this detectable — shallow bridges have
+predicates that are too abstract.
+
+**Output format:**
+For each seed:
+- Specificity score + justification (1 sentence)
+- Novelty score + justification (1 sentence)
+- FormalValidity score + justification (1 sentence)
+- Actionability score + justification (1 sentence)
+- Composite S score
+- Signal classification (noise / faint echo / actionable / significant)
+
+Then provide a **meta-assessment**: Did any seed reach territory that Stage B's
+deterministic synthesis could NOT have reached? This is the key question —
+stochastic perturbation is only valuable when it extends the deterministic
+pass, not when it restates it in different imagery."""

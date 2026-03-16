@@ -1,4 +1,5 @@
 from prompt_templates import render_seed_agent_prompt
+from prompt_templates import render_watcher_prompt
 
 
 def test_seed_agent_prompt_contains_tokens():
@@ -47,3 +48,45 @@ def test_seed_agent_prompt_contains_output_format():
     assert "bridge_predicates" in result
     assert "reflection" in result
     assert "signal" in result
+
+
+def test_watcher_prompt_contains_scoring_formula():
+    stage_b = "Pattern: plan is detailed about WHAT, silent about WHO."
+    result = render_watcher_prompt(stage_b)
+    assert "0.3*Specificity" in result or "0.3 * Specificity" in result
+    assert "0.3*Novelty" in result or "0.3 * Novelty" in result
+    assert "0.2*FormalValidity" in result or "0.2 * FormalValidity" in result
+    assert "0.2*Actionability" in result or "0.2 * Actionability" in result
+
+
+def test_watcher_prompt_contains_thresholds():
+    stage_b = "Test synthesis."
+    result = render_watcher_prompt(stage_b)
+    assert "0.3" in result
+    assert "0.5" in result
+    assert "0.7" in result
+
+
+def test_watcher_prompt_contains_stage_b_for_novelty():
+    stage_b = "The latent thought is about identity transformation."
+    result = render_watcher_prompt(stage_b)
+    assert "identity transformation" in result
+
+
+def test_watcher_prompt_contains_placeholder():
+    stage_b = "Test."
+    result = render_watcher_prompt(stage_b)
+    assert "{{SEED_AGENT_RESULTS}}" in result
+
+
+def test_watcher_prompt_contains_forced_connection_check():
+    stage_b = "Test."
+    result = render_watcher_prompt(stage_b)
+    assert "Forced Connection" in result
+
+
+def test_watcher_prompt_contains_meta_assessment():
+    stage_b = "Test."
+    result = render_watcher_prompt(stage_b)
+    assert "Stage B" in result
+    assert "deterministic" in result.lower()
