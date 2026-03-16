@@ -139,3 +139,62 @@ def test_orchestrate_iteration_block():
     assert iteration["signal_threshold"] == 0.5
     assert iteration["max_rounds"] == 3
     assert "--round 2" in iteration["next_round_command"]
+
+
+@pytest.mark.skipif(not HAS_TRANSFORMERS, reason="transformers not installed")
+def test_orchestrate_persists_inputs_to_tmp():
+    """First --orchestrate call should write inputs to /tmp/vn-*.txt."""
+    for f in ["/tmp/vn-artifact.txt", "/tmp/vn-concern.txt",
+              "/tmp/vn-predicates.txt", "/tmp/vn-stageb.txt"]:
+        if os.path.exists(f):
+            os.remove(f)
+
+    result = subprocess.run(
+        [
+            sys.executable, "perturb.py",
+            "--orchestrate",
+            "--artifact", "Persist test artifact.",
+            "--concern-summary", "Persist test concern.",
+            "--predicates", "Persist(test)",
+            "--stage-b-synthesis", "Persist test synthesis.",
+        ],
+        capture_output=True, text=True,
+        cwd="/Users/nicholaspark/Documents/via-negativa-free-form-stress",
+        timeout=120,
+    )
+    assert result.returncode == 0
+    assert os.path.exists("/tmp/vn-artifact.txt")
+    assert os.path.exists("/tmp/vn-concern.txt")
+    assert os.path.exists("/tmp/vn-predicates.txt")
+    assert os.path.exists("/tmp/vn-stageb.txt")
+    assert Path("/tmp/vn-artifact.txt").read_text() == "Persist test artifact."
+    assert Path("/tmp/vn-predicates.txt").read_text() == "Persist(test)"
+
+
+@pytest.mark.skipif(not HAS_TRANSFORMERS, reason="transformers not installed")
+def test_orchestrate_with_file_flags():
+    """--orchestrate should work with file flags for iteration rounds."""
+    Path("/tmp/vn-test-artifact.txt").write_text("File flag test artifact.")
+    Path("/tmp/vn-test-concern.txt").write_text("File flag test concern.")
+    Path("/tmp/vn-test-predicates.txt").write_text("FileTest(predicate)")
+    Path("/tmp/vn-test-stageb.txt").write_text("File flag test synthesis.")
+
+    result = subprocess.run(
+        [
+            sys.executable, "perturb.py",
+            "--orchestrate",
+            "--artifact-file", "/tmp/vn-test-artifact.txt",
+            "--concern-file", "/tmp/vn-test-concern.txt",
+            "--predicates-file", "/tmp/vn-test-predicates.txt",
+            "--stage-b-file", "/tmp/vn-test-stageb.txt",
+            "--round", "2",
+        ],
+        capture_output=True, text=True,
+        cwd="/Users/nicholaspark/Documents/via-negativa-free-form-stress",
+        timeout=120,
+    )
+    assert result.returncode == 0, f"stderr: {result.stderr}"
+    manifest = json.loads(result.stdout)
+    assert manifest["round"] == 2
+    assert "--round 3" in manifest["iteration"]["next_round_command"]
+    assert "FileTest(predicate)" in manifest["steps"][0]["agents"][0]["prompt"]
