@@ -27,6 +27,10 @@ import re
 import sys
 from pathlib import Path
 
+# Portable import: ensure prompt_templates.py is found regardless of cwd
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from prompt_templates import render_seed_agent_prompt, render_watcher_prompt
+
 
 def extract_entropy(text: str) -> list[str]:
     """Extract numerical features from artifact text for seeding RNG."""
@@ -91,6 +95,73 @@ def sample_tokens(word_tokens: list, seeds: list[int], k: int) -> dict[str, list
     return result
 
 
+def persist_inputs(artifact: str, concern: str, predicates: str, stage_b: str):
+    """Write inputs to /tmp for iteration round reuse. Restricts permissions to owner-only."""
+    import os
+    for path, content in [
+        ("/tmp/vn-artifact.txt", artifact),
+        ("/tmp/vn-concern.txt", concern),
+        ("/tmp/vn-predicates.txt", predicates),
+    ]:
+        Path(path).write_text(content)
+        os.chmod(path, 0o600)
+    if stage_b:
+        Path("/tmp/vn-stageb.txt").write_text(stage_b)
+        os.chmod("/tmp/vn-stageb.txt", 0o600)
+
+
+def build_manifest(
+    seed_tokens: dict[str, list[str]],
+    concern: str,
+    predicates: str,
+    stage_b: str,
+    round_num: int,
+    script_path: str,
+) -> dict:
+    """Build the complete execution manifest with agent prompts."""
+    agents = []
+    for seed_id, tokens in seed_tokens.items():
+        agents.append({
+            "id": seed_id,
+            "prompt": render_seed_agent_prompt(tokens, concern, predicates),
+        })
+
+    next_round = round_num + 1
+    manifest = {
+        "protocol": "via-negativa-stochastic-perturbation",
+        "version": 1,
+        "round": round_num,
+        "steps": [
+            {
+                "step": "seed_agents",
+                "dispatch": "parallel",
+                "agents": agents,
+            },
+            {
+                "step": "watcher",
+                "dispatch": "after_seed_agents",
+                "input_from": "seed_agents",
+                "input_fields": ["bridge_predicates", "reflection", "signal"],
+                "stage_b_synthesis": stage_b,
+                "prompt": render_watcher_prompt(stage_b),
+            },
+        ],
+        "iteration": {
+            "signal_threshold": 0.5,
+            "max_rounds": 3,
+            "next_round_command": (
+                f"python3 {script_path} --orchestrate"
+                f" --artifact-file /tmp/vn-artifact.txt"
+                f" --predicates-file /tmp/vn-predicates.txt"
+                f" --concern-file /tmp/vn-concern.txt"
+                f" --stage-b-file /tmp/vn-stageb.txt"
+                f" --round {next_round}"
+            ),
+        },
+    }
+    return manifest
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Stochastic Perturbation — Seed Generator",
@@ -142,10 +213,25 @@ def main():
         if args.stage_b_file:
             stage_b = Path(args.stage_b_file).read_text()
 
-        # Placeholder: orchestrate output logic comes in Task 4
-        # For now, fall through to seed generation to avoid breaking
-        print("orchestrate mode placeholder", file=sys.stderr)
+        # Orchestrate mode: generate manifest and return
+        word_tokens = load_tokenizer()
+        features = extract_entropy(artifact)
 
+        round_num = args.round if args.round is not None else 1
+        seeds = generate_seeds(features, args.seeds, round_num)
+        seed_tokens = sample_tokens(word_tokens, seeds, args.tokens)
+
+        persist_inputs(artifact, concern, predicates, stage_b)
+
+        script_path = "${CLAUDE_SKILL_DIR}/perturb.py"
+        manifest = build_manifest(
+            seed_tokens, concern, predicates, stage_b,
+            round_num, script_path,
+        )
+        print(json.dumps(manifest, ensure_ascii=False, indent=2))
+        return
+
+    # Seeds-only mode (existing behavior)
     word_tokens = load_tokenizer()
     features = extract_entropy(artifact)
 
