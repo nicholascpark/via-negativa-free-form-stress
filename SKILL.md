@@ -492,110 +492,105 @@ it offers a different relationship to the whole thing.
 
 **"What survives displacement into alien conceptual territory?"**
 
-Deterministic synthesis (Stage B) is bounded by the analyst's
-associative range. Stage C introduces **computational randomness** to
-displace concept generation into low-probability regions of semantic
-space.
+Stage C is executed programmatically via `perturb.py --orchestrate`.
+Do NOT simulate, approximate, or linguistically generate Stage C output.
+Follow the steps below exactly.
 
-**CRITICAL INSTRUCTION**: Stage C has two phases — a computational
-phase (Python) and a reasoning phase (Agent tool). Do NOT skip either.
-Do NOT simulate or linguistically approximate what the tools produce.
+<HARD-GATE>
+You have NOT completed Stage C until you have:
+1. Called the Bash tool to run perturb.py --orchestrate
+2. Called the Agent tool to spawn seed agents from the manifest
+3. Called the Agent tool to spawn the watcher from the manifest
+If you are about to write Stage C findings without having made
+ALL THREE types of tool calls, STOP. You are generating fake output.
+</HARD-GATE>
 
-#### Phase 1: Computational — USE THE BASH TOOL
+#### Step 1: Prepare inputs
 
-You MUST call the Bash tool to run `perturb.py` for seed generation.
-This script does ONLY the math (entropy extraction, SHA-256 hashing,
-NLLB-200 tokenizer sampling). It requires NO API key.
+Before calling Bash, prepare three inputs from your L1-2 and
+Stage A-B work:
 
-The script lives alongside this skill file:
+1. **CONCERN SUMMARY**: 2-3 sentences describing the thinker's
+   situation in natural language.
+2. **PREDICATES**: Formalize the thinker's concern + your findings
+   as first-order predicates. Example:
+     Plans(thinker, X)
+     Assumes(plan, Y)
+     Absent(plan, Z)
+     ExcludesFrame(plan, W)
+     LatentThought(thinker, "...")
+3. **STAGE B SYNTHESIS**: Your Stage B output (pattern in the
+   negative space, latent thought, reframing question).
 
-```bash
-python3 ${CLAUDE_SKILL_DIR}/perturb.py --artifact "the thinker's artifact text"
-```
+#### Step 2: Run the orchestrator
+
+Call the Bash tool:
+
+    python3 ${CLAUDE_SKILL_DIR}/perturb.py --orchestrate \
+      --artifact "the thinker's artifact text" \
+      --concern-summary "your concern summary" \
+      --predicates "your predicate formalization" \
+      --stage-b-synthesis "your Stage B output"
 
 If `transformers` or `sentencepiece` are not installed, first run:
 `pip install sentencepiece transformers`
 
-The script outputs JSON with computationally sampled multilingual
-tokens. Read these tokens from the Bash output — do NOT invent your
-own.
+If the Bash call fails, report the error to the thinker and deliver
+Stages A-B findings without Stage C. Do NOT generate fake Stage C
+output as a fallback.
 
-#### Phase 2: Reasoning — USE THE AGENT TOOL
+#### Step 3: Dispatch seed agents
 
-**Before spawning agents**, formalize the thinker's concern + your
-L1-2 + Stage A-B findings as predicates (e.g., `Plans(thinker, X)`,
-`Assumes(plan, Y)`, `Absent(plan, Z)`, `LatentQuestion("...")`).
+Read the manifest JSON from the Bash output. Look at
+`steps[0].agents` — call the Agent tool once per seed agent.
+**Send ALL Agent tool calls in a SINGLE message for parallel
+dispatch.** Use each agent's `"prompt"` field as-is — do not
+modify it.
 
-**Step A — Seed agents**: For EACH seed in the Phase 1 output, call
-the Agent tool to spawn a parallel subagent. Send ALL Agent calls in
-a SINGLE message. Each agent's prompt:
+#### Step 4: Collect results and dispatch watcher
 
-```
-You are a stochastic perturbation seed agent. Complete all three tasks.
+After all seed agents return, extract from each response ONLY:
+- `bridge_predicates`
+- `reflection`
+- `signal` (self-assessed score)
 
-**Your random tokens** (sampled computationally from NLLB-200):
-[TOKENS FROM BASH OUTPUT]
+Do NOT pass stories or story_predicates to the watcher. This
+enforces the algorithm's information isolation invariant.
 
-**Task 1 — Random Walk Story (100-200 words)**:
-Write a coherent paragraph incorporating ALL tokens above.
+Format the extracted results as:
 
-**Task 2 — Predicate Calculus Bridge**:
-The thinker's concern (formalized):
-[YOUR PREDICATE FORMALIZATION]
+    === Seed 1 ===
+    Bridge predicates: <extracted>
+    Reflection: <extracted>
+    Self-assessed signal: <extracted>
 
-Formalize your story as predicates. Identify bridges (structural
-isomorphisms, negation revelations, compositional insights). If no
-formally articulable bridge exists, report signal: 0.
+    === Seed 2 ===
+    ...
 
-**Task 3 — Reflection (150-200 words)**:
-Using the bridge as backbone, reflect on what the story reveals
-about the thinker's negative space. Reference specific predicates.
+Read `steps[1].prompt` from the manifest. Replace the placeholder
+`{{SEED_AGENT_RESULTS}}` with the formatted results above. Call
+the Agent tool with the completed watcher prompt.
 
-Output: story, story_predicates, bridge_predicates, reflection,
-signal (1-5)
-```
+#### Step 5: Evaluate and iterate
 
-**Step B — Watcher agent**: After ALL seed agents return, spawn ONE
-MORE agent. Give it ONLY the reflections and bridge predicates (NOT
-the stories). Its prompt:
+Read the watcher's scores:
+- **Any S >= 0.5**: Include those findings in your delivery.
+  Integrate with Stages A-B. Explain how stochastic findings
+  extend or confirm the deterministic pass.
+- **All S < 0.5**: Run `iteration.next_round_command` from the
+  manifest. Repeat Steps 3-5 with new results.
+- **After 3 rounds with no signal**: Report null result:
+  "Stochastic perturbation confirmed the deterministic synthesis."
+  This is a valid outcome that increases confidence in Stage B.
+  (Note: the algorithm spec suggests asking the thinker if they
+  want more rounds. This is intentionally simplified per the
+  auto-progression design — no consent gates during execution.)
 
-```
-Score each reflection using:
-S = 0.3*Specificity + 0.3*Novelty + 0.2*FormalValidity + 0.2*Actionability
-(all 0-1, thresholds: <0.3 noise, 0.3-0.5 faint echo, 0.5-0.7 actionable, ≥0.7 significant)
+If seed agents fail or return malformed output, proceed with the
+agents that did return. If zero agents returned usable output,
+treat as a null-signal round and iterate.
 
-Check for Forced Connection: if self-assessed signal ≥ 3 but bridge
-predicates are abstract (e.g., Changes(X)), override score downward.
-
-Output: scores with S for each seed, meta-assessment of whether any
-seed reached territory Stage B could not.
-```
-
-#### Step C — Iteration
-
-- **Any S ≥ 0.5**: Deliver those reflections to the thinker, integrated
-  with Stages A–B. Explain how stochastic findings extend or confirm
-  the deterministic pass.
-- **All S < 0.5**: Run another round — call `perturb.py --seeds-only`
-  again with `--round 2` (shifts the hash). Spawn new agents.
-- **After 3 rounds with no signal**: Ask the thinker if they want more.
-- **Null result is valid**: "Stochastic perturbation confirmed the
-  deterministic synthesis." This increases confidence in Stage B.
-
-#### Self-checks for Stage C
-
-1. **"Am I generating noise to justify the protocol?"** Most seeds
-   SHOULD produce noise. If every seed connects to the thinker's
-   problem, the bridges are being forced. Honest output is often:
-   "15 seeds, 2 actionable reflections, rest was noise."
-
-2. **"Is the predicate bridge real or manufactured?"** If the most
-   specific bridge you can write is `∀x: Changes(x)`, it's a
-   tautology, not a bridge.
-
-3. **"Does this extend Stage B or just rephrase it?"** If the
-   reflection could have been written without the random walk, the
-   random walk added nothing.
+For algorithm details, see `stochastic-perturbation-algorithm.txt`.
 
 ---
 
