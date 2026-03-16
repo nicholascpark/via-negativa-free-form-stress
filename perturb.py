@@ -104,6 +104,14 @@ def main():
     parser.add_argument("--seeds", type=int, default=3, help="Seeds per round (default: 3)")
     parser.add_argument("--tokens", type=int, default=6, help="Tokens per seed (default: 6)")
     parser.add_argument("--seeds-only", action="store_true", default=True, help="(default, kept for compatibility)")
+    parser.add_argument("--orchestrate", action="store_true", default=False,
+                        help="Output full execution manifest with agent prompts (JSON)")
+    parser.add_argument("--concern-summary", type=str, help="Natural-language concern summary")
+    parser.add_argument("--concern-file", type=str, help="Path to concern summary file")
+    parser.add_argument("--predicates", type=str, help="Predicate formalization string")
+    parser.add_argument("--predicates-file", type=str, help="Path to predicates file")
+    parser.add_argument("--stage-b-synthesis", type=str, help="Stage B synthesis output")
+    parser.add_argument("--stage-b-file", type=str, help="Path to Stage B synthesis file")
 
     args = parser.parse_args()
 
@@ -113,6 +121,30 @@ def main():
         artifact = Path(args.artifact_file).read_text()
     if not artifact:
         parser.error("Provide --artifact or --artifact-file")
+
+    if args.orchestrate:
+        # Load concern summary
+        concern = args.concern_summary
+        if args.concern_file:
+            concern = Path(args.concern_file).read_text()
+        if not concern:
+            parser.error("--orchestrate requires --concern-summary or --concern-file")
+
+        # Load predicates
+        predicates = args.predicates
+        if args.predicates_file:
+            predicates = Path(args.predicates_file).read_text()
+        if not predicates:
+            parser.error("--orchestrate requires --predicates or --predicates-file")
+
+        # Load stage B synthesis (optional but recommended)
+        stage_b = args.stage_b_synthesis or ""
+        if args.stage_b_file:
+            stage_b = Path(args.stage_b_file).read_text()
+
+        # Placeholder: orchestrate output logic comes in Task 4
+        # For now, fall through to seed generation to avoid breaking
+        print("orchestrate mode placeholder", file=sys.stderr)
 
     word_tokens = load_tokenizer()
     features = extract_entropy(artifact)
