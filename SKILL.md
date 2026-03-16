@@ -93,30 +93,24 @@ join the layer progression → Step R (Response Reading).
 
 ### Depth levels:
 
-The default depth is "Stress test" — all three layers. Layer 3 is where
-the differentiating metacognitive insight lives. Layers 1–2 without
-Layer 3 produces competent feedback that overlaps with standard editing or
-planning advice. Layer 3 is what makes the output something the thinker
-could not have produced from inside their own head.
+Two depths. No runtime depth decisions.
 
-- "Quick check" → Layers 1–2 (fast but less differentiated)
-- "Stress test" → Layers 1–3 (default — includes frame analysis,
-  generative synthesis, and stochastic perturbation)
+- "Quick check" → Layers 1–2 only. Deliver and move to Step R.
+- "Stress test" → Layers 1–3, all stages (A, B, C). Default.
 
-The thinker can jump to any depth explicitly. Progressive disclosure is
-the default when no depth is specified.
+The thinker can request either depth explicitly. If no depth is
+specified, use "stress test."
 
-### Progressive Disclosure (default)
+<HARD-GATE>
+DEPTH = "STRESS TEST" (DEFAULT): Execute Layers 1->2->3 (all stages
+A, B, C) as a single continuous pass. Do NOT pause between layers.
+Do NOT ask the thinker if they want to go deeper. The ONLY pause
+points are Step Q (wait for thinker's answers) and Step R (wait for
+thinker's reaction to findings). Deliver all findings together.
 
-Don't pre-select depth. Start at Layer 1 and let each layer's output
-determine whether to go deeper. **Always run Layers 1–2 minimum.**
-
-- **After Layer 2**: Assumptions mostly visible/validated → deliver,
-  move to Step R. Invisible or fragile assumptions → *"There's a
-  framing pattern underneath these assumptions. Want me to look at
-  it?"* If yes → Layer 3.
-- **After Layer 3**: Deliver all three stages (frame exclusions,
-  generative synthesis, stochastic perturbation), move to Step R.
+DEPTH = "QUICK CHECK": Execute Layers 1->2 only. Deliver and move
+to Step R.
+</HARD-GATE>
 
 ---
 
