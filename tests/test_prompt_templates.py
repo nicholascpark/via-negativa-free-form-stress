@@ -43,11 +43,39 @@ def test_seed_agent_prompt_contains_output_format():
     concern = "Test."
     predicates = "X(y)"
     result = render_seed_agent_prompt(tokens, concern, predicates)
-    assert "story" in result
-    assert "story_predicates" in result
-    assert "bridge_predicates" in result
-    assert "reflection" in result
-    assert "signal" in result
+    assert '"story"' in result
+    assert '"story_predicates"' in result
+    assert '"bridge_type"' in result
+    assert '"bridge_predicates"' in result
+    assert '"counterevidence"' in result
+    assert '"reflection"' in result
+    assert '"signal"' in result
+    assert "valid JSON" in result
+
+
+def test_seed_agent_prompt_contains_anchor_terms_and_profile():
+    tokens = ["foo"]
+    concern = "Test."
+    predicates = "X(y)"
+    result = render_seed_agent_prompt(
+        tokens,
+        concern,
+        predicates,
+        artifact_anchors=["identity", "consulting"],
+        perturbation_profile={
+            "round_strategy": "negative_lexicon",
+            "round_description": "Push away from default phrasing.",
+            "artifact_dominant_scripts": ["latin"],
+            "sampled_scripts": ["arabic", "cyrillic"],
+            "displacement_mode": "hybrid",
+            "displacement_note": "hybrid displacement using a multilingual encoder",
+            "selection_strategy": "cross-script low-overlap sampling",
+        },
+    )
+    assert "identity" in result
+    assert "negative_lexicon" in result
+    assert "hybrid" in result
+    assert "cross-script low-overlap sampling" in result
 
 
 def test_watcher_prompt_contains_scoring_formula():
@@ -77,12 +105,14 @@ def test_watcher_prompt_contains_placeholder():
     stage_b = "Test."
     result = render_watcher_prompt(stage_b)
     assert "{{SEED_AGENT_RESULTS}}" in result
+    assert "JSON array" in result
 
 
 def test_watcher_prompt_contains_forced_connection_check():
     stage_b = "Test."
     result = render_watcher_prompt(stage_b)
     assert "Forced Connection" in result
+    assert "counterevidence" in result
 
 
 def test_watcher_prompt_contains_meta_assessment():
@@ -90,3 +120,9 @@ def test_watcher_prompt_contains_meta_assessment():
     result = render_watcher_prompt(stage_b)
     assert "Stage B" in result
     assert "deterministic" in result.lower()
+
+
+def test_watcher_prompt_contains_bridge_type_check():
+    stage_b = "Test."
+    result = render_watcher_prompt(stage_b)
+    assert "Bridge type" in result

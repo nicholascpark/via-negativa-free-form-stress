@@ -11,15 +11,40 @@ def render_seed_agent_prompt(
     tokens: list[str],
     concern_summary: str,
     predicates: str,
+    artifact_anchors: list[str] | None = None,
+    perturbation_profile: dict | None = None,
 ) -> str:
     """Build a complete seed agent prompt with tokens, concern, and predicates embedded."""
+    anchors = artifact_anchors or []
+    profile = perturbation_profile or {}
+    round_strategy = profile.get("round_strategy", "unknown")
+    round_description = profile.get("round_description", "No round description provided.")
+    dominant_scripts = profile.get("artifact_dominant_scripts", [])
+    sampled_scripts = profile.get("sampled_scripts", [])
+    selection_strategy = profile.get("selection_strategy", "unknown")
+    displacement_mode = profile.get("displacement_mode", "unknown")
+    displacement_note = profile.get("displacement_note", "No displacement note provided.")
+
     return f"""You are a stochastic perturbation seed agent. Complete all three tasks below.
+Your final answer must be ONLY valid JSON. Do not wrap it in prose.
 
 **Your random tokens** (sampled computationally from NLLB-200 multilingual tokenizer):
 {json.dumps(tokens, ensure_ascii=False)}
 
 **Thinker's concern summary:**
 {concern_summary}
+
+**Artifact anchor terms** (high-salience words from the original artifact):
+{json.dumps(anchors, ensure_ascii=False)}
+
+**Perturbation profile**:
+- Round strategy: {round_strategy}
+- Strategy intent: {round_description}
+- Dominant artifact scripts: {json.dumps(dominant_scripts, ensure_ascii=False)}
+- Sampled token scripts: {json.dumps(sampled_scripts, ensure_ascii=False)}
+- Displacement mode: {displacement_mode}
+- Displacement note: {displacement_note}
+- Selection strategy: {selection_strategy}
 
 ---
 
@@ -33,6 +58,9 @@ concept space because its starting conditions were genuinely random.
 
 The paragraph is SCAFFOLDING — its value is in the semantic territory it
 occupies, not in its content.
+Treat the random tokens as detours away from the anchor terms, not as hidden
+answers. Your job is to leave the artifact's default phrasing, then return
+with a structurally defensible bridge.
 
 ---
 
@@ -66,21 +94,40 @@ The thinker's concern (formalized as first-order predicates):
     The predicate calculus step is the anti-bullshit filter: connections must
     be logically statable, not merely associatively felt.
 
+2c. Name the single strongest bridge type you found:
+    structural_isomorphism | negation_revelation | compositional_insight | none
+
+2d. State one counterevidence clause:
+    What observation would make your bridge invalid, over-forced, or redundant
+    with Stage B?
+
 ---
 
 **Task 3 — Reflection (150-200 words)**
 
 Using the bridge as backbone, reflect on what the story reveals about the
 thinker's negative space. Reference specific predicates from both sides.
+Ground the reflection in at least one artifact anchor term if possible.
 
 ---
 
-**Output format** (use these exact field names):
-1. story: your generated paragraph
-2. story_predicates: formal notation
-3. bridge_predicates: formal notation (or "none — signal: 0")
-4. reflection: natural language, predicate-grounded
-5. signal: self-assessed 1-5 (1 = noise, 5 = significant structural insight)"""
+**Output schema**:
+Return ONLY valid JSON matching this shape:
+{{
+  "story": "your generated paragraph",
+  "story_predicates": ["Predicate(...)", "Predicate(...)"],
+  "bridge_type": "structural_isomorphism" | "negation_revelation" | "compositional_insight" | "none",
+  "bridge_predicates": ["Predicate(...)", "Predicate(...)"],
+  "counterevidence": "one falsification or redundancy condition",
+  "reflection": "natural language, predicate-grounded",
+  "signal": 0-5
+}}
+
+Schema rules:
+- If bridge_type is "none", set bridge_predicates to [] and signal to 0 or 1.
+- If bridge_type is not "none", bridge_predicates must not be empty.
+- story_predicates and bridge_predicates must be JSON arrays, not a single string.
+- counterevidence must name a real condition that would weaken, falsify, or trivialize the bridge."""
 
 
 def render_watcher_prompt(stage_b_synthesis: str) -> str:
@@ -94,7 +141,7 @@ you evaluate logical structure only.
 
 ---
 
-**Seed agent results to evaluate:**
+**Seed agent results to evaluate** (JSON array of watcher-safe records):
 
 {{{{SEED_AGENT_RESULTS}}}}
 
@@ -116,7 +163,8 @@ S = 0.3*Specificity + 0.3*Novelty + 0.2*FormalValidity + 0.2*Actionability
 
 - **FormalValidity (0-1):** Is the predicate bridge logically sound?
   0 = association masquerading as logic (e.g., "both involve change"),
-  1 = valid structural isomorphism or negation with specific predicates.
+  1 = valid structural isomorphism, negation, or composition with specific
+  predicates and a real counterevidence clause.
 
 - **Actionability (0-1):** Does the thinker gain a new question, frame, or
   distinction they can use? 0 = interesting but inert, 1 = changes what
@@ -133,14 +181,17 @@ If a seed agent self-assessed signal ≥ 3 but the bridge predicates contain
 only abstract mappings (e.g., Changes(X) rather than
 ReorganizesIdentityUnder(X, pressure)), override the score downward.
 The predicate formalization makes this detectable — shallow bridges have
-predicates that are too abstract.
+predicates that are too abstract. Also override downward if the
+counterevidence is vacuous or would never actually falsify the bridge.
 
 **Output format:**
-For each seed:
+For each seed object in the JSON array:
+- Bridge type + one-sentence sanity check
 - Specificity score + justification (1 sentence)
 - Novelty score + justification (1 sentence)
 - FormalValidity score + justification (1 sentence)
 - Actionability score + justification (1 sentence)
+- Counterevidence quality check (1 sentence)
 - Composite S score
 - Signal classification (noise / faint echo / actionable / significant)
 

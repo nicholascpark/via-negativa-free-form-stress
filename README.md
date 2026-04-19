@@ -12,7 +12,7 @@ This project operates on three foundational facts:
 - Next-token-prediction accuracy will continue to approach perfection.
 - Surfacing all thoughts and details into structured architectural plans is the definitive path forward.
 
-Because next-token prediction inherently limits out-of-the-box reasoning, LLM nodes require a different kind of activation. This repository introduces a method for perturbing and activating trained models to produce intentional noise—introducing creative thinking "via-negativa."
+Because next-token prediction inherently limits out-of-the-box reasoning, LLM nodes require a different kind of activation. This repository introduces a method for perturbing and activating trained models through deterministic artifact fingerprinting, cross-script lexical displacement, and adversarial verification to support apophatic exploration.
 
 ## What is this?
 
@@ -38,11 +38,22 @@ The progression is increasingly metacognitive:
 3. What's missing from the frame you're using to think? (paradigm-level)
 4. What does the shape of your not-thinking reveal? (generative-level)
 
+## Sibling Skill: Ephemeral Context Perturbation
+
+The same structural move operates one layer below thought — at the conversation context itself. See [`ephemeral-context-perturbation/SKILL.md`](ephemeral-context-perturbation/SKILL.md).
+
+Where via-negativa perturbs *concepts* to escape local associative neighborhoods, ephemeral-context-perturbation perturbs *context* to escape accumulated conversation frames. Same generator, different layer:
+
+- **via-negativa**: surfaces what's absent from the thinking
+- **ephemeral-context-perturbation**: tests whether the current frame was derived from evidence or from conversational accumulation — via a throwaway fork with aggressive directed `/compact`, returning only the finding to the main thread
+
+They chain: via-negativa identifies the frame; ephemeral-context-perturbation tests its source by reconstructing context without it. Use together for long conversations where accumulated framing may be doing structural work invisibly.
+
 ## Quick Start
 
 ### As a Claude Skill
 
-Copy the entire repo directory into `~/.claude/skills/via-negativa/` (or any skill directory Claude Code discovers). The directory must include `SKILL.md`, `perturb.py`, and `references/`. Then:
+Copy the entire repo directory into `~/.claude/skills/via-negativa/` (or any skill directory Claude Code discovers). The directory must include `SKILL.md`, `perturb.py`, `bridge_schema.py`, and `references/`. Then:
 
 ```
 # Reflective mode
@@ -59,7 +70,11 @@ what am I avoiding thinking about?
 
 ## The Skill
 
-**Elicitation** (ask before telling — diagnostic questions that reveal more than the artifact) -> **Absence Inventory** (what's not being thought) -> **Load-Bearing Assumptions** (what the thinking stands on) -> **Deep Metacognition** (frame exclusions, generative synthesis, stochastic perturbation) -> **Response Reading** (the thinker's resistance pattern as a second artifact). Default depth includes all three layers.
+**Elicitation** (ask before telling — diagnostic questions that reveal more than the artifact) -> **Absence Inventory** (what's not being thought) -> **Load-Bearing Assumptions** (what the thinking stands on) -> **Deep Metacognition** (frame exclusions, generative synthesis, stochastic perturbation via artifact fingerprints + lexical/semantic displacement + typed bridge schema + adversarial watcher) -> **Response Reading** (the thinker's resistance pattern as a second artifact). Default depth includes all three layers.
+
+The Stage C pipeline now includes a small schema CLI in `bridge_schema.py`
+that validates raw seed-agent JSON and can emit either the watcher-safe
+payload or the completed watcher prompt automatically.
 
 ### Depth Levels
 - **Quick check** → Layers 1–2 (fast but less differentiated)

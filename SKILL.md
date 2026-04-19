@@ -530,10 +530,12 @@ Call the Bash tool:
       --artifact "the thinker's artifact text" \
       --concern-summary "your concern summary" \
       --predicates "your predicate formalization" \
+      --displacement-mode hybrid \
       --stage-b-synthesis "your Stage B output"
 
-If `transformers` or `sentencepiece` are not installed, first run:
-`pip install sentencepiece transformers`
+If `transformers`, `sentencepiece`, or a torch backend are not installed,
+first install them. If hybrid displacement is unavailable, rerun with
+`--displacement-mode lexical`.
 
 If the Bash call fails, report the error to the thinker and deliver
 Stages A-B findings without Stage C. Do NOT generate fake Stage C
@@ -549,27 +551,19 @@ modify it.
 
 #### Step 4: Collect results and dispatch watcher
 
-After all seed agents return, extract from each response ONLY:
-- `bridge_predicates`
-- `reflection`
-- `signal` (self-assessed score)
+After all seed agents return, concatenate their raw JSON outputs into a
+single stdin payload separated by `schema.seed_result_delimiter`, then call
+`schema.watcher_prompt_builder_command` from the manifest. That command:
+- validates each seed result against `bridge_schema.py`
+- drops invalid outputs
+- strips story fields automatically
+- substitutes the watcher payload into the prompt template
+- prints the completed watcher prompt to stdout
 
-Do NOT pass stories or story_predicates to the watcher. This
-enforces the algorithm's information isolation invariant.
+If the command exits nonzero, treat the round as having zero usable seed
+results and iterate.
 
-Format the extracted results as:
-
-    === Seed 1 ===
-    Bridge predicates: <extracted>
-    Reflection: <extracted>
-    Self-assessed signal: <extracted>
-
-    === Seed 2 ===
-    ...
-
-Read `steps[1].prompt` from the manifest. Replace the placeholder
-`{{SEED_AGENT_RESULTS}}` with the formatted results above. Call
-the Agent tool with the completed watcher prompt.
+Call the Agent tool with the stdout from that command as the watcher prompt.
 
 #### Step 5: Evaluate and iterate
 

@@ -7,10 +7,11 @@ OVERVIEW
 ================================================================================
 
 The algorithm escapes the deterministic associative range of LLM analysis
-by introducing computational randomness into concept generation. The
-randomness is genuine (Python RNG + multilingual tokenizer sampling),
-not linguistic ("be more creative"). The evaluation is mathematical
-(weighted composite scoring), not subjective ("does this feel relevant").
+by introducing computational perturbation into concept generation. The
+perturbation is genuine (deterministic fingerprint hashing + Python RNG +
+multilingual tokenizer sampling), not linguistic ("be more creative").
+The evaluation is structured (weighted composite scoring + falsification
+checks), not subjective ("does this feel relevant").
 
 The core insight: LLMs are pattern completers. Asking one to "think of
 something random" produces high-probability completions, not genuine
@@ -51,25 +52,31 @@ Parameters:
   N = 3-5  (seeds per round)
   K = 5-8  (tokens per seed)
 
-1.1 ENTROPY EXTRACTION
+1.1 ARTIFACT FINGERPRINTING
 
-  Extract numerical features from the artifact text:
-  - Character-level: vowel count, consonant count, total length
-  - Structural: sentence count, word count, punctuation frequencies
-  - These features are semantically uncorrelated with concept generation,
-    making them a genuine entropy source for seeding the RNG.
+  Build a deterministic fingerprint of the artifact:
+  - Full normalized text hash
+  - Structural counts: characters, words, sentences, punctuation vector
+  - Lexical anchors: high-salience content words
+  - Character trigrams: compact surface fragments for later rounds
+  - Dominant script profile: what writing system the artifact mostly inhabits
 
-1.2 HASH → SEEDS
+  This yields a seed source that is still reproducible but much less fragile
+  than a handful of surface counts.
 
-  Concatenate features as strings with delimiter.
-  SHA-256 hash of concatenated features → 64-character hex digest.
-  Slice digest into N non-overlapping 16-character segments.
-  Convert each segment to integer → N deterministic seeds.
+1.2 HASH EXPANSION → SEEDS
 
-  Property: same artifact always produces the same seeds (reproducible).
-  Different artifacts produce different seeds (deterministic variation).
+  Build round-specific payloads from the fingerprint:
+  - Round 1: normalized artifact text
+  - Round 2: mirrored sentence order / boundary-emphasized payload
+  - Round 3: negative lexicon (anchors, rare words, trigrams)
 
-1.3 MULTILINGUAL TOKEN SAMPLING
+  Serialize the payload and expand it with repeated BLAKE2b hashing:
+  - same artifact + same round => same seeds
+  - same artifact + different round => different seeds
+  - arbitrary N seeds supported (not capped by one digest width)
+
+1.3 STRATIFIED MULTILINGUAL TOKEN SAMPLING
 
   Tokenizer: NLLB-200 (facebook/nllb-200-distilled-600M)
   - 256K vocabulary, ~213K pure word tokens after filtering
@@ -80,8 +87,13 @@ Parameters:
   strip sentencepiece ▁ prefix. This removes control tokens, punctuation,
   and code artifacts.
 
-  For each seed: initialize Python random.Random(seed), sample K tokens
-  from the filtered vocabulary without replacement.
+  Annotate each token with script family. For each seed:
+  - initialize Python random.Random(seed)
+  - prefer scripts not dominant in the artifact
+  - prefer low lexical overlap with the artifact anchor terms
+  - optionally use multilingual embeddings to prefer semantic distance from
+    the artifact anchor terms
+  - sample K tokens without replacement, aiming for script diversity
 
   Example output:
     Seed 1: ["Esituluilo", "риб", "وحد", "Ня", "ndé", "Wi"]
@@ -91,6 +103,11 @@ Parameters:
   Why NLLB-200: English-heavy tokenizers (tiktoken cl100k_base) have <1%
   non-Latin tokens. The displacement requires genuine cross-linguistic
   randomness to escape the LLM's dominant language biases.
+
+  Why stratification: pure uniform sampling from tokenizer surface forms
+  creates weirdness, but not necessarily useful detours. Down-weighting the
+  artifact's dominant script and anchor overlap pushes seeds further into
+  the artifact's negative lexical space.
 
 ================================================================================
 STEP 2: RANDOM WALK STORY GENERATION (PER SEED, PARALLEL)
@@ -170,21 +187,39 @@ Output: Formal bridge predicates + natural language reflection
   seed agent produces.
 
 SEED AGENT OUTPUT:
-  1. Generated paragraph (for transparency)
-  2. Story predicates (formal notation)
-  3. Bridge predicates (formal notation)
-  4. Reflection (natural language, predicate-grounded)
-  5. Self-assessed signal score (1-5)
+  Return JSON only.
+  {
+    "story": "...",
+    "story_predicates": ["Predicate(...)"],
+    "bridge_type": "structural_isomorphism" | "negation_revelation" |
+                   "compositional_insight" | "none",
+    "bridge_predicates": ["Predicate(...)"],
+    "counterevidence": "What would falsify or trivialize the bridge",
+    "reflection": "...",
+    "signal": 0-5
+  }
+
+  Validation rules:
+  - If bridge_type = none => bridge_predicates = [] and signal ∈ {0,1}
+  - Otherwise bridge_predicates must be non-empty
+  - Predicate fields are arrays, not newline-formatted prose
 
 ================================================================================
 STEP 4: WATCHER EVALUATION (SEPARATE AGENT)
 ================================================================================
 
-Input:  All N reflections + predicate bridges (NOT the story paragraphs)
+Input:  JSON array of watcher-safe seed records containing bridge_type,
+        bridge_predicates, counterevidence, reflection, and signal
+        (NOT the story paragraphs)
 Output: Ranked reflections with composite scores + meta-assessment
 
 The watcher has NO access to the random walk stories. This prevents
 narrative seduction — the watcher evaluates logical structure only.
+In the implementation, this watcher-safe payload is built by
+`bridge_schema.py watcher-payload`, and the fully substituted watcher prompt
+can be built by `bridge_schema.py watcher-prompt`. Both commands validate
+raw seed outputs, drop invalid records, and strip story-bearing fields
+automatically.
 
 4.1 SCORING FORMULA
 
@@ -202,7 +237,8 @@ narrative seduction — the watcher evaluates logical structure only.
   FormalValidity (0-1):
     Is the predicate bridge logically sound? 0 = association masquerading
     as logic (e.g., "both involve change"), 1 = valid structural
-    isomorphism or negation with specific predicates.
+    isomorphism / negation / composition with specific predicates and a
+    real counterevidence clause.
 
   Actionability (0-1):
     Does the thinker gain a new question, frame, or distinction they can
@@ -222,8 +258,8 @@ narrative seduction — the watcher evaluates logical structure only.
   Forced Connection check: if seed agent self-assessed signal >= 3 but
   predicate bridge contains only abstract mappings (e.g., Changes(X)
   rather than ReorganizesIdentityUnder(X, pressure)), override score
-  downward. The predicate formalization makes this detectable — shallow
-  bridges have predicates that are too abstract.
+  downward. Also override downward if the counterevidence clause is
+  performative rather than genuinely falsifiable.
 
 4.4 META-ASSESSMENT
 
@@ -302,16 +338,16 @@ Why the watcher can't see the stories:
   higher when you can see the story. Stripping the narrative forces
   evaluation of logical structure only.
 
-Why SHA-256 (not simpler hash):
-  Uniform distribution across output space. Non-overlapping segments
-  produce independent seeds. Deterministic (same input = same output)
-  for reproducibility.
+Why hash expansion:
+  The full artifact fingerprint is serialized once, then expanded with
+  repeated BLAKE2b hashing. This preserves determinism while supporting
+  arbitrary numbers of seeds and round-specific payloads.
 
-Why iteration with entropy re-extraction:
-  Different text features produce different hash digests, which produce
-  different seeds, which sample different tokens. This ensures each round
-  explores a genuinely different region of concept space rather than
-  retrying the same displacement.
+Why iteration with round diversification:
+  Different round payloads emphasize different aspects of the artifact
+  (surface text, reversed temporal structure, negative lexicon). This
+  ensures each round explores a genuinely different region of concept
+  space rather than retrying the same displacement.
 
 ================================================================================
 FUTURE ITERATION CONSIDERATIONS
