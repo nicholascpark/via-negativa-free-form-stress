@@ -1,0 +1,9 @@
+Synthetic development cases; page positions are one-based.
+Columns: stated original, hypothetical one-IN recovery, hypothetical two-IN recovery
+{"input": "OUT OUT OUT", "expected": [[1, 2, 3], [1], [1]], "actual": [[1, 2, 3], [1], [1]]}
+{"input": "OUT IN OUT", "expected": [[1, 3], [1, 3], [1]], "actual": [[1, 3], [1, 3], [1]]}
+{"input": "OUT IN IN OUT", "expected": [[1, 4], [1, 4], [1, 4]], "actual": [[1, 4], [1, 4], [1, 4]]}
+{"input": "OUT MISSING OUT", "expected": [[1, 3], [1], [1]], "actual": [[1, 3], [1], [1]]}
+{"input": "OUT IN MISSING IN OUT", "expected": [[1, 5], [1, 5], [1]], "actual": [[1, 5], [1, 5], [1]]}
+{"input": "MISSING IN OUT", "expected": [[3], [3], [3]], "actual": [[3], [3], [3]]}
+PASS: 6 frozen cases and 2186 candidate-trace contract checks (length 0–6).

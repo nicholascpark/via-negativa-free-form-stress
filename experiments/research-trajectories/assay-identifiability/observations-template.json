@@ -1,0 +1,7 @@
+{
+  "provenance": "awaiting measurements; all nulls intentionally unfilled",
+  "known_standard_quantity": null,
+  "absent": {"blank": null, "sample": null, "standard": null},
+  "present": {"blank": null, "sample": null, "standard": null},
+  "notes_to_record": ["Define x and reagent exposure", "Response and standard units", "Matrix-match and standard-stability evidence", "Supported linearity range", "Cell input and endpoint", "Timing", "Physical randomized well mapping", "Measurement uncertainty basis"]
+}

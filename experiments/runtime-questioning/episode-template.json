@@ -1,0 +1,97 @@
+{
+  "protocol_version": "0.2",
+  "status": "not_run",
+  "episode_id": null,
+  "condition": null,
+  "claim_under_test": null,
+  "purpose_revision": {
+    "original_objective_and_source": null,
+    "concrete_alternative": null,
+    "experience_actually_completed": null,
+    "revised_objective_and_source": null,
+    "retained_criteria": [],
+    "retired_criteria_with_reasons": [],
+    "benchmark_versions": [],
+    "sacrificed_capabilities": [],
+    "later_endorsement_or_reversal": null
+  },
+  "opportunity": {
+    "registry_id": null,
+    "selected_at": null,
+    "selector_and_eligibility_rule": null,
+    "selected_before_condition_assignment": null,
+    "disposition": null,
+    "disposition_reason": null,
+    "unresolved_decision_relevant_uncertainty": null,
+    "expected_benefit_versus_interruption": null
+  },
+  "task": {
+    "brief_source": null,
+    "artifact_checkpoint": null,
+    "confirmed_constraints": [],
+    "available_evidence": [],
+    "resource_budget": null
+  },
+  "prequery": {
+    "recorded_at": null,
+    "record_hash_or_version": null,
+    "pending_decision": null,
+    "current_intended_action": null,
+    "current_justification": null,
+    "case": null,
+    "exact_question": null,
+    "all_presented_material": [],
+    "option_order": [],
+    "plausible_omitted_alternatives": [],
+    "alternatives_considered": [],
+    "timing_and_reason": null,
+    "answer_to_action_map": [],
+    "no_change_or_uncertainty_path": null
+  },
+  "answer": {
+    "received_at": null,
+    "source": null,
+    "verbatim": null,
+    "new_relative_to_available_evidence": null,
+    "user_account_of_preference_change": null,
+    "interpretation": null,
+    "scope": null,
+    "exceptions_or_unknowns": []
+  },
+  "implementation": {
+    "decision_changed": null,
+    "decision_after": null,
+    "artifact_diff": null,
+    "working_acceptance_cases": [],
+    "verification_result": null
+  },
+  "evaluation": {
+    "status": "not_run",
+    "batch_id": null,
+    "cases_frozen_at": null,
+    "common_panel_across_conditions": null,
+    "case_selection_source": null,
+    "evaluator_inputs_and_exposures": [],
+    "label_authority_and_source": null,
+    "labeler_exposure_to_questioning": null,
+    "scoring_rule": null,
+    "transfer_cases": [],
+    "unwanted_inclusions": null,
+    "wanted_exclusions": null,
+    "public_constraint_violations": null,
+    "independent_task_outcome": null,
+    "blinded_or_delayed_user_judgment": null,
+    "results_used_for_further_edits": false
+  },
+  "cost": {
+    "user_minutes": null,
+    "questions": null,
+    "response_difficulty": null,
+    "total_agent_tokens": null,
+    "tool_calls": null,
+    "elapsed_seconds": null,
+    "rework": null,
+    "abandoned": null
+  },
+  "amendments": []
+}

@@ -1,0 +1,261 @@
+{
+  "check": "setup_and_pre_answer_snapshot_hashes",
+  "checks": [
+    {
+      "manifest": "setup-manifest.json",
+      "file": "public/baseline.py",
+      "matches": true
+    },
+    {
+      "manifest": "setup-manifest.json",
+      "file": "public/streams.json",
+      "matches": true
+    },
+    {
+      "manifest": "setup-manifest.json",
+      "file": "public/task.md",
+      "matches": true
+    },
+    {
+      "manifest": "setup-manifest.json",
+      "file": "user-private/cases.json",
+      "matches": true
+    },
+    {
+      "manifest": "setup-manifest.json",
+      "file": "user-private/dossier.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "brief.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "question-01.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "v0/baseline.py",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "v0/explore.py",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "v0/results.jsonl",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "v0/streams.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "v0.sha256",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "answer-01.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "brief.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "development-probes.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "question-01.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "question-02.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0/baseline.py",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0/explore.py",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0/results.jsonl",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0/streams.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0.manifest.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0.sha256",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v1/prototype.py",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v1/representation.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v1/results.jsonl",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v1/streams.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v1.manifest.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "answer-01.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "answer-02.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "brief.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "development-probes.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "question-01.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "question-02.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "question-03.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0/baseline.py",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0/explore.py",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0/results.jsonl",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0/streams.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0.manifest.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0.sha256",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v1/prototype.py",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v1/representation.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v1/results.jsonl",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v1/streams.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v1.manifest.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v2/prototype.py",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v2/representation.md",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v2/results.jsonl",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v2/streams.json",
+      "matches": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v2.manifest.json",
+      "matches": true
+    }
+  ],
+  "all_match": true
+}

@@ -1,0 +1,17 @@
+{
+  "artifact_version": "thermal-lab-v1",
+  "status": "Frozen before running thermal_lab.py; mathematical predictions, not measurements",
+  "derivation": "For r=alpha*dt/dx^2, a sampled Fourier mode k has forward-Euler gain g(k)=1-4*r*sin(pi*k/N)^2. For even N, the checkerboard k=N/2 has gain 1-4*r.",
+  "cases": [
+    {"id":"coarse-contaminated","N":20,"dt":0.1,"r":0.4,"initial":"sin(2*pi*j/N)+0.001*(-1)^j","predicted_checkerboard_gain":-0.6,"prediction":"Alternating sign each step, decreasing magnitude. Smooth mode decays."},
+    {"id":"fine-contaminated","N":80,"dt":0.1,"r":6.4,"initial":"sin(2*pi*j/N)+0.001*(-1)^j","predicted_checkerboard_gain":-24.6,"prediction":"Alternating sign each step, increasing checkerboard magnitude; no resonance term is needed to produce this."},
+    {"id":"fine-substepped","N":80,"output_dt":0.1,"substeps":16,"internal_dt":0.00625,"r":0.4,"prediction":"All discrete Fourier gains have magnitude at most 1; the given checkerboard is damped."},
+    {"id":"filter-original","N":80,"dt":0.1,"filter":"After Euler, replace values by (left+2*center+right)/4","prediction":"This filter exactly removes checkerboard content in exact arithmetic. That alone does not establish stability."},
+    {"id":"filter-transfer-witness","N":80,"dt":0.1,"perturbation_mode":20,"prediction":"At k=N/4, combined Euler/filter gain is (1-2*r)/2=-5.9, so the correction fails to control another resolvable mode."},
+    {"id":"threshold-family","N":20,"r_values":[0.499,0.5,0.501],"prediction":"Checkerboard magnitude decreases below 0.5, is unchanged at 0.5, and increases above 0.5; sign reverses in each case."},
+    {"id":"constant-and-mean","prediction":"Periodic difference updates preserve constants and mean in exact arithmetic; bounded floating-point residual is expected."},
+    {"id":"positive-impulse","r_values":[0.4,0.6],"prediction":"A nonnegative impulse remains nonnegative at r=0.4; at r=0.6 the center becomes -0.2 after one step."},
+    {"id":"smooth-refinement","N_values":[20,40,80,160],"r":0.4,"time":1.0,"initial":"sin(2*pi*x)","reference":"exp(-4*pi^2*alpha*t)*sin(2*pi*x)","prediction":"With dt proportional to dx^2, total error is second order in dx asymptotically; doubling N should give about a fourfold error reduction."}
+  ],
+  "limits":"The original grid-dependent checkerboard is not a fixed smooth continuum initial condition across N. Use the smooth sine fixture for continuum convergence. No prediction here supplies missing physical data."
+}

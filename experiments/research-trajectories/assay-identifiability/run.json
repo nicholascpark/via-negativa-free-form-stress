@@ -1,0 +1,16 @@
+{
+  "version": "assay-cycle-v1",
+  "question": "Does the co-administered reagent change cellular production, separately from fluorescence gain?",
+  "observations_source": "Raw supplied task; illustrative lab-style inputs, not actual clinical data",
+  "observations": {"dose": [1,2,4], "reported_means": [2,4,8], "reported_repeats_per_dose": 3, "reported_variation": "about +/-0.2", "rounding": true},
+  "not_available": ["Individual repeat readings", "Definition/units of dose and response", "Whether x denotes reagent concentration or another stimulus", "Which reagent conditions were included", "Gain calibration", "Blank readings", "Biological versus technical repeat definition", "Validated same-analyte standard and production-free matched matrix"],
+  "team_interpretation_not_observation": "Dose doubling means cellular production doubles",
+  "model_given": "y = g p; gain unknown and may change with reagent",
+  "assistant_model_extension": "For the proposed calibration, allow y = b_r + g_r p in reagent condition r; additive background is a precautionary nuisance parameter, not an observed fact.",
+  "budget": {"proposed_additional_wells":6,"wet_lab_execution":0,"paid_services":0,"network_calls":0,"local_cycles":1},
+  "branches": ["A: product symmetry and rival models", "B: matched calibration and six-well allocation"],
+  "delegation": "Independent worker requested, but both spawn and follow-up tools reported agent thread limit reached. Single worker maintained both branches; no independent evaluation claimed.",
+  "status": "Proposed experiment and executable synthetic evaluation; mechanism unresolved until new measurements and calibration transfer evidence",
+  "stochastic_sampling": "Not needed or used; optional transformations applied directly, no distance claims",
+  "cost_limitations": "Model tokens, actual compute cost, human reading time not measured. No human questions actually answered."
+}

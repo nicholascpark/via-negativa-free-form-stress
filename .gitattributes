@@ -1,0 +1,4 @@
+# Preserve byte-level provenance when cloning with automatic newline conversion.
+experiments/interactive-alerts-20260928/** -text
+# Python's CSV writer emits CRLF; keep its recorded bytes and allow that line ending.
+*.csv -text whitespace=cr-at-eol

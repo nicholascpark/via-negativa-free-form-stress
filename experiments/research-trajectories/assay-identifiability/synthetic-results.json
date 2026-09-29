@@ -1,0 +1,270 @@
+{
+  "version": "assay-v1",
+  "kind": "synthetic development checks",
+  "cases": [
+    {
+      "name": "production_only",
+      "input": {
+        "provenance": "synthetic; not measured",
+        "known_standard_quantity": "4",
+        "absent": {
+          "blank": "0",
+          "sample": "2",
+          "standard": "4"
+        },
+        "present": {
+          "blank": "0",
+          "sample": "4",
+          "standard": "4"
+        }
+      },
+      "result": {
+        "status": "calculated under unverified transfer/linearity assumptions",
+        "production_ratio": "2",
+        "gain_ratio": "1",
+        "production_ratio_sensitivity": [
+          "27/22",
+          "121/36"
+        ],
+        "arms": {
+          "absent": {
+            "p": "2",
+            "g": "1",
+            "p_interval": [
+              "16/11",
+              "8/3"
+            ]
+          },
+          "present": {
+            "p": "4",
+            "g": "1",
+            "p_interval": [
+              "36/11",
+              "44/9"
+            ]
+          }
+        }
+      },
+      "check": "passed"
+    },
+    {
+      "name": "gain_only",
+      "input": {
+        "provenance": "synthetic; not measured",
+        "known_standard_quantity": "4",
+        "absent": {
+          "blank": "0",
+          "sample": "2",
+          "standard": "4"
+        },
+        "present": {
+          "blank": "0",
+          "sample": "4",
+          "standard": "8"
+        }
+      },
+      "result": {
+        "status": "calculated under unverified transfer/linearity assumptions",
+        "production_ratio": "1",
+        "gain_ratio": "2",
+        "production_ratio_sensitivity": [
+          "9/14",
+          "121/76"
+        ],
+        "arms": {
+          "absent": {
+            "p": "2",
+            "g": "1",
+            "p_interval": [
+              "16/11",
+              "8/3"
+            ]
+          },
+          "present": {
+            "p": "2",
+            "g": "2",
+            "p_interval": [
+              "12/7",
+              "44/19"
+            ]
+          }
+        }
+      },
+      "check": "passed"
+    },
+    {
+      "name": "cancellation",
+      "input": {
+        "provenance": "synthetic; not measured",
+        "known_standard_quantity": "4",
+        "absent": {
+          "blank": "0",
+          "sample": "2",
+          "standard": "4"
+        },
+        "present": {
+          "blank": "0",
+          "sample": "2",
+          "standard": "2"
+        }
+      },
+      "result": {
+        "status": "calculated under unverified transfer/linearity assumptions",
+        "production_ratio": "2",
+        "gain_ratio": "1/2",
+        "production_ratio_sensitivity": [
+          "1",
+          "33/8"
+        ],
+        "arms": {
+          "absent": {
+            "p": "2",
+            "g": "1",
+            "p_interval": [
+              "16/11",
+              "8/3"
+            ]
+          },
+          "present": {
+            "p": "4",
+            "g": "1/2",
+            "p_interval": [
+              "8/3",
+              "6"
+            ]
+          }
+        }
+      },
+      "check": "passed"
+    },
+    {
+      "name": "small_effect",
+      "input": {
+        "provenance": "synthetic; not measured",
+        "known_standard_quantity": "4",
+        "absent": {
+          "blank": "0",
+          "sample": "2",
+          "standard": "4"
+        },
+        "present": {
+          "blank": "0",
+          "sample": "21/10",
+          "standard": "4"
+        }
+      },
+      "result": {
+        "status": "calculated under unverified transfer/linearity assumptions",
+        "production_ratio": "21/20",
+        "gain_ratio": "1",
+        "production_ratio_sensitivity": [
+          "51/88",
+          "275/144"
+        ],
+        "arms": {
+          "absent": {
+            "p": "2",
+            "g": "1",
+            "p_interval": [
+              "16/11",
+              "8/3"
+            ]
+          },
+          "present": {
+            "p": "21/10",
+            "g": "1",
+            "p_interval": [
+              "17/11",
+              "25/9"
+            ]
+          }
+        }
+      },
+      "check": "passed"
+    },
+    {
+      "name": "background_change",
+      "input": {
+        "provenance": "synthetic; not measured",
+        "known_standard_quantity": "4",
+        "absent": {
+          "blank": "1/2",
+          "sample": "5/2",
+          "standard": "9/2"
+        },
+        "present": {
+          "blank": "4/5",
+          "sample": "24/5",
+          "standard": "24/5"
+        }
+      },
+      "result": {
+        "status": "calculated under unverified transfer/linearity assumptions",
+        "production_ratio": "2",
+        "gain_ratio": "1",
+        "production_ratio_sensitivity": [
+          "27/22",
+          "121/36"
+        ],
+        "arms": {
+          "absent": {
+            "p": "2",
+            "g": "1",
+            "p_interval": [
+              "16/11",
+              "8/3"
+            ]
+          },
+          "present": {
+            "p": "4",
+            "g": "1",
+            "p_interval": [
+              "36/11",
+              "44/9"
+            ]
+          }
+        }
+      },
+      "check": "passed"
+    },
+    {
+      "name": "weak_calibration",
+      "result": {
+        "status": "inconclusive: calibration increment too small for specified sensitivity bound"
+      },
+      "check": "passed"
+    },
+    {
+      "name": "matrix_mismatch",
+      "result": {
+        "status": "calculated under unverified transfer/linearity assumptions",
+        "production_ratio": "2",
+        "gain_ratio": "1",
+        "production_ratio_sensitivity": [
+          "27/22",
+          "121/36"
+        ],
+        "arms": {
+          "absent": {
+            "p": "2",
+            "g": "1",
+            "p_interval": [
+              "16/11",
+              "8/3"
+            ]
+          },
+          "present": {
+            "p": "4",
+            "g": "1",
+            "p_interval": [
+              "36/11",
+              "44/9"
+            ]
+          }
+        }
+      },
+      "true_production_ratio": 1,
+      "check": "expected failure of calibration transfer reproduced; false production signal"
+    }
+  ]
+}

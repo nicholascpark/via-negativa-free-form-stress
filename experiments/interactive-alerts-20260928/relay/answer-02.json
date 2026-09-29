@@ -1,0 +1,8 @@
+{
+  "event": "answer",
+  "id": "answer-02",
+  "question_id": "question-02",
+  "at_utc": "2026-09-29T03:36:40.146414+00:00",
+  "speaker": "simulated technician",
+  "text": "`reconnect-4` is an old replay and should be ignored. `n` increases separately for each cabinet/duct, including INVALID records. It survives reconnects and restarts; it does not reset or wrap within these captures. Repeated numbers are retries of the same reading.\n\nThis notifier is for current conditions, so an older record should neither trigger a retroactive page nor clear a problem after a newer record has arrived."
+}

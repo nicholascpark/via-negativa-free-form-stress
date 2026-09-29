@@ -1,0 +1,9 @@
+capture | current 20s | proposed 60s | episode candidate
+long_spell | long-2, long-4 | long-2 | long-2
+quick_return | quick-2 | quick-2 | quick-2, quick-4
+two_ports | ports-3 | ports-3 | ports-3, ports-4
+reconnected | reconnect-2, reconnect-4 | reconnect-2 | reconnect-2
+unreadable_patch | invalid-2, invalid-4 | invalid-2 | invalid-2
+quiet | — | — | —
+already_high | startup-1, startup-2 | startup-1 | startup-1
+two_cabinets | cabs-3, cabs-4 | cabs-3, cabs-4 | cabs-3, cabs-4

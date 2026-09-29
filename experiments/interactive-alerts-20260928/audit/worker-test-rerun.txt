@@ -1,0 +1,16 @@
+test_equal_counter_retry_ignored (__main__.NotifierTests.test_equal_counter_retry_ignored) ... ok
+test_fresh_recovery_immediately_rearms (__main__.NotifierTests.test_fresh_recovery_immediately_rearms) ... ok
+test_generated_retry_and_time_invariance (__main__.NotifierTests.test_generated_retry_and_time_invariance) ... ok
+test_incremental_interface_matches_batch (__main__.NotifierTests.test_incremental_interface_matches_batch) ... ok
+test_invalid_advances_frontier_and_does_not_clear (__main__.NotifierTests.test_invalid_advances_frontier_and_does_not_clear) ... ok
+test_invalid_before_first_high_does_not_arm_requirement (__main__.NotifierTests.test_invalid_before_first_high_does_not_arm_requirement) ... ok
+test_no_memory_crosses_captures (__main__.NotifierTests.test_no_memory_crosses_captures) ... ok
+test_no_reminder_after_long_silence (__main__.NotifierTests.test_no_reminder_after_long_silence) ... ok
+test_one_duct_cannot_clear_another (__main__.NotifierTests.test_one_duct_cannot_clear_another) ... ok
+test_public_capture_regressions (__main__.NotifierTests.test_public_capture_regressions) ... ok
+test_stale_normal_does_not_rearm (__main__.NotifierTests.test_stale_normal_does_not_rearm) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.008s
+
+OK

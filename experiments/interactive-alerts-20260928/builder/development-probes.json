@@ -1,0 +1,14 @@
+[
+  {"name":"old_normal_after_high", "synthetic":true,
+   "records":[{"id":"a","t":0,"cabinet":"A","port":"left","n":2,"reading":"HIGH"},{"id":"b","t":1,"cabinet":"A","port":"left","n":1,"reading":"NORMAL"},{"id":"c","t":2,"cabinet":"A","port":"left","n":3,"reading":"HIGH"}],
+   "prediction_raw_episode":["a","c"],"prediction_monotone_source_episode":["a"],
+   "unresolved":"Is n a comparable freshness order for one physical source?"},
+  {"name":"invalid_then_delayed_normal", "synthetic":true,
+   "records":[{"id":"a","t":0,"cabinet":"A","port":"left","n":1,"reading":"HIGH"},{"id":"b","t":1,"cabinet":"A","port":"left","n":3,"reading":"INVALID"},{"id":"c","t":2,"cabinet":"A","port":"left","n":2,"reading":"NORMAL"},{"id":"d","t":3,"cabinet":"A","port":"left","n":4,"reading":"HIGH"}],
+   "prediction_raw_episode":["a","d"],"prediction_all_rows_advance_source_frontier":["a"],
+   "unresolved":"Does INVALID carry a reliable sequence number, and is historical recovery relevant even when delivered out of order?"},
+  {"name":"one_port_normal_while_other_high", "synthetic":true,
+   "records":[{"id":"a","t":0,"cabinet":"A","port":"left","n":1,"reading":"HIGH"},{"id":"b","t":1,"cabinet":"A","port":"right","n":1,"reading":"NORMAL"},{"id":"c","t":2,"cabinet":"A","port":"left","n":2,"reading":"HIGH"}],
+   "prediction_scalar_cabinet_episode":["a","c"],"prediction_independent_port_episode":["a"],
+   "unresolved":"Whether ports are separate sources, and if not how evidence combines."}
+]

@@ -1,0 +1,8 @@
+{
+  "event": "user_feedback",
+  "at_utc": "2026-09-29T03:43:55.301219+00:00",
+  "speaker": "simulated technician",
+  "candidate": "v3",
+  "text": "These outcomes address my frustration: `quick-4` and `ports-4` now page, while the repeated and replayed HIGH records don\u2019t. I would use this prototype\u2019s per-duct behavior instead of raising the cooldown to 60 seconds.\n\nThe record-by-record explanation is useful to me. I don\u2019t need another feature for this offline task. I\u2019ve checked the reported decisions, not the implementation; these synthetic captures alone don\u2019t establish how a continuously running notifier handles missing reports or its own restarts.",
+  "scope": "Read README and comparison; no implementation verification or real-user endorsement"
+}

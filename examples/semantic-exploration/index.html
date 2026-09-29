@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Semantic field notes · Measured exploration</title>
+  <style>
+    :root { --bg:#f4f3ec; --panel:#fffef9; --ink:#193831; --muted:#5a6e65; --line:#d4dcd1; --wash:#eaf0e8; --accent:#236b59; --text:#246cbd; --image:#b3572b; --objective:#866120; --p1:#3679c4; --p2:#9765bf; --p3:#298772; --shadow:0 12px 40px #19383106; }
+    :root[data-theme="dark"] { --bg:#111d1a; --panel:#172722; --ink:#eaf0e6; --muted:#a4b7ad; --line:#32473d; --wash:#21372e; --accent:#a8d2a9; --text:#8bbff0; --image:#efa176; --objective:#efd190; --p1:#80b8ec; --p2:#bf99e3; --p3:#81c9ac; --shadow:none; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:var(--accent); }
+    button,select { font:inherit; color:inherit; }
+    button,select,summary { cursor:pointer; }
+    button,select { border:1px solid var(--line); background:var(--panel); border-radius:6px; min-height:40px; padding:7px 12px; }
+    button:hover,select:hover { border-color:var(--accent); }
+    button[aria-pressed="true"] { background:var(--wash); border-color:var(--accent); }
+    :focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    .skip { position:absolute; top:-80px; left:20px; z-index:5; background:var(--panel); padding:10px; }
+    .skip:focus { top:10px; }
+    .wrap { max-width:1320px; margin:auto; padding:0 36px; }
+    .masthead { display:flex; justify-content:space-between; align-items:center; gap:18px; border-bottom:1px solid var(--line); padding:22px 0; }
+    .brand { font-size:11px; font-weight:750; letter-spacing:.18em; text-transform:uppercase; }
+    .brand span { color:var(--muted); font-weight:400; margin-left:14px; }
+    .theme { font-size:12px; min-width:84px; }
+    main { padding-bottom:60px; }
+    .intro { display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:end; padding:44px 0 32px; }
+    .eyebrow { color:var(--accent); font-size:11px; letter-spacing:.14em; font-weight:750; text-transform:uppercase; margin:0 0 12px; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font:500 clamp(38px,4.4vw,60px)/1.06 Georgia,serif; letter-spacing:-.045em; margin:0; max-width:610px; }
+    .lede { color:var(--muted); font-size:15px; max-width:540px; margin:0 0 3px; }
+    .objective { border-left:3px solid var(--accent); padding:19px 23px; background:var(--wash); margin-bottom:30px; }
+    .objective .eyebrow { margin-bottom:6px; }
+    #objective-text { font-size:18px; line-height:1.5; margin:0; max-width:1060px; }
+    .toolbar { display:flex; justify-content:space-between; gap:18px; align-items:center; flex-wrap:wrap; margin:0 0 15px; }
+    .section-title { display:flex; gap:12px; align-items:baseline; }
+    .index { color:var(--accent); font:12px ui-monospace,SFMono-Regular,monospace; }
+    h2 { font-size:19px; letter-spacing:-.02em; margin:0; }
+    .controls { display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:12px; }
+    .controls label { color:var(--muted); }
+    .workspace { display:grid; grid-template-columns:minmax(0,1fr) 335px; gap:18px; align-items:stretch; }
+    .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow); overflow:hidden; min-width:0; }
+    .plot-head { padding:17px 20px 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+    .legend { display:flex; align-items:center; gap:18px; font-size:11px; color:var(--muted); }
+    .legend span { display:inline-flex; gap:7px; align-items:center; }
+    .dot { width:8px; height:8px; border-radius:50%; display:inline-block; background:var(--text); }
+    .diamond { width:8px; height:8px; display:inline-block; background:var(--image); transform:rotate(45deg); }
+    .star { color:var(--objective); font-size:16px; line-height:1; }
+    .quiet { color:var(--muted); font-size:12px; }
+    .plot { display:block; width:100%; height:auto; min-height:320px; }
+    .plot .grid { stroke:var(--line); stroke-width:.8; stroke-dasharray:3 6; }
+    .plot .axis-label { fill:var(--muted); font:11px -apple-system,BlinkMacSystemFont,sans-serif; }
+    .plot .point { cursor:pointer; }
+    .plot .point:focus { outline:none; }
+    .plot .point:focus .halo,.plot .point:hover .halo { opacity:1; }
+    .plot .halo { fill:var(--wash); stroke:var(--ink); stroke-width:1; opacity:0; }
+    .plot .selected .halo { opacity:1; }
+    .plot .point-label { fill:var(--muted); font:10px ui-monospace,SFMono-Regular,monospace; pointer-events:none; opacity:0; }
+    .plot .point:hover .point-label,.plot .point:focus .point-label,.plot .selected .point-label,.plot .image-point .point-label { opacity:1; }
+    .plot .objective-label { fill:var(--objective); font-size:11px; font-weight:700; }
+    .plot .objective-point .point-label { opacity:1; }
+    .plot-actions { display:flex; gap:7px; }
+    .plot-actions button { font-size:11px; min-height:34px; }
+    .plot-caption { border-top:1px solid var(--line); padding:13px 20px; font-size:12px; color:var(--muted); margin:0; }
+    .plot-caption strong { color:var(--ink); font-weight:600; }
+    .inspector { padding:20px; display:flex; flex-direction:column; }
+    .field-label { display:block; font-size:11px; font-weight:650; color:var(--muted); margin-bottom:6px; }
+    .inspector select { width:100%; font-size:12px; }
+    .cue-header { margin:19px 0 12px; }
+    .cue-header h3 { font:500 25px/1.15 Georgia,serif; letter-spacing:-.03em; margin:6px 0 0; }
+    .pill { display:inline-block; border:1px solid var(--line); border-radius:4px; padding:2px 6px; color:var(--muted); font:10px ui-monospace,SFMono-Regular,monospace; text-transform:uppercase; }
+    .cue-content { background:var(--wash); border-radius:6px; padding:13px; min-height:82px; font-size:12px; line-height:1.6; overflow-wrap:anywhere; }
+    .cue-content p { margin:0; white-space:pre-wrap; }
+    .cue-content img { display:block; max-width:100%; width:100%; height:180px; object-fit:contain; border-radius:3px; }
+    .source { margin:9px 0 16px; font-size:10px; line-height:1.6; color:var(--muted); overflow-wrap:anywhere; }
+    .measure { border-top:1px solid var(--line); padding-top:13px; margin-top:auto; }
+    .distance { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-top:10px; }
+    .distance output { font:500 30px/1.2 Georgia,serif; font-variant-numeric:tabular-nums; }
+    .distance span { color:var(--muted); font-size:10px; }
+    .neighbors { padding:0; margin:10px 0 0; list-style:none; }
+    .neighbors button { border:0; border-radius:0; background:transparent; padding:5px 0; min-height:30px; width:100%; display:flex; gap:10px; justify-content:space-between; text-align:left; font-size:11px; }
+    .neighbors button:hover { text-decoration:underline; }
+    .neighbors .value { color:var(--muted); font:11px ui-monospace,SFMono-Regular,monospace; flex-shrink:0; }
+    .small-label { color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.08em; margin:14px 0 2px; }
+    section { margin-top:30px; }
+    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .path-card { border-top:3px solid var(--path); }
+    .path-head { display:flex; justify-content:space-between; gap:8px; align-items:center; padding:15px 17px 12px; border-bottom:1px solid var(--line); }
+    .path-head h3 { font-size:14px; margin:0; }
+    .path-head button { min-height:30px; padding:3px 8px; font-size:10px; }
+    .steps { list-style:none; padding:0; margin:0; }
+    .step { position:relative; padding:15px 17px; border-bottom:1px solid var(--line); }
+    .step:last-child { border-bottom:0; }
+    .step-top { display:flex; gap:9px; align-items:start; margin-bottom:9px; }
+    .hop { display:flex; align-items:center; justify-content:center; width:21px; height:21px; border:1px solid var(--line); color:var(--muted); border-radius:50%; flex-shrink:0; font:10px ui-monospace,SFMono-Regular,monospace; margin-top:3px; }
+    .cue-button { border:0; border-radius:0; padding:0; min-height:26px; background:transparent; font-size:13px; font-weight:650; text-align:left; line-height:1.45; }
+    .cue-button:hover { color:var(--accent); text-decoration:underline; }
+    .step-sub { color:var(--muted); font-size:10px; line-height:1.5; margin:1px 0 0; }
+    .operator { display:block; color:var(--ink); font-size:11px; background:var(--wash); padding:7px 9px; border-radius:4px; margin:0 0 11px; line-height:1.5; overflow-wrap:anywhere; }
+    .metrics { display:grid; grid-template-columns:1fr 1fr 1fr; gap:5px; }
+    .metric dt { color:var(--muted); font-size:9px; margin:0 0 2px; }
+    .metric dd { font:12px ui-monospace,SFMono-Regular,monospace; margin:0; }
+    dl { margin:0; }
+    .step details { margin-top:9px; color:var(--muted); font-size:10px; }
+    .step details p { margin:6px 0 0; }
+    .path-foot { padding:10px 17px; border-top:1px solid var(--line); color:var(--muted); font-size:10px; }
+    .run-note { font-size:11px; color:var(--muted); margin:12px 0 0; max-width:1060px; }
+    .bridge { border-top:1px solid var(--line); padding-top:27px; }
+    .bridge-head { display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:15px; }
+    .bridge-head p { color:var(--muted); font-size:11px; margin:0; }
+    .bridge-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .bridge-stage { padding:17px 0; border-top:2px solid var(--line); }
+    .bridge-stage .eyebrow { margin-bottom:7px; }
+    .bridge-stage h3 { font:500 22px/1.2 Georgia,serif; margin-bottom:9px; }
+    .bridge-stage p { color:var(--muted); font-size:12px; margin:0; }
+    .bridge-note { background:var(--wash); border-radius:6px; padding:12px 16px; font-size:12px; margin-top:8px; }
+    .benchmark { margin-top:20px; border:1px solid var(--line); border-radius:7px; padding:16px; background:var(--panel); }
+    .benchmark summary { font-size:13px; font-weight:650; }
+    .benchmark p { font-size:11px; color:var(--muted); margin:12px 0; }
+    .table-scroll { overflow-x:auto; }
+    table { width:100%; border-collapse:collapse; font-size:11px; text-align:left; }
+    caption { text-align:left; color:var(--muted); padding:0 0 12px; font-size:11px; }
+    th,td { padding:10px 12px 10px 0; border-top:1px solid var(--line); vertical-align:top; }
+    th { font-size:10px; color:var(--muted); font-weight:650; }
+    td:first-child { min-width:210px; }
+    td:nth-child(2) { min-width:165px; }
+    .case-input { display:block; font:10px/1.7 ui-monospace,SFMono-Regular,monospace; color:var(--muted); margin-top:6px; white-space:pre-line; }
+    .verdict { font:10px ui-monospace,SFMono-Regular,monospace; text-transform:uppercase; white-space:nowrap; }
+    .provenance { border-top:1px solid var(--line); padding-top:22px; }
+    .provenance summary { font-size:12px; font-weight:600; }
+    .provenance dl { display:grid; grid-template-columns:125px minmax(0,1fr); gap:7px 18px; margin-top:16px; font-size:11px; }
+    .provenance dt { color:var(--muted); }
+    .provenance dd { margin:0; overflow-wrap:anywhere; font-family:ui-monospace,SFMono-Regular,monospace; }
+    .limitation { max-width:1010px; color:var(--muted); font-size:11px; margin:17px 0 0; }
+    footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:24px 0; border-top:1px solid var(--line); font-size:10px; color:var(--muted); letter-spacing:.04em; }
+    .loading { padding:24px; border:1px solid var(--line); background:var(--panel); border-radius:8px; margin:25px 0; }
+    [hidden] { display:none !important; }
+    @media (max-width:1050px) { .wrap { padding:0 24px; } .workspace { grid-template-columns:minmax(0,1fr) 290px; } .intro { gap:30px; } .plot { min-height:290px; } .cards { gap:12px; } .step { padding:13px; } .metrics { gap:3px; } }
+    @media (max-width:820px) { .intro { grid-template-columns:1fr; gap:20px; padding-top:32px; } h1 { max-width:none; } .lede { max-width:650px; } .workspace { grid-template-columns:1fr; } .inspector { display:grid; grid-template-columns:1fr 1fr; column-gap:25px; align-items:start; } .inspector > label,.inspector > select,.cue-header,.cue-content,.source { grid-column:1; } .measure { grid-column:2; grid-row:1 / 7; align-self:start; margin:0; padding:0; border:0; } .cards { grid-template-columns:1fr; } .steps { display:grid; grid-template-columns:repeat(3,1fr); } .step { border-bottom:0; border-right:1px solid var(--line); } .step:last-child { border-right:0; } .bridge-grid { gap:20px; } }
+    @media (max-width:560px) { .wrap { padding:0 17px; } .brand span { display:none; } .masthead { padding:17px 0; } .intro { padding-bottom:25px; } h1 { font-size:41px; } .objective { padding:16px; } #objective-text { font-size:16px; } .workspace { gap:12px; } .plot-head { padding:13px 13px 0; } .legend { gap:13px; } .plot { min-height:260px; } .plot-caption { padding:12px 14px; } .inspector { display:flex; padding:17px; } .inspector > select { width:100%; } .cue-content { width:100%; } .measure { width:100%; padding-top:15px; border-top:1px solid var(--line); } .cue-content img { height:175px; } .steps { display:block; } .step { border-right:0; border-bottom:1px solid var(--line); padding:15px 17px; } .metrics { gap:14px; } .metric dt { font-size:10px; } .metric dd { font-size:13px; } .bridge-grid { grid-template-columns:1fr; gap:0; } .bridge-stage { padding:16px 0; } .provenance dl { grid-template-columns:95px minmax(0,1fr); gap:8px; } .toolbar { align-items:start; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to exploration</a>
+  <div class="wrap">
+    <header class="masthead"><div class="brand">Semantic field notes <span>A bounded experiment</span></div><button class="theme" id="theme" type="button">Dark mode</button></header>
+    <main id="main">
+      <div class="intro"><div><p class="eyebrow">Text + image · Shared embedding space</p><h1>A shared space.<br>A bounded walk.</h1></div><p class="lede">Explore actual encoded cues, follow seeded trajectories, and inspect the distances behind each hop. A sampled association is a place to look. Its usefulness still needs a bridge and a test.</p></div>
+      <div id="loading" class="loading" role="status">Loading the embedding corpus and sampled walks…</div>
+      <div id="content" hidden>
+        <div class="objective"><p class="eyebrow">Original objective · retained throughout exploration</p><p id="objective-text"></p></div>
+        <div class="toolbar"><div class="section-title"><span class="index">01</span><h2>The cue landscape</h2></div><div class="controls"><span id="corpus-count" class="quiet"></span><label for="seed">Random seed</label><select id="seed"></select></div></div>
+        <div class="workspace">
+          <div class="panel"><div class="plot-head"><div class="legend"><span><i class="dot"></i>Text</span><span><i class="diamond"></i>Image</span><span><i class="star">✦</i>Objective</span></div><div class="plot-actions"><button id="zoom-text" type="button" aria-pressed="false">Zoom to text</button><button id="all-paths" type="button" aria-pressed="true">All paths</button></div></div><svg id="plot" class="plot" viewBox="0 0 820 485" role="group" aria-label="Two-dimensional PCA projection of cue embeddings; select a point to inspect it"></svg><p class="plot-caption"><strong>2D PCA is an approximation.</strong> <span id="variance"></span> Distances shown below use the original embedding space, not this drawing. <span id="plot-view-note">Hover for cue codes, zoom into the text cluster, or choose a cue to inspect.</span></p></div>
+          <aside class="panel inspector" aria-label="Cue inspector"><label class="field-label" for="cue-select">Inspect a cue</label><select id="cue-select"></select><div class="cue-header"><span class="pill" id="cue-kind"></span><h3 id="cue-title"></h3></div><div class="cue-content" id="cue-content"></div><p class="source" id="cue-source"></p><div class="measure"><label class="field-label" for="compare-select">Cosine distance to</label><select id="compare-select"></select><div class="distance"><output id="pair-distance" aria-live="polite">—</output><span>1 − cosine similarity<br>Original space · range 0–2</span></div><p class="small-label">Nearest other cues in this corpus</p><ul class="neighbors" id="neighbors"></ul></div></aside>
+        </div>
+        <section aria-labelledby="paths-title"><div class="toolbar"><div class="section-title"><span class="index">02</span><h2 id="paths-title">Three sampled trajectories</h2></div><span class="quiet" id="run-summary"></span></div><div class="cards" id="paths"></div><p class="run-note" id="run-note"></p></section>
+        <section class="bridge" aria-labelledby="bridge-title"><div class="bridge-head"><div class="section-title"><span class="index">03</span><h2 id="bridge-title">Exploration → bridge → test</h2></div><p>Illustrative, not inferred from these walks or tested.</p></div><div class="bridge-grid"><article class="bridge-stage"><p class="eyebrow">Explore</p><h3>One message, many listeners.</h3><p>A public announcement suggests a relation: several consumers can share one production step. The association is a candidate mechanism, not evidence that it fits an engineering problem.</p></article><article class="bridge-stage"><p class="eyebrow">Bridge</p><h3>Map the relation to a system.</h3><p>For concurrent identical reads, map “one announcement” to one in-flight query and “listeners” to waiting requests. Verify matching response inputs, access boundaries, freshness, and cancellation behavior.</p></article><article class="bridge-stage"><p class="eyebrow">Test</p><h3>Make a prediction that can fail.</h3><p>Compare a bounded request-coalescing prototype with the baseline. Count database reads and measure latency, errors, and freshness. Fewer queries without faster responses would challenge the proposed bottleneck.</p></article></div><p class="bridge-note">Keep the original objective authoritative. A promising analogy may suggest a requirement change; it does not authorize one. Structural resemblance generates a hypothesis, not a proof.</p></section>
+        <details class="benchmark" id="benchmark" hidden><summary id="benchmark-summary">Inspect a bounded synthetic check</summary><p id="benchmark-description"></p><p id="benchmark-contract"></p><div class="table-scroll"><table><caption>Generated development cases · agreement with a separately declared fictional contract</caption><thead><tr><th scope="col">Case and request inputs</th><th scope="col">Expected behavior</th><th scope="col">SKU-only key</th><th scope="col">Full identity key</th></tr></thead><tbody id="benchmark-cases"></tbody></table></div><p id="benchmark-limits"></p></details>
+        <section class="provenance"><details open><summary>Encoder, sampling, and provenance</summary><dl id="provenance"></dl></details><p class="limitation"><a href="path-trial.json">Inspect one worker trial (unvalidated proposal)</a>. This separate trial does not establish the results of the synthetic check above.</p><p class="limitation">This is a small, curated corpus. The two-image pool cannot populate all three distance bands and provides very limited visual coverage. “Near,” “middle,” and “far” are relative rank bands within each available modality, not universal semantic categories. PCA can distort proximity, and cross-modal cosine geometry is model-dependent. Sampled operators are prompts for subsequent exploration; this viewer does not execute them, infer bridges, or assess engineering utility.</p></section>
+      </div>
+    </main>
+    <footer><span>Geometry proposes where to look. Evidence decides what to keep.</span><a href="images/README.txt">Photo credits · CC BY 2.0</a><a href="data.json" download>Download the underlying data</a></footer>
+  </div>
+  <script>
+    'use strict';
+    const $ = id => document.getElementById(id);
+    const NS = 'http://www.w3.org/2000/svg';
+    const state = { data:null, run:null, selected:null, comparison:null, activePath:null, zoomText:false, items:new Map(), points:new Map(), codes:new Map() };
+    const colors = ['var(--p1)','var(--p2)','var(--p3)'];
+    const node = (tag, text, className) => { const element=document.createElement(tag); if(text!==undefined) element.textContent=text; if(className) element.className=className; return element; };
+    const svg = (tag, attrs={}) => { const element=document.createElementNS(NS,tag); for(const [key,value] of Object.entries(attrs)) element.setAttribute(key,String(value)); return element; };
+    const number = value => Number.isFinite(value) ? value.toFixed(4) : 'Unavailable';
+    const percent = value => Number.isFinite(value) ? (value*100).toFixed(2)+'%' : 'Unavailable';
+    const display = value => value==null ? 'Not supplied' : typeof value==='string' ? value : JSON.stringify(value);
+    function cosine(a,b) { if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length||!a.length) return null; let dot=0,aa=0,bb=0; for(let i=0;i<a.length;i++){ if(!Number.isFinite(a[i])||!Number.isFinite(b[i])) return null; dot+=a[i]*b[i]; aa+=a[i]*a[i]; bb+=b[i]*b[i]; } if(!aa||!bb) return null; return 1-Math.max(-1,Math.min(1,dot/Math.sqrt(aa*bb))); }
+    function distance(a,b) { const measured=cosine(state.items.get(a)?.embedding,state.items.get(b)?.embedding); if(measured!==null) return measured; if(a===b) return 0; for(const run of state.data.runs||[]) for(const path of run.paths||[]) for(const step of path.steps||[]) { if((a===step.current_id&&b===state.data.objective.id)||(b===step.current_id&&a===state.data.objective.id)) return step.distance_to_objective; if((a===step.current_id&&b===step.previous_id)||(b===step.current_id&&a===step.previous_id)) return step.distance_to_parent; } return null; }
+    function label(id) { return state.items.get(id)?.label || (id===state.data.objective.id?'Original objective':id); }
+    function option(select,id,title) { const item=node('option',title); item.value=id; select.append(item); }
+    function theme(value) { document.documentElement.dataset.theme=value; $('theme').textContent=value==='dark'?'Light mode':'Dark mode'; $('theme').setAttribute('aria-label','Switch to '+(value==='dark'?'light':'dark')+' mode'); }
+    theme(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    $('theme').addEventListener('click',()=>theme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
+    function selectCue(id) { state.selected=id; $('cue-select').value=id; renderInspector(); renderPlot(); }
+    function renderInspector() {
+      const cue=state.items.get(state.selected); const objective=cue.id===state.data.objective.id;
+      $('cue-kind').textContent=objective?'Objective':cue.kind+' · '+state.codes.get(cue.id);
+      $('cue-title').textContent=objective?'The original problem':cue.label;
+      const content=$('cue-content'); content.replaceChildren();
+      if(cue.kind==='image'&&cue.image) {
+        let address; try { address=new URL(cue.image,location.href); } catch {}
+        if(address&&address.origin===location.origin&&['http:','https:','file:'].includes(address.protocol)) { const img=node('img'); img.src=address.href; img.alt=cue.label; img.addEventListener('error',()=>{content.replaceChildren(node('p','The local image could not be loaded.'));}); content.append(img); }
+        else content.append(node('p','No local image preview is available.'));
+      } else content.append(node('p',cue.text||'Exact text was not supplied.'));
+      $('cue-source').textContent=objective?'This objective remains fixed across every sampled path.':'Source: '+display(cue.source)+(cue.kind==='image'?' · The image itself was encoded; its label is for display.':'');
+      const compare=$('compare-select'); compare.replaceChildren();
+      for(const [id,item] of state.items) if(id!==state.selected) option(compare,id,id===state.data.objective.id?'Original objective':(state.codes.get(id)+' · '+item.label));
+      if(!state.comparison||state.comparison===state.selected||!state.items.has(state.comparison)) state.comparison=state.selected===state.data.objective.id?state.data.cues[0]?.id:state.data.objective.id;
+      compare.value=state.comparison||''; renderPair();
+      const nearest=state.data.cues.filter(item=>item.id!==state.selected).map(item=>({item,value:distance(state.selected,item.id)})).filter(row=>Number.isFinite(row.value)).sort((a,b)=>a.value-b.value||a.item.id.localeCompare(b.item.id)).slice(0,3);
+      $('neighbors').replaceChildren();
+      for(const row of nearest) { const li=node('li'); const button=node('button'); button.type='button'; button.append(node('span',row.item.label),node('span',number(row.value),'value')); button.addEventListener('click',()=>selectCue(row.item.id)); li.append(button); $('neighbors').append(li); }
+      if(!nearest.length) $('neighbors').append(node('li','No vectors available for this comparison.','quiet'));
+    }
+    function renderPair(){ $('pair-distance').textContent=number(distance(state.selected,state.comparison)); }
+    function renderPlot() {
+      const plot=$('plot'); plot.replaceChildren();
+      const points=[...state.points.values()].filter(point=>!state.zoomText||state.items.get(point.id)?.kind!=='image'); if(!points.length){const message=svg('text',{x:410,y:240,'text-anchor':'middle',class:'axis-label'});message.textContent='No PCA coordinates supplied.';plot.append(message);return;}
+      const xs=points.map(point=>point.x),ys=points.map(point=>point.y); const xMin=Math.min(...xs),xMax=Math.max(...xs),yMin=Math.min(...ys),yMax=Math.max(...ys);
+      const xSpan=xMax-xMin||1,ySpan=yMax-yMin||1; const scale=Math.min(690/xSpan,345/ySpan); const midX=(xMin+xMax)/2,midY=(yMin+yMax)/2;
+      const xy=id=>{const point=state.points.get(id);return point&&(!state.zoomText||state.items.get(id)?.kind!=='image')?{x:410+(point.x-midX)*scale,y:232-(point.y-midY)*scale}:null;};
+      for(let i=0;i<5;i++){plot.append(svg('line',{x1:55,y1:61+i*86,x2:765,y2:61+i*86,class:'grid'}));plot.append(svg('line',{x1:65+i*172.5,y1:50,x2:65+i*172.5,y2:413,class:'grid'}));}
+      const axisX=svg('text',{x:764,y:460,'text-anchor':'end',class:'axis-label'});axisX.textContent='PC1 →';plot.append(axisX);
+      const axisY=svg('text',{x:24,y:47,class:'axis-label'});axisY.textContent='PC2 ↑';plot.append(axisY);
+      (state.run.paths||[]).forEach((path,index)=>{const group=svg('g',{opacity:state.activePath&&state.activePath!==path.path_id?.toString()?'.10':'.75'});const color=colors[index%colors.length]; for(const step of path.steps||[]){const a=xy(step.previous_id),b=xy(step.current_id);if(!a||!b)continue;group.append(svg('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:color,'stroke-width':state.activePath===path.path_id?'2.7':'1.7','stroke-dasharray':index===1?'7 5':index===2?'2 4':'none'})); const dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy);if(len>24){const ux=dx/len,uy=dy/len,tx=b.x-ux*15,ty=b.y-uy*15;group.append(svg('path',{d:`M ${tx-ux*7-uy*3} ${ty-uy*7+ux*3} L ${tx} ${ty} L ${tx-ux*7+uy*3} ${ty-uy*7-ux*3}`,fill:'none',stroke:color,'stroke-width':1.5}));}}
+        plot.append(group);
+      });
+      for(const [id,item] of state.items) { const position=xy(id);if(!position)continue;const objective=id===state.data.objective.id;const selected=id===state.selected;const group=svg('g',{class:'point'+(selected?' selected':'')+(objective?' objective-point':item.kind==='image'?' image-point':''),transform:`translate(${position.x},${position.y})`,tabindex:0,role:'button','aria-label':(objective?'Original objective':item.kind+' cue: '+item.label),'aria-pressed':String(selected)});group.append(svg('circle',{r:15,class:'halo'})); const title=svg('title');title.textContent=objective?state.data.objective.text:item.label;group.append(title);
+        if(objective) group.append(svg('path',{d:'M 0 -10 L 3 -3 L 10 0 L 3 3 L 0 10 L -3 3 L -10 0 L -3 -3 Z',fill:'var(--objective)',stroke:'var(--panel)','stroke-width':1.5}));
+        else if(item.kind==='image')group.append(svg('rect',{x:-5,y:-5,width:10,height:10,transform:'rotate(45)',fill:'var(--image)',stroke:'var(--panel)','stroke-width':1.5}));
+        else group.append(svg('circle',{r:5.5,fill:'var(--text)',stroke:'var(--panel)','stroke-width':1.5}));
+        const text=svg('text',{x:objective?-17:0,y:objective?-10:21,'text-anchor':objective?'end':'middle',class:objective?'point-label objective-label':'point-label'});text.textContent=objective?'OBJECTIVE':state.codes.get(id);group.append(text);group.addEventListener('click',()=>selectCue(id));group.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();selectCue(id);}});plot.append(group);
+      }
+    }
+    function metric(label,value){const cell=node('div',undefined,'metric');cell.append(node('dt',label),node('dd',value));return cell;}
+    function renderPaths() {
+      const host=$('paths');host.replaceChildren();
+      const paths=state.run.paths||[];
+      $('paths-title').textContent=paths.length===3?'Three sampled trajectories':paths.length+' sampled trajectories';
+      paths.forEach((path,index)=>{const card=node('article',undefined,'panel path-card');card.style.setProperty('--path',colors[index%colors.length]);const head=node('div',undefined,'path-head');head.append(node('h3','Path '+String(index+1).padStart(2,'0')));const button=node('button',state.activePath===path.path_id?'Highlighted':'Highlight');button.type='button';button.setAttribute('aria-pressed',String(state.activePath===path.path_id));button.addEventListener('click',()=>{state.activePath=state.activePath===path.path_id?null:path.path_id;renderPaths();renderPlot();});head.append(button);card.append(head);const steps=node('ol',undefined,'steps');
+        for(const step of path.steps||[]){const row=node('li',undefined,'step');const top=node('div',undefined,'step-top');top.append(node('span',String(step.hop),'hop'));const names=node('div');const cue=node('button',label(step.current_id),'cue-button');cue.type='button';cue.addEventListener('click',()=>selectCue(step.current_id));names.append(cue,node('p',(state.codes.get(step.current_id)||step.current_id)+' · '+step.selected_kind+' · '+step.selected_band+' band','step-sub'));top.append(names);row.append(top,node('span',step.operator,'operator'));const metrics=node('dl',undefined,'metrics');metrics.append(metric('From parent',number(step.distance_to_parent)),metric('From objective',number(step.distance_to_objective)),metric('Cue probability',percent(step.transition_probability)));row.append(metrics);const details=node('details');details.append(node('summary','Sampling details'));const sizes=Object.entries(step.band_sizes_within_selected_kind||{}).map(([key,value])=>key+' '+value).join(', ');details.append(node('p','Parent: '+label(step.previous_id)+'. Available cues: '+step.available_cues+'. Band sizes within '+step.selected_kind+': '+sizes+'.'));details.append(node('p','P(kind) '+percent(step.kind_probability)+' · P(band | kind) '+percent(step.selected_band_probability)+' · P(operator) '+percent(step.operator_probability)+'. Joint cue + operator probability: '+percent(step.joint_probability)+'.'));details.append(node('p','Minimum distance to an earlier sampled cue: '+(step.min_distance_to_earlier_cues===null?'No earlier cue':number(step.min_distance_to_earlier_cues))+'. A geometric distance, not a usefulness score.'));row.append(details);steps.append(row);}card.append(steps,node('div',path.termination==='pool_exhausted'?'Stopped: cue pool exhausted.':'Stopped: hop budget reached.','path-foot'));host.append(card);
+      });
+      $('all-paths').setAttribute('aria-pressed',String(!state.activePath));
+      $('run-summary').textContent='Seed '+state.run.config.seed+' · '+state.run.observed_hops+' recorded hops';
+      const weights=state.run.config.band_weights||{};
+      $('run-note').textContent='Each hop samples a modality uniformly, then a distance band (near '+percent(weights.near)+', middle '+percent(weights.middle)+', far '+percent(weights.far)+' before empty-band renormalization), then a cue uniformly within that band. Cue probability is the conditional transition probability at that hop. Operators are sampled separately and uniformly. No cue repeats within a path; different paths may overlap.';
+    }
+    function renderProvenance() {
+      const encoder=state.data.encoder,config=state.run.config;const pairs=[['Encoder',encoder.id],['Revision',encoder.revision],['Dimensions',encoder.dimension],['Distance',config.metric],['Projection',display(state.data.projection.method||'PCA, first two components')],['Cue pool',state.data.cues.length+' cues · '+state.data.cues.filter(cue=>cue.kind==='text').length+' text / '+state.data.cues.filter(cue=>cue.kind==='image').length+' image'],['Run seed',config.seed],['Run input SHA-256',state.run.input_sha256],['Run status',state.run.status],['Utility assessed',state.run.utility_assessed===true?'Yes (as declared in run)':'No'],['Operator pool',config.operators]];
+      if(state.data.provenance)pairs.push(['Data provenance',state.data.provenance]);
+      $('provenance').replaceChildren();for(const [key,value] of pairs)$('provenance').append(node('dt',key),node('dd',display(value)));
+    }
+    function renderBenchmark() {
+      const bridge=state.data.bridge;if(!bridge||!Array.isArray(bridge.generated_cases))return;
+      const cases=bridge.generated_cases,candidates=bridge.candidate_predicates||[],domain=bridge.domain_bounds||{};
+      $('benchmark-summary').textContent='Inspect a bounded synthetic check · '+cases.length+' generated cases';
+      $('benchmark-description').textContent=candidates.length+' candidate predicates; '+candidates.filter(candidate=>candidate.status==='rejected').length+' rejected. '+display(domain.request_instances)+' request instances, '+display(domain.unordered_distinct_instance_pairs)+' distinct pairs. SKU-only and full-identity proposals disagree on '+display(bridge.proposal_disagreement_count)+' pairs. This check was supplied separately; it was not discovered from the cue walks and does not measure latency.';
+      $('benchmark-contract').textContent='Declared sharing contract: '+display(bridge.declared_contract?.sharing_permission)+' Chosen fields: '+(bridge.chosen_predicate?.fields||[]).join(' + ')+'.';
+      const body=$('benchmark-cases');body.replaceChildren();
+      for(const test of cases){const row=node('tr');const name=node('td',test.role);if(test.requests)name.append(node('span',test.requests.map(request=>request.instance+': '+request.tenant+' / '+request.sku+' / '+request.locale).join('\n'),'case-input'));else if(test.situation)name.append(node('span',test.situation,'case-input'));row.append(name,node('td',typeof test.expected_share==='boolean'?(test.expected_share?'May share production.':'Must not share production.'):display(test.expected_behavior)));for(const key of ['sku_only','full_identity']){const cell=node('td');const verdict=typeof test.validation==='object'?test.validation?.[key]:test.validation;cell.append(node('span',verdict||'pending','verdict'));if(test.observed&&typeof test.observed[key]==='boolean')cell.append(node('span',test.observed[key]?'Observed: share':'Observed: separate','case-input'));if(test.reason)cell.title=test.reason;row.append(cell);}body.append(row);}
+      $('benchmark-limits').textContent=(bridge.limits||[]).join(' ');$('benchmark').hidden=false;
+    }
+    function setRun(index){state.run=state.data.runs[index];state.activePath=null;renderPaths();renderPlot();renderProvenance();}
+    async function initialize(){
+      try { const response=await fetch('data.json');if(!response.ok)throw new Error('The data file returned HTTP '+response.status+'.');const data=await response.json();if(!data.objective||!Array.isArray(data.cues)||!data.runs?.length||!data.projection?.points)throw new Error('The data file is missing objective, cues, sampled runs, or projection points.');state.data=data;state.items.set(data.objective.id,data.objective);let textIndex=0,imageIndex=0;for(const cue of data.cues){state.items.set(cue.id,cue);state.codes.set(cue.id,(cue.kind==='image'?'I'+String(++imageIndex).padStart(2,'0'):'T'+String(++textIndex).padStart(2,'0')));}for(const point of data.projection.points)if(Number.isFinite(point.x)&&Number.isFinite(point.y))state.points.set(point.id,point);
+        $('objective-text').textContent=data.objective.text;$('corpus-count').textContent=data.cues.length+' cues · '+data.encoder.dimension+' dimensions';
+        data.runs.forEach((run,index)=>option($('seed'),String(index),String(run.config.seed)));option($('cue-select'),data.objective.id,'Original objective');for(const cue of data.cues)option($('cue-select'),cue.id,state.codes.get(cue.id)+' · '+cue.label);
+        const variance=data.projection.explained_variance;if(Array.isArray(variance)&&variance.length>=2&&variance.slice(0,2).every(Number.isFinite))$('variance').textContent='These axes retain '+((variance[0]+variance[1])*100).toFixed(1)+'% of the variance.';
+        state.selected=data.objective.id;state.comparison=data.cues[0]?.id;setRun(0);renderInspector();renderBenchmark();$('loading').hidden=true;$('content').hidden=false;
+      }catch(error){$('loading').textContent='Could not load this experiment. '+error.message+' Serve this directory over HTTP so the viewer can fetch data.json.';}
+    }
+    $('seed').addEventListener('change',event=>setRun(Number(event.target.value)));
+    $('cue-select').addEventListener('change',event=>selectCue(event.target.value));
+    $('compare-select').addEventListener('change',event=>{state.comparison=event.target.value;renderPair();});
+    $('all-paths').addEventListener('click',()=>{state.activePath=null;renderPaths();renderPlot();});
+    $('zoom-text').addEventListener('click',()=>{state.zoomText=!state.zoomText;$('zoom-text').textContent=state.zoomText?'Full landscape':'Zoom to text';$('zoom-text').setAttribute('aria-pressed',String(state.zoomText));$('plot-view-note').textContent=state.zoomText?'Text-only crop of the same PCA coordinates. Image points and image-connected segments are hidden; all cues remain available in the inspector.':'Hover for cue codes, zoom into the text cluster, or choose a cue to inspect.';renderPlot();});
+    initialize();
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{"capture": "long_spell", "delivery_episode": ["long-2"], "source_episode": ["long-2"]}
+{"capture": "quick_return", "delivery_episode": ["quick-2", "quick-4"], "source_episode": ["quick-2", "quick-4"]}
+{"capture": "two_ports", "delivery_episode": ["ports-3", "ports-4"], "source_episode": ["ports-3", "ports-4"]}
+{"capture": "reconnected", "delivery_episode": ["reconnect-2", "reconnect-4"], "source_episode": ["reconnect-2"]}
+{"capture": "unreadable_patch", "delivery_episode": ["invalid-2"], "source_episode": ["invalid-2"]}
+{"capture": "quiet", "delivery_episode": [], "source_episode": []}
+{"capture": "already_high", "delivery_episode": ["startup-1"], "source_episode": ["startup-1"]}
+{"capture": "two_cabinets", "delivery_episode": ["cabs-3", "cabs-4"], "source_episode": ["cabs-3", "cabs-4"]}

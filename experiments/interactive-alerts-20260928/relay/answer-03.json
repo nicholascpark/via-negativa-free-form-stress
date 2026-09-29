@@ -1,0 +1,8 @@
+{
+  "event": "answer",
+  "id": "answer-03",
+  "question_id": "question-03",
+  "at_utc": "2026-09-29T03:38:29.981882+00:00",
+  "speaker": "simulated technician",
+  "text": "That matches what I need. HIGH and NORMAL are already qualified upstream, so one fresh NORMAL means recovery, even if brief. A subsequent HIGH deserves a new page immediately.\n\nPage an initial HIGH. INVALID means we couldn\u2019t obtain a reading; it neither confirms recovery nor needs its own page here. I don\u2019t need repeat reminders, even after a long silence. So `startup-1` only and `invalid-2` only are right."
+}

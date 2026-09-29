@@ -1,0 +1,178 @@
+[
+  {
+    "n": 2,
+    "unnormalized_vector": [
+      1,
+      -1
+    ],
+    "normalizer_squared": 2,
+    "sum_fourth": "1/2",
+    "e4": "0",
+    "status": "exact rational checks passed"
+  },
+  {
+    "n": 3,
+    "unnormalized_vector": [
+      2,
+      -1,
+      -1
+    ],
+    "normalizer_squared": 6,
+    "sum_fourth": "1/2",
+    "e4": "0",
+    "status": "exact rational checks passed"
+  },
+  {
+    "n": 4,
+    "unnormalized_vector": [
+      3,
+      -1,
+      -1,
+      -1
+    ],
+    "normalizer_squared": 12,
+    "sum_fourth": "7/12",
+    "e4": "-1/48",
+    "status": "exact rational checks passed"
+  },
+  {
+    "n": 5,
+    "unnormalized_vector": [
+      4,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "normalizer_squared": 20,
+    "sum_fourth": "13/20",
+    "e4": "-3/80",
+    "status": "exact rational checks passed"
+  },
+  {
+    "n": 6,
+    "unnormalized_vector": [
+      5,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "normalizer_squared": 30,
+    "sum_fourth": "7/10",
+    "e4": "-1/20",
+    "status": "exact rational checks passed"
+  },
+  {
+    "n": 7,
+    "unnormalized_vector": [
+      6,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "normalizer_squared": 42,
+    "sum_fourth": "31/42",
+    "e4": "-5/84",
+    "status": "exact rational checks passed"
+  },
+  {
+    "n": 8,
+    "unnormalized_vector": [
+      7,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "normalizer_squared": 56,
+    "sum_fourth": "43/56",
+    "e4": "-15/224",
+    "status": "exact rational checks passed"
+  },
+  {
+    "n": 9,
+    "unnormalized_vector": [
+      8,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "normalizer_squared": 72,
+    "sum_fourth": "19/24",
+    "e4": "-7/96",
+    "status": "exact rational checks passed"
+  },
+  {
+    "n": 10,
+    "unnormalized_vector": [
+      9,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "normalizer_squared": 90,
+    "sum_fourth": "73/90",
+    "e4": "-7/90",
+    "status": "exact rational checks passed"
+  },
+  {
+    "n": 11,
+    "unnormalized_vector": [
+      10,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "normalizer_squared": 110,
+    "sum_fourth": "91/110",
+    "e4": "-9/110",
+    "status": "exact rational checks passed"
+  },
+  {
+    "n": 12,
+    "unnormalized_vector": [
+      11,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "normalizer_squared": 132,
+    "sum_fourth": "37/44",
+    "e4": "-15/176",
+    "status": "exact rational checks passed"
+  }
+]

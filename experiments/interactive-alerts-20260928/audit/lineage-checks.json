@@ -1,0 +1,33 @@
+{
+  "q1": {
+    "case": "two_ports",
+    "before_cabinet_route": [
+      "ports-3"
+    ],
+    "before_port_route": [
+      "ports-3",
+      "ports-4"
+    ],
+    "after_v1_default": [
+      "ports-3",
+      "ports-4"
+    ],
+    "interpretation": "Answer selected and made mandatory an existing provisional independent-source branch."
+  },
+  "q2": {
+    "case": "reconnected",
+    "before_v1_default": [
+      "reconnect-2",
+      "reconnect-4"
+    ],
+    "after_v2_default": [
+      "reconnect-2"
+    ],
+    "interpretation": "Answer changed default behavior by activating existing provisional source-order admission."
+  },
+  "q3": {
+    "cases_compared": 18,
+    "v2_v3_outputs_equal": true,
+    "interpretation": "Answer confirmed existing policy. v3 adds final contract, usable interface, diagnostics, and development checks; no observed notification-policy change."
+  }
+}

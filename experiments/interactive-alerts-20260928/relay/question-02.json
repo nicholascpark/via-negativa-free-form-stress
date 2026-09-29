@@ -1,0 +1,26 @@
+{
+  "event": "question",
+  "id": "question-02",
+  "at_utc": "2026-09-29T03:36:04.222579+00:00",
+  "text": "In `reconnected`, `reconnect-4` delivers HIGH with `n=51` after we already received NORMAL with `n=52`. Is that an old replay we should ignore, or can a genuinely new reading reuse a lower number? Specifically, is `n` an increasing counter independently for each duct, does it also reliably advance on INVALID records, and can it reset or wrap within these captures?",
+  "record": "/private/tmp/via-negativa-interactive-20260928/builder/question-02.md",
+  "snapshot": "/private/tmp/via-negativa-interactive-20260928/relay/question-02-before-answer",
+  "hashes": {
+    "answer-01.md": "0c069c8f68ee9651337b884b7a969cf1ab633468ffb172301a1ef107279990be",
+    "brief.md": "6f223eef3689d7c10025ba60b0b4323ac06d9418dc9b3c32c1381f612caa27d6",
+    "development-probes.json": "a6b8062935b1562d0ab5ed5bb3cf9f2fbe004c2929227931a390d27d9a791758",
+    "question-01.md": "1a4ab99f43d586d795b268016ca5449feb37283f9198224889cfdf60a1975a1d",
+    "question-02.md": "cc652a57674ddb6599b729d8001a9ca6d37c2914c1b23f91529511473dfeb580",
+    "v0/baseline.py": "ba63d031513ecc0f57f616d406daf9e4ad0964c0e295e20221fdb810966a1a1b",
+    "v0/explore.py": "2ee48d81a7cd3d7f3e82ab7993a1bbc86a6132559b9f541e6a04d377c33ae869",
+    "v0/results.jsonl": "b68343c6f12c3fb560d8b4a1a91a1eef843b0f4c753d16770fd74e8fedc25018",
+    "v0/streams.json": "276781db9be6905ce063d8c13ad3b46a60d7186aab667e57e408f18a4f55c25a",
+    "v0.manifest.json": "3adcbcb9c75f705794ec1f198316cca4259e4f0de615fd447f70b513e7671534",
+    "v0.sha256": "8f4c99e5d0afbb8ebdc302de4d00056ccecc6ec9ab2be1836ca022f39ccc8593",
+    "v1/prototype.py": "d42f2e4456d2dbf070b2617a06b54bdcf4c60f88adb09fd8e9b9d1629b13a2d7",
+    "v1/representation.md": "b13779a02044bd8961282078ca93caa7905389fdcf5e08f420fee6e5d0b6bf0c",
+    "v1/results.jsonl": "deb0f790597ff86ba1e77670dcd5b4629c62c9fc3154c0df5afdfe0eee0ec87b",
+    "v1/streams.json": "276781db9be6905ce063d8c13ad3b46a60d7186aab667e57e408f18a4f55c25a",
+    "v1.manifest.json": "cf404f16c765a3d40748e36d3a68554729d6a6b3e419647e427a1a1417771c8b"
+  }
+}

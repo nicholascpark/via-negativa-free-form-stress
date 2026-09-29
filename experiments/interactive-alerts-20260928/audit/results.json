@@ -1,0 +1,2459 @@
+{
+  "at_utc": "2026-09-29T04:18:39.089828+00:00",
+  "source": "relay/candidate-frozen/v3",
+  "adaptation": "None; direct documented page_ids/decisions/Notifier interfaces.",
+  "provenance": [
+    {
+      "manifest": "setup-manifest.json",
+      "file": "public/baseline.py",
+      "pass": true
+    },
+    {
+      "manifest": "setup-manifest.json",
+      "file": "public/streams.json",
+      "pass": true
+    },
+    {
+      "manifest": "setup-manifest.json",
+      "file": "public/task.md",
+      "pass": true
+    },
+    {
+      "manifest": "setup-manifest.json",
+      "file": "user-private/cases.json",
+      "pass": true
+    },
+    {
+      "manifest": "setup-manifest.json",
+      "file": "user-private/dossier.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "answer-01.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "answer-02.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "answer-03.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "brief.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "development-probes.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "question-01.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "question-02.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "question-03.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v0/baseline.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v0/explore.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v0/results.jsonl",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v0/streams.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v0.manifest.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v0.sha256",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v1/prototype.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v1/representation.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v1/results.jsonl",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v1/streams.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v1.manifest.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v2/prototype.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v2/representation.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v2/results.jsonl",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v2/streams.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v2.manifest.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v3/INTERFACE.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v3/README.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v3/baseline.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v3/checks.txt",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v3/comparison.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v3/manifest.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v3/notifier.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v3/records.csv",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v3/streams.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/candidate-frozen.json",
+      "file": "v3/test_notifier.py",
+      "pass": true
+    },
+    {
+      "manifest": "audit/holdout-manifest.json",
+      "file": "audit/holdouts.json",
+      "pass": true
+    },
+    {
+      "manifest": "audit/holdout-manifest.json",
+      "file": "audit/holdout-plan.md",
+      "pass": true
+    },
+    {
+      "manifest": "audit/holdout-manifest.json",
+      "file": "audit/preregistered-plan.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "brief.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "question-01.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "v0/baseline.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "v0/explore.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "v0/results.jsonl",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "v0/streams.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-01.json",
+      "file": "v0.sha256",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "answer-01.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "brief.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "development-probes.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "question-01.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "question-02.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0/baseline.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0/explore.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0/results.jsonl",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0/streams.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0.manifest.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v0.sha256",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v1/prototype.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v1/representation.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v1/results.jsonl",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v1/streams.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-02.json",
+      "file": "v1.manifest.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "answer-01.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "answer-02.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "brief.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "development-probes.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "question-01.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "question-02.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "question-03.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0/baseline.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0/explore.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0/results.jsonl",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0/streams.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0.manifest.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v0.sha256",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v1/prototype.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v1/representation.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v1/results.jsonl",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v1/streams.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v1.manifest.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v2/prototype.py",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v2/representation.md",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v2/results.jsonl",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v2/streams.json",
+      "pass": true
+    },
+    {
+      "manifest": "relay/question-03.json",
+      "file": "v2.manifest.json",
+      "pass": true
+    }
+  ],
+  "cases": [
+    {
+      "group": "public",
+      "case": "long_spell",
+      "expected": [
+        "long-2"
+      ],
+      "actual": [
+        "long-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "quick_return",
+      "expected": [
+        "quick-2",
+        "quick-4"
+      ],
+      "actual": [
+        "quick-2",
+        "quick-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_ports",
+      "expected": [
+        "ports-3",
+        "ports-4"
+      ],
+      "actual": [
+        "ports-3",
+        "ports-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "reconnected",
+      "expected": [
+        "reconnect-2"
+      ],
+      "actual": [
+        "reconnect-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "unreadable_patch",
+      "expected": [
+        "invalid-2"
+      ],
+      "actual": [
+        "invalid-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "quiet",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "already_high",
+      "expected": [
+        "startup-1"
+      ],
+      "actual": [
+        "startup-1"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_cabinets",
+      "expected": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "actual": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "no_history_then_unreadable",
+      "expected": [
+        "p1-2"
+      ],
+      "actual": [
+        "p1-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "independent_duct_recovery",
+      "expected": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "actual": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "stale_clearances",
+      "expected": [
+        "p3-1",
+        "p3-8"
+      ],
+      "actual": [
+        "p3-1",
+        "p3-8"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "replay_after_real_clearance",
+      "expected": [
+        "p4-1",
+        "p4-5"
+      ],
+      "actual": [
+        "p4-1",
+        "p4-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "separate_counter_ranges",
+      "expected": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "actual": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "silence_is_not_a_clearance",
+      "expected": [
+        "p6-1",
+        "p6-4"
+      ],
+      "actual": [
+        "p6-1",
+        "p6-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "newest_unreadable_before_first_high",
+      "expected": [
+        "a3"
+      ],
+      "actual": [
+        "a3"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "zero_receipt_gap_real_clearance",
+      "expected": [
+        "b1",
+        "b3"
+      ],
+      "actual": [
+        "b1",
+        "b3"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "source_scoped_unreadable_frontiers",
+      "expected": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "actual": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "cleared_then_delayed_retry_and_new_problem",
+      "expected": [
+        "d1",
+        "d6"
+      ],
+      "actual": [
+        "d1",
+        "d6"
+      ],
+      "passed": true
+    }
+  ],
+  "metamorphic_checks": [
+    {
+      "group": "public",
+      "case": "long_spell",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "long-2"
+      ],
+      "actual": [
+        "long-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "long_spell",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "long-2"
+      ],
+      "actual": [
+        "long-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "long_spell",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "long-2"
+      ],
+      "actual": [
+        "long-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "long_spell",
+      "transformation": "source_label_swap",
+      "expected": [
+        "long-2"
+      ],
+      "actual": [
+        "long-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "quick_return",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "quick-2",
+        "quick-4"
+      ],
+      "actual": [
+        "quick-2",
+        "quick-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "quick_return",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "quick-2",
+        "quick-4"
+      ],
+      "actual": [
+        "quick-2",
+        "quick-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "quick_return",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "quick-2",
+        "quick-4"
+      ],
+      "actual": [
+        "quick-2",
+        "quick-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "quick_return",
+      "transformation": "source_label_swap",
+      "expected": [
+        "quick-2",
+        "quick-4"
+      ],
+      "actual": [
+        "quick-2",
+        "quick-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_ports",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "ports-3",
+        "ports-4"
+      ],
+      "actual": [
+        "ports-3",
+        "ports-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_ports",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "ports-3",
+        "ports-4"
+      ],
+      "actual": [
+        "ports-3",
+        "ports-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_ports",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "ports-3",
+        "ports-4"
+      ],
+      "actual": [
+        "ports-3",
+        "ports-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_ports",
+      "transformation": "source_label_swap",
+      "expected": [
+        "ports-3",
+        "ports-4"
+      ],
+      "actual": [
+        "ports-3",
+        "ports-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "reconnected",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "reconnect-2"
+      ],
+      "actual": [
+        "reconnect-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "reconnected",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "reconnect-2"
+      ],
+      "actual": [
+        "reconnect-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "reconnected",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "reconnect-2"
+      ],
+      "actual": [
+        "reconnect-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "reconnected",
+      "transformation": "source_label_swap",
+      "expected": [
+        "reconnect-2"
+      ],
+      "actual": [
+        "reconnect-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "unreadable_patch",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "invalid-2"
+      ],
+      "actual": [
+        "invalid-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "unreadable_patch",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "invalid-2"
+      ],
+      "actual": [
+        "invalid-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "unreadable_patch",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "invalid-2"
+      ],
+      "actual": [
+        "invalid-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "unreadable_patch",
+      "transformation": "source_label_swap",
+      "expected": [
+        "invalid-2"
+      ],
+      "actual": [
+        "invalid-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "quiet",
+      "transformation": "compact_receipt_times",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "quiet",
+      "transformation": "stretched_receipt_times",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "quiet",
+      "transformation": "source_affine_counters",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "quiet",
+      "transformation": "source_label_swap",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "already_high",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "startup-1"
+      ],
+      "actual": [
+        "startup-1"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "already_high",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "startup-1"
+      ],
+      "actual": [
+        "startup-1"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "already_high",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "startup-1"
+      ],
+      "actual": [
+        "startup-1"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "already_high",
+      "transformation": "source_label_swap",
+      "expected": [
+        "startup-1"
+      ],
+      "actual": [
+        "startup-1"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_cabinets",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "actual": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_cabinets",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "actual": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_cabinets",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "actual": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_cabinets",
+      "transformation": "source_label_swap",
+      "expected": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "actual": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "no_history_then_unreadable",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "p1-2"
+      ],
+      "actual": [
+        "p1-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "no_history_then_unreadable",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "p1-2"
+      ],
+      "actual": [
+        "p1-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "no_history_then_unreadable",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "p1-2"
+      ],
+      "actual": [
+        "p1-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "no_history_then_unreadable",
+      "transformation": "source_label_swap",
+      "expected": [
+        "p1-2"
+      ],
+      "actual": [
+        "p1-2"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "independent_duct_recovery",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "actual": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "independent_duct_recovery",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "actual": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "independent_duct_recovery",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "actual": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "independent_duct_recovery",
+      "transformation": "source_label_swap",
+      "expected": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "actual": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "stale_clearances",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "p3-1",
+        "p3-8"
+      ],
+      "actual": [
+        "p3-1",
+        "p3-8"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "stale_clearances",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "p3-1",
+        "p3-8"
+      ],
+      "actual": [
+        "p3-1",
+        "p3-8"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "stale_clearances",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "p3-1",
+        "p3-8"
+      ],
+      "actual": [
+        "p3-1",
+        "p3-8"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "stale_clearances",
+      "transformation": "source_label_swap",
+      "expected": [
+        "p3-1",
+        "p3-8"
+      ],
+      "actual": [
+        "p3-1",
+        "p3-8"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "replay_after_real_clearance",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "p4-1",
+        "p4-5"
+      ],
+      "actual": [
+        "p4-1",
+        "p4-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "replay_after_real_clearance",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "p4-1",
+        "p4-5"
+      ],
+      "actual": [
+        "p4-1",
+        "p4-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "replay_after_real_clearance",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "p4-1",
+        "p4-5"
+      ],
+      "actual": [
+        "p4-1",
+        "p4-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "replay_after_real_clearance",
+      "transformation": "source_label_swap",
+      "expected": [
+        "p4-1",
+        "p4-5"
+      ],
+      "actual": [
+        "p4-1",
+        "p4-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "separate_counter_ranges",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "actual": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "separate_counter_ranges",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "actual": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "separate_counter_ranges",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "actual": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "separate_counter_ranges",
+      "transformation": "source_label_swap",
+      "expected": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "actual": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "silence_is_not_a_clearance",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "p6-1",
+        "p6-4"
+      ],
+      "actual": [
+        "p6-1",
+        "p6-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "silence_is_not_a_clearance",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "p6-1",
+        "p6-4"
+      ],
+      "actual": [
+        "p6-1",
+        "p6-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "silence_is_not_a_clearance",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "p6-1",
+        "p6-4"
+      ],
+      "actual": [
+        "p6-1",
+        "p6-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "silence_is_not_a_clearance",
+      "transformation": "source_label_swap",
+      "expected": [
+        "p6-1",
+        "p6-4"
+      ],
+      "actual": [
+        "p6-1",
+        "p6-4"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "newest_unreadable_before_first_high",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "a3"
+      ],
+      "actual": [
+        "a3"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "newest_unreadable_before_first_high",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "a3"
+      ],
+      "actual": [
+        "a3"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "newest_unreadable_before_first_high",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "a3"
+      ],
+      "actual": [
+        "a3"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "newest_unreadable_before_first_high",
+      "transformation": "source_label_swap",
+      "expected": [
+        "a3"
+      ],
+      "actual": [
+        "a3"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "zero_receipt_gap_real_clearance",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "b1",
+        "b3"
+      ],
+      "actual": [
+        "b1",
+        "b3"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "zero_receipt_gap_real_clearance",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "b1",
+        "b3"
+      ],
+      "actual": [
+        "b1",
+        "b3"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "zero_receipt_gap_real_clearance",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "b1",
+        "b3"
+      ],
+      "actual": [
+        "b1",
+        "b3"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "zero_receipt_gap_real_clearance",
+      "transformation": "source_label_swap",
+      "expected": [
+        "b1",
+        "b3"
+      ],
+      "actual": [
+        "b1",
+        "b3"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "source_scoped_unreadable_frontiers",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "actual": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "source_scoped_unreadable_frontiers",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "actual": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "source_scoped_unreadable_frontiers",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "actual": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "source_scoped_unreadable_frontiers",
+      "transformation": "source_label_swap",
+      "expected": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "actual": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "cleared_then_delayed_retry_and_new_problem",
+      "transformation": "compact_receipt_times",
+      "expected": [
+        "d1",
+        "d6"
+      ],
+      "actual": [
+        "d1",
+        "d6"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "cleared_then_delayed_retry_and_new_problem",
+      "transformation": "stretched_receipt_times",
+      "expected": [
+        "d1",
+        "d6"
+      ],
+      "actual": [
+        "d1",
+        "d6"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "cleared_then_delayed_retry_and_new_problem",
+      "transformation": "source_affine_counters",
+      "expected": [
+        "d1",
+        "d6"
+      ],
+      "actual": [
+        "d1",
+        "d6"
+      ],
+      "passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "cleared_then_delayed_retry_and_new_problem",
+      "transformation": "source_label_swap",
+      "expected": [
+        "d1",
+        "d6"
+      ],
+      "actual": [
+        "d1",
+        "d6"
+      ],
+      "passed": true
+    }
+  ],
+  "interface_checks": [
+    {
+      "group": "public",
+      "case": "long_spell",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "public",
+      "case": "quick_return",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_ports",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "public",
+      "case": "reconnected",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "public",
+      "case": "unreadable_patch",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "public",
+      "case": "quiet",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "public",
+      "case": "already_high",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "public",
+      "case": "two_cabinets",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "no_history_then_unreadable",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "independent_duct_recovery",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "stale_clearances",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "replay_after_real_clearance",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "separate_counter_ranges",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "private_user",
+      "case": "silence_is_not_a_clearance",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "newest_unreadable_before_first_high",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "zero_receipt_gap_real_clearance",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "source_scoped_unreadable_frontiers",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "cleared_then_delayed_retry_and_new_problem",
+      "repeated_batch_passed": true,
+      "trace_passed": true,
+      "incremental_passed": true
+    }
+  ],
+  "empty_capture_passed": true,
+  "baseline_comparisons": [
+    {
+      "group": "public",
+      "case": "long_spell",
+      "cooldown": 20,
+      "actual": [
+        "long-2",
+        "long-4"
+      ],
+      "expected": [
+        "long-2"
+      ],
+      "passed": false,
+      "extra": [
+        "long-4"
+      ],
+      "missed": []
+    },
+    {
+      "group": "public",
+      "case": "long_spell",
+      "cooldown": 60,
+      "actual": [
+        "long-2"
+      ],
+      "expected": [
+        "long-2"
+      ],
+      "passed": true,
+      "extra": [],
+      "missed": []
+    },
+    {
+      "group": "public",
+      "case": "quick_return",
+      "cooldown": 20,
+      "actual": [
+        "quick-2"
+      ],
+      "expected": [
+        "quick-2",
+        "quick-4"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "quick-4"
+      ]
+    },
+    {
+      "group": "public",
+      "case": "quick_return",
+      "cooldown": 60,
+      "actual": [
+        "quick-2"
+      ],
+      "expected": [
+        "quick-2",
+        "quick-4"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "quick-4"
+      ]
+    },
+    {
+      "group": "public",
+      "case": "two_ports",
+      "cooldown": 20,
+      "actual": [
+        "ports-3"
+      ],
+      "expected": [
+        "ports-3",
+        "ports-4"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "ports-4"
+      ]
+    },
+    {
+      "group": "public",
+      "case": "two_ports",
+      "cooldown": 60,
+      "actual": [
+        "ports-3"
+      ],
+      "expected": [
+        "ports-3",
+        "ports-4"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "ports-4"
+      ]
+    },
+    {
+      "group": "public",
+      "case": "reconnected",
+      "cooldown": 20,
+      "actual": [
+        "reconnect-2",
+        "reconnect-4"
+      ],
+      "expected": [
+        "reconnect-2"
+      ],
+      "passed": false,
+      "extra": [
+        "reconnect-4"
+      ],
+      "missed": []
+    },
+    {
+      "group": "public",
+      "case": "reconnected",
+      "cooldown": 60,
+      "actual": [
+        "reconnect-2"
+      ],
+      "expected": [
+        "reconnect-2"
+      ],
+      "passed": true,
+      "extra": [],
+      "missed": []
+    },
+    {
+      "group": "public",
+      "case": "unreadable_patch",
+      "cooldown": 20,
+      "actual": [
+        "invalid-2",
+        "invalid-4"
+      ],
+      "expected": [
+        "invalid-2"
+      ],
+      "passed": false,
+      "extra": [
+        "invalid-4"
+      ],
+      "missed": []
+    },
+    {
+      "group": "public",
+      "case": "unreadable_patch",
+      "cooldown": 60,
+      "actual": [
+        "invalid-2"
+      ],
+      "expected": [
+        "invalid-2"
+      ],
+      "passed": true,
+      "extra": [],
+      "missed": []
+    },
+    {
+      "group": "public",
+      "case": "quiet",
+      "cooldown": 20,
+      "actual": [],
+      "expected": [],
+      "passed": true,
+      "extra": [],
+      "missed": []
+    },
+    {
+      "group": "public",
+      "case": "quiet",
+      "cooldown": 60,
+      "actual": [],
+      "expected": [],
+      "passed": true,
+      "extra": [],
+      "missed": []
+    },
+    {
+      "group": "public",
+      "case": "already_high",
+      "cooldown": 20,
+      "actual": [
+        "startup-1",
+        "startup-2"
+      ],
+      "expected": [
+        "startup-1"
+      ],
+      "passed": false,
+      "extra": [
+        "startup-2"
+      ],
+      "missed": []
+    },
+    {
+      "group": "public",
+      "case": "already_high",
+      "cooldown": 60,
+      "actual": [
+        "startup-1"
+      ],
+      "expected": [
+        "startup-1"
+      ],
+      "passed": true,
+      "extra": [],
+      "missed": []
+    },
+    {
+      "group": "public",
+      "case": "two_cabinets",
+      "cooldown": 20,
+      "actual": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "expected": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "passed": true,
+      "extra": [],
+      "missed": []
+    },
+    {
+      "group": "public",
+      "case": "two_cabinets",
+      "cooldown": 60,
+      "actual": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "expected": [
+        "cabs-3",
+        "cabs-4"
+      ],
+      "passed": true,
+      "extra": [],
+      "missed": []
+    },
+    {
+      "group": "private_user",
+      "case": "no_history_then_unreadable",
+      "cooldown": 20,
+      "actual": [
+        "p1-2",
+        "p1-4"
+      ],
+      "expected": [
+        "p1-2"
+      ],
+      "passed": false,
+      "extra": [
+        "p1-4"
+      ],
+      "missed": []
+    },
+    {
+      "group": "private_user",
+      "case": "no_history_then_unreadable",
+      "cooldown": 60,
+      "actual": [
+        "p1-2"
+      ],
+      "expected": [
+        "p1-2"
+      ],
+      "passed": true,
+      "extra": [],
+      "missed": []
+    },
+    {
+      "group": "private_user",
+      "case": "independent_duct_recovery",
+      "cooldown": 20,
+      "actual": [
+        "p2-1"
+      ],
+      "expected": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "p2-2",
+        "p2-5"
+      ]
+    },
+    {
+      "group": "private_user",
+      "case": "independent_duct_recovery",
+      "cooldown": 60,
+      "actual": [
+        "p2-1"
+      ],
+      "expected": [
+        "p2-1",
+        "p2-2",
+        "p2-5"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "p2-2",
+        "p2-5"
+      ]
+    },
+    {
+      "group": "private_user",
+      "case": "stale_clearances",
+      "cooldown": 20,
+      "actual": [
+        "p3-1",
+        "p3-6"
+      ],
+      "expected": [
+        "p3-1",
+        "p3-8"
+      ],
+      "passed": false,
+      "extra": [
+        "p3-6"
+      ],
+      "missed": [
+        "p3-8"
+      ]
+    },
+    {
+      "group": "private_user",
+      "case": "stale_clearances",
+      "cooldown": 60,
+      "actual": [
+        "p3-1"
+      ],
+      "expected": [
+        "p3-1",
+        "p3-8"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "p3-8"
+      ]
+    },
+    {
+      "group": "private_user",
+      "case": "replay_after_real_clearance",
+      "cooldown": 20,
+      "actual": [
+        "p4-1",
+        "p4-3"
+      ],
+      "expected": [
+        "p4-1",
+        "p4-5"
+      ],
+      "passed": false,
+      "extra": [
+        "p4-3"
+      ],
+      "missed": [
+        "p4-5"
+      ]
+    },
+    {
+      "group": "private_user",
+      "case": "replay_after_real_clearance",
+      "cooldown": 60,
+      "actual": [
+        "p4-1"
+      ],
+      "expected": [
+        "p4-1",
+        "p4-5"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "p4-5"
+      ]
+    },
+    {
+      "group": "private_user",
+      "case": "separate_counter_ranges",
+      "cooldown": 20,
+      "actual": [
+        "p5-1",
+        "p5-5"
+      ],
+      "expected": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "p5-3",
+        "p5-4"
+      ]
+    },
+    {
+      "group": "private_user",
+      "case": "separate_counter_ranges",
+      "cooldown": 60,
+      "actual": [
+        "p5-1",
+        "p5-5"
+      ],
+      "expected": [
+        "p5-1",
+        "p5-3",
+        "p5-4",
+        "p5-5"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "p5-3",
+        "p5-4"
+      ]
+    },
+    {
+      "group": "private_user",
+      "case": "silence_is_not_a_clearance",
+      "cooldown": 20,
+      "actual": [
+        "p6-1",
+        "p6-2"
+      ],
+      "expected": [
+        "p6-1",
+        "p6-4"
+      ],
+      "passed": false,
+      "extra": [
+        "p6-2"
+      ],
+      "missed": [
+        "p6-4"
+      ]
+    },
+    {
+      "group": "private_user",
+      "case": "silence_is_not_a_clearance",
+      "cooldown": 60,
+      "actual": [
+        "p6-1",
+        "p6-2"
+      ],
+      "expected": [
+        "p6-1",
+        "p6-4"
+      ],
+      "passed": false,
+      "extra": [
+        "p6-2"
+      ],
+      "missed": [
+        "p6-4"
+      ]
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "newest_unreadable_before_first_high",
+      "cooldown": 20,
+      "actual": [
+        "a2"
+      ],
+      "expected": [
+        "a3"
+      ],
+      "passed": false,
+      "extra": [
+        "a2"
+      ],
+      "missed": [
+        "a3"
+      ]
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "newest_unreadable_before_first_high",
+      "cooldown": 60,
+      "actual": [
+        "a2"
+      ],
+      "expected": [
+        "a3"
+      ],
+      "passed": false,
+      "extra": [
+        "a2"
+      ],
+      "missed": [
+        "a3"
+      ]
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "zero_receipt_gap_real_clearance",
+      "cooldown": 20,
+      "actual": [
+        "b1"
+      ],
+      "expected": [
+        "b1",
+        "b3"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "b3"
+      ]
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "zero_receipt_gap_real_clearance",
+      "cooldown": 60,
+      "actual": [
+        "b1"
+      ],
+      "expected": [
+        "b1",
+        "b3"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "b3"
+      ]
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "source_scoped_unreadable_frontiers",
+      "cooldown": 20,
+      "actual": [
+        "c2",
+        "c3"
+      ],
+      "expected": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "c5",
+        "c8"
+      ]
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "source_scoped_unreadable_frontiers",
+      "cooldown": 60,
+      "actual": [
+        "c2",
+        "c3"
+      ],
+      "expected": [
+        "c2",
+        "c3",
+        "c5",
+        "c8"
+      ],
+      "passed": false,
+      "extra": [],
+      "missed": [
+        "c5",
+        "c8"
+      ]
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "cleared_then_delayed_retry_and_new_problem",
+      "cooldown": 20,
+      "actual": [
+        "d1",
+        "d7"
+      ],
+      "expected": [
+        "d1",
+        "d6"
+      ],
+      "passed": false,
+      "extra": [
+        "d7"
+      ],
+      "missed": [
+        "d6"
+      ]
+    },
+    {
+      "group": "auditor_holdout",
+      "case": "cleared_then_delayed_retry_and_new_problem",
+      "cooldown": 60,
+      "actual": [
+        "d1",
+        "d7"
+      ],
+      "expected": [
+        "d1",
+        "d6"
+      ],
+      "passed": false,
+      "extra": [
+        "d7"
+      ],
+      "missed": [
+        "d6"
+      ]
+    }
+  ],
+  "worker_tests": {
+    "exit_code": 0,
+    "log": "worker-test-rerun.txt"
+  },
+  "cli": {
+    "table": {
+      "exit_code": 0,
+      "stderr": ""
+    },
+    "json": {
+      "exit_code": 0,
+      "stderr": ""
+    },
+    "csv": {
+      "exit_code": 0,
+      "stderr": ""
+    }
+  },
+  "claim_checks": {
+    "saved_json_reproduced": true,
+    "saved_csv_reproduced": true,
+    "all_public_records_shown": true,
+    "summary_counts": {
+      "cooldown20": 12,
+      "cooldown60": 8,
+      "candidate": 10
+    },
+    "cli_all_succeeded": true
+  },
+  "rough_cost": {
+    "question_rounds": 3,
+    "timeline": [
+      {
+        "round": 1,
+        "question_words": 48,
+        "answer_words": 30,
+        "reply_latency_seconds": 23.55109
+      },
+      {
+        "round": 2,
+        "question_words": 59,
+        "answer_words": 66,
+        "reply_latency_seconds": 35.923835
+      },
+      {
+        "round": 3,
+        "question_words": 79,
+        "answer_words": 68,
+        "reply_latency_seconds": 28.091172
+      }
+    ],
+    "setup_to_candidate_seconds": 586.638021,
+    "tokens_money_compute": "Not measured; wall time includes coordination and agent work."
+  }
+}

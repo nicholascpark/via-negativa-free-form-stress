@@ -1,0 +1,76 @@
+[
+  {
+    "name":"no_history_then_unreadable",
+    "events":[
+      {"id":"p1-1","t":0,"cabinet":"B","port":"right","n":10,"reading":"INVALID"},
+      {"id":"p1-2","t":1,"cabinet":"B","port":"right","n":11,"reading":"HIGH"},
+      {"id":"p1-3","t":22,"cabinet":"B","port":"right","n":12,"reading":"INVALID"},
+      {"id":"p1-4","t":45,"cabinet":"B","port":"right","n":13,"reading":"HIGH"},
+      {"id":"p1-5","t":50,"cabinet":"B","port":"right","n":14,"reading":"NORMAL"}
+    ],
+    "expected_page_ids":["p1-2"],
+    "because":"An initial valid HIGH needs a page. INVALID is neither a page request nor a clearance; elapsed time does not warrant a reminder."
+  },
+  {
+    "name":"independent_duct_recovery",
+    "events":[
+      {"id":"p2-1","t":0,"cabinet":"A","port":"left","n":1,"reading":"HIGH"},
+      {"id":"p2-2","t":0,"cabinet":"A","port":"right","n":1,"reading":"HIGH"},
+      {"id":"p2-3","t":1,"cabinet":"A","port":"left","n":2,"reading":"NORMAL"},
+      {"id":"p2-4","t":2,"cabinet":"A","port":"right","n":2,"reading":"HIGH"},
+      {"id":"p2-5","t":3,"cabinet":"A","port":"left","n":3,"reading":"HIGH"}
+    ],
+    "expected_page_ids":["p2-1","p2-2","p2-5"],
+    "because":"The two ducts have separate problems. Left clears and develops a fresh problem; right never clears. No minimum time gap is required."
+  },
+  {
+    "name":"stale_clearances",
+    "events":[
+      {"id":"p3-1","t":0,"cabinet":"A","port":"right","n":100,"reading":"HIGH"},
+      {"id":"p3-2","t":1,"cabinet":"A","port":"right","n":99,"reading":"NORMAL"},
+      {"id":"p3-3","t":2,"cabinet":"A","port":"right","n":101,"reading":"HIGH"},
+      {"id":"p3-4","t":3,"cabinet":"A","port":"right","n":103,"reading":"INVALID"},
+      {"id":"p3-5","t":4,"cabinet":"A","port":"right","n":102,"reading":"NORMAL"},
+      {"id":"p3-6","t":30,"cabinet":"A","port":"right","n":104,"reading":"HIGH"},
+      {"id":"p3-7","t":31,"cabinet":"A","port":"right","n":105,"reading":"NORMAL"},
+      {"id":"p3-8","t":32,"cabinet":"A","port":"right","n":106,"reading":"HIGH"}
+    ],
+    "expected_page_ids":["p3-1","p3-8"],
+    "because":"The NORMAL records at 99 and 102 arrive after newer source reports and cannot clear current trouble; 103 INVALID is still newer than 102. Only NORMAL 105 is an accepted clearance."
+  },
+  {
+    "name":"replay_after_real_clearance",
+    "events":[
+      {"id":"p4-1","t":0,"cabinet":"B","port":"left","n":200,"reading":"HIGH"},
+      {"id":"p4-2","t":2,"cabinet":"B","port":"left","n":202,"reading":"NORMAL"},
+      {"id":"p4-3","t":40,"cabinet":"B","port":"left","n":201,"reading":"HIGH"},
+      {"id":"p4-4","t":41,"cabinet":"B","port":"left","n":202,"reading":"NORMAL"},
+      {"id":"p4-5","t":42,"cabinet":"B","port":"left","n":203,"reading":"HIGH"}
+    ],
+    "expected_page_ids":["p4-1","p4-5"],
+    "because":"An older HIGH replay must not create a retroactive page after a newer valid clearance. A repeated NORMAL is harmless. HIGH 203 is genuinely new."
+  },
+  {
+    "name":"separate_counter_ranges",
+    "events":[
+      {"id":"p5-1","t":0,"cabinet":"A","port":"left","n":900,"reading":"HIGH"},
+      {"id":"p5-2","t":1,"cabinet":"A","port":"left","n":901,"reading":"NORMAL"},
+      {"id":"p5-3","t":2,"cabinet":"A","port":"right","n":4,"reading":"HIGH"},
+      {"id":"p5-4","t":3,"cabinet":"A","port":"left","n":902,"reading":"HIGH"},
+      {"id":"p5-5","t":4,"cabinet":"B","port":"right","n":1,"reading":"HIGH"}
+    ],
+    "expected_page_ids":["p5-1","p5-3","p5-4","p5-5"],
+    "because":"Counters and abnormal conditions are independent for each cabinet-port pair. A low counter on another source is not stale, and a brief valid clearance permits a new page."
+  },
+  {
+    "name":"silence_is_not_a_clearance",
+    "events":[
+      {"id":"p6-1","t":0,"cabinet":"B","port":"right","n":1,"reading":"HIGH"},
+      {"id":"p6-2","t":3600,"cabinet":"B","port":"right","n":2,"reading":"HIGH"},
+      {"id":"p6-3","t":3601,"cabinet":"B","port":"right","n":3,"reading":"NORMAL"},
+      {"id":"p6-4","t":3602,"cabinet":"B","port":"right","n":4,"reading":"HIGH"}
+    ],
+    "expected_page_ids":["p6-1","p6-4"],
+    "because":"One continuous problem needs one page regardless of duration or silence. The later valid clearance and fresh HIGH produce a second page."
+  }
+]

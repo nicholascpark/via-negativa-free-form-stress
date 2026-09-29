@@ -1,0 +1,528 @@
+{
+  "artifact_version": "thermal-lab-v1",
+  "evidence": "Synthetic numerical development checks only",
+  "equation": "u_t=0.01*u_xx; periodic length 1; x_j=j/N",
+  "predictions_sha256": "d74ab892ff67b80e32d030bbecc36c5725b0d2bc6bc56c06fdc7342db80e6d6d",
+  "experiments": [
+    {
+      "settings": {
+        "N": 20,
+        "dx": 0.05,
+        "alpha": 0.01,
+        "output_dt": 0.1,
+        "steps": 10,
+        "perturbation_mode": 10,
+        "perturbation_amplitude": 0.001,
+        "method": "original",
+        "r": 0.4,
+        "internal_dt": 0.1,
+        "substeps": 1
+      },
+      "initial": {
+        "case": "coarse-contaminated",
+        "time": 0.0,
+        "N": 20,
+        "observed_mode": 10,
+        "mode_amplitude": 0.0009999999999999848,
+        "smooth_amplitude": 1.0,
+        "mean": 2.824346659324739e-17,
+        "mean_square": 0.5000009999999999,
+        "max_abs": 1.001
+      },
+      "final": {
+        "case": "coarse-contaminated",
+        "time": 1.0,
+        "N": 20,
+        "observed_mode": 10,
+        "mode_amplitude": 6.046617600010328e-06,
+        "smooth_amplitude": 0.6707092688830614,
+        "mean": 4.3497513533760637e-17,
+        "mean_square": 0.2249254617193869,
+        "max_abs": 0.6707153155006613
+      }
+    },
+    {
+      "settings": {
+        "N": 80,
+        "dx": 0.0125,
+        "alpha": 0.01,
+        "output_dt": 0.1,
+        "steps": 10,
+        "perturbation_mode": 40,
+        "perturbation_amplitude": 0.001,
+        "method": "original",
+        "r": 6.4,
+        "internal_dt": 0.1,
+        "substeps": 1
+      },
+      "initial": {
+        "case": "fine-contaminated",
+        "time": 0.0,
+        "N": 80,
+        "observed_mode": 40,
+        "mode_amplitude": 0.0009999999999999976,
+        "smooth_amplitude": 1.0,
+        "mean": 1.46936499426098e-17,
+        "mean_square": 0.500001,
+        "max_abs": 1.001
+      },
+      "final": {
+        "case": "fine-contaminated",
+        "time": 1.0,
+        "N": 80,
+        "observed_mode": 40,
+        "mode_amplitude": 81161688023.57117,
+        "smooth_amplitude": 0.6685952287258717,
+        "mean": 0.0,
+        "mean_square": 6.587219602835496e+21,
+        "max_abs": 81161688024.23907
+      }
+    },
+    {
+      "settings": {
+        "N": 80,
+        "dx": 0.0125,
+        "alpha": 0.01,
+        "output_dt": 0.1,
+        "steps": 10,
+        "perturbation_mode": 40,
+        "perturbation_amplitude": 0.001,
+        "method": "substepped",
+        "substeps": 16,
+        "internal_dt": 0.00625,
+        "r": 0.3999999999999999
+      },
+      "initial": {
+        "case": "fine-substepped",
+        "time": 0.0,
+        "N": 80,
+        "observed_mode": 40,
+        "mode_amplitude": 0.0009999999999999976,
+        "smooth_amplitude": 1.0,
+        "mean": 1.46936499426098e-17,
+        "mean_square": 0.500001,
+        "max_abs": 1.001
+      },
+      "final": {
+        "case": "fine-substepped",
+        "time": 1.0,
+        "N": 80,
+        "observed_mode": 40,
+        "mode_amplitude": 2.4685432564763e-18,
+        "smooth_amplitude": 0.673633807165622,
+        "mean": 2.2417863230209583e-17,
+        "mean_square": 0.22689125307822522,
+        "max_abs": 0.6736338071656222
+      }
+    },
+    {
+      "settings": {
+        "N": 80,
+        "dx": 0.0125,
+        "alpha": 0.01,
+        "output_dt": 0.1,
+        "steps": 10,
+        "perturbation_mode": 40,
+        "perturbation_amplitude": 0.001,
+        "method": "filtered",
+        "r": 6.4,
+        "internal_dt": 0.1,
+        "substeps": 1
+      },
+      "initial": {
+        "case": "filter-original",
+        "time": 0.0,
+        "N": 80,
+        "observed_mode": 40,
+        "mode_amplitude": 0.0009999999999999976,
+        "smooth_amplitude": 1.0,
+        "mean": 1.46936499426098e-17,
+        "mean_square": 0.500001,
+        "max_abs": 1.001
+      },
+      "final": {
+        "case": "filter-original",
+        "time": 1.0,
+        "N": 80,
+        "observed_mode": 40,
+        "mode_amplitude": -2.5370330836160802e-18,
+        "smooth_amplitude": 0.6583607392347304,
+        "mean": 6.043342909434201e-17,
+        "mean_square": 0.2167194314828503,
+        "max_abs": 0.6583607397004863
+      }
+    },
+    {
+      "settings": {
+        "N": 80,
+        "dx": 0.0125,
+        "alpha": 0.01,
+        "output_dt": 0.1,
+        "steps": 10,
+        "perturbation_mode": 20,
+        "perturbation_amplitude": 0.001,
+        "method": "filtered",
+        "r": 6.4,
+        "internal_dt": 0.1,
+        "substeps": 1
+      },
+      "initial": {
+        "case": "filter-transfer-witness",
+        "time": 0.0,
+        "N": 80,
+        "observed_mode": 20,
+        "mode_amplitude": 0.0009999999999995176,
+        "smooth_amplitude": 1.0,
+        "mean": 1.6071869527160688e-17,
+        "mean_square": 0.5000005,
+        "max_abs": 1.0
+      },
+      "final": {
+        "case": "filter-transfer-witness",
+        "time": 1.0,
+        "N": 80,
+        "observed_mode": 20,
+        "mode_amplitude": 51111.675330065045,
+        "smooth_amplitude": 0.6583607392344777,
+        "mean": -6.821210263296962e-13,
+        "mean_square": 1306201677.7397094,
+        "max_abs": 51112.33166129668
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "coarse-contaminated-gain",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 20,
+        "dt": 0.1
+      },
+      "expectation_source": "exact Fourier eigenvalue",
+      "expected": -0.6000000000000001,
+      "observed": -0.5999999999999913,
+      "pass": true
+    },
+    {
+      "id": "fine-contaminated-gain",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 80,
+        "dt": 0.1
+      },
+      "expectation_source": "exact Fourier eigenvalue",
+      "expected": -24.6,
+      "observed": -24.599999999999987,
+      "pass": true
+    },
+    {
+      "id": "three-step-growth",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 80,
+        "time": 0.3
+      },
+      "expectation_source": "frozen modal recurrence",
+      "expected": -14.886936000000004,
+      "observed": -14.886935999999958,
+      "pass": true
+    },
+    {
+      "id": "coarse-contaminated-energy",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "case": "coarse-contaminated"
+      },
+      "expectation_source": "all Fourier gains |g|<=1 and Parseval",
+      "expected": "mean-square nonincreasing",
+      "observed": [
+        0.5000009999999999,
+        0.46161212170721616,
+        0.42617096669287946,
+        0.3934509884533662,
+        0.36324318157305113,
+        0.3353546404881483,
+        0.30960728937925125,
+        0.28583673134948906,
+        0.2638911937963744,
+        0.243630557575838,
+        0.2249254617193869
+      ],
+      "pass": true
+    },
+    {
+      "id": "fine-substepped-energy",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "case": "fine-substepped"
+      },
+      "expectation_source": "all Fourier gains |g|<=1 and Parseval",
+      "expected": "mean-square nonincreasing",
+      "observed": [
+        0.500001,
+        0.4620136207161273,
+        0.42691317145430385,
+        0.39447940014994753,
+        0.3645097119223437,
+        0.336816903582811,
+        0.3112279942853248,
+        0.28758314501591264,
+        0.26573466017142,
+        0.2455460649910925,
+        0.22689125307822522
+      ],
+      "pass": true
+    },
+    {
+      "id": "filter-removes-visible-mode",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 80,
+        "k": 40
+      },
+      "expectation_source": "filter multiplier at q=1 is zero",
+      "expected": 0.0,
+      "observed": 6.201636426617086e-18,
+      "pass": true
+    },
+    {
+      "id": "filter-counterexample",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 80,
+        "k": 20,
+        "dt": 0.1
+      },
+      "expectation_source": "composed multiplier (1-4*r*q)*(1-q), q=1/2",
+      "expected": -5.9,
+      "observed": -5.90000000000343,
+      "pass": true
+    },
+    {
+      "id": "threshold-0.499",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 20,
+        "r": 0.499
+      },
+      "expectation_source": "even-grid checkerboard eigenvalue",
+      "expected": -0.996,
+      "observed": -0.9960000000000001,
+      "pass": true
+    },
+    {
+      "id": "threshold-0.5",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 20,
+        "r": 0.5
+      },
+      "expectation_source": "even-grid checkerboard eigenvalue",
+      "expected": -1.0,
+      "observed": -1.0,
+      "pass": true
+    },
+    {
+      "id": "threshold-0.501",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 20,
+        "r": 0.501
+      },
+      "expectation_source": "even-grid checkerboard eigenvalue",
+      "expected": -1.004,
+      "observed": -1.004,
+      "pass": true
+    },
+    {
+      "id": "constant-odd-grid",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 31,
+        "dt": 0.1
+      },
+      "expectation_source": "Laplacian annihilates constants",
+      "expected": "maximum absolute deviation is zero (tolerance 1e-14)",
+      "observed": 0.0,
+      "pass": true
+    },
+    {
+      "id": "mean-positive-odd-grid",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 31,
+        "dt": 0.1,
+        "seed": 42,
+        "split": {
+          "substeps": 3,
+          "internal_dt": 0.03333333333333333,
+          "r": 0.32033333333333336
+        }
+      },
+      "expectation_source": "periodic stencil sum is zero; convex transfer at 0<=r<=0.5",
+      "expected": "mean residual <1e-14 and output stays in input range",
+      "observed": {
+        "mean_residual": 0.0,
+        "input_range": [
+          0.006498759678061017,
+          0.9572130722067812
+        ],
+        "output_range": [
+          0.23669175952825114,
+          0.6153554942446653
+        ]
+      },
+      "pass": true
+    },
+    {
+      "id": "impulse-0.4",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 20,
+        "r": 0.4
+      },
+      "expectation_source": "local transfer weights",
+      "expected": {
+        "center": 0.19999999999999996,
+        "minimum": 0
+      },
+      "observed": {
+        "center": 0.19999999999999996,
+        "minimum": 0.0
+      },
+      "pass": true
+    },
+    {
+      "id": "impulse-0.6",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": 20,
+        "r": 0.6
+      },
+      "expectation_source": "local transfer weights",
+      "expected": {
+        "center": -0.19999999999999996,
+        "minimum": -0.19999999999999996
+      },
+      "observed": {
+        "center": -0.19999999999999996,
+        "minimum": -0.19999999999999996
+      },
+      "pass": true
+    },
+    {
+      "id": "smooth-continuum-refinement",
+      "artifact_version": "thermal-lab-v1",
+      "inputs": {
+        "N": [
+          20,
+          40,
+          80,
+          160
+        ],
+        "r": 0.4,
+        "time": 1.0
+      },
+      "expectation_source": "analytic heat sine solution; O(dx^2)+O(dt) with dt proportional to dx^2",
+      "expected": "successive error ratios near 4 (development interval 3.8..4.2)",
+      "observed": {
+        "rows": [
+          {
+            "N": 20,
+            "dt": 0.1,
+            "r": 0.4,
+            "steps": 10,
+            "time": 1.0,
+            "rms_error": 0.0022034736699478065,
+            "cell_updates": 200
+          },
+          {
+            "N": 40,
+            "dt": 0.025,
+            "r": 0.4,
+            "steps": 40,
+            "time": 1.0,
+            "rms_error": 0.0005437878045839197,
+            "cell_updates": 1600
+          },
+          {
+            "N": 80,
+            "dt": 0.00625,
+            "r": 0.4,
+            "steps": 160,
+            "time": 1.0,
+            "rms_error": 0.00013551281850953623,
+            "cell_updates": 12800
+          },
+          {
+            "N": 160,
+            "dt": 0.0015625,
+            "r": 0.4,
+            "steps": 640,
+            "time": 1.0,
+            "rms_error": 3.3851199826443897e-05,
+            "cell_updates": 102400
+          }
+        ],
+        "ratios": [
+          4.05208364618217,
+          4.012814511312467,
+          4.003191000741908
+        ]
+      },
+      "pass": true
+    }
+  ],
+  "convergence": [
+    {
+      "N": 20,
+      "dt": 0.1,
+      "r": 0.4,
+      "steps": 10,
+      "time": 1.0,
+      "rms_error": 0.0022034736699478065,
+      "cell_updates": 200
+    },
+    {
+      "N": 40,
+      "dt": 0.025,
+      "r": 0.4,
+      "steps": 40,
+      "time": 1.0,
+      "rms_error": 0.0005437878045839197,
+      "cell_updates": 1600
+    },
+    {
+      "N": 80,
+      "dt": 0.00625,
+      "r": 0.4,
+      "steps": 160,
+      "time": 1.0,
+      "rms_error": 0.00013551281850953623,
+      "cell_updates": 12800
+    },
+    {
+      "N": 160,
+      "dt": 0.0015625,
+      "r": 0.4,
+      "steps": 640,
+      "time": 1.0,
+      "rms_error": 3.3851199826443897e-05,
+      "cell_updates": 102400
+    }
+  ],
+  "passed": 15,
+  "total": 15,
+  "resource_use": {
+    "euler_cell_updates": 132686,
+    "filter_cell_updates": 1600,
+    "wall_seconds": 0.013459499983582646
+  },
+  "limits": [
+    "No material measurements or original team solver inspected.",
+    "No resonance mechanism is proved absent from real material.",
+    "Substep stability does not certify the application's accuracy tolerance.",
+    "Cases are development data, not skill-effectiveness evidence.",
+    "Small coefficients can lose relative accuracy once an unstable mode dominates."
+  ]
+}

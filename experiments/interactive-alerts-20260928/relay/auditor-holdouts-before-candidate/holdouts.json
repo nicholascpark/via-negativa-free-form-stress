@@ -1,0 +1,54 @@
+[
+  {
+    "name": "newest_unreadable_before_first_high",
+    "events": [
+      {"id":"a1","t":0,"cabinet":"A","port":"left","n":10,"reading":"INVALID"},
+      {"id":"a2","t":1,"cabinet":"A","port":"left","n":9,"reading":"HIGH"},
+      {"id":"a3","t":2,"cabinet":"A","port":"left","n":11,"reading":"HIGH"},
+      {"id":"a4","t":3,"cabinet":"A","port":"left","n":11,"reading":"HIGH"}
+    ],
+    "expected_page_ids": ["a3"],
+    "because": "Dossier groups 2–3: INVALID advances source ordering without declaring a clearance; an older HIGH is not a current problem; first current HIGH pages; equal-counter retry is not new."
+  },
+  {
+    "name": "zero_receipt_gap_real_clearance",
+    "events": [
+      {"id":"b1","t":0,"cabinet":"B","port":"left","n":1,"reading":"HIGH"},
+      {"id":"b2","t":0,"cabinet":"B","port":"left","n":2,"reading":"NORMAL"},
+      {"id":"b3","t":0,"cabinet":"B","port":"left","n":3,"reading":"HIGH"},
+      {"id":"b4","t":0,"cabinet":"B","port":"left","n":4,"reading":"INVALID"},
+      {"id":"b5","t":0,"cabinet":"B","port":"left","n":5,"reading":"HIGH"}
+    ],
+    "expected_page_ids": ["b1", "b3"],
+    "because": "Dossier groups 2–3: delivery order and qualified clearance govern new problems; no minimum time gap is required and receipt time adds no clearance."
+  },
+  {
+    "name": "source_scoped_unreadable_frontiers",
+    "events": [
+      {"id":"c1","t":0,"cabinet":"A","port":"left","n":500,"reading":"INVALID"},
+      {"id":"c2","t":1,"cabinet":"A","port":"right","n":1,"reading":"HIGH"},
+      {"id":"c3","t":2,"cabinet":"B","port":"left","n":1,"reading":"HIGH"},
+      {"id":"c4","t":3,"cabinet":"A","port":"left","n":499,"reading":"NORMAL"},
+      {"id":"c5","t":4,"cabinet":"A","port":"left","n":501,"reading":"HIGH"},
+      {"id":"c6","t":5,"cabinet":"B","port":"left","n":2,"reading":"NORMAL"},
+      {"id":"c7","t":6,"cabinet":"A","port":"right","n":2,"reading":"HIGH"},
+      {"id":"c8","t":7,"cabinet":"B","port":"left","n":3,"reading":"HIGH"}
+    ],
+    "expected_page_ids": ["c2", "c3", "c5", "c8"],
+    "because": "Dossier groups 1–3: episode and source-ordering state are per cabinet-port pair; unreadable records affect only their source; another source's NORMAL cannot clear a continuing problem."
+  },
+  {
+    "name": "cleared_then_delayed_retry_and_new_problem",
+    "events": [
+      {"id":"d1","t":0,"cabinet":"B","port":"right","n":7,"reading":"HIGH"},
+      {"id":"d2","t":1,"cabinet":"B","port":"right","n":8,"reading":"NORMAL"},
+      {"id":"d3","t":2,"cabinet":"B","port":"right","n":7,"reading":"HIGH"},
+      {"id":"d4","t":3,"cabinet":"B","port":"right","n":9,"reading":"INVALID"},
+      {"id":"d5","t":4,"cabinet":"B","port":"right","n":8,"reading":"NORMAL"},
+      {"id":"d6","t":5,"cabinet":"B","port":"right","n":10,"reading":"HIGH"},
+      {"id":"d7","t":99999,"cabinet":"B","port":"right","n":11,"reading":"HIGH"}
+    ],
+    "expected_page_ids": ["d1", "d6"],
+    "because": "Dossier groups 2–3: delayed retry cannot reactivate a cleared problem; INVALID cannot fabricate a recovery or a page; the next current HIGH pages after accepted NORMAL and silence cannot create a reminder."
+  }
+]

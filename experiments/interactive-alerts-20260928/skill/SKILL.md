@@ -146,11 +146,7 @@ method-level evaluation is the actual assignment.
 Ask when a reply supplies missing observations, distinguishes plausible purposes,
 or changes the next consequential action. Record how plausible answers change
 that action before asking. Make comparisons concrete, show tradeoffs, and allow
-another answer or uncertainty. Ask about one unresolved decision at a time;
-closely related factual details can share a question. Learn an unknown operating
-rule before presenting a preferred policy for endorsement. When a comparison
-helps, give plausible options comparable detail instead of bundling defaults
-into “Does this match your needs?” Keep the original competitive. The
+another answer or uncertainty. Keep the original competitive. The
 [decision card](references/decision-card.md) supports this when a durable record
 helps; it is not required for every question or every branch.
 
@@ -158,9 +154,6 @@ Continue independent work while an answer is pending. User silence is not assent
 A user can revise an aim or explain an observation; voting cannot certify a
 physical mechanism or theorem. Apply existing evidence and authorization without
 asking again. Preserve actual answers with source, date, scope, and exceptions.
-Record whether the reply changed the adopted behavior, selected an existing
-alternative, or confirmed a provisional rule. Confirmation can be useful without
-being a new design change.
 
 Persist reusable objects and operations with their definitions, assumptions,
 artifact versions, evidence, failures, and next use. Keep user judgments separate
@@ -173,9 +166,6 @@ Memory is a working library, not a personality profile or a claim of model train
 Provide the result or best remaining construction, supporting artifacts and
 checks, limits, and the next meaningful operation if unfinished. Report actual
 resource use when available; otherwise say which costs were not measured.
-In a simulated-user trial, identify the speaker as simulated in each standalone
-report or handoff that quotes or relies on its answers. Preserve that provenance
-when copying answers into memory; do not present role-play as real-user evidence.
 Do not claim automatic discovery, optimal exploration, an erased context, or
 success outside the evidence's domain. Historical case studies, including the
 [Navier–Stokes comparison](references/navier-stokes-alignment.md), illustrate

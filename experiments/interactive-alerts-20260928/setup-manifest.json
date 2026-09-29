@@ -1,0 +1,11 @@
+{
+  "event": "setup_frozen",
+  "at_utc": "2026-09-29T03:32:58.808635+00:00",
+  "hashes": {
+    "public/baseline.py": "ba63d031513ecc0f57f616d406daf9e4ad0964c0e295e20221fdb810966a1a1b",
+    "public/streams.json": "276781db9be6905ce063d8c13ad3b46a60d7186aab667e57e408f18a4f55c25a",
+    "public/task.md": "a528d414d73f265a61af9b900b9fb46541564cf82853218a3308ce534208608e",
+    "user-private/cases.json": "852076abb12049d1ff20690afef6982da6727ee6fae901b7ba8a0bb11f1aef4b",
+    "user-private/dossier.md": "94e26987d7ad7ec26716c725056ca15592aed1ee8827df11db383f6ac90efa0f"
+  }
+}

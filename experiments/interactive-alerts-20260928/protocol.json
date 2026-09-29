@@ -1,0 +1,14 @@
+{
+  "frozen_at_utc": "2026-09-29T03:29:49.331028+00:00",
+  "roles": {
+    "practitioner": "/root/interactive_practitioner_v1",
+    "simulated_user": "/root/interactive_user_v1",
+    "auditor": "/root/interactive_auditor_v1"
+  },
+  "context": "All three spawned with fork_turns=none; role prompts only. Model priors shared. File visibility restrictions are instructed, not OS-enforced.",
+  "interaction": "Practitioner writes question/action mapping; root snapshots builder before relaying exact question to user; root logs reply then delivers it. Preserve candidate before independent audit.",
+  "fixture": "User creates fixed private facts and holdout cases before interaction. Auditor may create additional checks before final artifact. No answers or passing outcome supplied to practitioner.",
+  "conclusions": "Single synthetic process/functional trial. Baseline implementation comparisons may be possible. No ordinary-prompting control, actual human user evidence, or scientific discovery claim.",
+  "skill_edits": "Frozen snapshot throughout trial. Any later change requires separate record and rerun label.",
+  "harness_scaffolding": "Practitioner role prompt explicitly requests pre-answer question/action-map records, snapshots/checkpoints, and 1\u20133 worthwhile question turns (not a forced questionnaire). These logging behaviors cannot be attributed to skill alone. No solution or private task facts supplied."
+}

@@ -1,160 +1,156 @@
-# Via Negativa Stress Test
+# Via negativa: invent what the next step can think with
 
-A metacognitive skill that equips an LLM with via negativa perception — the ability to see what's **absent, assumed, and structurally excluded** from any artifact or system.
+**What could we construct that makes the next step possible?**
 
-Most review asks *"is what's here correct?"*
-Most debugging asks *"where is the error?"*
-This asks *"what's NOT here, and does its absence matter?"*
+This skill develops representations, constructions and reusable operations for
+hard scientific and engineering problems. Continuing branches can turn an
+obstruction into a new object, explore auxiliary problems, and exchange partial
+results before reconnecting to the scientific or engineering purpose. Words,
+images and seeded semantic walks remain available as exploratory inputs.
 
-## Two Modes
+The active instructions are in [SKILL.md](SKILL.md), with operational detail in
+[research trajectories](references/research-trajectories.md). [Domain guidance](references/domains.md)
+distinguishes mathematical proofs, empirical and inverse problems, numerical
+models, software and distributed systems, and physical design/control/VLA. The
+[Navier–Stokes comparison](references/navier-stokes-alignment.md) distinguishes
+published research evidence, instructions we can adopt, and capabilities still
+dependent on the host and domain tools. This is an experimental research protocol.
 
-**Prophetic** (review / stress test): Nothing is broken yet. What's absent that will become the failure? What's invisible that would change the decision if seen?
+## Use the skill
 
-**Diagnostic** (debugging / root cause): Something is broken. What structural absence made this class of failure inevitable? What's missing from the system that would make this bug impossible?
+Point the agent at this repository's `SKILL.md` and give it the actual problem,
+current artifacts, and any resource constraints. For example:
 
-When the same method is turned inward on an agent's own reasoning, a third application emerges — **agent mode** (cognitive proprioception). What is that reasoning blind to? Is the agent solving the wrong problem?
+> Use via negativa on this obstruction. Let distinct branches develop new
+> representations through several transformations. Exchange intermediate
+> artifacts, generate checks from what they reveal, and return something we
+> can use in the next experiment, proof, or build.
 
-## Quick Start
+The core is the same across domains: preserve observations and commitments,
+develop an object that changes the next available operation, carry it forward,
+and reconnect with appropriate evidence. An experiment proposal, a new variable,
+a counterexample, or a revised controller can each be a useful return.
 
-### As a Claude Skill
+The agent can ask concrete questions when answers would change a consequential
+choice. Scoped memory keeps definitions, assumptions, human answers, failures,
+and the next operation. The optional [archive helper](scripts/research_archive.py)
+provides parent-linked records and exchange packets; its schema and commands
+are in [research trajectories](references/research-trajectories.md).
 
-Drop `SKILL.md` and `references/` into your Claude project or skill directory. Then:
+The skill does not require embeddings, multiple agents, or a proof assistant.
+Those tools expand the available operations when the host provides them. No
+global installation or model training is performed by the files in this repository.
 
-```
-# Prophetic mode
-stress test this PR
-poke holes in this architecture doc
-what am I not seeing in this business plan?
+## What the questions sound like
 
-# Diagnostic mode
-why does this test keep flaking?
-what's really going on with this memory leak?
-this bug doesn't make sense — what am I missing?
-```
+They are short questions about a real choice in the work. For example:
 
-### Agent Mode
+- “Are these readings from separate fault sources, or two views of the same one?”
+  The answer determines whether the build tracks one fault or two.
+- “Can this counter restart, or does a smaller number always mean an older reading?”
+  The answer determines whether a record can safely be ignored.
+- “What tells you a fault has ended?”
+  The answer determines when the next fault should create a new alert.
 
-Agent mode runs at decision points inside agentic loops — not on artifacts a human hands it, but on the agent's own reasoning before it acts. There are three intervention points:
+The agent records what each answer would change before asking. It asks about
+the uncertain rule first, then shows a concrete comparison if a choice remains.
+It keeps real user answers, simulated replies, and its own hypotheses distinct.
 
-#### 1. Pre-Execution Audit
+## Inspect the working prototype
 
-Insert at the moment an agent commits to a plan. The audit runs a compressed Layer 1+3 pass on the agent's reasoning and outputs a structured verdict: `proceed`, `yes-with-caveats`, or `pause-and-reframe`.
+The runnable prototype below exercises the optional cue sampler. The broader
+research protocol is executed by the host agent using project artifacts and
+available tools; this repository does not bundle an autonomous research scheduler.
 
-**To use in a system prompt or agent wrapper:**
+[The semantic exploration viewer](examples/semantic-exploration/index.html) shows
+18 text cues and two photographs embedded by one pinned TinyCLIP checkpoint.
+It includes actual 512-dimensional distances, a clearly approximate PCA map,
+and three seeded runs of three short cue paths. Image embeddings come from pixels.
+The tiny curated pool demonstrates mechanics, not broad conceptual coverage.
 
-```
-Before executing your plan, run a via-negativa pre-execution audit:
-1. What are the 1-2 most fragile assumptions in your plan? What breaks if they're wrong?
-2. What is your plan not considering that's within its blast radius? (max 3 findings)
-3. Frame check: are you solving the right problem, or are you solving the problem
-   your tools/frame make easy to solve?
+Serve the directory from the repository root:
 
-Output your audit as:
-- Proceed: yes | yes-with-caveats | pause-and-reframe
-- Blind spots (max 3)
-- Fragile assumptions (max 2)
-- Frame check: fit or mismatch
-- Recommendation
-```
-
-**When to trigger**: Consequential decisions only — plan commits, architecture choices, debugging direction changes. Not every action. Renaming a variable doesn't need an audit; deciding to refactor a module does.
-
-#### 2. Loop-Break Diagnostic
-
-Insert when the agent has attempted the same class of action 2+ times without success. Instead of retrying with variation, diagnose *why* the agent is stuck.
-
-**To use in a system prompt or agent wrapper:**
-
-```
-You've attempted similar approaches multiple times without success. Before trying again,
-run a via-negativa loop-break diagnostic:
-1. Name the loop: what pattern are you repeating?
-2. Why are you stuck? Common causes:
-   - Frame lock: debugging in the wrong layer/abstraction
-   - False unity: treating two different problems as one
-   - Avoidance: unable to conclude "this approach won't work"
-   - Optimization vs exploration: refining one solution when you should search across solutions
-3. What should you do differently? Not "try harder" — a specific reframe.
-4. What should you stop doing?
+```sh
+python3 -m http.server 8787 --bind 127.0.0.1 --directory examples/semantic-exploration
 ```
 
-**When to trigger**: After 2+ failed attempts at the same class of solution. The signal is not "it failed twice" but "the agent's approach hasn't fundamentally changed between attempts."
+Then open `http://127.0.0.1:8787`. Cached data needs no model or API.
+Sample a new run or exercise the finite relational example:
 
-#### 3. Task-Framing Challenge
-
-Insert when the agent interprets a user's request, before starting execution. Surfaces assumptions buried in the request that might change the request itself.
-
-**To use in a system prompt or agent wrapper:**
-
-```
-Before starting this task, run a via-negativa task-framing challenge:
-1. What assumptions are inherited in the user's request that they may not have examined?
-   (max 3)
-2. What problem is the user actually solving? Is the stated task the only/best path?
-3. What will the user encounter during execution that they haven't anticipated? (max 2)
-
-Present findings as "worth confirming" — respect user agency.
+```sh
+python3 scripts/semantic_walk.py examples/semantic-exploration/input.json \
+  --seed 7 --walks 3 --hops 3 --output /tmp/semantic-walk.json
+python3 experiments/semantic-walk/bridge_example.py
+python3 experiments/semantic-walk/test_sampler.py
 ```
 
-**When to trigger**: Complex or ambiguous tasks. Not "add a log line" but "refactor to microservices" or "plan this migration." Tasks where the framing choice has as much impact as the execution quality.
+The sampler records modality, distance band, operator, selection probability,
+parent, objective distance and input hash. It selects cues; the host agent still
+has to inspect them, continue an interpretation, and build a defensible bridge.
+The prototype is not an autonomous LLM orchestration service.
 
-#### Integration Strategy
+An [actual worker trial](examples/semantic-exploration/path-trial.json) follows
+flower → pavilion → germination, records three external sketches, and proposes
+a bounded request-coalescing experiment. It inspected both images. The experiment
+has not run; this is a candidate with stated unknowns, not a measured improvement.
 
-**Start small**: Pick one intervention point — pre-execution audit is highest leverage. Insert it at the moment the agent commits to a plan. Measure how often the audit surfaces something that would have caused a failure or wasted iteration. If the hit rate is meaningful (>15%), expand to loop-break and task-framing.
+The finite bridge example searches eight request-sharing predicates and generates
+cases where candidate builds disagree. Its fictional contract supplies expected
+behavior. It checks bounded identity relations, not actual latency or a discovery
+caused by the cue walk. Freshness and execution effects remain pending.
 
-**Avoid audit fatigue**: Only trigger on consequential decisions. If the audit runs on every action, the agent (or user) will learn to ignore it. The Relevance Gate exists for this reason — fewer, higher-signal findings beat comprehensive coverage.
+Read [semantic exploration](references/semantic-exploration.md) for the exact
+sampling rule, regeneration instructions, bridge example, cost model and proposed
+evaluation. The encoder checkpoint is external and is not bundled here. The photo
+licence and original credits are in [the retained attribution](examples/semantic-exploration/images/README.txt).
 
-**One pass only**: Agent mode is designed for speed. One pass, structured output, done. If the audit recommends a reframe, execute the reframe and re-audit once. Never more than two passes. See the "Infinite Regress" anti-pattern.
+## The human comparison stage
 
-### Investigation Scripts (for PRs and code)
+The earlier [rehearsal comparison](examples/rehearsal/index.html) lets a speaker
+try a manuscript and three cues. That encounter might support keeping a
+teleprompter or building a rehearsal editor instead. No such user outcome has
+been measured. It illustrates downstream interaction, not stochastic search.
 
-```bash
-./scripts/run-all.sh --base main              # full investigation
-./scripts/blast-radius.sh --base main         # blast-radius only
-./scripts/co-change-gaps.sh --base main       # co-change only
+The [decision card](references/decision-card.md) records how answers change a
+pending decision before asking. The [questioning protocol](experiments/runtime-questioning/protocol.md)
+tests that separate component. A local benchmark guides a build; evaluating the
+skill requires independent tasks and equal-budget comparisons, including strong
+ordinary prompting. See [claims and theory](references/claims-and-theory.md).
+
+Earlier Git investigation scripts and code/debugging/strategy/checklist references
+remain optional legacy material. Their former layer terminology does not imply
+proven access to unknown concepts.
+
+## Development checks
+
+The [cross-domain record](experiments/research-trajectories/validation.md) retains
+a mathematical counterexample, an assay-identifiability experiment design, and
+a thermal-simulation investigation. The latter two were exercised by separate
+workers using the revised skill. Their generated checks and limits are preserved;
+these small cases do not establish an advantage over ordinary prompting.
+
+A later [interactive fresh-context trial](experiments/interactive-alerts-20260928/RESULTS.md)
+used a practitioner, simulated user, and independent auditor. It preserves three
+question/answer rounds, pre-answer candidate snapshots, withheld cases, and the
+auditor's functional results and process criticisms. The skill remained frozen
+throughout that trial.
+
+The current instructions address its findings: avoid bundled policy-endorsement
+questions, distinguish confirmation from changed behavior, and label simulated
+speakers in standalone handoffs. The historical trial and its hashes remain
+intact; its passing results describe the tested version.
+The [corrected handoff](experiments/interactive-alerts-20260928/HANDOFF.md)
+identifies the simulated technician explicitly.
+A [focused post-fix exercise](experiments/interaction-question-fix-20260929/RESULTS.md)
+produced an open question about recovery evidence and a clearly labeled simulated
+handoff; its hypothetical policies remained unadopted pending an answer.
+
+```sh
+python3 experiments/research-trajectories/test_archive.py
+python3 experiments/research-trajectories/assay-identifiability/evaluator.py
+python3 experiments/research-trajectories/thermal-stability/thermal_lab.py
 ```
-
-**Requirements**: bash, git, grep, bc. No external dependencies.
-
-## Scripts
-
-| Script | Answers |
-|--------|---------|
-| `blast-radius.sh` | Who is affected by this change that the diff doesn't show? (import-aware) |
-| `co-change-gaps.sh` | What files usually change alongside this but weren't changed? |
-| `churn-report.sh` | Is this a fragile area that keeps getting patched? |
-| `abandoned-approaches.sh` | What did previous engineers try and abandon here? |
-| `trajectory.sh` | Is this the Nth PR adding complexity without refactoring? |
-| `run-all.sh` | Run all of the above. |
-
-## The Skill
-
-Four-layer progressive analysis: **Absence Inventory** → **Load-Bearing Assumptions** → **Frame Exclusions** → **Via Negativa Design**. Default depth is all four layers — Layers 3–4 are where the differentiating insight lives. Layer 3 reveals what the creator's frame made impossible to see; Layer 3b (stochastic perturbation) extends this by sampling from the complement of the known predicate space through parallel sub-agents, surfacing emergent predicates that analytical frame analysis cannot reach. Layer 4 synthesizes the negative space into what the artifact is actually reaching toward.
-
-Agent mode adds a compressed Layer 1+3 protocol for agentic decision points — see the Agent Mode section in `SKILL.md` for full methodology.
-
-See `SKILL.md` for full methodology.
-
-## What Makes This Different From Reflection
-
-Every agent framework has some version of "reflect on your output." The difference is structural:
-
-- **Reflection** asks: "Is this good?" → produces validation or iteration
-- **Via negativa** asks: "What is this blind to?" → produces revelation
-
-Reflection improves answers. Via negativa changes the question. An agent that reflects will produce a better version of the same plan. An agent that runs via negativa might realize it's solving the wrong problem.
-
-## References
-
-| File | Purpose |
-|------|---------|
-| `references/anti-patterns.md` | What bad output looks like — calibrate against these before producing findings |
-| `references/agent-mode-examples.md` | Worked examples for agent integration (pre-execution audit, loop-break, task-framing) |
-| `references/code-review-examples.md` | Worked examples for PRs and code (prophetic mode) |
-| `references/strategy-examples.md` | Worked examples for business/strategy artifacts (prophetic mode) |
-| `references/debugging-examples.md` | Worked examples for bugs and incidents (diagnostic mode) |
-| `references/domain-checklists.md` | Absence checklists for 10+ artifact types |
 
 ## License
 
-MIT
+Code: MIT. The two sample photographs retain their separate CC BY 2.0 attribution.

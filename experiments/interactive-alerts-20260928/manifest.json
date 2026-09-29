@@ -1,0 +1,12 @@
+{
+  "started_utc": "2026-09-29T03:28:25.704810+00:00",
+  "kind": "interactive synthetic skill trial",
+  "skill_sha256": "aa670ae34fc81a5772e18699079ae94faf03d1188d52b636d75876ce666b8f41",
+  "roles": [
+    "fresh skill practitioner",
+    "simulated user",
+    "independent auditor"
+  ],
+  "scope": "Local stdlib artifacts only; no actual human preferences inferred; skill snapshot frozen for this trial",
+  "root": "/private/tmp/via-negativa-interactive-20260928"
+}

@@ -1,0 +1,33 @@
+{
+  "task": "Investigate, without assuming truth, whether for every integer n >= 2 and real x_1,...,x_n satisfying sum x_i = 0 and sum x_i^2 = 1, sum x_i^4 <= 1/2.",
+  "raw_evidence": "User examples at n=2 and n=3 support the claim; coordinates were not supplied.",
+  "resolution": "A proof under the exact quantifiers or one admissible exact counterexample.",
+  "constraints": [
+    "No repository edits",
+    "No network or paid services",
+    "About two minutes",
+    "Local Python and symbolic reasoning allowed"
+  ],
+  "tools": [
+    "Python standard-library rational arithmetic",
+    "analytic symmetric-polynomial identity",
+    "independent agent checking one-versus-many coordinate family"
+  ],
+  "baseline_inference_separate": "Small-dimensional equality may have been mistaken for a dimension-independent upper bound; this is a hypothesis, not initial evidence.",
+  "branches": [
+    "A: expose the missing degree-four interaction",
+    "B: exact zero-sum two-level coordinate construction"
+  ],
+  "stochastic_sampling": "Not used; optional under revised skill. No embeddings or semantic-distance claims.",
+  "questions": 0,
+  "predictions_frozen_before_python": [
+    "For v=(3,-1,-1,-1), v/sqrt(12) is admissible and its fourth-power sum is 7/12",
+    "The symmetric interaction e4=-1/48 for that normalized vector",
+    "Family one coordinate n-1, others -1, normalized, exceeds 1/2 exactly when n>=4"
+  ],
+  "status": "Exact counterexample and general family analytically proved; finite rational checks supplement but do not replace derivation.",
+  "unresolved": "No obligation remains for refuting the original claim. The family is not claimed to maximize the fourth-power sum for each fixed n; that stronger optimization is unproved here.",
+  "cost": "One bounded delegated derivation, one local Python verification; no paid/network service calls. Model token/compute costs unavailable.",
+  "kind": "Synthetic forward-test task supplied by the coordinating agent, not a user research claim.",
+  "artifact_provenance": "Worker executed in /private/tmp/via-negativa-math-dryrun; coordinating agent copied the records into this repository after completion and reran verify.py."
+}

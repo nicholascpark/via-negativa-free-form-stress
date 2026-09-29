@@ -1,0 +1,87 @@
+{
+  "kind": "synthetic_exploratory_path",
+  "objective": "Reduce latency for a burst of identical product requests while preserving tenant isolation and one-second freshness.",
+  "raw_evidence": {
+    "known": [
+      "Only the objective is known."
+    ],
+    "unknown": [
+      "Implementation",
+      "Bottleneck",
+      "Workload",
+      "Meaning and enforcement of one-second freshness"
+    ],
+    "path_provenance": "The parent supplied this preselected seeded path as coming from real TinyCLIP distances; this trial did not inspect distances or reproduce selection."
+  },
+  "observations": [
+    {
+      "image": "examples/semantic-exploration/images/flower.jpg",
+      "observed": "Orange petals form nested rings around a compact center.",
+      "inspected": true
+    },
+    {
+      "image": "examples/semantic-exploration/images/china.jpg",
+      "observed": "A multilevel pavilion has projecting roofs and surrounding balconies beside a lake.",
+      "inspected": true
+    }
+  ],
+  "sketches": [
+    {
+      "hop": 1,
+      "stimulus": "flower.jpg",
+      "operator": "invert a relation",
+      "sketch": "Draw nested petal sockets around a shared chamber. Reverse an invented center-to-edge delivery relation: the sockets now feed inward to one chamber.",
+      "status": "Designed relation, not an observed biological mechanism."
+    },
+    {
+      "hop": 2,
+      "stimulus": "china.jpg",
+      "operator": "separate roles",
+      "sketch": "Carry the inward-feeding chamber into the pavilion. Give its outer terraces the arrival role, an inner room the work role, and a balcony the release role; put a separate doorway at each transition.",
+      "status": "Designed use of visible forms, not a claim about this building."
+    },
+    {
+      "hop": 3,
+      "stimulus": "A seed germinates when moisture and temperature permit growth.",
+      "operator": "separate roles",
+      "sketch": "Carry the pavilion's separate doorway and work room into a seed diagram: a condition gate checks moisture and temperature, while the seed performs growth. Draw permission and execution as distinct boxes.",
+      "status": "External design sketch; no claim of task utility."
+    }
+  ],
+  "bridge": {
+    "source_relation": "Many arrivals converge on one work location; eligibility and release checks occupy separate roles from execution.",
+    "target_role_mapping": {
+      "arrivals": "Authenticated, equivalent product requests within one tenant and authorization scope.",
+      "work_room": "One in-flight origin fetch for each complete equivalence key.",
+      "condition_gate": "Check request equivalence and isolation before joining; check a source-derived freshness bound again before delivery.",
+      "release": "Deliver a shared result only while its freshness bound remains valid; otherwise fetch again."
+    },
+    "proposed_experiment": "Build a disposable synthetic harness with two tenants, distinct tenant-specific product values, and a delayed origin capped at four concurrent reads. Compare direct reads with tenant-and-authorization-scoped in-flight coalescing for simultaneous batches of 100 equivalent requests per tenant. Then issue follow-up batches across a one-second boundary while mutating the authoritative values. Record p95 response latency, origin read count, tenant/value mismatches, and result age at delivery. For this experiment only, define freshness as an authoritative read time no more than one second before delivery, with a reliable clock; actual product semantics remain unknown.",
+    "falsifiable_prediction": "Under the stipulated capacity-limited synthetic origin, coalescing will reduce initial-batch origin reads from 200 to 2 and lower p95 latency, with zero tenant/value mismatches and zero deliveries exceeding the experimental one-second age bound. Any contrary measurement falsifies the corresponding prediction.",
+    "unknown_evidence": [
+      "Whether real origin reads constrain latency",
+      "Whether authorization and all response-varying inputs can be encoded in an equivalence key",
+      "Whether source freshness is observable",
+      "Real freshness semantics, errors, cancellation, and deployment topology"
+    ],
+    "mismatch": "Flowers, pavilion forms, and germination supply no evidence about software contention, security, or freshness. The role mapping proposes a familiar coalescing experiment; it neither establishes novelty nor shows this path improves design quality."
+  },
+  "execution": {
+    "experiment_run": false,
+    "utility_measured": false,
+    "repository_edited": false,
+    "network_accessed": false,
+    "limitation": "Only supplied image contents were inspected. Sketches and predictions are proposals, not observed service behavior or evidence of method superiority."
+  },
+  "controller_provenance": {
+    "seed": 1,
+    "path_id": "path_01",
+    "input_sha256": "2e22f09e6542d8d34e3198b9ce2839503317a46ecdbab694205eb2a13ed27264",
+    "encoder": {
+      "id": "wkcn/TinyCLIP-ViT-8M-16-Text-3M-YFCC15M",
+      "revision": "a2a8c6eaa2549ad66eb7c31b85022bf58273a26c",
+      "dimension": 512
+    },
+    "trial_context": "Grounding objective and sampled stimuli only; no preferred implementation or earlier bridge supplied."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "event": "auditor_holdouts_frozen",
+  "at_utc": "2026-09-29T03:34:39.224132+00:00",
+  "hashes": {
+    "audit/holdouts.json": "c253cfbd4dff534e2ca717118cb7850c1c01d79e178cde703ffde35dc7e989ad",
+    "audit/holdout-plan.md": "f399663477610cb9330b512ed4dc4dc59e31c73f6d3c0db7b41102751f3594e0",
+    "audit/preregistered-plan.md": "3324fba02da3d03e01cc576fd1d9b1a3cc6b24a1627d6488ef6b84dcc6908faf"
+  },
+  "candidate_inspected": false,
+  "builder_inspected": false
+}

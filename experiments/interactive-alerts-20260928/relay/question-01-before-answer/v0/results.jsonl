@@ -1,0 +1,8 @@
+{"capture": "long_spell", "cooldown20": ["long-2", "long-4"], "cooldown60": ["long-2"], "episode_cabinet": ["long-2"], "episode_port": ["long-2"]}
+{"capture": "quick_return", "cooldown20": ["quick-2"], "cooldown60": ["quick-2"], "episode_cabinet": ["quick-2", "quick-4"], "episode_port": ["quick-2", "quick-4"]}
+{"capture": "two_ports", "cooldown20": ["ports-3"], "cooldown60": ["ports-3"], "episode_cabinet": ["ports-3"], "episode_port": ["ports-3", "ports-4"]}
+{"capture": "reconnected", "cooldown20": ["reconnect-2", "reconnect-4"], "cooldown60": ["reconnect-2"], "episode_cabinet": ["reconnect-2", "reconnect-4"], "episode_port": ["reconnect-2", "reconnect-4"]}
+{"capture": "unreadable_patch", "cooldown20": ["invalid-2", "invalid-4"], "cooldown60": ["invalid-2"], "episode_cabinet": ["invalid-2"], "episode_port": ["invalid-2"]}
+{"capture": "quiet", "cooldown20": [], "cooldown60": [], "episode_cabinet": [], "episode_port": []}
+{"capture": "already_high", "cooldown20": ["startup-1", "startup-2"], "cooldown60": ["startup-1"], "episode_cabinet": ["startup-1"], "episode_port": ["startup-1"]}
+{"capture": "two_cabinets", "cooldown20": ["cabs-3", "cabs-4"], "cooldown60": ["cabs-3", "cabs-4"], "episode_cabinet": ["cabs-3", "cabs-4"], "episode_port": ["cabs-3", "cabs-4"]}

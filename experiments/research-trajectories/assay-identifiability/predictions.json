@@ -1,0 +1,15 @@
+{
+  "version":"predictions-v1-written-before-evaluation",
+  "provenance":"All cases below are synthetic, specified by mathematical model, not inferred measurements.",
+  "q":4,
+  "epsilon":0.2,
+  "epsilon_meaning":"Illustrative deterministic per-reading perturbation bound, not a validated uncertainty bound, standard deviation, or confidence interval.",
+  "cases":[
+    {"name":"production_only","p0":2,"p1":4,"g0":1,"g1":1,"expected_p_ratio":2,"expected_g_ratio":1,"expected":"Calibrated point estimate attributes raw doubling to production; illustrative bounded-error production interval excludes 1."},
+    {"name":"gain_only","p0":2,"p1":2,"g0":1,"g1":2,"expected_p_ratio":1,"expected_g_ratio":2,"expected":"Same raw sample doubling as production-only, but calibrated point estimate gives no production change; sensitivity interval includes 1."},
+    {"name":"cancellation","p0":2,"p1":4,"g0":1,"g1":0.5,"expected_p_ratio":2,"expected_g_ratio":0.5,"expected":"Equal background-corrected sample readings hide production doubling; calibration recovers it noiselessly, but the chosen conservative epsilon can leave no-change unresolved."},
+    {"name":"small_effect","p0":2,"p1":2.1,"g0":1,"g1":1,"expected_p_ratio":1.05,"expected_g_ratio":1,"expected":"Small point change is not distinguishable in the illustrative sensitivity envelope."},
+    {"name":"weak_calibration","expected":"Return inconclusive when the standard-minus-blank difference is at or below twice epsilon."},
+    {"name":"matrix_mismatch","expected":"If sample gain doubles while calibrator gain stays fixed, true unchanged production appears to double. The algorithm cannot diagnose an undisclosed transfer failure from these six readings."}
+  ]
+}
