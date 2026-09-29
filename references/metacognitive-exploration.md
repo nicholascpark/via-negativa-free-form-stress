@@ -1,10 +1,11 @@
 # Assumption revision as an executable research practice
 
 Use this for a foundational problem, a stuck representation, or an explicit
-request for metacognitive or revelatory exploration. The output is a changed
-research object and a defensible account of its consequences, not a claim to
-experience altered consciousness. External definitions, equations, experiments
-and decision summaries suffice; do not request private chains of thought.
+request to reconsider habitual assumptions through sustained associative
+exploration and successive changes of representation. The output is a changed
+research object and a defensible account of its consequences, documented through
+definitions, equations, experiments and concise decision summaries. Do not
+request private chains of thought.
 
 ## Find the assumptions that are doing work
 
@@ -120,7 +121,8 @@ and record the actual checker command and outcome. Without a run, say so.
 Use the result to update the assumption map and next choice. Record what changed
 your decision: a derived identity, a counterexample, a retrieved theorem, a user
 answer or a computation. Attribution to a prompt technique requires comparisons;
-a vivid experience or a successful external paper does not supply that evidence.
+an intuitively compelling interpretation or a successful external paper does not
+supply that evidence.
 
 The [Navier–Stokes case](navier-stokes-alignment.md) motivates distinguishing
 admissible degrees of freedom from habits, and turning residuals into

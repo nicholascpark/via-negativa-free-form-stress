@@ -23,10 +23,15 @@ pass that final standard, and do not manufacture novelty or a breakthrough.
 
 Metacognition here means revising explicit assumptions, representations and
 research choices in response to artifacts. It does not require a private thought
-transcript or claimed access to hidden cognition. A “psychedelic” or “revelatory”
-request calls for a wider generative interval: loosen habitual interpretations,
-permit remote associations, then translate what survives into usable objects.
-Felt profundity, surprising language and agreement among agents are not evidence.
+transcript or claimed access to hidden cognition. For requests to reconsider an
+entrenched framing, use deliberately expansive associative exploration through
+successive conceptual reframing. Preserve factual context and exact task
+requirements while treating habitual assumptions and interpretations as
+provisional. Follow distant conceptual associations through several changes of
+representation before assessing their immediate usefulness, then express
+promising connections as precise constructions with clearly stated, checkable
+claims. Explanatory elegance, rhetorical novelty and agreement among agents do
+not establish correctness.
 
 ## Start from the actual problem
 
