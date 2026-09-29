@@ -158,3 +158,15 @@ python3 experiments/research-trajectories/thermal-stability/thermal_lab.py
 ## License
 
 Code: MIT. The two sample photographs retain their separate CC BY 2.0 attribution.
+
+
+## Metacognitive assumption revision
+
+The [2026-09-29 Millennium-problem trial](experiments/metacognitive-millennium-20260929/RESULTS.md)
+records a Navier–Stokes assumption review, a fresh three-role P-versus-NP episode,
+and a fresh-context continuation. The active skill now distinguishes target
+requirements from representational habits, records consequential assumption
+changes, and ties follow-up experiments to explicit continue/redirect decisions.
+The mathematical artifacts and independent read-only audits are preserved.
+These formative results do not establish a Millennium solution, novelty, or
+superiority over ordinary mathematical prompting.

@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "scope": "exact finite rectangular and degenerate affine cases",
+  "matrices": 146,
+  "threshold_comparisons": 22023,
+  "partition_identities": 4108
+}

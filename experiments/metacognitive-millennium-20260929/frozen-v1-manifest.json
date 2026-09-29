@@ -1,0 +1,28 @@
+{
+  "frozen_utc": "2026-09-29T06:01:07.823790+00:00",
+  "files": {
+    "ANSWER-01.md": "1f6b6e7aae70002da14be0915ae466cd9748240fd78acf0e1055173a58203742",
+    "BRIEF.md": "4f7bbf5fca2ad73f5a97a4a136ce905f3e328181cbe24a45a20686ec1626d45a",
+    "CHECK-PREDICTIONS-v1.md": "4419296b644b6667ca3441191d6c15133b939aae7f628768c88a5208f8389160",
+    "CONTINUATION-v2.md": "4c53f5582d0906e7a487da64d2f55c389dca66019261229217576f7edfab8c76",
+    "DECISION-1.md": "591c38ccad7b87ea6c6c576b60352445dd1689a07ef8ccd5017bbbfbdeb87ab0",
+    "DERIVATION-v1.md": "9d9c4fe5fe10dc32c954dc797131dddc841ed00a17a1728df47a0e7a3759ce20",
+    "QUESTION-1-PREANSWER.md": "c805bd92c7e440955a01702c3cfc2794c3349d03e3fb8023e932e2c0459bce50",
+    "REPORT.md": "8d6a9919411091e6c9fce28623e1b716260f017f2b6ffdd3c42b8254d32595e8",
+    "SHARED-AFFINE-SETUP.md": "628b2e488b0125a28da4df1d9e98d88576bee61a8970e6757d68c5c2f94886dc",
+    "SOURCES.md": "20800b6892636e99122ef9870cb54ddff01259e8f15a4b2f7f15bc407d46767b",
+    "affine.py": "a6b84278129796de4458b8e8bfa91d5bb53128ef43589b4d6bbe1a8cb2fab389",
+    "check-output.json": "5a6215b111e162559a5f0be14bd7811c41615186b87e462dc9d94fa4b3f1ecbe",
+    "check-output.txt": "5a6215b111e162559a5f0be14bd7811c41615186b87e462dc9d94fa4b3f1ecbe",
+    "checks.py": "a67003a0decbed78edc525f9ede0cbda5c7986240c9e360fa20ca09cab3c5b65",
+    "continuation-output.json": "b0dd888d261e8ffb0a1413c58356ef644dab873df1a8bce3d6c0658eef5207c9",
+    "continuation-output.txt": "b0dd888d261e8ffb0a1413c58356ef644dab873df1a8bce3d6c0658eef5207c9",
+    "continuation_checks.py": "a3a17dfd67de34652228432fd68ee1bcf2be4cda513a25a138eff1847854cada",
+    "k4-even.cnf": "9fa4c20d987e11a768d3a3c28960c154f451399975f491fdb36a997c2ae2e1a4",
+    "k4-odd.cnf": "861b38239ec08050a7b38b3da04fd79c17d43624a8f755be5a1417d8f01745c8",
+    "prism3-even.cnf": "c680c365ec4c572a321033c5e744b30c917fbfe386ea1a63805b81497bb4d69f",
+    "prism3-odd.cnf": "6b9487b1d993142af8b378342e2089715fb33ffc6e7bf58c83dd8a8d3c98176d",
+    "prism4-even.cnf": "42d5cb2466daeb752ae6329c214c320c36593efea323d7fa67a974f75ea2ebcf",
+    "prism4-odd.cnf": "9e07974108e8872d47d6eb2c8b3233911671be92e5acb96f6a4cbdaf4ba972ad"
+  }
+}

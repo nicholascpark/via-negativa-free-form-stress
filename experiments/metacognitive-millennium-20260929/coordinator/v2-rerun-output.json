@@ -1,0 +1,408 @@
+{
+  "status": "all checks passed",
+  "seed": 6292026,
+  "generic_instances": 915,
+  "star": [
+    {
+      "q": 0,
+      "count": 2,
+      "signed_trace": [
+        1
+      ],
+      "boundary_trace": [
+        1,
+        1
+      ],
+      "width": 0,
+      "projected_signed_trace": [
+        1
+      ]
+    },
+    {
+      "q": 1,
+      "count": 3,
+      "signed_trace": [
+        1,
+        2
+      ],
+      "boundary_trace": [
+        1,
+        2,
+        1
+      ],
+      "width": 1,
+      "projected_signed_trace": [
+        1,
+        1
+      ]
+    },
+    {
+      "q": 2,
+      "count": 5,
+      "signed_trace": [
+        1,
+        2,
+        4
+      ],
+      "boundary_trace": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "width": 1,
+      "projected_signed_trace": [
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "q": 3,
+      "count": 9,
+      "signed_trace": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "boundary_trace": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "width": 1,
+      "projected_signed_trace": [
+        1,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "q": 4,
+      "count": 17,
+      "signed_trace": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "boundary_trace": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "width": 1,
+      "projected_signed_trace": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "q": 5,
+      "count": 33,
+      "signed_trace": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "boundary_trace": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "width": 1,
+      "projected_signed_trace": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "q": 6,
+      "count": 65,
+      "signed_trace": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "boundary_trace": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "width": 1,
+      "projected_signed_trace": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "q": 7,
+      "count": 129,
+      "signed_trace": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "boundary_trace": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "width": 1,
+      "projected_signed_trace": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "q": 8,
+      "count": 257,
+      "signed_trace": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "boundary_trace": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "width": 1,
+      "projected_signed_trace": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ]
+    }
+  ],
+  "disjoint": [
+    {
+      "q": 0,
+      "count": 1,
+      "global_keys": 1,
+      "component_count": 0,
+      "sum_component_peak_keys": 0
+    },
+    {
+      "q": 1,
+      "count": 3,
+      "global_keys": 2,
+      "component_count": 1,
+      "sum_component_peak_keys": 2
+    },
+    {
+      "q": 2,
+      "count": 9,
+      "global_keys": 4,
+      "component_count": 2,
+      "sum_component_peak_keys": 4
+    },
+    {
+      "q": 3,
+      "count": 27,
+      "global_keys": 8,
+      "component_count": 3,
+      "sum_component_peak_keys": 6
+    },
+    {
+      "q": 4,
+      "count": 81,
+      "global_keys": 16,
+      "component_count": 4,
+      "sum_component_peak_keys": 8
+    },
+    {
+      "q": 5,
+      "count": 243,
+      "global_keys": 32,
+      "component_count": 5,
+      "sum_component_peak_keys": 10
+    },
+    {
+      "q": 6,
+      "count": 729,
+      "global_keys": 64,
+      "component_count": 6,
+      "sum_component_peak_keys": 12
+    },
+    {
+      "q": 7,
+      "count": 2187,
+      "global_keys": 128,
+      "component_count": 7,
+      "sum_component_peak_keys": 14
+    },
+    {
+      "q": 8,
+      "count": 6561,
+      "global_keys": 256,
+      "component_count": 8,
+      "sum_component_peak_keys": 16
+    }
+  ],
+  "reserved_parity_transfer_check": [
+    {
+      "n": 1,
+      "count": 1,
+      "width": 0,
+      "peak_boundary_states": 1,
+      "signed_states": 1,
+      "projected_signed_trace": [
+        1
+      ]
+    },
+    {
+      "n": 2,
+      "count": 2,
+      "width": 1,
+      "peak_boundary_states": 2,
+      "signed_states": 1,
+      "projected_signed_trace": [
+        1
+      ]
+    },
+    {
+      "n": 3,
+      "count": 4,
+      "width": 2,
+      "peak_boundary_states": 4,
+      "signed_states": 1,
+      "projected_signed_trace": [
+        1
+      ]
+    },
+    {
+      "n": 4,
+      "count": 8,
+      "width": 3,
+      "peak_boundary_states": 8,
+      "signed_states": 1,
+      "projected_signed_trace": [
+        1
+      ]
+    },
+    {
+      "n": 5,
+      "count": 16,
+      "width": 4,
+      "peak_boundary_states": 16,
+      "signed_states": 1,
+      "projected_signed_trace": [
+        1
+      ]
+    },
+    {
+      "n": 6,
+      "count": 32,
+      "width": 5,
+      "peak_boundary_states": 32,
+      "signed_states": 1,
+      "projected_signed_trace": [
+        1
+      ]
+    },
+    {
+      "n": 7,
+      "count": 64,
+      "width": 6,
+      "peak_boundary_states": 64,
+      "signed_states": 1,
+      "projected_signed_trace": [
+        1
+      ]
+    },
+    {
+      "n": 8,
+      "count": 128,
+      "width": 7,
+      "peak_boundary_states": 128,
+      "signed_states": 1,
+      "projected_signed_trace": [
+        1
+      ]
+    },
+    {
+      "n": 9,
+      "count": 256,
+      "width": 8,
+      "peak_boundary_states": 256,
+      "signed_states": 1,
+      "projected_signed_trace": [
+        1
+      ]
+    }
+  ],
+  "elapsed_seconds": 0.10481883300235495
+}

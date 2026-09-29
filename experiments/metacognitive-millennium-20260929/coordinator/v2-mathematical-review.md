@@ -1,0 +1,7 @@
+# Coordinator review of the continuation
+
+By inspection, the star family has one distinct consistent affine falsification state for each clause subset. The initial/global component graph is connected; the conclusion applies to this exact splitting mechanism, not all conditional factorization. Summing out variables absent from every remaining clause is legitimate after projecting their affine couplings. The image/left-nullspace characterization gives the projected constraints; rank-nullity gives the constant fiber multiplicity. Linearity permits the same operation on signed sums. The algorithm's claimed invariant and final exact count follow. This does not bound dictionary size on arbitrary instances.
+
+The raw boundary comparator closes constraints at their last variable. Every earlier variable in such a constraint remains in the boundary until that time, so its assignment is available. One long parity constraint indeed forces this raw representation to retain all preceding assignments, while direct affine projection has one state. This is a statement about the implemented representation, not a lower bound on all boundary methods.
+
+The rerun was performed in a separate copy. All nontiming JSON output reproduced, including 915 generic cases. Elapsed time differs and is recorded separately. This was a rerun, not a separately implemented second checker for v2 and not a hidden holdout. The coordinator separately implemented finite checks only for v1. No proof assistant was run, and no novelty claim was reviewed.

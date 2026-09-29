@@ -1,0 +1,9 @@
+{
+  "observed_utc": "2026-09-29T06:06:48.980797+00:00",
+  "snapshot": "v2-predictions-before-code.md",
+  "sha256": "8b8cae33aa3b7963dc0b17305a277927b0574c0e7706574950cfd923c70488b2",
+  "files_observed_at_capture": [
+    "PREDICTIONS.md"
+  ],
+  "scope": "Snapshot of visible artifacts at this checkpoint, not a claim about private internal timing."
+}

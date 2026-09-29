@@ -1,0 +1,26 @@
+{
+  "status": "completed bounded formative cycle",
+  "completed_utc": "2026-09-29T06:15:42.980690+00:00",
+  "seconds_since_trial_protocol_creation": 1597.25151,
+  "timing_scope": "Excludes earlier source review; not CPU cost or total per-agent work.",
+  "frozen_manifests_verified": {
+    "baseline": 24,
+    "skill-v1": 26,
+    "skill-v2": 26,
+    "frozen-v1": 23,
+    "frozen-v2": 5
+  },
+  "delivered_report_links_checked": 23,
+  "missing_links": [],
+  "skill_version": "v2",
+  "millennium_problem_solved": false,
+  "full_navier_stokes_proof_verified": false,
+  "formal_checker_run": false,
+  "causal_skill_efficacy_established": false,
+  "simulated_user_need_resolved": true,
+  "observer_actions": "read-only; no executions or edits",
+  "unmeasured": [
+    "tokens",
+    "monetary costs"
+  ]
+}

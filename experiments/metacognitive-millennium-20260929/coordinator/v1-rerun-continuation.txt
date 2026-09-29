@@ -1,0 +1,88 @@
+{
+  "exhaustive_affine_two_clause_cases": 9216,
+  "edgecases": [
+    {
+      "clauses": [],
+      "count": 2
+    },
+    {
+      "clauses": [
+        []
+      ],
+      "count": 0
+    },
+    {
+      "clauses": [
+        [
+          1,
+          -1
+        ]
+      ],
+      "count": 2
+    },
+    {
+      "clauses": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "count": 1
+    },
+    {
+      "clauses": [
+        [
+          1
+        ],
+        [
+          -1
+        ]
+      ],
+      "count": 0
+    },
+    {
+      "clauses": [
+        [
+          1,
+          1
+        ]
+      ],
+      "count": 1
+    }
+  ],
+  "disjoint_clause_family": [
+    {
+      "q": 0,
+      "count": 1,
+      "expanded_terms": 1
+    },
+    {
+      "q": 1,
+      "count": 7,
+      "expanded_terms": 2
+    },
+    {
+      "q": 2,
+      "count": 49,
+      "expanded_terms": 4
+    },
+    {
+      "q": 3,
+      "count": 343,
+      "expanded_terms": 8
+    },
+    {
+      "q": 4,
+      "count": 2401,
+      "expanded_terms": 16
+    },
+    {
+      "q": 5,
+      "count": 16807,
+      "expanded_terms": 32
+    }
+  ],
+  "status": "All assertions passed."
+}

@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "all_nontiming_outputs_reproduced": true,
+  "generic_fixtures": 915,
+  "original_python_seconds": 0.12410412498866208,
+  "rerun_python_seconds": 0.10481883300235495,
+  "frozen_v2_intact": true,
+  "star_q8": {
+    "q": 8,
+    "count": 257,
+    "signed_trace": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "boundary_trace": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+    ],
+    "width": 1,
+    "projected_signed_trace": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+    ]
+  },
+  "parity_n9": {
+    "n": 9,
+    "count": 256,
+    "width": 8,
+    "peak_boundary_states": 256,
+    "signed_states": 1,
+    "projected_signed_trace": [
+      1
+    ]
+  }
+}

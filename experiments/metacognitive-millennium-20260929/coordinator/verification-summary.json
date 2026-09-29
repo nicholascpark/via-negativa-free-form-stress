@@ -1,0 +1,15 @@
+{
+  "practitioner_reruns_exit": 0,
+  "recorded_json_outputs_reproduced": {
+    "check-output.json": true,
+    "continuation-output.json": true
+  },
+  "frozen_v1_intact": true,
+  "independent_checks": {
+    "status": "passed",
+    "scope": "exact finite rectangular and degenerate affine cases",
+    "matrices": 146,
+    "threshold_comparisons": 22023,
+    "partition_identities": 4108
+  }
+}

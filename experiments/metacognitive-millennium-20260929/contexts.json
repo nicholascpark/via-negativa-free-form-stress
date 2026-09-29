@@ -1,0 +1,57 @@
+{
+  "isolation": "Agents created with fork_turns=none. Access rules were instructional on a shared filesystem; not OS-enforced. Same underlying model priors remain.",
+  "practitioner_v1": {
+    "received": [
+      "skill-v1/SKILL.md and routed references",
+      "relay/initial-prompt.md",
+      "public primary sources retrieved by practitioner",
+      "relay/answer-01.md"
+    ],
+    "withheld": [
+      "baseline",
+      "root source-review rationale",
+      "observer diagnosis",
+      "simulated user private preferences until answered",
+      "coordinator independent checks"
+    ],
+    "reported_external_sources": "frozen-v1/SOURCES.md"
+  },
+  "simulated_user": {
+    "received": [
+      "role instruction and request to prepare P-versus-NP prompt",
+      "relayed question 1",
+      "frozen-v1/REPORT.md for final feedback"
+    ],
+    "withheld": [
+      "skill instructions",
+      "root proposed fixes",
+      "observer comments",
+      "coordinator mathematical checks"
+    ],
+    "preferences": "General uniform decision complexity; changing definitions does not count; restricted cases welcome with explicit transfer."
+  },
+  "observer": {
+    "received": [
+      "original skill and related references",
+      "frozen v1 skill/protocol",
+      "frozen-v1 result and relay records after episode end",
+      "coordinator verification records, explicitly developmental",
+      "updated Navier\u2013Stokes source reference"
+    ],
+    "actions": "read-only inspection; no experiment execution, edits, or contact with participants"
+  },
+  "practitioner_v2": {
+    "received": [
+      "skill-v2/SKILL.md and routed references",
+      "frozen-v1/REPORT.md as explicit input",
+      "simulated user follow-up asking continuation value and redirect criteria"
+    ],
+    "withheld": [
+      "observer findings",
+      "coordinator derivations and checks",
+      "revision rationale",
+      "baseline"
+    ],
+    "classification": "fresh-context continuation, feedback-exposed same problem, not independent replication"
+  }
+}

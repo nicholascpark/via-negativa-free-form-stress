@@ -1,0 +1,154 @@
+{
+  "shared_rank_checks": 256,
+  "matrix_checks": {
+    "matrices": 512,
+    "rhs_pairs": 18432,
+    "threshold_comparisons": 73728
+  },
+  "graphs": [
+    {
+      "name": "k4",
+      "vertices": 4,
+      "edges": 6,
+      "clauses": 16,
+      "proper_subsets_checked": 15,
+      "even_histogram": {
+        "0": 8,
+        "2": 48,
+        "4": 8
+      },
+      "odd_histogram": {
+        "1": 32,
+        "3": 32
+      },
+      "raw_moments_equal_through": 3,
+      "first_different_raw_moment": 4,
+      "total_solution_counts": [
+        8,
+        0
+      ],
+      "exact_contrast_at_half": "1/81",
+      "individual_clause_transfer_failure": {
+        "indices_zero_based": [
+          0,
+          4
+        ],
+        "size": 2,
+        "even_histogram": {
+          "0": 50,
+          "1": 6,
+          "16": 6,
+          "17": 2
+        },
+        "odd_histogram": {
+          "0": 48,
+          "1": 8,
+          "16": 8
+        },
+        "even_clauses": [
+          [
+            -1,
+            2,
+            3
+          ],
+          [
+            -1,
+            4,
+            5
+          ]
+        ],
+        "odd_clauses": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            -1,
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "name": "prism3",
+      "vertices": 6,
+      "edges": 9,
+      "clauses": 24,
+      "proper_subsets_checked": 63,
+      "even_histogram": {
+        "0": 16,
+        "2": 240,
+        "4": 240,
+        "6": 16
+      },
+      "odd_histogram": {
+        "1": 96,
+        "3": 320,
+        "5": 96
+      },
+      "raw_moments_equal_through": 5,
+      "first_different_raw_moment": 6,
+      "total_solution_counts": [
+        16,
+        0
+      ],
+      "exact_contrast_at_half": "1/729"
+    },
+    {
+      "name": "prism4",
+      "vertices": 8,
+      "edges": 12,
+      "clauses": 32,
+      "proper_subsets_checked": 255,
+      "even_histogram": {
+        "0": 32,
+        "2": 896,
+        "4": 2240,
+        "6": 896,
+        "8": 32
+      },
+      "odd_histogram": {
+        "1": 256,
+        "3": 1792,
+        "5": 1792,
+        "7": 256
+      },
+      "raw_moments_equal_through": 7,
+      "first_different_raw_moment": 8,
+      "total_solution_counts": [
+        32,
+        0
+      ],
+      "exact_contrast_at_half": "1/6561"
+    }
+  ],
+  "thermal_half_contrast_threshold": [
+    {
+      "m": 6,
+      "beta_for_contrast_half": 2.8525308651060257
+    },
+    {
+      "m": 12,
+      "beta_for_contrast_half": 3.544844736766564
+    },
+    {
+      "m": 24,
+      "beta_for_contrast_half": 4.23778343809226
+    },
+    {
+      "m": 48,
+      "beta_for_contrast_half": 4.930878489334283
+    }
+  ],
+  "disconnected_extension": {
+    "components": 2,
+    "thresholds": {
+      "0": "infinity",
+      "1": 3,
+      "9": 3
+    }
+  },
+  "status": "All assertions passed."
+}

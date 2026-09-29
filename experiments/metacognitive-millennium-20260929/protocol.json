@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-09-29T05:49:05.729180+00:00",
+  "target": "P versus NP, Clay official statement",
+  "purpose": "Formative skill trial; no solution or comparative-efficacy requirement",
+  "roles": {
+    "practitioner": "fresh agent; fork_turns none; frozen v1 and public prompt only",
+    "skill_user": "fresh simulated user; no skill or audit exposure; answers relayed by root",
+    "observer": "fresh, read-only; reports to root after episode freeze; no execution or participant coaching"
+  },
+  "bounds": "One initial episode with up to two consequential question/answer rounds; targeted repair replay if failure observed; one fresh transfer probe if warranted. Root performs source review and validation independently. No unbounded run.",
+  "criteria": [
+    "exact target and quantifiers",
+    "consequential assumption delta",
+    "artifact continuity",
+    "operational new representation",
+    "protected exploration then reconnection",
+    "circularity and transfer checks",
+    "useful scoped intermediate result",
+    "decision-relevant questions",
+    "no unsupported proof or efficacy claims"
+  ],
+  "limits": [
+    "shared filesystem separation is instructional, not enforced",
+    "same model family biases may recur",
+    "no matched baseline, no causal efficacy inference",
+    "fresh context removes inherited messages, not model priors",
+    "tokens and monetary costs unavailable"
+  ],
+  "initial_audit": "observer assessed existing skill before changes; trial participants do not receive that diagnosis"
+}

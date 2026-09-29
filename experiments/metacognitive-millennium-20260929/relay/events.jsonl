@@ -1,0 +1,2 @@
+{"time_utc": "2026-09-29T05:51:17.999233+00:00", "event": "question_01_relayed", "pre_answer_snapshot": "before-answer-01", "speaker": "practitioner", "recipient": "simulated user"}
+{"time_utc": "2026-09-29T05:51:28.014242+00:00", "event": "answer_01_relayed", "speaker": "simulated user", "recipient": "practitioner", "path": "answer-01.md"}

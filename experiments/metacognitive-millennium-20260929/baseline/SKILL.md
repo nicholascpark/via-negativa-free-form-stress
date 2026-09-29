@@ -4,7 +4,7 @@ description: >
   Explore hard scientific and engineering problems by developing new representations,
   observables, constructions, and operations in continuing branches. Use for via
   negativa exploration, scientific exploration, reframing a stuck model, or an
-  exploratory design detour, including metacognitive assumption revision. Connect intermediate discoveries to domain-appropriate experiments,
+  exploratory design detour. Connect intermediate discoveries to domain-appropriate experiments,
   proofs, and build decisions; not a routine review for every coding task.
 ---
 
@@ -20,13 +20,6 @@ Return something work can continue from. A useful research artifact can be an
 unresolved construction or discriminating experiment. A claim that the problem is
 solved needs the relevant domain's evidence. Do not make every exploratory move
 pass that final standard, and do not manufacture novelty or a breakthrough.
-
-Metacognition here means revising explicit assumptions, representations and
-research choices in response to artifacts. It does not require a private thought
-transcript or claimed access to hidden cognition. A “psychedelic” or “revelatory”
-request calls for a wider generative interval: loosen habitual interpretations,
-permit remote associations, then translate what survives into usable objects.
-Felt profundity, surprising language and agreement among agents are not evidence.
 
 ## Start from the actual problem
 
@@ -52,24 +45,6 @@ actual quantifiers and hypotheses. For empirical work, a revised explanatory
 question may itself be a discovery. Adopting a changed user objective requires
 their judgment; exploring it provisionally does not replace the original task.
 
-## Separate requirements from habits
-
-For a stuck or foundational problem, read
-[metacognitive exploration](references/metacognitive-exploration.md). Make a small
-assumption map: target requirements, definitions, established dependencies,
-working hypotheses, and representational habits. “Minimal” means locally
-necessary for the next construction, not an unsupported claim of globally weakest
-axioms. Locate where each consequential assumption is used. Remove or vary a
-habit before weakening the target; if the target changes, keep the original
-beside it and name the return obligation.
-
-Choose an assumption whose variation opens an operation. Record the parent,
-what changed, what remains fixed, the new object, and what it now enables.
-Equivalent words are not a new representation. A conditional result is useful,
-but inspect whether its additional hypothesis already contains the difficult
-conclusion. A deletion that breaks a proof may expose dependence in that proof;
-it does not establish logical necessity in every proof.
-
 ## Open routes and give them continuity
 
 Choose distinct routes through representations, constructions, rival explanations,
@@ -94,13 +69,6 @@ its usefulness. Record assumptions and failures without requiring an immediate
 relevance argument. Speculative descendants can continue from a failed attempt;
 its false assertion remains false. Keep exploratory changes in scratch artifacts
 until their effect on the authorized build or experiment is understood.
-
-Choose a checkpoint before starting that interval, such as one short work session
-or a few artifact transformations. Maintain both a familiar route and a route
-that changes a consequential assumption or representation when resources permit.
-At the checkpoint, recover definitions and assess what operation became possible.
-If nothing changed beyond vocabulary, perturb a different assumption or end that
-branch. If an object enables new work, develop it before launching more routes.
 
 ## Turn an obstruction into something usable
 
@@ -199,17 +167,6 @@ artifact versions, evidence, failures, and next use. Keep user judgments separat
 from hypotheses. Supersede records explicitly and retrieve them before repeating
 work or questions. Failed branches remain possible material for transformation.
 Memory is a working library, not a personality profile or a claim of model training.
-
-## Improve the method from observed use
-
-When the assignment is to upgrade this skill, use
-[fresh-context trials](references/fresh-context-trials.md). Freeze each tested
-version, keep the practitioner, simulated user and observer roles separate, and
-let the observer report after the interaction freezes. Diagnose a demonstrated
-failure, make the smallest general correction that addresses it, and replay the
-affected behavior before calling it repaired. The next fresh episode tests
-transfer; a replay with feedback tests only that repair. An inconclusive run is
-not a reason to accumulate more instructions. Preserve room for exploration.
 
 ## Finish with a usable handoff
 
