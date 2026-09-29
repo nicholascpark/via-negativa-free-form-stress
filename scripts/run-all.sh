@@ -17,7 +17,7 @@ BOLD='\033[1m'
 NC='\033[0m'
 
 echo -e "${CYAN}${BOLD}╔════════════════════════════════════════════════════╗${NC}"
-echo -e "${CYAN}${BOLD}║     VIA NEGATIVA STRESS TEST - INVESTIGATION      ║${NC}"
+echo -e "${CYAN}${BOLD}║    VIA NEGATIVA EXPLORATION - GIT INVESTIGATION     ║${NC}"
 echo -e "${CYAN}${BOLD}╚════════════════════════════════════════════════════╝${NC}"
 echo ""
 
@@ -50,5 +50,5 @@ echo -e "${CYAN}${BOLD}╔══════════════════
 echo -e "${CYAN}${BOLD}║              INVESTIGATION COMPLETE                ║${NC}"
 echo -e "${CYAN}${BOLD}╚════════════════════════════════════════════════════╝${NC}"
 echo ""
-echo "Feed these results into the via negativa stress test (SKILL.md)"
-echo "for Layer 1-4 analysis with full system context."
+echo "Feed these results into Via Negativa Exploration (SKILL.md)"
+echo "as optional Git evidence for the problem under exploration."

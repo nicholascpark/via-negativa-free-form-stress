@@ -1,4 +1,4 @@
-# Via negativa: invent what the next step can think with
+# Via Negativa Exploration
 
 **What could we construct that makes the next step possible?**
 
@@ -18,10 +18,14 @@ dependent on the host and domain tools. This is an experimental research protoco
 
 ## Use the skill
 
+The skill is named `via-negativa-exploration`. This repository retains its
+historical `via-negativa-stress-test` name. It is separate from the older
+`via-negativa-free-form-stress` skill.
+
 Point the agent at this repository's `SKILL.md` and give it the actual problem,
 current artifacts, and any resource constraints. For example:
 
-> Use via negativa on this obstruction. Let distinct branches develop new
+> Use via-negativa-exploration on this obstruction. Let distinct branches develop new
 > representations through several transformations. Exchange intermediate
 > artifacts, generate checks from what they reveal, and return something we
 > can use in the next experiment, proof, or build.

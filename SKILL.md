@@ -1,14 +1,14 @@
 ---
-name: via-negativa-stress-test
+name: via-negativa-exploration
 description: >
   Explore hard scientific and engineering problems by developing new representations,
   observables, constructions, and operations in continuing branches. Use for via
-  negativa, scientific exploration, reframing a stuck model, or an exploratory
-  design detour. Connect intermediate discoveries to domain-appropriate experiments,
+  negativa exploration, scientific exploration, reframing a stuck model, or an
+  exploratory design detour. Connect intermediate discoveries to domain-appropriate experiments,
   proofs, and build decisions; not a routine review for every coding task.
 ---
 
-# Via negativa: invent what the next step can think with
+# Via Negativa Exploration
 
 Keep the meaningful context; loosen the authority of its current interpretation.
 A branch may develop unfamiliar constructions before their usefulness is evident.
